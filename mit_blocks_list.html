@@ -1,475 +1,479 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Блоки массивов в MIT App Inventor</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <a href="index.html#section-1" class="header-link active">Теория</a>
-      <a class="header-link" href="mit_project_description.html">Проекты</a>
-      <a href="index.html">
-        <img class="logo" src="images/codi-logo.svg" />
-      </a>
-    </header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Блоки массивов в MIT App Inventor</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<header>
+			<a href="index.html#section-1" class="header-link active">Теория</a>
+			<a class="header-link" href="mit_project_description.html">Проекты</a>
+			<a href="index.html">
+				<img class="logo" src="images/codi-logo.svg" />
+			</a>
+		</header>
 
-    <div class="sidebar">
-      <ul class="menu-list">
-        <li>
-          <a href="#blocks_2lvl_1type" class="nav-link"
-            >Блоки 2-го уровня первого типа</a
-          >
-        </li>
-        <li>
-          <a href="#blocks_2lvl_2type" class="nav-link"
-            >Блоки 2-го уровня второго типа</a
-          >
-        </li>
-        <li><a href="#blocks_3lvl" class="nav-link">Блоки 3-го уровня</a></li>
-        <li>
-          <div class="back-to-index">
-            <a href="index.html#section-2">Вернуться к оглавлению</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="content">
-      <h1>Блоки массивов в MIT App Inventor</h1>
-      <div class="container">
-        <p>
-          Блоки массивов в MIT App Inventor предназначены для работы со списками
-          данных. С их помощью можно создавать, изменять и анализировать списки
-          элементов. Они позволяют добавлять новые элементы, удалять
-          существующие, сортировать данные и выполнять поиск внутри списка. Эти
-          блоки особенно полезны при работе с большими объемами данных, где
-          требуется удобное хранение и обработка информации, например, списков
-          покупок, задач или контактов.
-        </p>
-        <ul>
-          <h2>Блоки 2-го уровня первого типа</h2>
-          <div id="blocks_2lvl_1type">
-            <li>
-              <strong>add items to list (добавить элементы в список)</strong>:
-              Этот блок добавляет один или несколько элементов в существующий
-              список.
-            </li>
-            <div class="block-example">
-              <img class="medium-img" src="images/lists_add_items.png" alt="" />
-              Добавить в список (список) элементы (элемент) <br />
-              -– обновить список
-            </div>
-            <li>
-              <strong>insert list item (вставить элемент в список)</strong>:
-              Этот блок вставляет элемент в список на указанную позицию.
-            </li>
-            <div class="block-example">
-              <img
-                class="medium-img"
-                src="images/lists_insert_item.png"
-                alt=""
-              />
-              Вставить в список (список) на позицию (индекс) элемент
-              (элемент)<br />
-              -– обновить список
-            </div>
-            <li>
-              <strong>replace list item (заменить элемент в списке)</strong>:
-              Этот блок заменяет элемент в списке на указанной позиции.
-            </li>
-            <div class="block-example">
-              <img
-                class="medium-img"
-                src="images/lists_replace_item.png"
-                alt=""
-              />
-              Заменить элемент в списке (список) на позиции (индекс) на (новый
-              элемент)<br />
-              -– обновить список
-            </div>
-          </div>
-          <li>
-            <strong>remove list item (удалить элемент из списка)</strong>: Этот
-            блок удаляет элемент из списка по указанному индексу.
-          </li>
-          <div class="block-example">
-            <img class="medium-img" src="images/lists_remove_item.png" alt="" />
-            Удалить элемент из списка (список) на позиции (индекс) <br />
-            -– обновить список
-          </div>
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<a href="#blocks_2lvl_1type" class="nav-link"
+						>Блоки 2-го уровня первого типа</a
+					>
+				</li>
+				<li>
+					<a href="#blocks_2lvl_2type" class="nav-link"
+						>Блоки 2-го уровня второго типа</a
+					>
+				</li>
+				<li><a href="#blocks_3lvl" class="nav-link">Блоки 3-го уровня</a></li>
+				<li>
+					<div class="back-to-index">
+						<a href="index.html#section-2">Вернуться к оглавлению</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<h1>Блоки массивов в MIT App Inventor</h1>
+			<div class="container">
+				<p>
+					Блоки массивов в MIT App Inventor предназначены для работы со списками
+					данных. С их помощью можно создавать, изменять и анализировать списки
+					элементов. Они позволяют добавлять новые элементы, удалять
+					существующие, сортировать данные и выполнять поиск внутри списка. Эти
+					блоки особенно полезны при работе с большими объемами данных, где
+					требуется удобное хранение и обработка информации, например, списков
+					покупок, задач или контактов.
+				</p>
+				<ul>
+					<h2>Блоки 2-го уровня первого типа</h2>
+					<div id="blocks_2lvl_1type">
+						<li>
+							<strong>add items to list (добавить элементы в список)</strong>:
+							Этот блок добавляет один или несколько элементов в существующий
+							список.
+						</li>
+						<div class="block-example">
+							<img class="medium-img" src="images/lists_add_items.png" alt="" />
+							Добавить в список (список) элементы (элемент) <br />
+							-– обновить список
+						</div>
+						<li>
+							<strong>insert list item (вставить элемент в список)</strong>:
+							Этот блок вставляет элемент в список на указанную позицию.
+						</li>
+						<div class="block-example">
+							<img
+								class="medium-img"
+								src="images/lists_insert_item.png"
+								alt=""
+							/>
+							Вставить в список (список) на позицию (индекс) элемент
+							(элемент)<br />
+							-– обновить список
+						</div>
+						<li>
+							<strong>replace list item (заменить элемент в списке)</strong>:
+							Этот блок заменяет элемент в списке на указанной позиции.
+						</li>
+						<div class="block-example">
+							<img
+								class="medium-img"
+								src="images/lists_replace_item.png"
+								alt=""
+							/>
+							Заменить элемент в списке (список) на позиции (индекс) на (новый
+							элемент)<br />
+							-– обновить список
+						</div>
+					</div>
+					<li>
+						<strong>remove list item (удалить элемент из списка)</strong>: Этот
+						блок удаляет элемент из списка по указанному индексу.
+					</li>
+					<div class="block-example">
+						<img class="medium-img" src="images/lists_remove_item.png" alt="" />
+						Удалить элемент из списка (список) на позиции (индекс) <br />
+						-– обновить список
+					</div>
 
-          <li>
-            <strong>append to list (добавить в конец списка)</strong>: Этот блок
-            добавляет элементы второго списка в конец первого списка.
-          </li>
-          <div class="block-example">
-            <img class="medium-img" src="images/lists_append_list.png" alt="" />
-            Добавить (элементы) в конец списка (список)<br />
-            -– обновить список
-          </div>
-          <div id="blocks_2lvl_2type">
-            <h2>Блоки 2-го уровня второго типа</h2>
-            <li>
-              <strong>make a list (создать список)</strong>: Этот блок создаёт
-              новый список с указанными элементами.
-            </li>
-            <div class="block-example">
-              <img
-                class="medium-img"
-                src="images/lists_create_with.png"
-                alt=""
-              />
-              Создать список (элемент1, элемент2)<br />
-              -– использовать для хранения данных
-            </div>
-            <li>
-              <strong>is in list (находится в списке)</strong>: Этот блок
-              проверяет, содержится ли указанный элемент в списке. Возвращает
-              true, если элемент найден.
-            </li>
-            <div class="block-example">
-              <img class="medium-img" src="images/lists_is_in.png" alt="" />
-              Если (элемент находится в списке)<br />
-              -– выполнять действие
-            </div>
-            <li>
-              <strong>length of list (длина списка)</strong>: Этот блок
-              возвращает количество элементов в списке.
-            </li>
-            <div class="block-example">
-              <img class="medium-img" src="images/lists_length.png" alt="" />
-              Длина списка (список)<br />
-              -– использовать результат для вычислений
-            </div>
-            <li>
-              <strong>is list empty (является ли список пустым)</strong>: Этот
-              блок проверяет, пуст ли список. Возвращает true, если список не
-              содержит элементов.
-            </li>
-            <div class="block-example">
-              <img class="medium-img" src="images/lists_is_empty.png" alt="" />
-              Если (список пустой)<br />
-              -– выполнять действие
-            </div>
-            <li>
-              <strong>pick a random item (выбрать случайный элемент)</strong>:
-              Этот блок выбирает случайный элемент из списка.
-            </li>
-            <div class="block-example">
-              <img
-                class="medium-img"
-                src="images/lists_pick_random_item.png"
-                alt=""
-              />
-              Случайный элемент (список)<br />
-              -– использовать результат
-            </div>
-            <li>
-              <strong>index in list (индекс в списке)</strong>: Этот блок
-              возвращает позицию элемента в списке. Если элемент не найден,
-              возвращает 0.
-            </li>
-            <div class="block-example">
-              <img
-                class="medium-img"
-                src="images/lists_position_in.png"
-                alt=""
-              />
-              Индекс элемента (элемент, список)<br />
-              -– использовать результат для выполнения действия
-            </div>
-            <li>
-              <strong>select list item (выбрать элемент списка)</strong>: Этот
-              блок возвращает элемент из списка по указанному индексу.
-            </li>
-            <div class="block-example">
-              <img
-                class="medium-img"
-                src="images/lists_select_item.png"
-                alt=""
-              />
-              Элемент списка (список, индекс)<br />
-              -– использовать результат
-            </div>
-            <li>
-              <strong>copy list (копировать список)</strong>: Этот блок создаёт
-              копию списка.
-            </li>
-            <div class="block-example">
-              <img class="medium-img" src="images/lists_copy.png" alt="" />
-              Копировать список (список)<br />
-              -– использовать копию для дальнейших операций
-            </div>
-            <li>
-              <strong>is a list? (является ли список?)</strong>: Этот блок
-              проверяет, является ли указанное значение списком. Возвращает
-              true, если это список.
-            </li>
-            <div class="block-example">
-              <img class="medium-img" src="images/lists_is_list.png" alt="" />
-              Если (значение является списком)<br />
-              -– выполнять действие
-            </div>
-            <li>
-              <strong>reverse list (обратить список)</strong>: Этот блок меняет
-              порядок элементов списка на противоположный.
-            </li>
-            <div class="block-example">
-              <img class="small-img" src="images/lists_reverse.png" alt="" />
-              Обратить порядок элементов в списке (список)<br />
-              -– использовать результат
-            </div>
-            <li>
-              <strong>list to csv row (список в строку CSV)</strong>: Этот блок
-              преобразует список в строку формата CSV (через запятую).
-            </li>
-            <div class="block-example">
-              <img
-                class="medium-img"
-                src="images/lists_to_csv_row.png"
-                alt=""
-              />
-              Преобразовать список в строку CSV (список)<br />
-              -– использовать для экспорта данных
-            </div>
-            <li>
-              <strong>list to csv table (список в таблицу CSV)</strong>: Этот
-              блок преобразует список списков в таблицу формата CSV.
-            </li>
-            <div class="block-example">
-              <img
-                class="medium-img"
-                src="images/lists_to_csv_table.png"
-                alt=""
-              />
-              Преобразовать список в таблицу CSV (список списков)<br />
-              -– использовать для экспорта данных
-            </div>
-            <li>
-              <strong>list from csv row (список из строки CSV)</strong>: Этот
-              блок преобразует строку формата CSV в список.
-            </li>
-            <div class="block-example">
-              <img
-                class="medium-img"
-                src="images/lists_from_csv_row.png"
-                alt=""
-              />
-              Преобразовать строку CSV (текст) в список<br />
-              -– использовать результат для выполнения действия
-            </div>
-            <li>
-              <strong>list from csv table (список из таблицы CSV)</strong>: Этот
-              блок преобразует текст формата CSV в список списков.
-            </li>
-            <div class="block-example">
-              <img
-                class="medium-img"
-                src="images/lists_from_csv_table.png"
-                alt=""
-              />
-              Преобразовать таблицу CSV (текст) в список списков<br />
-              -– использовать результат
-            </div>
-            <li>
-              <strong>lookup in pairs (поиск в парах)</strong>: Этот блок ищет
-              значение по ключу в списке пар ключ-значение.
-            </li>
-            <div class="block-example">
-              <img
-                class="medium-img"
-                src="images/lists_lookup_in_pairs.png"
-                alt=""
-              />
-              Поиск по ключу (ключ, список пар)<br />
-              -– использовать результат
-            </div>
-            <li>
-              <strong>join with separator (соединить с разделителем)</strong>:
-              Этот блок объединяет элементы списка в строку, разделяя их
-              указанным символом.
-            </li>
-            <div class="block-example">
-              <img
-                class="medium-img"
-                src="images/lists_join_with_separator.png"
-                alt=""
-              />
-              Соединить элементы с разделителем (разделитель) список (список)
-              <br />
-              -– использовать результат
-            </div>
-            <li>
-              <strong
-                >make new mapped list (создать новый отображённый
-                список)</strong
-              >: Этот блок создаёт новый список, применяя функцию к каждому
-              элементу исходного списка.
-            </li>
-            <div class="block-example">
-              <img class="medium-img" src="images/lists_map.png" alt="" />
-              Создать новый список из (список), преобразовав элементы
-              (функция)<br />
-              -– использовать результат
-            </div>
-            <li>
-              <strong
-                >make new filtered list (создать новый отфильтрованный
-                список)</strong
-              >: Этот блок создаёт новый список, содержащий только те элементы,
-              которые удовлетворяют указанному условию.
-            </li>
-            <div class="block-example">
-              <img class="medium-img" src="images/lists_filter.png" alt="" />
-              Создать новый список из (список), фильтруя элементы (условие)<br />
-              -– использовать результат
-            </div>
-            <li>
-              <strong
-                >reduce list to a single value (сократить список до одного
-                значения)</strong
-              >:Этот блок применяет функцию для последовательного объединения
-              элементов списка в одно значение.
-            </li>
-            <div class="block-example">
-              <img class="medium-img" src="images/lists_reduce.png" alt="" />
-              Сократить список (список) с помощью функции (функция)<br />
-              -– использовать результат
-            </div>
-            <li>
-              <strong
-                >sort list in ascending order (отсортировать список по
-                возрастанию)</strong
-              >: Этот блок сортирует элементы списка по возрастанию.
-            </li>
-            <div class="block-example">
-              <img class="medium-img" src="images/lists_sort.png" alt="" />
-              Отсортировать список по возрастанию (список)<br />
-              -– использовать результат
-            </div>
+					<li>
+						<strong>append to list (добавить в конец списка)</strong>: Этот блок
+						добавляет элементы второго списка в конец первого списка.
+					</li>
+					<div class="block-example">
+						<img class="medium-img" src="images/lists_append_list.png" alt="" />
+						Добавить (элементы) в конец списка (список)<br />
+						-– обновить список
+					</div>
+					<div id="blocks_2lvl_2type">
+						<h2>Блоки 2-го уровня второго типа</h2>
+						<li>
+							<strong>make a list (создать список)</strong>: Этот блок создаёт
+							новый список с указанными элементами.
+						</li>
+						<div class="block-example">
+							<img
+								class="medium-img"
+								src="images/lists_create_with.png"
+								alt=""
+							/>
+							Создать список (элемент1, элемент2)<br />
+							-– использовать для хранения данных
+						</div>
+						<li>
+							<strong>is in list (находится в списке)</strong>: Этот блок
+							проверяет, содержится ли указанный элемент в списке. Возвращает
+							true, если элемент найден.
+						</li>
+						<div class="block-example">
+							<img class="medium-img" src="images/lists_is_in.png" alt="" />
+							Если (элемент находится в списке)<br />
+							-– выполнять действие
+						</div>
+						<li>
+							<strong>length of list (длина списка)</strong>: Этот блок
+							возвращает количество элементов в списке.
+						</li>
+						<div class="block-example">
+							<img class="medium-img" src="images/lists_length.png" alt="" />
+							Длина списка (список)<br />
+							-– использовать результат для вычислений
+						</div>
+						<li>
+							<strong>is list empty (является ли список пустым)</strong>: Этот
+							блок проверяет, пуст ли список. Возвращает true, если список не
+							содержит элементов.
+						</li>
+						<div class="block-example">
+							<img class="medium-img" src="images/lists_is_empty.png" alt="" />
+							Если (список пустой)<br />
+							-– выполнять действие
+						</div>
+						<li>
+							<strong>pick a random item (выбрать случайный элемент)</strong>:
+							Этот блок выбирает случайный элемент из списка.
+						</li>
+						<div class="block-example">
+							<img
+								class="medium-img"
+								src="images/lists_pick_random_item.png"
+								alt=""
+							/>
+							Случайный элемент (список)<br />
+							-– использовать результат
+						</div>
+						<li>
+							<strong>index in list (индекс в списке)</strong>: Этот блок
+							возвращает позицию элемента в списке. Если элемент не найден,
+							возвращает 0.
+						</li>
+						<div class="block-example">
+							<img
+								class="medium-img"
+								src="images/lists_position_in.png"
+								alt=""
+							/>
+							Индекс элемента (элемент, список)<br />
+							-– использовать результат для выполнения действия
+						</div>
+						<li>
+							<strong>select list item (выбрать элемент списка)</strong>: Этот
+							блок возвращает элемент из списка по указанному индексу.
+						</li>
+						<div class="block-example">
+							<img
+								class="medium-img"
+								src="images/lists_select_item.png"
+								alt=""
+							/>
+							Элемент списка (список, индекс)<br />
+							-– использовать результат
+						</div>
+						<li>
+							<strong>copy list (копировать список)</strong>: Этот блок создаёт
+							копию списка.
+						</li>
+						<div class="block-example">
+							<img class="medium-img" src="images/lists_copy.png" alt="" />
+							Копировать список (список)<br />
+							-– использовать копию для дальнейших операций
+						</div>
+						<li>
+							<strong>is a list? (является ли список?)</strong>: Этот блок
+							проверяет, является ли указанное значение списком. Возвращает
+							true, если это список.
+						</li>
+						<div class="block-example">
+							<img class="medium-img" src="images/lists_is_list.png" alt="" />
+							Если (значение является списком)<br />
+							-– выполнять действие
+						</div>
+						<li>
+							<strong>reverse list (обратить список)</strong>: Этот блок меняет
+							порядок элементов списка на противоположный.
+						</li>
+						<div class="block-example">
+							<img class="small-img" src="images/lists_reverse.png" alt="" />
+							Обратить порядок элементов в списке (список)<br />
+							-– использовать результат
+						</div>
+						<li>
+							<strong>list to csv row (список в строку CSV)</strong>: Этот блок
+							преобразует список в строку формата CSV (через запятую).
+						</li>
+						<div class="block-example">
+							<img
+								class="medium-img"
+								src="images/lists_to_csv_row.png"
+								alt=""
+							/>
+							Преобразовать список в строку CSV (список)<br />
+							-– использовать для экспорта данных
+						</div>
+						<li>
+							<strong>list to csv table (список в таблицу CSV)</strong>: Этот
+							блок преобразует список списков в таблицу формата CSV.
+						</li>
+						<div class="block-example">
+							<img
+								class="medium-img"
+								src="images/lists_to_csv_table.png"
+								alt=""
+							/>
+							Преобразовать список в таблицу CSV (список списков)<br />
+							-– использовать для экспорта данных
+						</div>
+						<li>
+							<strong>list from csv row (список из строки CSV)</strong>: Этот
+							блок преобразует строку формата CSV в список.
+						</li>
+						<div class="block-example">
+							<img
+								class="medium-img"
+								src="images/lists_from_csv_row.png"
+								alt=""
+							/>
+							Преобразовать строку CSV (текст) в список<br />
+							-– использовать результат для выполнения действия
+						</div>
+						<li>
+							<strong>list from csv table (список из таблицы CSV)</strong>: Этот
+							блок преобразует текст формата CSV в список списков.
+						</li>
+						<div class="block-example">
+							<img
+								class="medium-img"
+								src="images/lists_from_csv_table.png"
+								alt=""
+							/>
+							Преобразовать таблицу CSV (текст) в список списков<br />
+							-– использовать результат
+						</div>
+						<li>
+							<strong>lookup in pairs (поиск в парах)</strong>: Этот блок ищет
+							значение по ключу в списке пар ключ-значение.
+						</li>
+						<div class="block-example">
+							<img
+								class="medium-img"
+								src="images/lists_lookup_in_pairs.png"
+								alt=""
+							/>
+							Поиск по ключу (ключ, список пар)<br />
+							-– использовать результат
+						</div>
+						<li>
+							<strong>join with separator (соединить с разделителем)</strong>:
+							Этот блок объединяет элементы списка в строку, разделяя их
+							указанным символом.
+						</li>
+						<div class="block-example">
+							<img
+								class="medium-img"
+								src="images/lists_join_with_separator.png"
+								alt=""
+							/>
+							Соединить элементы с разделителем (разделитель) список (список)
+							<br />
+							-– использовать результат
+						</div>
+						<li>
+							<strong
+								>make new mapped list (создать новый отображённый
+								список)</strong
+							>: Этот блок создаёт новый список, применяя функцию к каждому
+							элементу исходного списка.
+						</li>
+						<div class="block-example">
+							<img class="medium-img" src="images/lists_map.png" alt="" />
+							Создать новый список из (список), преобразовав элементы
+							(функция)<br />
+							-– использовать результат
+						</div>
+						<li>
+							<strong
+								>make new filtered list (создать новый отфильтрованный
+								список)</strong
+							>: Этот блок создаёт новый список, содержащий только те элементы,
+							которые удовлетворяют указанному условию.
+						</li>
+						<div class="block-example">
+							<img class="medium-img" src="images/lists_filter.png" alt="" />
+							Создать новый список из (список), фильтруя элементы (условие)<br />
+							-– использовать результат
+						</div>
+						<li>
+							<strong
+								>reduce list to a single value (сократить список до одного
+								значения)</strong
+							>:Этот блок применяет функцию для последовательного объединения
+							элементов списка в одно значение.
+						</li>
+						<div class="block-example">
+							<img class="medium-img" src="images/lists_reduce.png" alt="" />
+							Сократить список (список) с помощью функции (функция)<br />
+							-– использовать результат
+						</div>
+						<li>
+							<strong
+								>sort list in ascending order (отсортировать список по
+								возрастанию)</strong
+							>: Этот блок сортирует элементы списка по возрастанию.
+						</li>
+						<div class="block-example">
+							<img class="medium-img" src="images/lists_sort.png" alt="" />
+							Отсортировать список по возрастанию (список)<br />
+							-– использовать результат
+						</div>
 
-            <li>
-              <strong
-                >sort list with a specified comparator (отсортировать список с
-                компаратором)</strong
-              >: Этот блок сортирует список, используя указанное правило
-              сравнения.
-            </li>
-            <div class="block-example">
-              <img
-                class="medium-img"
-                src="images/lists_sort_comparator.png"
-                alt=""
-              />
-              Отсортировать список (список) с компаратором (функция)<br />
-              -– использовать результат
-            </div>
-            <li>
-              <strong>sort list with key (отсортировать список по ключу)</strong
-              >: Этот блок сортирует список, используя указанную функцию для
-              получения ключа сравнения.
-            </li>
-            <div class="block-example">
-              <img class="medium-img" src="images/lists_sort_key.png" alt="" />
-              Отсортировать список (список) по ключу (функция)<br />
-              -– использовать результат
-            </div>
+						<li>
+							<strong
+								>sort list with a specified comparator (отсортировать список с
+								компаратором)</strong
+							>: Этот блок сортирует список, используя указанное правило
+							сравнения.
+						</li>
+						<div class="block-example">
+							<img
+								class="medium-img"
+								src="images/lists_sort_comparator.png"
+								alt=""
+							/>
+							Отсортировать список (список) с компаратором (функция)<br />
+							-– использовать результат
+						</div>
+						<li>
+							<strong>sort list with key (отсортировать список по ключу)</strong
+							>: Этот блок сортирует список, используя указанную функцию для
+							получения ключа сравнения.
+						</li>
+						<div class="block-example">
+							<img class="medium-img" src="images/lists_sort_key.png" alt="" />
+							Отсортировать список (список) по ключу (функция)<br />
+							-– использовать результат
+						</div>
 
-            <li>
-              <strong
-                >minimum value in list (минимальное значение в списке)</strong
-              >: Этот блок возвращает минимальное значение из списка.
-            </li>
-            <div class="block-example">
-              <img
-                class="medium-img"
-                src="images/lists_minimum_value.png"
-                alt=""
-              />
-              Минимальное значение в списке (список)<br />
-              -– использовать результат
-            </div>
-            <li>
-              <strong
-                >maximum value in list (максимальное значение в списке)</strong
-              >: Этот блок возвращает максимальное значение из списка.
-            </li>
-            <div class="block-example">
-              <img
-                class="medium-img"
-                src="images/lists_maximum_value.png"
-                alt=""
-              />
-              Максимальное значение в списке (список)<br />
-              -– использовать результат
-            </div>
-            <li>
-              <strong>all but first (все, кроме первого)</strong>: Этот блок
-              возвращает список без первого элемента.
-            </li>
-            <div class="block-example">
-              <img class="medium-img" src="images/lists_but_first.png" alt="" />
-              Все, кроме первого (список)<br />
-              -– использовать результат
-            </div>
-            <li>
-              <strong>all but last (все, кроме последнего)</strong>: Этот блок
-              возвращает список без последнего элемента.
-            </li>
-            <div class="block-example">
-              <img class="medium-img" src="images/lists_but_last.png" alt="" />
-              Все, кроме последнего (список)<br />
-              -– использовать результат
-            </div>
-            <li>
-              <strong>list slices (срезы списка)</strong>: Этот блок возвращает
-              подсписок из указанного списка, задаваемый началом и концом.
-            </li>
-            <div class="block-example">
-              <img class="small-img" src="images/lists_slice.png" alt="" />
-              Срез списка (список, начало, конец)<br />
-              -– использовать результат
-            </div>
-          </div>
-          <div id="blocks_3lvl">
-            <h2>Блоки 3-го уровня</h2>
-            <li>
-              <strong>create empty list (создать пустой список)</strong>: Этот
-              блок создаёт новый пустой список, в который позже можно добавлять
-              элементы.
-            </li>
-            <div class="block-example">
-              <img class="medium-img" src="images/lists_is_empty.png" alt="" />
-              Создать пустой список<br />
-              -– использовать для хранения данных
-            </div>
-          </div>
-        </ul>
-      </div>
-    </div>
-    <script>
-      const links = document.querySelectorAll(".nav-link");
-      const sections = document.querySelectorAll("div[id]");
+						<li>
+							<strong
+								>minimum value in list (минимальное значение в списке)</strong
+							>: Этот блок возвращает минимальное значение из списка.
+						</li>
+						<div class="block-example">
+							<img
+								class="medium-img"
+								src="images/lists_minimum_value.png"
+								alt=""
+							/>
+							Минимальное значение в списке (список)<br />
+							-– использовать результат
+						</div>
+						<li>
+							<strong
+								>maximum value in list (максимальное значение в списке)</strong
+							>: Этот блок возвращает максимальное значение из списка.
+						</li>
+						<div class="block-example">
+							<img
+								class="medium-img"
+								src="images/lists_maximum_value.png"
+								alt=""
+							/>
+							Максимальное значение в списке (список)<br />
+							-– использовать результат
+						</div>
+						<li>
+							<strong>all but first (все, кроме первого)</strong>: Этот блок
+							возвращает список без первого элемента.
+						</li>
+						<div class="block-example">
+							<img class="medium-img" src="images/lists_but_first.png" alt="" />
+							Все, кроме первого (список)<br />
+							-– использовать результат
+						</div>
+						<li>
+							<strong>all but last (все, кроме последнего)</strong>: Этот блок
+							возвращает список без последнего элемента.
+						</li>
+						<div class="block-example">
+							<img class="medium-img" src="images/lists_but_last.png" alt="" />
+							Все, кроме последнего (список)<br />
+							-– использовать результат
+						</div>
+						<li>
+							<strong>list slices (срезы списка)</strong>: Этот блок возвращает
+							подсписок из указанного списка, задаваемый началом и концом.
+						</li>
+						<div class="block-example">
+							<img class="small-img" src="images/lists_slice.png" alt="" />
+							Срез списка (список, начало, конец)<br />
+							-– использовать результат
+						</div>
+					</div>
+					<div id="blocks_3lvl">
+						<h2>Блоки 3-го уровня</h2>
+						<li>
+							<strong>create empty list (создать пустой список)</strong>: Этот
+							блок создаёт новый пустой список, в который позже можно добавлять
+							элементы.
+						</li>
+						<div class="block-example">
+							<img
+								class="medium-img"
+								src="images/lists_is_empty.png"
+								alt="Блок Создать пустой лист"
+							/>
+							Создать пустой список<br />
+							-– использовать для хранения данных
+						</div>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<script>
+			const links = document.querySelectorAll('.nav-link')
+			const sections = document.querySelectorAll('div[id]')
 
-      function updateActiveLink() {
-        let index = sections.length;
+			function updateActiveLink() {
+				let index = sections.length
 
-        while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
+				while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
 
-        links.forEach((link) => link.classList.remove("active"));
-        links[index]?.classList.add("active");
-      }
+				links.forEach(link => link.classList.remove('active'))
+				links[index]?.classList.add('active')
+			}
 
-      links.forEach((link) => {
-        link.addEventListener("click", (event) => {
-          event.preventDefault();
-          const target = document.querySelector(link.getAttribute("href"));
-          window.scrollTo({ top: target.offsetTop - 20, behavior: "smooth" });
-        });
-      });
+			links.forEach(link => {
+				link.addEventListener('click', event => {
+					event.preventDefault()
+					const target = document.querySelector(link.getAttribute('href'))
+					window.scrollTo({ top: target.offsetTop - 20, behavior: 'smooth' })
+				})
+			})
 
-      window.addEventListener("scroll", updateActiveLink);
-    </script>
-  </body>
+			window.addEventListener('scroll', updateActiveLink)
+		</script>
+	</body>
 </html>
