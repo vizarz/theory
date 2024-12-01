@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Блоки математики в MIT App Inventor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html#section-1" class="header-link active">Теория</a>
+      <a class="header-link" href="mit_project_description.html">Проекты</a>
+      <a href="index.html">
+        <img class="logo" src="images/codi-logo.svg" />
+      </a>
+    </header>
+
+    <div class="sidebar">
+      <ul class="menu-list">
+        <li>
+          <a href="#blocks_2lvl_1type" class="nav-link"
+            >Блоки 2-го уровня первого типа</a
+          >
+        </li>
+        <li>
+          <a href="#blocks_2lvl_2type" class="nav-link"
+            >Блоки 2-го уровня второго типа</a
+          >
+        </li>
+        <li><a href="#blocks_3lvl" class="nav-link">Блоки 3-го уровня</a></li>
+        <li>
+          <div class="back-to-index">
+            <a href="index.html#section-2">Вернуться к оглавлению</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="content">
+      <h1>Блоки математики в MIT App Inventor</h1>
+      <div class="container">
+        <p>
+          Блоки математики в MIT App Inventor позволяют выполнять вычисления и
+          работать с числовыми данными. Они обеспечивают возможность выполнять
+          основные арифметические операции, такие как сложение, вычитание,
+          умножение и деление, а также более сложные вычисления, включая
+          использование тригонометрических функций, округление и генерацию
+          случайных чисел.
+        </p>
+        <ul>
+          <h2>Блоки 2-го уровня первого типа</h2>
+          <div id="blocks_2lvl_1type">
+            <li>
+              <strong
+                >random set seed to (установить зерно для случайных
+                чисел)</strong
+              >: Этот блок задаёт "зерно" (начальное значение) для генерации
+              случайных чисел, чтобы результаты были предсказуемыми при
+              одинаковом "зерне".
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/math_random_set_seed.png"
+                alt=""
+              />
+              Установить зерно для случайных чисел (значение)<br />
+              -– использовать перед генерацией случайных чисел
+            </div>
+            <div id="blocks_2lvl_2type">
+              <h2>Блоки 2-го уровня второго типа</h2>
+              <li>
+                <strong>min (минимум)</strong>: Этот блок возвращает меньшее из
+                двух чисел.
+              </li>
+              <div class="block-example">
+                <img
+                  class="small-img"
+                  src="images/math_on_list_min.png"
+                  alt=""
+                />
+                Минимум (число1, число2)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>max (максимум):</strong>: Этот блок возвращает большее
+                из двух чисел.
+              </li>
+              <div class="block-example">
+                <img
+                  class="small-img"
+                  src="images/math_on_list_max.png"
+                  alt=""
+                />
+                Максимум (число1, число2)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>square root (квадратный корень)</strong>:Этот блок
+                вычисляет квадратный корень числа.
+              </li>
+              <div class="block-example">
+                <img
+                  class="medium-img"
+                  src="images/math_square_root.png"
+                  alt=""
+                />
+                Квадратный корень (число)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>abs (абсолютное значение)</strong>: Этот блок возвращает
+                абсолютное значение числа (модуль).
+              </li>
+              <div class="block-example">
+                <img class="small-img" src="images/math_abs.png" alt="" />
+                Абсолютное значение (число)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>neg (отрицательное значение)</strong>: Этот блок
+                возвращает отрицательное значение числа. Если число уже
+                отрицательное, оно становится положительным.
+              </li>
+              <div class="block-example">
+                <img class="small-img" src="images/math_abs_neg.png" alt="" />
+                Отрицательное значение (число)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>log (логарифм)</strong>: Этот блок вычисляет натуральный
+                логарифм числа (по основанию e).
+              </li>
+              <div class="block-example">
+                <img class="small-img" src="images/math_abs_log.png" alt="" />
+                Логарифм (число)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>e^ (экспонента)</strong>: Этот блок вычисляет значение e
+                в степени заданного числа.
+              </li>
+              <div class="block-example">
+                <img class="small-img" src="images/math_abs_e.png" alt="" />
+                e^ (число)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>round (округление)</strong>: Этот блок округляет число
+                до ближайшего целого.
+              </li>
+              <div class="block-example">
+                <img
+                  class="small-img"
+                  src="images/math_abs_convert.png"
+                  alt=""
+                />
+                Округление (число)
+                <br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>ceiling (потолок)</strong>: Этот блок округляет число
+                вверх до ближайшего целого.
+              </li>
+              <div class="block-example">
+                <img
+                  class="medium-img"
+                  src="images/math_abs_convert_gt.png"
+                  alt=""
+                />
+                Потолок (число)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>floor (пол)</strong>: Этот блок округляет число вниз до
+                ближайшего целого.
+              </li>
+              <div class="block-example">
+                <img class="medium-img" src="images/math_abs_lt.png" alt="" />
+                Пол (число) <br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>sin (синус)</strong>: Этот блок вычисляет синус угла (в
+                радианах).
+              </li>
+              <div class="block-example">
+                <img class="small-img" src="images/math_trig.png" alt="" />
+                Синус (угол)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>cos (косинус)</strong>: Этот блок вычисляет косинус угла
+                (в радианах).
+              </li>
+              <div class="block-example">
+                <img class="small-img" src="images/math_trig_cos.png" alt="" />
+                Косинус (угол)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>tan (тангенс)</strong>: Этот блок вычисляет тангенс угла
+                (в радианах).
+              </li>
+              <div class="block-example">
+                <img class="small-img" src="images/math_trig_tg.png" alt="" />
+                Тангенс (угол)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>asin (арксинус)</strong>: Этот блок вычисляет арксинус
+                числа. Возвращаемое значение находится в диапазоне от -π/2 до
+                π/2.
+              </li>
+              <div class="block-example">
+                <img
+                  class="small-img"
+                  src="images/math_trig_arcsin.png"
+                  alt=""
+                />
+                Арксинус (число)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>acos (арккосинус)</strong>: Этот блок вычисляет
+                арккосинус числа. Возвращаемое значение находится в диапазоне от
+                0 до π.
+              </li>
+              <div class="block-example">
+                <img
+                  class="small-img"
+                  src="images/math_trig_arccos.png"
+                  alt=""
+                />
+                Арккосинус (число)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>atan (арктангенс)</strong>: Этот блок вычисляет
+                арктангенс числа. Возвращаемое значение находится в диапазоне от
+                -π/2 до π/2.
+              </li>
+              <div class="block-example">
+                <img
+                  class="small-img"
+                  src="images/math_trig_arctg.png"
+                  alt=""
+                />
+                Арктангенс (число)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>atan2 (арктангенс двух чисел)</strong>: Этот блок
+                вычисляет угол в радианах между положительным направлением оси x
+                и точкой, заданной двумя числами.
+              </li>
+              <div class="block-example">
+                <img class="small-img" src="images/math_atan2.png" alt="" />
+                Арктангенс (число1, число2)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong
+                  >convert radians to degrees (перевести радианы в
+                  градусы)</strong
+                >: Этот блок преобразует значение угла из радиан в градусы.
+              </li>
+              <div class="block-example">
+                <img
+                  class="medium-img"
+                  src="images/math_convert_rad_to_angles.png"
+                  alt=""
+                />
+                Перевести радианы в градусы (значение)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong
+                  >convert degrees to radians (перевести градусы в
+                  радианы)</strong
+                >: Этот блок преобразует значение угла из градусов в радианы.
+              </li>
+              <div class="block-example">
+                <img
+                  class="medium-img"
+                  src="images/math_convert_angles_to_rag.png"
+                  alt=""
+                />
+                Перевести градусы в радианы (значение)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>format as decimal (форматировать как десятичное)</strong
+                >: Этот блок преобразует число в строку с указанным количеством
+                десятичных знаков.
+              </li>
+              <div class="block-example">
+                <img
+                  class="medium-img"
+                  src="images/math_format_as_decimal.png"
+                  alt=""
+                />
+                Форматировать как десятичное (число, количество знаков)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>is a number? (является ли числом?)</strong>: Этот блок
+                проверяет, является ли указанное значение числом. Возвращает
+                true, если да.
+              </li>
+              <div class="block-example">
+                <img
+                  class="medium-img"
+                  src="images/math_is_a_number.png"
+                  alt=""
+                />
+                (Является ли значение числом?) <br />
+                -– выполнять действие, если результат true
+                <img
+                  class="medium-img"
+                  src="images/math_is_a_number_2.png"
+                  alt=""
+                />
+                (Является ли значение двоичным?) <br />
+                -– выполнять действие, если результат true
+                <img
+                  class="medium-img"
+                  src="images/math_is_a_number_16.png"
+                  alt=""
+                />
+                (Является ли значение шестнадцатеричным?) <br />
+                -– выполнять действие, если результат true
+              </div>
+
+              <li>
+                <strong>convert number (преобразовать число)</strong>: Этот блок
+                преобразует строку в число, если это возможно.
+              </li>
+              <div class="block-example">
+                <img
+                  class="medium-img"
+                  src="images/math_convert_number.png"
+                  alt=""
+                />
+                Преобразовать строку в число (значение)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>Bitwise And (побитовая операция И)</strong>: Этот блок
+                выполняет побитовую операцию "И" над двумя числами.
+              </li>
+              <div class="block-example">
+                <img class="small-img" src="images/math_bitwise.png" alt="" />
+                Побитовая операция И (число1, число2)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>Bitwise Or (Inclusive) (побитовая операция ИЛИ)</strong
+                >: Этот блок выполняет побитовую операцию "ИЛИ" (включающую) над
+                двумя числами.
+              </li>
+              <div class="block-example">
+                <img
+                  class="small-img"
+                  src="images/math_bitwise_or.png"
+                  alt=""
+                />
+                Побитовая операция ИЛИ (число1, число2)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>Bitwise Or (Exclusive) (побитовая операция XOR)</strong
+                >: Этот блок выполняет побитовую операцию "исключающее ИЛИ"
+                (XOR) над двумя числами.
+              </li>
+              <div class="block-example">
+                <img
+                  class="small-img"
+                  src="images/math_bitwise_xor.png"
+                  alt=""
+                />
+                Побитовая операция XOR (число1, число2)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>arithmetic mean (среднее арифметическое)</strong>: Этот
+                блок вычисляет среднее арифметическое списка чисел.
+              </li>
+              <div class="block-example">
+                <img
+                  class="medium-img"
+                  src="images/math_on_list2_average.png"
+                  alt=""
+                />
+                Среднее арифметическое (список чисел)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>min in list (минимум в списке)</strong>: Этот блок
+                возвращает наименьшее число из списка.
+              </li>
+              <div class="block-example">
+                <img
+                  class="small-img"
+                  src="images/math_on_list2_in_min.png"
+                  alt=""
+                />
+                Минимум в списке (список)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong> max in list (максимум в списке)</strong>: Этот блок
+                возвращает наибольшее число из списка.
+              </li>
+              <div class="block-example">
+                <img
+                  class="small-img"
+                  src="images/math_on_list2_in_max.png"
+                  alt=""
+                />
+                Максимум в списке (список)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>mode of a list (мода списка)</strong>: Этот блок
+                возвращает значение, которое встречается в списке чаще всего.
+              </li>
+              <div class="block-example">
+                <img
+                  class="small-img"
+                  src="images/math_mode_of_list.png"
+                  alt=""
+                />
+                Мода списка (список)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>geometric mean (среднее геометрическое)</strong>: Этот
+                блок вычисляет среднее геометрическое списка положительных
+                чисел.
+              </li>
+              <div class="block-example">
+                <img
+                  class="small-img"
+                  src="images/math_on_list2_geometric_mean.png"
+                  alt=""
+                />
+                Среднее геометрическое (список чисел)<br />
+                -– использовать результат для анализа данных
+              </div>
+              <li>
+                <strong>standard deviation (стандартное отклонение)</strong>:
+                Этот блок вычисляет стандартное отклонение чисел в списке.
+              </li>
+              <div class="block-example">
+                <img
+                  class="small-img"
+                  src="images/math_on_list2_deviation.png"
+                  alt=""
+                />
+                Стандартное отклонение (список чисел)<br />
+                -– использовать результат для статистического анализа
+              </div>
+              <li>
+                <strong>standard error (стандартная ошибка)</strong>: Этот блок
+                вычисляет стандартную ошибку чисел в списке, которая показывает
+                степень отклонения среднего.
+              </li>
+              <div class="block-example">
+                <img
+                  class="small-img"
+                  src="images/math_on_list2_error.png"
+                  alt=""
+                />
+                Стандартная ошибка (список чисел)<br />
+                -– использовать результат для анализа данных
+              </div>
+            </div>
+            <div id="blocks_3lvl">
+              <h2>Блоки 3-го уровня</h2>
+              <li>
+                <strong>Basic Number Block (базовый числовой блок)</strong>:Этот
+                блок используется для задания числового значения. Число может
+                быть целым или дробным.
+              </li>
+              <div class="block-example">
+                <img
+                  style="max-width: 50px; height: auto; margin-right: 10px"
+                  src="images/math_number.png"
+                  alt=""
+                />
+                (Число)<br />
+                -– использовать в вычислениях или действиях
+              </div>
+              <li>
+                <strong>Radix Number Block (блок числа с основанием):</strong
+                >:Этот блок используется для задания числа в определённой
+                системе счисления, например, двоичной, восьмеричной или
+                шестнадцатеричной.
+              </li>
+              <div class="block-example">
+                <img
+                  class="small-img"
+                  src="images/math_number_radix_binary.png"
+                  alt=""
+                />
+                (Число с основанием)<br />
+                -– преобразовать или использовать в вычислениях
+              </div>
+              <li>
+                <strong>= (равно)</strong>: Проверяет, равны ли два числа.
+                Возвращает true, если равны, и false, если нет.
+              </li>
+              <div class="block-example">
+                <img class="small-img" src="images/math_compare.png" alt="" />
+                Если (число1 = число2)<br />
+                -– выполнять действие
+              </div>
+              <li>
+                <strong>≠ (не равно)</strong>: Проверяет, не равны ли два числа.
+                Возвращает true, если числа различны.
+              </li>
+              <div class="block-example">
+                <img
+                  class="small-img"
+                  src="images/math_compare_negate.png"
+                  alt=""
+                />
+                Если (число1 ≠ число2)<br />
+                -– выполнять действие
+              </div>
+              <li>
+                <strong>> (больше)</strong>: Проверяет, больше ли одно число
+                другого. Возвращает true, если первое число больше второго.
+              </li>
+              <div class="block-example">
+                <img
+                  class="small-img"
+                  src="images/math_compare_gt.png"
+                  alt=""
+                />
+                Если (число1 > число2)<br />
+                -– выполнять действие
+              </div>
+              <li>
+                <strong>< (меньше)</strong>: Проверяет, меньше ли одно число
+                другого. Возвращает true, если первое число меньше второго.
+              </li>
+              <div class="block-example">
+                <img
+                  class="small-img"
+                  src="images/math_compare_lt.png"
+                  alt=""
+                />
+                Если (число1 < число2)<br />
+                -– выполнять действие
+              </div>
+              <li>
+                <strong>≤ (меньше или равно)</strong>: Проверяет, меньше ли одно
+                число другого или равно ему. Возвращает true, если это так.
+              </li>
+              <div class="block-example">
+                <img
+                  class="small-img"
+                  src="images/math_compare_lte.png"
+                  alt=""
+                />
+                Если (число1 ≤ число2)<br />
+                -– выполнять действие
+              </div>
+              <li>
+                <strong>≥ (больше или равно)</strong>:Проверяет, больше ли одно
+                число другого или равно ему. Возвращает true, если это так.
+              </li>
+              <div class="block-example">
+                <img
+                  class="small-img"
+                  src="images/math_compare_gte.png"
+                  alt=""
+                />
+                Если (число1 ≥ число2)<br />
+                -– выполнять действие
+              </div>
+              <li>
+                <strong>+ (плюс)</strong>: Этот блок используется для сложения
+                двух или более чисел.
+              </li>
+              <div class="block-example">
+                <img class="small-img" src="images/math_add.png" alt="" />
+                (число1 + число2)<br />
+                -– использовать результат в вычислениях
+              </div>
+              <li>
+                <strong>- (минус)</strong>: Этот блок используется для вычитания
+                одного числа из другого.
+              </li>
+              <div class="block-example">
+                <img class="small-img" src="images/math_subtract.png" alt="" />
+                (число1 - число2)<br />
+                -– использовать результат в вычислениях
+              </div>
+              <li>
+                <strong>* (умножить)</strong>: Этот блок используется для
+                умножения двух или более чисел.
+              </li>
+              <div class="block-example">
+                <img class="small-img" src="images/math_multiply.png" alt="" />
+                (число1 * число2)<br />
+                -– использовать результат в вычислениях
+              </div>
+              <li>
+                <strong>/ (разделить)</strong>: Этот блок используется для
+                деления одного числа на другое.
+              </li>
+              <div class="block-example">
+                <img class="small-img" src="images/math_division.png" alt="" />
+                (число1 / число2)<br />
+                -– использовать результат в вычислениях
+              </div>
+              <li>
+                <strong>^ (в степень)</strong>: Этот блок используется для
+                возведения числа в степень.
+              </li>
+              <div class="block-example">
+                <img class="small-img" src="images/math_power.png" alt="" />
+                (число1 ^ число2)<br />
+                -– использовать результат в вычислениях
+              </div>
+              <li>
+                <strong>random integer (случайное целое число)</strong>: Этот
+                блок возвращает случайное целое число в заданном диапазоне.
+              </li>
+              <div class="block-example">
+                <img
+                  class="medium-img"
+                  src="images/math_random_from_to.png"
+                  alt=""
+                />
+                Случайное целое число (минимум, максимум)<br />
+                -– использовать результат в вычислениях
+              </div>
+              <li>
+                <strong>random fraction (случайная дробь)</strong>: Этот блок
+                возвращает случайное дробное число от 0 до 1.
+              </li>
+              <div class="block-example">
+                <img
+                  class="medium-img"
+                  src="images/math_random_float.png"
+                  alt=""
+                />
+                Случайная дробь<br />
+                -– использовать для выполнения действия
+              </div>
+              <li>
+                <strong>modulo (остаток)</strong>: Этот блок вычисляет остаток
+                от деления одного числа на другое.
+              </li>
+              <div class="block-example">
+                <img class="medium-img" src="images/math_divide.png" alt="" />
+                Остаток (число1 ÷ число2)<br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>remainder (остаток от деления)</strong>: Этот блок
+                возвращает остаток от деления, учитывая знак делимого.
+              </li>
+              <div class="block-example">
+                <img
+                  class="medium-img"
+                  src="images/math_divide_remainder.png"
+                  alt=""
+                />
+                Остаток от деления (число1 ÷ число2)
+                <br />
+                -– использовать результат для выполнения действия
+              </div>
+              <li>
+                <strong>quotient (частное)</strong>: Этот блок возвращает целую
+                часть результата деления одного числа на другое.
+              </li>
+              <div class="block-example">
+                <img
+                  class="medium-img"
+                  src="images/math_divide_quotient.png"
+                  alt=""
+                />
+                Частное (число1 ÷ число2)<br />
+                -– использовать результат для выполнения действия
+              </div>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <script>
+      const links = document.querySelectorAll(".nav-link");
+      const sections = document.querySelectorAll("div[id]");
+
+      function updateActiveLink() {
+        let index = sections.length;
+
+        while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
+
+        links.forEach((link) => link.classList.remove("active"));
+        links[index]?.classList.add("active");
+      }
+
+      links.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          const target = document.querySelector(link.getAttribute("href"));
+          window.scrollTo({ top: target.offsetTop - 20, behavior: "smooth" });
+        });
+      });
+
+      window.addEventListener("scroll", updateActiveLink);
+    </script>
+  </body>
+</html>

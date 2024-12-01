@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>О программе</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <a class="header-link active" href="index.html#section-1">Теория</a>
+      <a class="header-link" href="mit_project_description.html">Проекты</a>
+      <a href="index.html">
+        <img class="logo" src="images/codi-logo.svg" />
+      </a>
+    </header>
+    <div class="sidebar">
+      <ul class="menu-list">
+        <li>
+          <div class="back-to-index">
+            <a href="index.html">Вернуться к оглавлению</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="content">
+      <h1>О веб-сайте "Электронное учебное пособие по MIT App Inventor"</h1>
+      <p>
+        Программа: "Электронное учебное пособие по MIT App Inventor"<br />
+        создана в рамках курсового проектирования<br />
+        студентом группы П-21 Власовым Никитой<br />
+        Руководители курсового проекта Фролова Г.Н., Данилов Д.М.<br />
+        Преподаватель-консультант Данилов Д.М.<br />
+        по МДК 02.01 "Технология разработки программного обеспечения"
+      </p>
+    </div>
+    <script>
+      const links = document.querySelectorAll(".nav-link");
+      const sections = document.querySelectorAll("div[id]");
+
+      function updateActiveLink() {
+        let index = sections.length;
+
+        while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
+
+        links.forEach((link) => link.classList.remove("active"));
+        links[index]?.classList.add("active");
+      }
+
+      links.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          const target = document.querySelector(link.getAttribute("href"));
+          window.scrollTo({ top: target.offsetTop - 20, behavior: "smooth" });
+        });
+      });
+
+      window.addEventListener("scroll", updateActiveLink);
+    </script>
+  </body>
+</html>

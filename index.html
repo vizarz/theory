@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      li {
+        text-align: match-parrent;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="header-link active" href="index.html#section-1">Теория</a>
+      <a class="header-link" href="mit_project_description.html">Проекты</a>
+      <a href="index.html">
+        <img class="logo" src="images/codi-logo.svg" />
+      </a>
+    </header>
+    <div class="sidebar">
+      <ul class="menu-list">
+        <li>
+          <div class="back-to-index">
+            <a href="mit_about.html">О программе</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="content">
+      <h1>Теория по MIT App Inventor</h1>
+      <p>
+        Перед вами теория по MIT App Inventor, включающая в себя обзор множества
+        функций и особенностей платформы. Вы познакомитесь с процессом создания
+        мобильных приложений с помощью визуального программирования, освоите
+        работу с различными компонентами и блоками, а также научитесь строить
+        логику приложения и интегрировать дополнительные возможности для
+        создания полноценных Android-приложений.
+      </p>
+      <div class="section">
+        <p class="section-title">Содержание</p>
+        <p>
+          Первая часть посвящена MIT App Inventor: введение в платформу, обзор
+          режима "Дизайнер" и режима "Блоки". <br />Вторая часть включает
+          подробный обзор всех блоков MIT App Inventor, таких как управление,
+          логика, математика и другие.<br />
+          Третья часть охватывает решение распространённых проблем и ошибок при
+          разработке приложений, а также советы по оптимизации работы.
+        </p>
+        <nav class="tabs__menu">
+          <a class="tabs__menu-button active" href="#section-1" id="link-1"
+            >Часть 1</a
+          >
+          <a class="tabs__menu-button" href="#section-2" id="link-2">Часть 2</a>
+          <a class="tabs__menu-button" href="#section-3" id="link-3">Часть 3</a>
+        </nav>
+        <div id="section-1" class="section">
+          <h2>Часть 1</h2>
+
+          <div class="chapter-title">
+            <a class="chapter-title" href="mit_introduction.html"
+              >Введение в MIT App Inventor</a
+            >
+          </div>
+          <ul class="chapter-list">
+            <li>
+              <span>1.1</span>
+              <a href="mit_introduction.html#description"
+                >Описание MIT App Inventor</a
+              >
+            </li>
+            <li>
+              <span>1.2</span
+              ><a href="mit_introduction.html#gui"> Интерфейс пользователя </a>
+            </li>
+            <li>
+              <span>1.3</span
+              ><a href="mit_introduction.html#designer"> Режим "Дизайнер"</a>
+            </li>
+            <li>
+              <span>1.4</span
+              ><a href="mit_introduction.html#screens"> Экраны приложения</a>
+            </li>
+            <li>
+              <span>1.5</span
+              ><a href="mit_introduction.html#blocks"> Режим "Блоки"</a>
+            </li>
+            <li>
+              <span>1.6</span
+              ><a href="mit_introduction.html#download_tips">
+                Загрузка и установка приложений</a
+              >
+            </li>
+          </ul>
+
+          <div class="chapter-title">
+            <a class="chapter-title" href="mit_designer_description.html"
+              >Работа в режиме "Дизайнер"</a
+            >
+          </div>
+          <ul class="chapter-list">
+            <li>
+              <span>2.1</span>
+              <a href="mit_designer_description.html#description"
+                >Режим "Дизайнер"</a
+              >
+            </li>
+            <li>
+              <span>2.2</span
+              ><a href="mit_designer_description.html#about_designer">
+                Описание режима
+              </a>
+            </li>
+            <li>
+              <span>2.3</span
+              ><a href="mit_designer_description.html#about_palette">
+                Окно палитры</a
+              >
+            </li>
+            <li>
+              <span>2.4</span
+              ><a href="mit_designer_description.html#palette_sections">
+                Разделы в палитре</a
+              >
+            </li>
+            <li>
+              <span>2.5</span
+              ><a href="mit_designer_description.html#viewer">
+                Окно Просмотр"</a
+              >
+            </li>
+            <li>
+              <span>2.6</span
+              ><a href="mit_designer_description.html#components">
+                Окно Компоненты</a
+              >
+            </li>
+            <li>
+              <span>2.7</span
+              ><a href="mit_designer_description.html#media"> Окно Медиа</a>
+            </li>
+            <li>
+              <span>2.8</span
+              ><a href="mit_designer_description.html#properties">
+                Окно Свойства</a
+              >
+            </li>
+          </ul>
+          <div class="chapter-title">
+            <a class="chapter-title" href="mit_blocks_description.html"
+              >Работа в режиме "Блоки"</a
+            >
+          </div>
+          <ul class="chapter-list">
+            <li>
+              <span>3.1</span>
+              <a href="mit_blocks_description.html#description"
+                >Режим "Блоки"</a
+              >
+            </li>
+            <li>
+              <span>3.2</span
+              ><a href="mit_blocks_description.html#main_section">
+                Основные разделы блоков
+              </a>
+            </li>
+            <li>
+              <span>3.3</span
+              ><a href="mit_blocks_description.html#main_types">
+                Основные типы блоков</a
+              >
+            </li>
+            <li>
+              <span>3.4</span
+              ><a href="mit_blocks_description.html#using_examples">
+                Примеры использования</a
+              >
+            </li>
+            <li>
+              <span>3.5</span
+              ><a href="mit_blocks_description.html#chain_types">
+                Способы крепления
+              </a>
+            </li>
+            <li>
+              <span>3.6</span
+              ><a href="mit_blocks_description.html#blocks_levels">
+                Классификация блоков</a
+              >
+            </li>
+            <li>
+              <span>3.7</span
+              ><a href="mit_blocks_description.html#variables"> Переменные</a>
+            </li>
+            <li>
+              <span>3.8</span
+              ><a href="mit_blocks_description.html#mutators"> Мутаторы</a>
+            </li>
+          </ul>
+        </div>
+        <div id="section-2" class="section">
+          <h2>Часть 2</h2>
+
+          <div class="chapter-title">
+            <a class="chapter-title" href="mit_blocks_control.html"
+              >Блоки управления</a
+            >
+          </div>
+          <ul class="chapter-list">
+            <li>
+              <span>1.1</span>
+              <a href="mit_blocks_control.html#blocks_2lvl_1type"
+                >Блоки 2-го уровня первого типа</a
+              >
+            </li>
+            <li>
+              <span>1.2</span
+              ><a href="mit_blocks_control.html#blocks_2lvl_2type">
+                Блоки 2-го уровня второго типа</a
+              >
+            </li>
+            <li>
+              <span>1.3</span
+              ><a href="mit_blocks_control.html#blocks_3lvl">
+                Блоки 3-го уровня</a
+              >
+            </li>
+          </ul>
+
+          <div class="chapter-title">
+            <a class="chapter-title" href="mit_blocks_logic.html"
+              >Блоки логики</a
+            >
+          </div>
+          <ul class="chapter-list">
+            <li>
+              <span>2.1</span
+              ><a href="mit_blocks_logic.html#blocks_2lvl_2type">
+                Блоки 2-го уровня второго типа</a
+              >
+            </li>
+            <li>
+              <span>2.2</span
+              ><a href="mit_blocks_logic.html#blocks_3lvl">
+                Блоки 3-го уровня</a
+              >
+            </li>
+          </ul>
+          <div class="chapter-title">
+            <a class="chapter-title" href="mit_blocks_math.html"
+              >Блоки математики</a
+            >
+          </div>
+          <ul class="chapter-list">
+            <li>
+              <span>3.1</span>
+              <a href="mit_blocks_math.html#blocks_2lvl_1type"
+                >Блоки 2-го уровня первого типа</a
+              >
+            </li>
+            <li>
+              <span>3.2</span
+              ><a href="mit_blocks_math.html#blocks_2lvl_2type">
+                Блоки 2-го уровня второго типа</a
+              >
+            </li>
+            <li>
+              <span>3.3</span
+              ><a href="mit_blocks_math.html#blocks_3lvl"> Блоки 3-го уровня</a>
+            </li>
+          </ul>
+          <div class="chapter-title">
+            <a class="chapter-title" href="mit_blocks_text.html"
+              >Блоки текста</a
+            >
+          </div>
+          <ul class="chapter-list">
+            <li>
+              <span>4.1</span
+              ><a href="mit_blocks_text.html#blocks_2lvl_2type">
+                Блоки 2-го уровня второго типа</a
+              >
+            </li>
+            <li>
+              <span>4.2</span
+              ><a href="mit_blocks_text.html#blocks_3lvl"> Блоки 3-го уровня</a>
+            </li>
+          </ul>
+          <div class="chapter-title">
+            <a class="chapter-title" href="mit_blocks_list.html"
+              >Блоки массивов</a
+            >
+          </div>
+          <ul class="chapter-list">
+            <li>
+              <span>5.1</span>
+              <a href="mit_blocks_list.html#blocks_2lvl_1type"
+                >Блоки 2-го уровня первого типа</a
+              >
+            </li>
+            <li>
+              <span>5.2</span
+              ><a href="mit_blocks_list.html#blocks_2lvl_2type">
+                Блоки 2-го уровня второго типа</a
+              >
+            </li>
+            <li>
+              <span>5.3</span
+              ><a href="mit_blocks_list.html#blocks_3lvl"> Блоки 3-го уровня</a>
+            </li>
+          </ul>
+          <div class="chapter-title">
+            <a class="chapter-title" href="mit_blocks_dictionaries.html"
+              >Блоки Dictionaries (словари)</a
+            >
+          </div>
+          <ul class="chapter-list">
+            <li>
+              <span>6.1</span>
+              <a href="mit_blocks_dictionaries.html#blocks_2lvl_1type"
+                >Блоки 2-го уровня первого типа</a
+              >
+            </li>
+            <li>
+              <span>6.2</span
+              ><a href="mit_blocks_dictionaries.html#blocks_2lvl_2type">
+                Блоки 2-го уровня второго типа</a
+              >
+            </li>
+            <li>
+              <span>6.3</span
+              ><a href="mit_blocks_dictionaries.html#blocks_3lvl">
+                Блоки 3-го уровня</a
+              >
+            </li>
+          </ul>
+          <div class="chapter-title">
+            <a class="chapter-title" href="mit_blocks_color.html"
+              >Блоки цветов</a
+            >
+          </div>
+          <ul class="chapter-list">
+            <li>
+              <span>7.1</span
+              ><a href="mit_blocks_color.html#blocks_2lvl_2type">
+                Блоки 2-го уровня второго типа</a
+              >
+            </li>
+            <li>
+              <span>7.2</span
+              ><a href="mit_blocks_color.html#blocks_3lvl">
+                Блоки 3-го уровня</a
+              >
+            </li>
+          </ul>
+          <div class="chapter-title">
+            <a class="chapter-title" href="mit_blocks_variables.html"
+              >Блоки переменных</a
+            >
+          </div>
+          <ul class="chapter-list">
+            <li>
+              <span>8.1</span
+              ><a href="mit_blocks_variables.html#blocks_1lvl">
+                Блоки 1-го уровня</a
+              >
+            </li>
+            <li>
+              <span>8.2</span>
+              <a href="mit_blocks_variables.html#blocks_2lvl_1type"
+                >Блоки 2-го уровня первого типа</a
+              >
+            </li>
+            <li>
+              <span>8.3</span
+              ><a href="mit_blocks_variables.html#blocks_2lvl_2type">
+                Блоки 2-го уровня второго типа</a
+              >
+            </li>
+            <li>
+              <span>8.4</span
+              ><a href="mit_blocks_variables.html#blocks_3lvl">
+                Блоки 3-го уровня</a
+              >
+            </li>
+          </ul>
+          <div class="chapter-title">
+            <a class="chapter-title" href="mit_blocks_procedure.html"
+              >Блоки процедур</a
+            >
+          </div>
+          <ul class="chapter-list">
+            <li>
+              <span>9.1</span>
+              <a href="mit_blocks_procedure.html#blocks_1lvl"
+                >Блоки 1-го уровня</a
+              >
+            </li>
+            <li>
+              <span>9.2</span
+              ><a href="mit_blocks_procedure.html#blocks_2lvl_1type">
+                Блоки 2-го уровня первого типа</a
+              >
+            </li>
+            <li>
+              <span>9.3</span
+              ><a href="mit_blocks_procedure.html#blocks_3lvl">
+                Блоки 3-го уровня</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div id="section-3" class="section">
+          <h2>Часть 3</h2>
+          <div class="chapter-title">
+            <a class="chapter-title" href="mit_troubleshooting.html"
+              >Устранение неполадок в MIT App Inventor</a
+            >
+          </div>
+          <ul class="chapter-list">
+            <li>
+              <span>1.1</span
+              ><a href="mit_troubleshooting.html#q1"> Проблемы с эмулятором</a>
+            </li>
+            <li>
+              <span>1.2</span
+              ><a href="mit_troubleshooting.html#q2"> При подключении по USB</a>
+            </li>
+            <li>
+              <span>1.3</span
+              ><a href="mit_troubleshooting.html#q3">
+                Программное обеспечение
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      const sections = document.querySelectorAll(".section");
+      const navLinks = document.querySelectorAll(".tabs__menu-button");
+      function updateActiveLink() {
+        let index = sections.length;
+
+        while (--index && window.scrollY - 500 < sections[index].offsetTop) {}
+
+        navLinks.forEach((link) => link.classList.remove("active"));
+        navLinks[index].classList.add("active");
+      }
+      window.addEventListener("scroll", updateActiveLink);
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", function () {
+          tabs.forEach((t) => t.classList.remove("active"));
+          this.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>

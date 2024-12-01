@@ -1,0 +1,266 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+html {
+  scroll-behavior: smooth;
+}
+header {
+  padding-left: 220px;
+}
+.header-link {
+  color: grey;
+  text-decoration: none;
+  margin-right: 15px;
+  transition: color 0.5s ease;
+}
+.header-link:hover,
+.header-link.active {
+  color: #8fc202;
+}
+h1,
+h2,
+h3 {
+  color: #8fc202;
+  border-bottom: 2px solid #8fc202;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  margin-top: 25px;
+}
+ul {
+  list-style: none;
+  margin-left: 20px;
+  padding-left: 0;
+  list-style-type: disc;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  padding-inline-start: 40px;
+}
+.container {
+  padding: 20px;
+}
+.container ul {
+  list-style: none;
+  margin-left: 20px;
+  padding-left: 0;
+  list-style-type: disc;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  padding-inline-start: 20px;
+}
+.chapter-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding-bottom: 30px;
+}
+
+.chapter-list a {
+  text-decoration: none;
+  color: #8fc202;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.chapter-list a:hover {
+  color: #6b9201;
+}
+.chapter h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+.chapter-list li {
+  margin: 0;
+}
+.chapter-list li span {
+  font-family: Arial, Helvetica, sans-serif, monospace;
+  font-size: 1rem;
+  color: #333;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+.logo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  max-width: 150px;
+  height: auto;
+  margin-right: 10px;
+}
+.small-img {
+  max-width: 70px;
+  height: auto;
+  margin-right: 10px;
+}
+.medium-img {
+  max-width: 150px;
+  height: auto;
+  margin-right: 10px;
+}
+.large-img {
+  max-width: 80px;
+  height: auto;
+  margin-right: 10px;
+}
+.block-example {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding-right: 10px;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #e8e8e8;
+  border: 1px solid #ccc;
+}
+.nav-link {
+  color: grey;
+  text-decoration: none;
+  margin-right: 15px;
+  transition: color 0.5s ease;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: #8fc202;
+}
+.tabs__menu {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #f9f9f9;
+  padding: 10px;
+  display: flex;
+  border-bottom: 2px solid #8fc202;
+}
+.tabs__menu-button {
+  color: grey;
+  padding: 10px 15px;
+  text-decoration: none;
+  transition: color 0.5s;
+  cursor: pointer;
+}
+.tabs__menu-button:hover,
+.tabs__menu-button.active {
+  color: #8fc202;
+}
+.section {
+  padding: 20px 0;
+  margin-top: 20px;
+}
+.section-title {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+.chapter-title {
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.chapter-title a:hover {
+  color: #6b9201;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 100%;
+  background-color: #e5e5e5;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  flex-grow: 1;
+}
+.sidebar ul li {
+  margin: 10px 0;
+}
+.sidebar ul li a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.5s ease;
+}
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+  color: #8fc202;
+}
+.content {
+  margin-left: 200px;
+  padding: 20px;
+  flex: 1;
+}
+.back-to-index {
+  bottom: 50px;
+  position: absolute;
+}
+.menu-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+.menu-list li {
+  margin: 10px 0;
+}
+
+.accordion {
+  max-width: 600px;
+  margin: 0;
+}
+
+.accordion-item {
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.accordion-header {
+  background-color: #f1f1f1;
+  cursor: pointer;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  text-align: left;
+  outline: none;
+  width: 100%;
+}
+
+.accordion-header:hover {
+  background-color: #ddd;
+}
+
+.accordion-content {
+  padding: 0 15px;
+  max-height: 0;
+  overflow: hidden;
+  background-color: #fff;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.accordion-content.open {
+  max-height: 200px;
+  padding: 15px;
+}

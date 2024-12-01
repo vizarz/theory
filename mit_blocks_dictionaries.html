@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Блоки словарей в MIT App Inventor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html#section-1" class="header-link active">Теория</a>
+      <a class="header-link" href="mit_project_description.html">Проекты</a>
+      <a href="index.html">
+        <img class="logo" src="images/codi-logo.svg" />
+      </a>
+    </header>
+
+    <div class="sidebar">
+      <ul class="menu-list">
+        <li>
+          <a href="#blocks_2lvl_1type" class="nav-link"
+            >Блоки 2-го уровня первого типа</a
+          >
+        </li>
+        <li>
+          <a href="#blocks_2lvl_2type" class="nav-link"
+            >Блоки 2-го уровня второго типа</a
+          >
+        </li>
+        <li><a href="#blocks_3lvl" class="nav-link">Блоки 3-го уровня</a></li>
+        <li>
+          <div class="back-to-index">
+            <a href="index.html#section-2">Вернуться к оглавлению</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="content">
+      <h1>Блоки словарей (Dictionaries) в MIT App Inventor</h1>
+      <div class="container">
+        <p>
+          Блоки словарей (Dictionaries) в MIT App Inventor позволяют работать с
+          коллекциями данных в виде пар "ключ-значение". Каждый элемент словаря
+          состоит из уникального ключа, который сопоставляется с определённым
+          значением. Эти блоки полезны для хранения и быстрого доступа к данным,
+          таким как информация о пользователях, настройки приложения или другие
+          ассоциативные данные. С помощью блоков словарей можно добавлять,
+          удалять и изменять пары "ключ-значение", а также искать значения по
+          ключам.
+        </p>
+        <ul>
+          <h2>Блоки 2-го уровня первого типа</h2>
+          <div id="blocks_2lvl_1type">
+            <li>
+              <strong>set value for key (установить значение для ключа)</strong
+              >: Этот блок устанавливает значение для указанного ключа в
+              словаре.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/dictionaries_set_pair.png"
+                alt=""
+              />
+              Установить значение для ключа (ключ)<br />в словаре <br />равным
+              (значение)
+            </div>
+            <li>
+              <strong>remove entry for key (удалить запись по ключу)</strong>:
+              Этот блок удаляет пару "ключ-значение" из словаря по указанному
+              ключу.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/dictionaries_delete_pair.png"
+                alt=""
+              />
+              Удалить запись по ключу (ключ) <br />
+              из словаря
+            </div>
+          </div>
+          <li>
+            <strong
+              >set value for key path (установить значение для пути
+              ключа)</strong
+            >: Этот блок устанавливает значение для ключа в вложенной структуре
+            данных, используя путь ключей.
+          </li>
+          <div class="block-example">
+            <img
+              class="medium-img"
+              src="images/dictionaries_recursive_set.png"
+              alt=""
+            />
+            Установить значение по пути ключа (путь) <br />в словаре<br />равным
+            (значение)
+          </div>
+
+          <li>
+            <strong>merge into dictionary (объединить в словарь)</strong>: Этот
+            блок объединяет данные из другого словаря в текущий словарь.
+          </li>
+          <div class="block-example">
+            <img
+              class="medium-img"
+              src="images/dictionaries_combine_dicts.png"
+              alt=""
+            />
+            Объединить словарь (словарь2) <br />
+            в словарь (словарь1)
+          </div>
+
+          <div id="blocks_2lvl_2type">
+            <h2>Блоки 2-го уровня второго типа</h2>
+            <li>
+              <strong>make a dictionary (создать словарь)</strong>: Этот блок
+              создаёт словарь с заранее определёнными парами "ключ-значение".
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/dictionaries_create_with.png"
+                alt=""
+              />
+              Создать словарь (ключ1: значение1,<br />
+              ключ2: значение2)
+            </div>
+            <li>
+              <strong>get value for key (получить значение по ключу)</strong>:
+              Этот блок возвращает значение, связанное с указанным ключом в
+              словаре.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/dictionaries_lookup.png"
+                alt=""
+              />
+              Получить значение для ключа (ключ)<br />
+              из словаря
+            </div>
+            <li>
+              <strong
+                >get value at key path (получить значение по пути ключа)</strong
+              >:Этот блок возвращает значение, связанное с ключом, в случае,
+              если используется вложенная структура данных (путь через несколько
+              ключей).
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/dictionaries_recursive_lookup.png"
+                alt=""
+              />
+              Получить значение по пути ключа (путь)<br />
+            </div>
+            <li>
+              <strong>get keys (получить ключи)</strong>: Этот блок возвращает
+              список всех ключей, содержащихся в словаре.
+            </li>
+            <div class="block-example">
+              <img
+                class="small-img"
+                src="images/dictionaries_getters.png"
+                alt=""
+              />
+              Получить ключи словаря (словарь)<br />
+            </div>
+            <li>
+              <strong>get values (получить значения)</strong>: Этот блок
+              возвращает список всех значений, связанных с ключами в словаре.
+            </li>
+            <div class="block-example">
+              <img
+                class="small-img"
+                src="images/dictionaries_get_values.png"
+                alt=""
+              />
+              Получить значения словаря (словарь)<br />
+            </div>
+            <li>
+              <strong
+                >is key in dictionary? (существует ли ключ в словаре?)</strong
+              >: Этот блок проверяет, содержится ли указанный ключ в словаре.
+              Возвращает true, если ключ найден.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/dictionaries_is_key_in.png"
+                alt=""
+              />
+              Если (ключ существует <br />в словаре) –– выполнить действие
+            </div>
+            <li>
+              <strong>size of dictionary (размер словаря)</strong>: Этот блок
+              возвращает количество пар "ключ-значение" в словаре.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/dictionaries_length.png"
+                alt=""
+              />
+              Размер словаря (словарь)<br />
+              -– использовать результат для выполнения действия
+            </div>
+            <li>
+              <strong>list of pairs to dictionary (список пар в словарь)</strong
+              >: Этот блок преобразует список пар "ключ-значение" в словарь.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/dictionaries_alist_to_dict.png"
+                alt=""
+              />
+              Преобразовать список пар (список) в словарь<br />
+              -– использовать результат для дальнейших операций
+            </div>
+            <li>
+              <strong>dictionary to list of pairs (словарь в список пар)</strong
+              >: Этот блок преобразует словарь в список пар "ключ-значение".
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/dictionaries_dict_to_alist.png"
+                alt=""
+              />
+              Преобразовать словарь (словарь) в список пар <br />
+              -– использовать результат
+            </div>
+            <li>
+              <strong>copy dictionary (копировать словарь)</strong>: Этот блок
+              создаёт копию словаря.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/dictionaries_copy.png"
+                alt=""
+              />
+              Копировать словарь (словарь)<br />
+              -– использовать копию для дальнейших операций
+            </div>
+            <li>
+              <strong
+                >list by walking key path (список, обходя путь ключа)</strong
+              >: Этот блок создаёт список всех значений, полученных при обходе
+              ключей через заданный путь.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/dictionaries_walk_tree.png"
+                alt=""
+              />
+              Список значений по пути ключа (путь)<br />
+              в словаре (словарь) или в списке (список)
+            </div>
+            <li>
+              <strong>is a dictionary? </strong>: Этот блок проверяет, является
+              ли заданная переменная словарём. Возвращает true, если это
+              словарь.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/dictionaries_is_dict.png"
+                alt=""
+              />
+              Если (переменная является словарём)<br />
+              -– выполнять действие
+            </div>
+          </div>
+          <div id="blocks_3lvl">
+            <h2>Блоки 3-го уровня</h2>
+            <li>
+              <strong>create empty dictionary (создать пустой словарь)</strong>:
+              Этот блок создаёт новый пустой словарь, в который можно добавлять
+              пары "ключ-значение" позже.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/dictionaries_create_empty.png"
+                alt=""
+              />
+              Создать пустой словарь<br />
+              -– использовать для хранения пар ключ-значение
+            </div>
+
+            <li>
+              <strong>pair (пара)</strong>: Этот блок создаёт пару
+              "ключ-значение", которую можно использовать для добавления в
+              словарь.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/dictionaries_pair.png"
+                alt=""
+              />
+              Пара (ключ, значение)<br />
+            </div>
+            <li>
+              <strong>walk all at level (обход всех на уровне)</strong>: Этот
+              блок проходит по всем элементам на указанном уровне вложенности в
+              словаре и выполняет действия для каждого элемента.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/dictionaries_walk_all.png"
+                alt=""
+              />
+              Обойти все элементы на уровне (уровень) в словаре<br />
+              -– выполнить действия с каждым элементом
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <script>
+      const links = document.querySelectorAll(".nav-link");
+      const sections = document.querySelectorAll("div[id]");
+
+      function updateActiveLink() {
+        let index = sections.length;
+
+        while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
+
+        links.forEach((link) => link.classList.remove("active"));
+        links[index]?.classList.add("active");
+      }
+
+      links.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          const target = document.querySelector(link.getAttribute("href"));
+          window.scrollTo({ top: target.offsetTop - 20, behavior: "smooth" });
+        });
+      });
+
+      window.addEventListener("scroll", updateActiveLink);
+    </script>
+  </body>
+</html>

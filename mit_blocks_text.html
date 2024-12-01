@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Блоки текста в MIT App Inventor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html#section-1" class="header-link active">Теория</a>
+      <a class="header-link" href="mit_project_description.html">Проекты</a>
+      <a href="index.html">
+        <img class="logo" src="images/codi-logo.svg" />
+      </a>
+    </header>
+    <div class="sidebar">
+      <ul class="menu-list">
+        <li>
+          <a href="#blocks_2lvl_2type" class="nav-link"
+            >Блоки 2-го уровня второго типа</a
+          >
+        </li>
+        <li><a href="#blocks_3lvl" class="nav-link">Блоки 3-го уровня</a></li>
+        <li>
+          <div class="back-to-index">
+            <a href="index.html#section-2">Вернуться к оглавлению</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="content">
+      <h1>Блоки текста в MIT App Inventor</h1>
+      <div class="container">
+        <p>
+          Блоки текста в MIT App Inventor позволяют работать с текстовыми
+          данными. С их помощью можно создавать, объединять, разделять и
+          изменять строки текста. Эти блоки широко используются для отображения
+          сообщений, обработки ввода от пользователя или формирования текстового
+          контента в приложении.
+        </p>
+        <ul>
+          <div id="blocks_2lvl_2type">
+            <h2>Блоки 2-го уровня второго типа</h2>
+
+            <li>
+              <strong>join (соединить)</strong>: Этот блок объединяет два или
+              более текстовых значения в одну строку.
+            </li>
+            <div class="block-example">
+              <img class="medium-img" src="images/text_join.png" alt="" />
+              Соединить (текст1, текст2)
+              <br />
+              -– использовать результат для отображения
+            </div>
+            <li>
+              <strong>length (длина)</strong>: Этот блок возвращает количество
+              символов в строке.
+            </li>
+            <div class="block-example">
+              <img class="small-img" src="images/text_length.png" alt="" />
+              Длина (текст)<br />
+              -– использовать результат для выполнения действия
+            </div>
+            <li>
+              <strong>is empty (является пустым)</strong>: Этот блок проверяет,
+              является ли текстовая строка пустой. Возвращает true, если строка
+              пуста.
+            </li>
+            <div class="block-example">
+              <img class="medium-img" src="images/text_isEmpty.png" alt="" />
+              Если (текст является пустым)<br />
+              -– выполнять действие
+            </div>
+            <li>
+              <strong>trim (обрезать)</strong>: Этот блок удаляет пробелы в
+              начале и конце строки.
+            </li>
+            <div class="block-example">
+              <img class="small-img" src="images/text_trim.png" alt="" />
+              Обрезать (текст)<br />
+              -– использовать результат для выполнения действия
+            </div>
+            <li>
+              <strong>upcase (преобразовать в верхний регистр)</strong>: Этот
+              блок преобразует все буквы текста в заглавные.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/text_changeCase_capital.png"
+                alt=""
+              />
+              Преобразовать в верхний регистр (текст)<br />
+              -– использовать результат для выполнения действия
+            </div>
+            <li>
+              <strong>downcase (преобразовать в нижний регистр)</strong>: Этот
+              блок преобразует все буквы текста в строчные.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/text_changeCase_lower.png"
+                alt=""
+              />
+              Преобразовать в нижний регистр (текст)<br />
+              -– использовать результат для выполнения действия
+            </div>
+            <li>
+              <strong>starts at (начинается с)</strong>: Этот блок возвращает
+              позицию, с которой начинается подстрока в строке. Если подстрока
+              не найдена, возвращает 0.
+            </li>
+            <div class="block-example">
+              <img class="medium-img" src="images/text_starts_at.png" alt="" />
+              Начинается с (строка, подстрока)<br />
+              -– использовать результат для выполнения действия
+            </div>
+            <li>
+              <strong>contain (содержит)</strong>: Этот блок проверяет,
+              содержится ли подстрока в строке. Возвращает true, если подстрока
+              найдена.
+            </li>
+            <div class="block-example">
+              <img style="width: 10%" src="images/text_contains.png" alt="" />
+              Если (строка содержит подстроку)<br />
+              -– выполнять действие
+            </div>
+            <li>
+              <strong>contains any (содержит хотя бы одно)</strong>: Этот блок
+              проверяет, содержит ли строка хотя бы одно из указанных значений.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/text_contains_any.png"
+                alt=""
+              />
+              Если (строка содержит хотя бы одно значение)<br />
+              -– выполнять действие
+            </div>
+            <li>
+              <strong>contains all (содержит все)</strong>: Этот блок проверяет,
+              содержит ли строка все указанные значения.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/text_contains_all.png"
+                alt=""
+              />
+              Если (строка содержит все значения)<br />
+              -– выполнять действие
+            </div>
+            <li>
+              <strong>split (разделить)</strong>: Этот блок разбивает строку на
+              части, используя указанный разделитель.
+            </li>
+            <div class="block-example">
+              <img class="medium-img" src="images/text_split.png" alt="" />
+              Разделить (текст, разделитель)<br />
+              -– использовать результат для выполнения действия
+            </div>
+            <li>
+              <strong>split at first (разделить по первому)</strong>: Этот блок
+              разделяет строку на две части по первому вхождению указанного
+              разделителя.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/text_split_for_first.png"
+                alt=""
+              />
+              Разделить по первому (текст, разделитель) <br />
+              -– использовать результат для выполнения действия
+            </div>
+            <li>
+              <strong
+                >split at first of any (разделить по первому из списка)</strong
+              >: Этот блок разделяет строку на две части по первому вхождению
+              любого из указанных разделителей.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/text_split_for_first_in_set.png"
+                alt=""
+              />
+              Разделить по первому из списка (текст, список разделителей)<br />
+              -– использовать результат для выполнения действия
+            </div>
+
+            <li>
+              <strong>split at any (разделить по любому)</strong>: Этот блок
+              разбивает строку на части, используя любой из указанных
+              разделителей.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/text_split_in_any.png"
+                alt=""
+              />
+              Разделить по любому (текст, список разделителей)<br />
+              -– использовать результат для выполнения действия
+            </div>
+            <li>
+              <strong>split at spaces (разделить по пробелам)</strong>: Этот
+              блок разбивает строку на части, используя пробелы в качестве
+              разделителя.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/text_split_at_spaces.png"
+                alt=""
+              />
+              Разделить по пробелам (текст)<br />
+              -– использовать результат для выполнения действия
+            </div>
+            <li>
+              <strong>segment (сегмент)</strong>: Этот блок извлекает сегмент
+              (подстроку) из строки, начиная с указанной позиции и заданной
+              длины.
+            </li>
+            <div class="block-example">
+              <img style="width: 10%" src="images/text_segment.png" alt="" />
+              Сегмент (текст, начало, длина)<br />
+              -– использовать результат для выполнения действия
+            </div>
+            <li>
+              <strong>replace all (заменить все)</strong>: Этот блок заменяет
+              все вхождения указанной подстроки в строке на другую подстроку.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/text_replace_all.png"
+                alt=""
+              />
+              Заменить все (текст, что заменить, на что заменить)<br />
+              -– использовать результат для выполнения действия
+            </div>
+            <li>
+              <strong>is a string? (является ли строкой?)</strong>: Этот блок
+              проверяет, является ли указанное значение текстовой строкой.
+              Возвращает true, если да.
+            </li>
+            <div class="block-example">
+              <img class="medium-img" src="images/text_is_string.png" alt="" />
+              Если (значение является строкой)<br />
+              -– выполнять действие
+            </div>
+            <li>
+              <strong>reverse (обратить)</strong>: Этот блок переворачивает
+              текстовую строку, меняя порядок символов на противоположный.
+            </li>
+            <div class="block-example">
+              <img style="width: 10%" src="images/text_reverse.png" alt="" />
+              Обратить (текст)<br />
+              -– использовать результат для выполнения действия
+            </div>
+            <li>
+              <strong>replace all mappings (заменить по карте)</strong>: Этот
+              блок заменяет символы или подстроки в строке на основе заданной
+              карты замен.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/text_replace_mappings.png"
+                alt=""
+              />
+              Заменить по карте (текст, карта замен)<br />
+              -– использовать результат для выполнения действия
+            </div>
+          </div>
+          <div id="blocks_3lvl">
+            <h2>Блоки 3-го уровня</h2>
+            <li>
+              <strong>" " (строковый блок)</strong>: Этот блок используется для
+              создания текстового значения. Внутри блока можно ввести любой
+              текст.
+            </li>
+            <div class="block-example">
+              <img
+                style="width: 5%; margin-right: 10px"
+                src="images/text.png"
+                alt=""
+              />
+              "Текст"<br />
+              -– использовать текст для отображения или обработки данных
+            </div>
+
+            <li>
+              <strong>compare texts < > = ≠ (сравнение текстов)</strong>: Этот
+              блок сравнивает два текста и возвращает результат на основе
+              выбранного оператора (меньше, больше, равно, не равно).
+            </li>
+            <div class="block-example">
+              <img class="medium-img" src="images/text_compare.png" alt="" />
+              Если (текст1 < / > / = / ≠ текст2)<br />
+              -– выполнять действие
+            </div>
+            <li>
+              <strong>obfuscated text (зашифрованный текст)</strong>: Этот блок
+              создаёт зашифрованную версию текста, которая становится
+              нечитаемой.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/text_obfuscated_text.png"
+                alt=""
+              />
+              Зашифровать текст (текст)<br />
+              -– использовать для защиты данных
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <script>
+      const links = document.querySelectorAll(".nav-link");
+      const sections = document.querySelectorAll("div[id]");
+
+      function updateActiveLink() {
+        let index = sections.length;
+
+        while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
+
+        links.forEach((link) => link.classList.remove("active"));
+        links[index]?.classList.add("active");
+      }
+
+      links.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          const target = document.querySelector(link.getAttribute("href"));
+          window.scrollTo({ top: target.offsetTop - 20, behavior: "smooth" });
+        });
+      });
+
+      window.addEventListener("scroll", updateActiveLink);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Блоки логики в MIT App Inventor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html#section-1" class="header-link active">Теория</a>
+      <a class="header-link" href="mit_project_description.html">Проекты</a>
+      <a href="index.html">
+        <img class="logo" src="images/codi-logo.svg" />
+      </a>
+    </header>
+
+    <div class="sidebar">
+      <ul class="menu-list">
+        <li>
+          <a href="#blocks_2lvl_2type" class="nav-link"
+            >Блоки 2-го уровня второго типа</a
+          >
+        </li>
+        <li><a href="#blocks_3lvl" class="nav-link">Блоки 3-го уровня</a></li>
+        <li>
+          <div class="back-to-index">
+            <a href="index.html#section-2">Вернуться к оглавлению</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="content">
+      <h1>Блоки логики в MIT App Inventor</h1>
+      <div class="container">
+        <p>
+          Блоки логики в MIT App Inventor позволяют работать с булевыми
+          значениями (логическими истинами и ложью) и создавать условия для
+          выполнения определённых действий. Эти блоки используются для проверки
+          условий, принятия решений и построения более сложной логики работы
+          приложения.
+        </p>
+        <ul>
+          <div id="blocks_2lvl_2type">
+            <h2>Блоки 2-го уровня второго типа</h2>
+            <li>
+              <strong>not (не)</strong>: Этот блок возвращает противоположное
+              логическое значение. Если условие истинно (true), блок делает его
+              ложным (false), и наоборот.
+            </li>
+            <div class="block-example">
+              <img class="small-img" src="images/logic_negate.png" alt="" />
+              Не (условие)<br />
+              -– выполнять действие, если условие ложно
+            </div>
+          </div>
+          <div id="blocks_3lvl">
+            <h2>Блоки 3-го уровня</h2>
+            <li>
+              <strong>true (истина)</strong>: Этот блок представляет логическое
+              значение "истина" (true) и используется в условиях для проверки
+              или выполнения действий.
+            </li>
+            <div class="block-example">
+              <img class="small-img" src="images/logic_boolean.png" alt="" />
+              Если (true)<br />
+              -– выполнять действие
+            </div>
+            <li>
+              <strong>false (ложь)</strong>: Этот блок представляет логическое
+              значение "ложь" (false) и используется в условиях, когда действие
+              не должно выполняться.
+            </li>
+            <div class="block-example">
+              <img class="small-img" src="images/logic_false.png" alt="" />
+              Если (false)<br />
+              -– действие не выполняется
+            </div>
+            <li>
+              <strong>= (равно)</strong>: Этот блок проверяет, равны ли два
+              значения. Если значения равны, возвращает true, иначе false.
+            </li>
+            <div class="block-example">
+              <img class="small-img" src="images/logic_compare.png" alt="" />
+              Если (значение1 = значение2)<br />
+              -– выполнять действие
+            </div>
+            <li>
+              <strong>≠ (не равно)</strong>: Этот блок проверяет, не равны ли
+              два значения. Если значения различны, возвращает true, иначе
+              false.
+            </li>
+            <div class="block-example">
+              <img
+                class="small-img"
+                src="images/logic_negate_compare.png"
+                alt=""
+              />
+              Если (значение1 ≠ значение2)<br />
+              -– выполнять действие
+            </div>
+            <li>
+              <strong>and (и)</strong>: Этот блок проверяет, истинны ли оба
+              условия одновременно. Возвращает true, только если все условия
+              истинны.
+            </li>
+            <div class="block-example">
+              <img class="small-img" src="images/logic_operation.png" alt="" />
+              Если (условие1 и условие2)<br />
+              -– выполнять действие
+            </div>
+            <li>
+              <strong>or (или)</strong>: Этот блок проверяет, истинно ли хотя бы
+              одно из условий. Возвращает true, если хотя бы одно условие
+              истинно.
+            </li>
+            <div class="block-example">
+              <img class="small-img" src="images/logic_or.png" alt="" />
+              Если (условие1 или условие2)<br />
+              -– выполнять действие
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <script>
+      const links = document.querySelectorAll(".nav-link");
+      const sections = document.querySelectorAll("div[id]");
+
+      function updateActiveLink() {
+        let index = sections.length;
+
+        while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
+
+        links.forEach((link) => link.classList.remove("active"));
+        links[index]?.classList.add("active");
+      }
+
+      links.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          const target = document.querySelector(link.getAttribute("href"));
+          window.scrollTo({ top: target.offsetTop - 20, behavior: "smooth" });
+        });
+      });
+
+      window.addEventListener("scroll", updateActiveLink);
+    </script>
+  </body>
+</html>

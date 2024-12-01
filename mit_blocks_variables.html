@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Блоки переменных в MIT App Inventor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html#section-1" class="header-link active">Теория</a>
+      <a class="header-link" href="mit_project_description.html">Проекты</a>
+      <a href="index.html">
+        <img class="logo" src="images/codi-logo.svg" />
+      </a>
+    </header>
+
+    <div class="sidebar">
+      <ul class="menu-list">
+        <li>
+          <a href="#blocks_1lvl" class="nav-link">Блоки 1-го уровня</a>
+        </li>
+        <li>
+          <a href="#blocks_2lvl_1type" class="nav-link"
+            >Блоки 2-го уровня первого типа</a
+          >
+        </li>
+        <li>
+          <a href="#blocks_2lvl_2type" class="nav-link"
+            >Блоки 2-го уровня второго типа</a
+          >
+        </li>
+        <li><a href="#blocks_3lvl" class="nav-link">Блоки 3-го уровня</a></li>
+        <li>
+          <div class="back-to-index">
+            <a href="index.html#section-2">Вернуться к оглавлению</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="content">
+      <h1>Блоки переменных в MIT App Inventor</h1>
+      <div class="container">
+        <p>
+          Блоки переменных в MIT App Inventor используются для хранения,
+          изменения и передачи данных в приложении. Они позволяют создавать и
+          управлять переменными, которые могут содержать текст, числа, списки
+          или другие типы данных. С помощью этих блоков можно задавать значения
+          переменным, изменять их в процессе выполнения программы и использовать
+          для расчётов, условий или передачи информации между блоками.
+          Переменные помогают организовать логику приложения и делают работу с
+          данными более гибкой и удобной.
+        </p>
+        <ul>
+          <div id="blocks_1lvl">
+            <h2>Блоки 1-го уровня</h2>
+
+            <li>
+              <strong
+                >initialize global name to (инициализировать глобальную
+                переменную)</strong
+              >: Этот блок создаёт глобальную переменную с указанным именем и
+              значением, доступную во всём проекте.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/variables_global_declaration.png"
+                alt=""
+              />
+              Инициализировать глобальную переменную (имя) значением
+              (значение)<br />
+            </div>
+          </div>
+          <h2>Блоки 2-го уровня первого типа</h2>
+          <div id="blocks_2lvl_1type">
+            <li>
+              <strong>set (установить)</strong>: Этот блок изменяет текущее
+              значение переменной.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/variables_lexical_variable_set.png"
+                alt=""
+              />
+              Установить переменную (имя) равной (новое значение)<br />
+            </div>
+            <li>
+              <strong
+                >initialize local name to - in (do) (инициализировать локальную
+                переменную в блоке do)</strong
+              >: Этот блок создаёт локальную переменную с указанным именем и
+              значением, которая доступна только внутри указанного блока
+              действий.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/variables_local_declaration_statement.png"
+                alt=""
+              />
+              Инициализировать локальную переменную (имя) значением
+              (значение)<br />
+              в блоке (действие)
+            </div>
+          </div>
+
+          <div id="blocks_2lvl_2type">
+            <h2>Блоки 2-го уровня второго типа</h2>
+            <li>
+              <strong
+                >initialize local name to - in (return) (инициализировать
+                локальную переменную в блоке return)</strong
+              >: Этот блок создаёт локальную переменную с указанным именем и
+              значением, которая используется для вычислений внутри функции,
+              возвращающей значение.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/variables_local_declaration_expression.png"
+                alt=""
+              />
+              Инициализировать локальную переменную (имя) значением (значение)
+              <br />в блоке (возвращаемое значение)
+            </div>
+          </div>
+          <div id="blocks_3lvl">
+            <h2>Блоки 3-го уровня</h2>
+            <li>
+              <strong>get (получить)</strong>: Этот блок возвращает текущее
+              значение переменной (глобальной или локальной).
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/variables_lexical_variable_get.png"
+                alt=""
+              />
+              Получить значение переменной (имя)<br />
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <script>
+      const links = document.querySelectorAll(".nav-link");
+      const sections = document.querySelectorAll("div[id]");
+
+      function updateActiveLink() {
+        let index = sections.length;
+
+        while (--index && window.scrollY + 400 < sections[index].offsetTop) {}
+
+        links.forEach((link) => link.classList.remove("active"));
+        links[index]?.classList.add("active");
+      }
+
+      links.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          const target = document.querySelector(link.getAttribute("href"));
+          window.scrollTo({ top: target.offsetTop - 20, behavior: "smooth" });
+        });
+      });
+
+      window.addEventListener("scroll", updateActiveLink);
+    </script>
+  </body>
+</html>

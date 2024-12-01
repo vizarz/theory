@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Блоки управления в MIT App Inventor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html#section-1" class="header-link active">Теория</a>
+      <a class="header-link" href="mit_project_description.html">Проекты</a>
+      <a href="index.html">
+        <img class="logo" src="images/codi-logo.svg" />
+      </a>
+    </header>
+
+    <div class="sidebar">
+      <ul class="menu-list">
+        <li>
+          <a href="#blocks_2lvl_1type" class="nav-link"
+            >Блоки 2-го уровня первого типа</a
+          >
+        </li>
+        <li>
+          <a href="#blocks_2lvl_2type" class="nav-link"
+            >Блоки 2-го уровня второго типа</a
+          >
+        </li>
+        <li><a href="#blocks_3lvl" class="nav-link">Блоки 3-го уровня</a></li>
+        <li>
+          <div class="back-to-index">
+            <a href="index.html#section-2">Вернуться к оглавлению</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="content">
+      <h1>Блоки управления в MIT App Inventor</h1>
+      <div class="container">
+        <p>
+          Блоки управления в MIT App Inventor позволяют задавать логику
+          выполнения программ. Они помогают организовать поток выполнения,
+          управлять условиями и циклами, и многое другое.
+        </p>
+        <ul>
+          <h2>Блоки 2-го уровня первого типа</h2>
+          <div id="blocks_2lvl_1type">
+            <li>
+              <strong>if и else if (если и иначе если)</strong>: этот блок
+              позволяет задавать условия, при выполнении которых происходит
+              выполнение определённых действий. Например:
+            </li>
+            <div class="block-example">
+              <img
+                class="large-img"
+                src="images/controls_if.png"
+                alt="Блок если, то"
+              />
+              <div>
+                Если (условие), то<br />
+                –– выполнить действие<br />
+              </div>
+              <img
+                class="large-img"
+                src="images/controls_if-2.png"
+                alt="Блок если, то, иначе"
+              />
+              <div>
+                Если (условие), то<br />
+                –– выполнить действие<br />
+                Иначе<br />
+                –– выполнить другое действие
+              </div>
+            </div>
+            <li>
+              <strong>while (пока)</strong>: Этот блок выполняет действия
+              повторно, пока заданное условие остаётся истинным (true). Как
+              только условие становится ложным (false), цикл прекращает
+              выполнение.
+            </li>
+            <div class="block-example">
+              <img
+                class="small-img"
+                src="images/controls_while.png"
+                alt="Блок пока"
+              />
+              Пока (условие)<br />
+              -– выполнять действие
+            </div>
+            <li>
+              <strong
+                >for each number from to (для каждого числа от... до...)</strong
+              >: Этот блок выполняет действия для каждого числа в указанном
+              диапазоне, начиная с начального значения и заканчивая конечным, с
+              заданным шагом.
+            </li>
+            <div class="block-example">
+              <img
+                class="small-img"
+                src="images/controls_forRange.png"
+                alt="Блок для каждого числа от... до..."
+              />
+              Для каждого числа от (начало)<br />
+              до (конец)<br />
+              с шагом (шаг)<br />
+              -– выполнять действие
+            </div>
+            <li>
+              <strong
+                >for each item in list (для каждого элемента в списке)</strong
+              >: Этот блок выполняет действия для каждого элемента из списка по
+              порядку.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/controls_forEach.png"
+                alt="Блок для каждого элемента в списке"
+              />
+              Для каждого элемента в списке (список)<br />
+              -– выполнять действие
+            </div>
+            <li>
+              <strong>open another screen (открыть другой экран)</strong>: Этот
+              блок используется для перехода на другой экран в приложении.
+            </li>
+            <div class="block-example">
+              <img
+                class="medium-img"
+                src="images/controls_openAnotherScreen.png"
+                alt="Блок открыть другой экран"
+              />
+              Открыть другой экран (имя экрана)<br />
+            </div>
+          </div>
+          <div id="blocks_2lvl_2type">
+            <h2>Блоки 2-го уровня второго типа</h2>
+            <li>
+              <strong>do with result (выполнить с результатом)</strong>: Этот
+              блок используется для выполнения действия с результатом вызова
+              функции или операции.
+            </li>
+            <div class="block-example">
+              <img
+                class="small-img"
+                src="images/controls_do_then_return.png"
+                alt="Блок выполнить с результатом"
+              />
+              Выполнить с результатом (действие)<br />
+              -– использовать результат для выполнения другого действия
+            </div>
+          </div>
+          <div id="blocks_3lvl">
+            <h2>Блоки 3-го уровня</h2>
+            <li>
+              <strong
+                >get plain start text (получить начальный текст) и get start
+                value (получить начальное значение)</strong
+              >: Этот блок возвращает значение, переданное на текущий экран при
+              его открытии.
+            </li>
+            <div class="block-example">
+              <img
+                class="small-img"
+                src="images/controls_getPlainStartText.png"
+                alt="Блок получить начальный текст"
+              />
+              -– использовать текст для выполнения действия
+              <img
+                class="small-img"
+                src="images/controls_getStartValue.png"
+                alt="Блок получить начальный текст"
+              />
+              -– использовать значение для выполнения действия
+            </div>
+            <li>
+              <strong>close screen (закрыть экран)</strong>: Этот блок закрывает
+              текущий экран и возвращает пользователя на предыдущий экран.
+            </li>
+            <div class="block-example">
+              <img
+                class="small-img"
+                src="images/controls_closeScreen.png"
+                alt="Блок закрыть экран"
+              />
+              -– Закрыть экран
+            </div>
+            <li>
+              <strong>close application (закрыть приложение)</strong>: Этот блок
+              завершает работу приложения и закрывает его полностью.
+            </li>
+            <div class="block-example">
+              <img
+                class="small-img"
+                src="images/controls_closeApplication.png"
+                alt="Блок закрыть приложение"
+              />
+              –– Закрыть приложение<br />
+            </div>
+            <li>
+              <strong>break (прервать)</strong>: Этот блок используется для
+              немедленного выхода из цикла, даже если условие продолжения ещё
+              истинно.
+            </li>
+            <div class="block-example">
+              <img
+                class="small-img"
+                src="images/controls_break.png"
+                alt="Блок прервать"
+              />
+              -– Прервать цикл
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <script>
+      const links = document.querySelectorAll(".nav-link");
+      const sections = document.querySelectorAll("div[id]");
+
+      function updateActiveLink() {
+        let index = sections.length;
+
+        while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
+
+        links.forEach((link) => link.classList.remove("active"));
+        links[index]?.classList.add("active");
+      }
+
+      links.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          const target = document.querySelector(link.getAttribute("href"));
+          window.scrollTo({ top: target.offsetTop - 20, behavior: "smooth" });
+        });
+      });
+
+      window.addEventListener("scroll", updateActiveLink);
+    </script>
+  </body>
+</html>
