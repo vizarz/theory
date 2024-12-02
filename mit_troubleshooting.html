@@ -1,123 +1,123 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Устранение неполадок в MIT App Inventor</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <a href="index.html#section-1" class="header-link active">Теория</a>
-      <a class="header-link" href="mit_project_description.html">Проекты</a>
-      <a href="index.html">
-        <img class="logo" src="images/codi-logo.svg" />
-      </a>
-    </header>
-    <div class="sidebar">
-      <ul class="menu-list">
-        <li>
-          <div class="back-to-index">
-            <a href="index.html">Вернуться к оглавлению</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="content">
-      <h1>Устранение неполадок в MIT App Inventor</h1>
-      <div class="accordion">
-        <div class="accordion-item">
-          <button class="accordion-header" id="q1">
-            Проблемы с эмулятором
-          </button>
-          <div class="accordion-content">
-            <p>
-              Если есть проблемы с эмулятором или USB, зайдите на
-              <a href="http://appinventor.mit.edu/test.html"
-                >страницу тестирования подключения</a
-              >, чтобы проверить, работает ли aiStarter, и установлена ли
-              последняя версия ПО. Если это не помогает, удалите старую версию,
-              перезагрузите систему и установите новую. Подробности — на
-              странице
-              <a
-                href="https://appinventor.mit.edu/explore/ai2/update-setup-software"
-                >Обновление ПО App Inventor.</a
-              >
-            </p>
-            <strong>Ошибка сети при общении с Companion</strong>
-            <p>
-              Это значит, что App Inventor подключился к эмулятору, но не
-              получает ответа от Companion. Скорее всего, нужно переустановить
-              ПО. Удалите старую версию, перезагрузите компьютер и установите
-              новую.
-            </p>
-            <strong>Приложение работает, но изображения не отображаются</strong>
-            <p>
-              Попробуйте перезагрузить страницу App Inventor (нажмите Shift +
-              Перезагрузка, чтобы очистить кэш) и снова подключитесь к
-              эмулятору.
-            </p>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-header" id="q2">
-            При подключении по USB
-          </button>
-          <div class="accordion-content">
-            <strong
-              >Мое устройство подключено, но при попытке подключения через USB
-              появляется сообщение "App Inventor не видит устройство".</strong
-            >
-            <p>
-              Отключите телефон, подождите 5 секунд и подключите его снова. App
-              Inventor должен автоматически восстановить соединение.
-            </p>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-header" id="q3">
-            Программное обеспечение
-          </button>
-          <div class="accordion-content">
-            <strong>Как обновить программное обеспечение App Inventor?</strong>
-            <p>
-              Ознакомьтесь с инструкциями на странице
-              <a
-                href="https://appinventor.mit.edu/explore/ai2/update-setup-software"
-              >
-                Как обновить программное обеспечение App Inventor.</a
-              >
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script>
-      //открытие из индекса
-      document.addEventListener("DOMContentLoaded", () => {
-        const hash = window.location.hash;
-        if (hash) {
-          const targetHeader = document.querySelector(hash);
-          const targetContent = targetHeader?.nextElementSibling;
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Устранение неполадок в MIT App Inventor</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<header>
+			<a href="index.html#section-1" class="header-link active">Теория</a>
+			<a class="header-link" href="mit_project_description.html">Проекты</a>
+			<a href="index.html">
+				<img class="logo" src="images/codi-logo.svg" />
+			</a>
+		</header>
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<div class="back-to-index">
+						<a href="index.html">Вернуться к оглавлению</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<h1>Устранение неполадок в MIT App Inventor</h1>
+			<div class="accordion">
+				<div class="accordion-item">
+					<button class="accordion-header" id="q1">
+						Проблемы с эмулятором
+					</button>
+					<div class="accordion-content">
+						<p>
+							Если есть проблемы с эмулятором или USB, зайдите на
+							<a href="http://appinventor.mit.edu/test.html"
+								>страницу тестирования подключения</a
+							>, чтобы проверить, работает ли aiStarter, и установлена ли
+							последняя версия ПО. Если это не помогает, удалите старую версию,
+							перезагрузите систему и установите новую. Подробности — на
+							странице
+							<a
+								href="https://appinventor.mit.edu/explore/ai2/update-setup-software"
+								>Обновление ПО App Inventor.</a
+							>
+						</p>
+						<strong>Ошибка сети при общении с Companion</strong>
+						<p>
+							Это значит, что App Inventor подключился к эмулятору, но не
+							получает ответа от Companion. Скорее всего, нужно переустановить
+							ПО. Удалите старую версию, перезагрузите компьютер и установите
+							новую.
+						</p>
+						<strong>Приложение работает, но изображения не отображаются</strong>
+						<p>
+							Попробуйте перезагрузить страницу App Inventor (нажмите Shift +
+							Перезагрузка, чтобы очистить кэш) и снова подключитесь к
+							эмулятору.
+						</p>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<button class="accordion-header" id="q2">
+						При подключении по USB
+					</button>
+					<div class="accordion-content">
+						<strong
+							>Мое устройство подключено, но при попытке подключения через USB
+							появляется сообщение "App Inventor не видит устройство".</strong
+						>
+						<p>
+							Отключите телефон, подождите 5 секунд и подключите его снова. App
+							Inventor должен автоматически восстановить соединение.
+						</p>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<button class="accordion-header" id="q3">
+						Программное обеспечение
+					</button>
+					<div class="accordion-content">
+						<strong>Как обновить программное обеспечение App Inventor?</strong>
+						<p>
+							Ознакомьтесь с инструкциями на странице
+							<a
+								href="https://appinventor.mit.edu/explore/ai2/update-setup-software"
+							>
+								Как обновить программное обеспечение App Inventor.</a
+							>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			//открытие из индекса
+			document.addEventListener('DOMContentLoaded', () => {
+				const hash = window.location.hash
+				if (hash) {
+					const targetHeader = document.querySelector(hash)
+					const targetContent = targetHeader?.nextElementSibling
 
-          if (targetHeader && targetContent) {
-            targetContent.classList.add("open");
-            targetContent.style.maxHeight = targetContent.scrollHeight + "px";
-            targetHeader.scrollIntoView({ behavior: "smooth" });
-          }
-        }
+					if (targetHeader && targetContent) {
+						targetContent.classList.add('open')
+						targetContent.style.maxHeight = targetContent.scrollHeight + 'px'
+						targetHeader.scrollIntoView({ behavior: 'smooth' })
+					}
+				}
 
-        // Аккордеонное поведение
-        document.querySelectorAll(".accordion-header").forEach((button) => {
-          button.addEventListener("click", () => {
-            const content = button.nextElementSibling;
-            content.classList.toggle("open");
-            content.style.maxHeight = content.classList.contains("open")
-              ? content.scrollHeight + "px"
-              : null;
-          });
-        });
-      });
-    </script>
-  </body>
+				// Аккордеонное поведение
+				document.querySelectorAll('.accordion-header').forEach(button => {
+					button.addEventListener('click', () => {
+						const content = button.nextElementSibling
+						content.classList.toggle('open')
+						content.style.maxHeight = content.classList.contains('open')
+							? content.scrollHeight + 'px'
+							: null
+					})
+				})
+			})
+		</script>
+	</body>
 </html>

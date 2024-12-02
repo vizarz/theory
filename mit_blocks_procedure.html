@@ -1,141 +1,141 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Блоки процедур в MIT App Inventor</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <a href="index.html#section-1" class="header-link active">Теория</a>
-      <a class="header-link" href="mit_project_description.html">Проекты</a>
-      <a href="index.html">
-        <img class="logo" src="images/codi-logo.svg" />
-      </a>
-    </header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Блоки процедур в MIT App Inventor</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<header>
+			<a href="index.html#section-1" class="header-link active">Теория</a>
+			<a class="header-link" href="mit_project_description.html">Проекты</a>
+			<a href="index.html">
+				<img class="logo" src="images/codi-logo.svg" />
+			</a>
+		</header>
 
-    <div class="sidebar">
-      <ul class="menu-list">
-        <li>
-          <a href="#blocks_1lvl" class="nav-link">Блоки 1-го уровня </a>
-        </li>
-        <li>
-          <a href="#blocks_2lvl_1type" class="nav-link"
-            >Блоки 2-го уровня первого типа</a
-          >
-        </li>
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<a href="#blocks_1lvl" class="nav-link">Блоки 1-го уровня </a>
+				</li>
+				<li>
+					<a href="#blocks_2lvl_1type" class="nav-link"
+						>Блоки 2-го уровня первого типа</a
+					>
+				</li>
 
-        <li><a href="#blocks_3lvl" class="nav-link">Блоки 3-го уровня</a></li>
-        <li>
-          <div class="back-to-index">
-            <a href="index.html#section-2">Вернуться к оглавлению</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="content">
-      <h1>Блоки процедур в MIT App Inventor</h1>
-      <div class="container">
-        <p>
-          Блоки процедур в MIT App Inventor позволяют создавать собственные
-          подпрограммы для выполнения повторяющихся или сложных действий. Они
-          помогают структурировать код, упрощая его чтение и уменьшая количество
-          повторяющихся блоков. С помощью этих блоков вы можете определить
-          процедуру, задать ей имя и указать набор действий, которые она должна
-          выполнять. Процедуры могут быть с возвращаемым значением или без него.
-        </p>
-        <ul>
-          <div id="blocks_1lvl">
-            <h2>Блоки 1-го уровня</h2>
+				<li><a href="#blocks_3lvl" class="nav-link">Блоки 3-го уровня</a></li>
+				<li>
+					<div class="back-to-index">
+						<a href="index.html#section-2">Вернуться к оглавлению</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<h1>Блоки процедур в MIT App Inventor</h1>
+			<div class="container">
+				<p>
+					Блоки процедур в MIT App Inventor позволяют создавать собственные
+					подпрограммы для выполнения повторяющихся или сложных действий. Они
+					помогают структурировать код, упрощая его чтение и уменьшая количество
+					повторяющихся блоков. С помощью этих блоков вы можете определить
+					процедуру, задать ей имя и указать набор действий, которые она должна
+					выполнять. Процедуры могут быть с возвращаемым значением или без него.
+				</p>
+				<ul>
+					<div id="blocks_1lvl">
+						<h2>Блоки 1-го уровня</h2>
 
-            <li>
-              <strong>procedure do (процедура выполнить)</strong>: Этот блок
-              определяет процедуру, которая содержит набор действий. Процедура
-              выполняет инструкции, но не возвращает значений.
-            </li>
-            <div class="block-example">
-              <img
-                class="medium-img"
-                src="images/procedures_defnoreturn.png"
-                alt=""
-              />
-              Процедура выполнить (процедура) <br />
-              –– выполнить действия, указанные в процедуре
-            </div>
-            <li>
-              <strong>procedure result (процедура результат)</strong>: Этот блок
-              определяет процедуру, которая выполняет действия и возвращает
-              результат (значение).
-            </li>
-            <div class="block-example">
-              <img
-                class="medium-img"
-                src="images/procedures_defreturn.png"
-                alt=""
-              />
-              Процедура результат (возвращаемое значение)<br />
-              –– выполнить действия и вернуть результат
-            </div>
-          </div>
-          <div id="blocks_2lvl_1type">
-            <h2>Блоки 2-го уровня первого типа</h2>
-            <li>
-              <strong>call do (вызвать процедуру)</strong>: Этот блок вызывает
-              ранее определённую процедуру для выполнения её действий.
-            </li>
-            <div class="block-example">
-              <img
-                class="medium-img"
-                src="images/procedures_callnoreturn.png"
-                alt=""
-              />
-              Вызвать процедуру (процедура) <br />
-              -– выполняются действия, указанные в процедуре
-            </div>
-          </div>
-          <div id="blocks_3lvl">
-            <h2>Блоки 3-го уровня</h2>
-            <li>
-              <strong>call result (вызвать результат)</strong>:Этот блок
-              вызывает ранее определённую процедуру, которая возвращает
-              значение, и использует это значение для дальнейших операций.
-            </li>
-            <div class="block-example">
-              <img
-                class="medium-img"
-                src="images/procedures_callreturn.png"
-                alt=""
-              />
-              Вызвать результат (передать параметры)<br />
-              -– использовать возвращённое значение для дальнейших вычислений
-            </div>
-          </div>
-        </ul>
-      </div>
-    </div>
-    <script>
-      const links = document.querySelectorAll(".nav-link");
-      const sections = document.querySelectorAll("div[id]");
+						<li>
+							<strong>procedure do (процедура выполнить)</strong>: Этот блок
+							определяет процедуру, которая содержит набор действий. Процедура
+							выполняет инструкции, но не возвращает значений.
+						</li>
+						<div class="block-example">
+							<img
+								class="medium-img"
+								src="images/procedures_defnoreturn.png"
+								alt=""
+							/>
+							Процедура выполнить (процедура) <br />
+							–– выполнить действия, указанные в процедуре
+						</div>
+						<li>
+							<strong>procedure result (процедура результат)</strong>: Этот блок
+							определяет процедуру, которая выполняет действия и возвращает
+							результат (значение).
+						</li>
+						<div class="block-example">
+							<img
+								class="medium-img"
+								src="images/procedures_defreturn.png"
+								alt=""
+							/>
+							Процедура результат (возвращаемое значение)<br />
+							–– выполнить действия и вернуть результат
+						</div>
+					</div>
+					<div id="blocks_2lvl_1type">
+						<h2>Блоки 2-го уровня первого типа</h2>
+						<li>
+							<strong>call do (вызвать процедуру)</strong>: Этот блок вызывает
+							ранее определённую процедуру для выполнения её действий.
+						</li>
+						<div class="block-example">
+							<img
+								class="medium-img"
+								src="images/procedures_callnoreturn.png"
+								alt=""
+							/>
+							Вызвать процедуру (процедура) <br />
+							-– выполняются действия, указанные в процедуре
+						</div>
+					</div>
+					<div id="blocks_3lvl">
+						<h2>Блоки 3-го уровня</h2>
+						<li>
+							<strong>call result (вызвать результат)</strong>:Этот блок
+							вызывает ранее определённую процедуру, которая возвращает
+							значение, и использует это значение для дальнейших операций.
+						</li>
+						<div class="block-example">
+							<img
+								class="medium-img"
+								src="images/procedures_callreturn.png"
+								alt=""
+							/>
+							Вызвать результат (передать параметры)<br />
+							-– использовать возвращённое значение для дальнейших вычислений
+						</div>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<script>
+			const links = document.querySelectorAll('.nav-link')
+			const sections = document.querySelectorAll('div[id]')
 
-      function updateActiveLink() {
-        let index = sections.length;
+			function updateActiveLink() {
+				let index = sections.length
 
-        while (--index && window.scrollY + 350 < sections[index].offsetTop) {}
+				while (--index && window.scrollY + 350 < sections[index].offsetTop) {}
 
-        links.forEach((link) => link.classList.remove("active"));
-        links[index]?.classList.add("active");
-      }
+				links.forEach(link => link.classList.remove('active'))
+				links[index]?.classList.add('active')
+			}
 
-      links.forEach((link) => {
-        link.addEventListener("click", (event) => {
-          event.preventDefault();
-          const target = document.querySelector(link.getAttribute("href"));
-          window.scrollTo({ top: target.offsetTop - 20, behavior: "smooth" });
-        });
-      });
+			links.forEach(link => {
+				link.addEventListener('click', event => {
+					event.preventDefault()
+					const target = document.querySelector(link.getAttribute('href'))
+					window.scrollTo({ top: target.offsetTop - 20, behavior: 'smooth' })
+				})
+			})
 
-      window.addEventListener("scroll", updateActiveLink);
-    </script>
-  </body>
+			window.addEventListener('scroll', updateActiveLink)
+		</script>
+	</body>
 </html>

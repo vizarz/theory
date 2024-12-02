@@ -1,59 +1,59 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Проекты в MIT App Inventor</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <a href="index.html#section-1" class="header-link">Теория</a>
-      <a class="header-link active" href="mit_project_description.html"
-        >Проекты</a
-      >
-      <a href="index.html">
-        <img class="logo" src="images/codi-logo.svg" />
-      </a>
-    </header>
-    <div class="sidebar">
-      <ul class="menu-list">
-        <li>
-          <div class="back-to-index">
-            <a href="index.html">Вернуться к оглавлению</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="content">
-      <h1>Проекты в MIT App Inventor</h1>
-      <p>
-        На этой странице будут методические указания по созданию проектов в MIT
-        App Inventor
-      </p>
-    </div>
-    <script>
-      const links = document.querySelectorAll(".nav-link");
-      const sections = document.querySelectorAll("div[id]");
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Проекты в MIT App Inventor</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<header>
+			<a href="index.html#section-1" class="header-link">Теория</a>
+			<a class="header-link active" href="mit_project_description.html"
+				>Проекты</a
+			>
+			<a href="index.html">
+				<img class="logo" src="images/codi-logo.svg" />
+			</a>
+		</header>
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<div class="back-to-index">
+						<a href="index.html">Вернуться к оглавлению</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<h1>Проекты в MIT App Inventor</h1>
+			<p>
+				На этой странице будут методические указания по созданию проектов в MIT
+				App Inventor
+			</p>
+		</div>
+		<script>
+			const links = document.querySelectorAll('.nav-link')
+			const sections = document.querySelectorAll('div[id]')
 
-      function updateActiveLink() {
-        let index = sections.length;
+			function updateActiveLink() {
+				let index = sections.length
 
-        while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
+				while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
 
-        links.forEach((link) => link.classList.remove("active"));
-        links[index]?.classList.add("active");
-      }
+				links.forEach(link => link.classList.remove('active'))
+				links[index]?.classList.add('active')
+			}
 
-      links.forEach((link) => {
-        link.addEventListener("click", (event) => {
-          event.preventDefault();
-          const target = document.querySelector(link.getAttribute("href"));
-          window.scrollTo({ top: target.offsetTop - 20, behavior: "smooth" });
-        });
-      });
+			links.forEach(link => {
+				link.addEventListener('click', event => {
+					event.preventDefault()
+					const target = document.querySelector(link.getAttribute('href'))
+					window.scrollTo({ top: target.offsetTop - 20, behavior: 'smooth' })
+				})
+			})
 
-      window.addEventListener("scroll", updateActiveLink);
-    </script>
-  </body>
+			window.addEventListener('scroll', updateActiveLink)
+		</script>
+	</body>
 </html>

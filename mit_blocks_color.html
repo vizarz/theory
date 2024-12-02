@@ -1,117 +1,117 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Блоки цветов в MIT App Inventor</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <a href="index.html#section-1" class="header-link active">Теория</a>
-      <a class="header-link" href="mit_project_description.html">Проекты</a>
-      <a href="index.html">
-        <img class="logo" src="images/codi-logo.svg" />
-      </a>
-    </header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Блоки цветов в MIT App Inventor</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<header>
+			<a href="index.html#section-1" class="header-link active">Теория</a>
+			<a class="header-link" href="mit_project_description.html">Проекты</a>
+			<a href="index.html">
+				<img class="logo" src="images/codi-logo.svg" />
+			</a>
+		</header>
 
-    <div class="sidebar">
-      <ul class="menu-list">
-        <li>
-          <a href="#blocks_2lvl_2type" class="nav-link"
-            >Блоки 2-го уровня второго типа</a
-          >
-        </li>
-        <li><a href="#blocks_3lvl" class="nav-link">Блоки 3-го уровня</a></li>
-        <li>
-          <div class="back-to-index">
-            <a href="index.html#section-2">Вернуться к оглавлению</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="content">
-      <h1>Блоки цветов в MIT App Inventor</h1>
-      <div class="container">
-        <p>
-          Блоки цветов в MIT App Inventor позволяют управлять цветовым
-          оформлением вашего приложения. С их помощью можно задавать цвета для
-          различных компонентов, таких как фоны, кнопки, текст и другие элементы
-          интерфейса. Эти блоки предоставляют стандартные предустановленные
-          цвета, а также возможность создавать собственные цвета, используя
-          значения RGB (красный, зелёный, синий).
-        </p>
-        <ul>
-          <div id="blocks_2lvl_2type">
-            <h2>Блоки 2-го уровня второго типа</h2>
-            <li>
-              <strong>make color (создать цвет)</strong>: Этот блок позволяет
-              создать цвет, указав значения красного, зелёного и синего
-              компонентов (RGB) в диапазоне от 0 до 255.
-            </li>
-            <div class="block-example">
-              <img
-                class="medium-img"
-                src="images/color_make_color.png"
-                alt=""
-              />
-              Создать цвет (красный = значение,<br />зелёный = значение,
-              <br />синий = значение)<br />
-            </div>
-            <li>
-              <strong>split color (разделить цвет)</strong>: Этот блок разбивает
-              цвет на его компоненты RGB (красный, зелёный, синий) и возвращает
-              их как список значений.
-            </li>
-            <div class="block-example">
-              <img
-                class="small-img"
-                src="images/color_split_color.png"
-                alt=""
-              />
-              Разделить цвет (цвет)<br />
-              -– использовать компоненты для выполнения действия
-            </div>
-          </div>
-          <div id="blocks_3lvl">
-            <h2>Блоки 3-го уровня</h2>
-            <li>
-              <strong>basic color (базовый цвет)</strong>: Этот блок
-              представляет собой предопределённые цвета, такие как красный,
-              зелёный, синий, чёрный, белый и другие, которые можно использовать
-              в приложении.
-            </li>
-            <div class="block-example">
-              <img class="medium-img" src="images/color_basic.png" alt="" />
-              Базовый цвет (выбрать при нажатии левой кнопкой мыши)<br />
-              -– применить для фона кнопки или текста
-            </div>
-          </div>
-        </ul>
-      </div>
-    </div>
-    <script>
-      const links = document.querySelectorAll(".nav-link");
-      const sections = document.querySelectorAll("div[id]");
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<a href="#blocks_2lvl_2type" class="nav-link"
+						>Блоки 2-го уровня второго типа</a
+					>
+				</li>
+				<li><a href="#blocks_3lvl" class="nav-link">Блоки 3-го уровня</a></li>
+				<li>
+					<div class="back-to-index">
+						<a href="index.html#section-2">Вернуться к оглавлению</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<h1>Блоки цветов в MIT App Inventor</h1>
+			<div class="container">
+				<p>
+					Блоки цветов в MIT App Inventor позволяют управлять цветовым
+					оформлением вашего приложения. С их помощью можно задавать цвета для
+					различных компонентов, таких как фоны, кнопки, текст и другие элементы
+					интерфейса. Эти блоки предоставляют стандартные предустановленные
+					цвета, а также возможность создавать собственные цвета, используя
+					значения RGB (красный, зелёный, синий).
+				</p>
+				<ul>
+					<div id="blocks_2lvl_2type">
+						<h2>Блоки 2-го уровня второго типа</h2>
+						<li>
+							<strong>make color (создать цвет)</strong>: Этот блок позволяет
+							создать цвет, указав значения красного, зелёного и синего
+							компонентов (RGB) в диапазоне от 0 до 255.
+						</li>
+						<div class="block-example">
+							<img
+								class="medium-img"
+								src="images/color_make_color.png"
+								alt=""
+							/>
+							Создать цвет (красный = значение,<br />зелёный = значение,
+							<br />синий = значение)<br />
+						</div>
+						<li>
+							<strong>split color (разделить цвет)</strong>: Этот блок разбивает
+							цвет на его компоненты RGB (красный, зелёный, синий) и возвращает
+							их как список значений.
+						</li>
+						<div class="block-example">
+							<img
+								class="small-img"
+								src="images/color_split_color.png"
+								alt=""
+							/>
+							Разделить цвет (цвет)<br />
+							-– использовать компоненты для выполнения действия
+						</div>
+					</div>
+					<div id="blocks_3lvl">
+						<h2>Блоки 3-го уровня</h2>
+						<li>
+							<strong>basic color (базовый цвет)</strong>: Этот блок
+							представляет собой предопределённые цвета, такие как красный,
+							зелёный, синий, чёрный, белый и другие, которые можно использовать
+							в приложении.
+						</li>
+						<div class="block-example">
+							<img class="medium-img" src="images/color_basic.png" alt="" />
+							Базовый цвет (выбрать при нажатии левой кнопкой мыши)<br />
+							-– применить для фона кнопки или текста
+						</div>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<script>
+			const links = document.querySelectorAll('.nav-link')
+			const sections = document.querySelectorAll('div[id]')
 
-      function updateActiveLink() {
-        let index = sections.length;
+			function updateActiveLink() {
+				let index = sections.length
 
-        while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
+				while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
 
-        links.forEach((link) => link.classList.remove("active"));
-        links[index]?.classList.add("active");
-      }
+				links.forEach(link => link.classList.remove('active'))
+				links[index]?.classList.add('active')
+			}
 
-      links.forEach((link) => {
-        link.addEventListener("click", (event) => {
-          event.preventDefault();
-          const target = document.querySelector(link.getAttribute("href"));
-          window.scrollTo({ top: target.offsetTop - 20, behavior: "smooth" });
-        });
-      });
+			links.forEach(link => {
+				link.addEventListener('click', event => {
+					event.preventDefault()
+					const target = document.querySelector(link.getAttribute('href'))
+					window.scrollTo({ top: target.offsetTop - 20, behavior: 'smooth' })
+				})
+			})
 
-      window.addEventListener("scroll", updateActiveLink);
-    </script>
-  </body>
+			window.addEventListener('scroll', updateActiveLink)
+		</script>
+	</body>
 </html>
