@@ -2,10 +2,10 @@
 
 ![Логотип][def]
 
-[Начало работы](#https://vizarz.github.io/theory/www/index.html) | [Установка](#установка) |
+[Начало работы](https://vizarz.github.io/theory/www/index.html) | [Установка](#установка) |
 
 ## Описание
 
 Краткое описание проекта...
 
-[def]: images/codi-logo.svg
+[def]: www/images/codi-logo.svg
