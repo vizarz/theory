@@ -7,13 +7,7 @@
 		<link rel="stylesheet" href="styles/styles.css" />
 	</head>
 	<body>
-		<header>
-			<a class="header-link active" href="index.html#section-1">Теория</a>
-			<a class="header-link" href="mit_project_description.html">Проекты</a>
-			<a href="index.html">
-				<img class="logo" src="images/codi-logo.svg" />
-			</a>
-		</header>
+		<div id="header"></div>
 		<div class="sidebar">
 			<ul class="menu-list">
 				<li>
@@ -34,28 +28,6 @@
 				Преподаватель-консультант Данилов Д.М.<br />
 			</p>
 		</div>
-		<script>
-			const links = document.querySelectorAll('.nav-link')
-			const sections = document.querySelectorAll('div[id]')
-
-			function updateActiveLink() {
-				let index = sections.length
-
-				while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
-
-				links.forEach(link => link.classList.remove('active'))
-				links[index]?.classList.add('active')
-			}
-
-			links.forEach(link => {
-				link.addEventListener('click', event => {
-					event.preventDefault()
-					const target = document.querySelector(link.getAttribute('href'))
-					window.scrollTo({ top: target.offsetTop - 20, behavior: 'smooth' })
-				})
-			})
-
-			window.addEventListener('scroll', updateActiveLink)
-		</script>
+		<script src="scripts/header-loader.js"></script>
 	</body>
 </html>
