@@ -1,38 +1,80 @@
-document.addEventListener('DOMContentLoaded', () => {
-	const registerForm = document.getElementById('register-form')
-	const loginForm = document.getElementById('login-form')
-
-	// Получаем список пользователей из localStorage или создаем пустой объект
-	let users = JSON.parse(localStorage.getItem('users')) || {}
-
-	registerForm.addEventListener('submit', e => {
+// Обработчик регистрации
+const registerForm = document.getElementById('register-form')
+if (registerForm) {
+	registerForm.addEventListener('submit', async e => {
 		e.preventDefault()
-		const username = registerForm.username.value.trim()
-		const password = registerForm.password.value.trim()
 
-		if (users[username]) {
-			alert('Пользователь с таким логином уже существует!')
-			return
+		const studentName = e.target.studentName.value
+		const username = e.target.username.value
+		const password = e.target.password.value
+		// Роль по умолчанию для регистрации — студент.
+		const role = 'student'
+
+		try {
+			const response = await fetch('http://localhost:3000/api/auth/register', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					name: studentName,
+					username,
+					password,
+					role,
+				}),
+			})
+
+			if (response.ok) {
+				const data = await response.json()
+				showToast('Вы успешно зарегистрировались', 'success')
+				setTimeout(() => {
+					window.location.href = 'login.html'
+				}, 1500)
+			} else {
+				const errorData = await response.json()
+				showToast(`Ошибка регистрации: ${errorData.message}`, 'error')
+			}
+		} catch (error) {
+			console.error('Ошибка:', error)
+			showToast('Произошла ошибка при регистрации', 'error')
 		}
-
-		// Для демонстрации пароли сохраняются как есть (небезопасно)
-		users[username] = password
-		localStorage.setItem('users', JSON.stringify(users))
-		alert('Регистрация успешна!')
-		registerForm.reset()
 	})
+}
 
-	loginForm.addEventListener('submit', e => {
+// Обработчик входа (login)
+const loginForm = document.getElementById('login-form')
+if (loginForm) {
+	loginForm.addEventListener('submit', async e => {
 		e.preventDefault()
-		const username = loginForm.username.value.trim()
-		const password = loginForm.password.value.trim()
+		console.log('Форма входа отправлена')
 
-		if (users[username] && users[username] === password) {
-			alert('Вход выполнен успешно!')
-			// Здесь можно добавить дальнейшую логику (например, переход на другую страницу)
-		} else {
-			alert('Неверный логин или пароль!')
+		const username = e.target.username.value
+		const password = e.target.password.value
+
+		try {
+			const response = await fetch('http://localhost:3000/api/auth/login', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ username, password }),
+			})
+			console.log('Получен ответ от сервера', response)
+
+			if (response.ok) {
+				const data = await response.json()
+				console.log('Данные входа', data)
+				localStorage.setItem('token', data.token)
+				showToast('Вы вошли в аккаунт', 'success')
+				setTimeout(() => {
+					window.location.href = 'index.html'
+				}, 1500)
+			} else {
+				const errorData = await response.json()
+				console.error('Ошибка входа', errorData)
+				showToast(`Ошибка входа: ${errorData.message}`, 'error')
+			}
+		} catch (error) {
+			console.error('Ошибка при выполнении запроса входа:', error)
+			showToast('Ошибка при входе', 'error')
 		}
-		loginForm.reset()
 	})
-})
+}

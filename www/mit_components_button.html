@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Компонент: Кнопка</title>
+		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/toast.css" />
+	</head>
+	<body>
+		<div id="header"></div>
+
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<a href="#methods" class="nav-link">Методы</a>
+				</li>
+				<li>
+					<a href="#properties" class="nav-link">Свойства</a>
+				</li>
+				<li>
+					<a href="#events" class="nav-link">События</a>
+				</li>
+				<li>
+					<div class="back-to-index">
+						<a href="index.html#section-2">Вернуться к оглавлению</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<h1>Кнопка</h1>
+			<div class="container">
+				<p>
+					Кнопка, способная обнаруживать клики. Многие аспекты её внешнего вида
+					можно изменить, а также определить её кликабельность (Enabled).
+					Свойства кнопки можно настраивать как в Дизайнере, так и в Редакторе
+					блоков.
+				</p>
+				<ul>
+					<div id="methods">
+						<h2>Методы</h2>
+						<li>...</li>
+						<li>...</li>
+					</div>
+					<!-- Этот фрагмент можно вставить в нужное место вашего документа, например, в раздел "Свойства" -->
+					<div id="properties">
+						<h2>Свойства</h2>
+						<ul>
+							<li>
+								<strong>Фоновый цвет (BackgroundColor):</strong> Задает фоновый
+								цвет кнопки в виде целого числа alpha-red-green-blue. Если
+								установлено изображение, изменение цвета не будет видно, пока
+								изображение не удалено.
+							</li>
+							<li>
+								<strong>Включено (Enabled):</strong> Определяет, должна ли
+								кнопка быть активной и кликабельной.
+							</li>
+							<li>
+								<strong>Жирный шрифт (FontBold):</strong> Определяет, должен ли
+								текст кнопки отображаться жирным. Некоторые шрифты не
+								поддерживают жирное начертание.
+							</li>
+							<li>
+								<strong>Курсив (FontItalic):</strong> Определяет, должен ли
+								текст кнопки отображаться курсивом. Некоторые шрифты не
+								поддерживают курсив.
+							</li>
+							<li>
+								<strong>Размер шрифта (FontSize):</strong> Задает размер шрифта
+								текста кнопки, измеряемый в sp (безразмерных пикселях).
+							</li>
+							<li>
+								<strong>Тип шрифта (FontTypeface):</strong> Задает тип шрифта
+								кнопки: default, serif, sans serif, monospace или custom. Для
+								пользовательского шрифта загрузите файл .ttf в медиа проекта.
+							</li>
+							<li>
+								<strong>Высота (Height):</strong> Задает вертикальную высоту
+								кнопки в пикселях.
+							</li>
+							<li>
+								<strong>Высота в процентах (HeightPercent):</strong> Задает
+								вертикальную высоту кнопки как процент от высоты экрана.
+							</li>
+							<li>
+								<strong>Изображение (Image):</strong> Задает путь к изображению
+								кнопки. Если указаны и изображение, и фоновый цвет, видимым
+								будет только изображение.
+							</li>
+							<li>
+								<strong>Форма (Shape):</strong> Задает форму кнопки. Допустимые
+								значения: 0 (по умолчанию), 1 (округлая), 2 (прямоугольная) и 3
+								(овал). Форма не отображается, если используется изображение.
+							</li>
+							<li>
+								<strong>Показ обратной связи (ShowFeedback):</strong>
+								Определяет, отображается ли визуальная обратная связь при
+								нажатии на кнопку с изображением.
+							</li>
+							<li>
+								<strong>Текст (Text):</strong> Задает текст, выводимый на
+								кнопке.
+							</li>
+							<li>
+								<strong>Выравнивание текста (TextAlignment):</strong> Задает
+								выравнивание текста кнопки. Допустимые значения: 0 (обычное,
+								например, по левому краю), 1 (центр) или 2 (противоположное,
+								например, по правому краю для текста слева направо).
+							</li>
+							<li>
+								<strong>Цвет текста (TextColor):</strong> Задает цвет текста
+								кнопки в виде целого числа alpha-red-green-blue.
+							</li>
+							<li>
+								<strong>Видимость (Visible):</strong> Определяет, должна ли
+								кнопка быть отображена на экране (true – кнопка видна, false –
+								скрыта).
+							</li>
+							<li>
+								<strong>Ширина (Width):</strong> Задает горизонтальную ширину
+								кнопки в пикселях.
+							</li>
+							<li>
+								<strong>Ширина в процентах (WidthPercent):</strong> Задает
+								горизонтальную ширину кнопки как процент от ширины экрана.
+							</li>
+						</ul>
+					</div>
+					<div id="events">
+						<h2>События</h2>
+						<li>...</li>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<div class="read-button-container">
+			<button id="readButton" class="btn-read">Прочитать</button>
+		</div>
+		<script src="scripts/toast.js"></script>
+		<script src="scripts/read-status.js"></script>
+		<script src="scripts/header-loader.js"></script>
+		<script src="scripts/page-navigation.js"></script>
+	</body>
+</html>

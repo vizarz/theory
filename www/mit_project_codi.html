@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hello, Codi</title>
+		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/toast.css" />
+	</head>
+	<body>
+		<div id="header"></div>
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<div class="back-to-index">
+						<a href="mit_projects.html">Вернуться к проектам</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<h1>Проекты</h1>
+			<div style="padding: 10px">
+				<h2 class="ai-header">Building your first app: HelloCodi</h2>
+
+				<p>
+					Now that you've set up your computer and device, and you've learned
+					how the Designer and the Blocks Editor work, you are ready to build
+					the HelloCodi app. At this point, you should have the Designer or
+					Blocks Editor open in your browser, and an Android/iOS device or
+					emulator connected for testing while build. (See
+					<a href="/explore/ai2/setup">Setup Instructions for App Inventor</a>
+					if you do not have these things running.) Choose Start a New Project
+					from the Projects menu and name it HelloCodi.
+				</p>
+
+				<h3>HelloCodi: Tap the Bee, Hear the Bee Buzz!</h3>
+				<p>
+					HelloCodi is a simple app that you can build in a very short time. You
+					create a button that has a picture of Codi the bee on it, and then
+					program the button so that when it is clicked the phone will make a
+					buzzing sound.
+				</p>
+
+				<p>
+					To build HelloCodi, you'll need an image file of Codi the bee.
+					Download these files to your computer by clicking the following links.
+					To download: after clicking a link, right click on the image and
+					select "Save As." Save the file onto your desktop or downloads folder,
+					or anywhere that you can easily find it later.
+				</p>
+
+				<ul>
+					<li>
+						Codi picture:
+						<a href="/explore/sites/all/files/ai2tutorials/helloCodi/codi.jpg">
+							codi.jpg</a
+						>
+						(Right-click and Save)
+					</li>
+					<li>
+						Bee sound:
+						<a
+							href="/explore/sites/all/files/ai2tutorials/helloCodi/Bee-Sound.mp3"
+						>
+							Bee-Sound.mp3</a
+						>
+						(Right-click and Save)
+					</li>
+				</ul>
+
+				<h3>Select components to design your app</h3>
+
+				<div class="row">
+					<div class="col-sm-3">
+						<img
+							src="/explore/sites/all/files/ai2tutorials/helloCodi/button.png"
+							style="width: 100%; border: 1px solid lightgrey"
+							alt="palette with button choice showing"
+						/>
+					</div>
+					<div class="col-sm-9">
+						<p>
+							The App Inventor <b>Components</b> are located on the left hand
+							side of the <em>Designer Window</em> under the title
+							<b>Palette</b>. Components are the basic elements you use to make
+							apps on an Android phone or iPhone. They're like the ingredients
+							in a recipe. Some components are very simple, like a
+							<b>Label</b> component, which just shows text on the screen, or a
+							<b>Button</b> component (#1 left) that you tap to initiate an
+							action.
+						</p>
+
+						<p>
+							Other components are more elaborate: a drawing <b>Canvas</b> that
+							can hold still images or animations, an
+							<b>Accelerometer</b> sensor that works like a Wii controller and
+							detects when you move or shake the phone, components that send
+							text messages, components that play music and video, components
+							that get information from Web sites, and so on.
+						</p>
+					</div>
+				</div>
+
+				<p>
+					To use a component in your app, you need to click and drag it onto the
+					viewer in the middle of the <b>Designer</b>. When you add a component
+					to the <b>Viewer</b> (#1 below), it will also appear in the components
+					list on the right hand side of the Viewer.
+				</p>
+
+				<p>
+					<strong>Components</strong> (#2 below) have adjustable properties.
+					These properties change the way the component appears or behaves
+					within the app. To view and change the <strong>Properties</strong> of
+					a component (#3 below), you must first select the desired component in
+					your list of components.
+				</p>
+
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-8">
+						<img
+							src="/explore/sites/all/files/ai2tutorials/helloCodi/viewer.png"
+							style="border: grey solid 1px; width: 100%"
+							alt="screenshot of designer window"
+						/>
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+
+				<h3>Steps for selecting components and setting properties</h3>
+
+				<p>
+					<span style="color: green">HelloCodi</span> will have a
+					<b>Button</b> component that displays the image of the bee you
+					downloaded earlier. To accomplish this:
+				</p>
+
+				<p>
+					<b>Step 1a</b>. From the <b>User Interface</b> palette, drag and drop
+					the <b>Button</b> component to Screen1 (#1).
+				</p>
+
+				<p>
+					<b>Step 1b</b>.To give the button the image of the bee, in the
+					<b>Properties</b> pane, under Image, click on the text
+					<em>"None..."</em> and click <em>"Upload File..."</em> (#2). A window
+					will pop up to let you choose the image file. Click "Browse" and then
+					navigate to the location of the <em>codi.jpg</em> file you downloaded
+					earlier (#3). Click the <em>codi.jpg</em> file, click "Open", and then
+					click "OK".
+				</p>
+
+				<div class="row">
+					<div class="col-md-1"></div>
+					<div class="col-md-10">
+						<img
+							src="/explore/sites/all/files/ai2tutorials/helloCodi/upload.png"
+							style="border: grey solid 1px; width: 100%"
+							alt="screenshot for uploading media"
+						/>
+					</div>
+					<div class="col-md-1"></div>
+				</div>
+
+				<p>
+					<b>Step 2</b>. Change the Button's <b>Text</b> property:<br />Delete
+					"Text for Button1", leaving the Button's text property blank so that
+					there is no writing over the bee image.
+				</p>
+				<div class="row">
+					<div class="col-sm-4"></div>
+					<div class="col-sm-3">
+						<img
+							src="/explore/sites/all/files/ai2tutorials/helloCodi/text-properties.png"
+							style="width: 100%; border: grey solid 1px"
+							alt="screenshot of text properties"
+						/>
+					</div>
+					<div class="col-sm-5"></div>
+				</div>
+
+				<p>
+					<b>Step 3</b>. From the <b>User Interface</b> palette, drag and drop
+					the <b>Label</b> component to the Viewer <strong>(#1)</strong>,
+					placing it below the picture of the bee. It will appear under your
+					list of components as <strong>Label1</strong>.
+				</p>
+
+				<p>Under the <b>Properties</b> pane, change the</p>
+				<ul style="list-style: none">
+					<li>
+						<b>(2) Text</b> property of Label1 to read "Touch the Bee". You'll
+						see the text change in the Designer and on your device.
+					</li>
+					<li><b>(3) FontSize</b> to 30.</li>
+					<li>
+						<b>(4) BackgroundColor</b> of Label1 by clicking on the box. You can
+						change it to any color you like.
+					</li>
+					<li>
+						<b>(5) TextColor</b> to any color you like. (Note: if
+						BackgroundColor and TextColor are the same, you will not be able to
+						read your text!)
+					</li>
+				</ul>
+				Here, the background color is set to aqua and the text color is set
+				blue.
+				<p></p>
+
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-8">
+						<img
+							src="/explore/sites/all/files/ai2tutorials/helloCodi/label.png"
+							style="border: grey solid 1px; width: 100%"
+							alt="screenshot of setting properties for Lable1"
+						/>
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+
+				<p>
+					<b>Step 4</b>. Under Palette, click on the <b>Media</b> drawer and
+					drag out a <b>Sound</b> component and place it in the Viewer (#1).
+					Wherever you drop it, it will appear in the area at the bottom of the
+					Viewer marked <b>Non-visible components</b>. Under the Media pane,
+					Click Upload File... (#2) Browse to the location of the
+					<em>Bee-Sound.mp3</em> file that you downloaded earlier and upload it
+					to this project (#3). Under the Properties pane, see that the Source
+					property currently says None.... Click the word None... to change the
+					Sound1 component's Source to <em>Bee-Sound.mp3</em> (#4).
+				</p>
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-8">
+						<img
+							src="/explore/sites/all/files/ai2tutorials/helloCodi/sound.png"
+							style="border: grey solid 1px; width: 100%"
+							alt="screenshot of setting propertie for Sound component"
+						/>
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+
+				<h3>Programming with the Blocks Editor</h3>
+				<p>
+					So far you have been arranging your app's screen and components in the
+					<em>Designer</em>, which is in a web browser window. To start
+					programming the behavior of the app, you need to go to the
+					<em>Blocks Editor</em>. Click the Blocks button in the upper right of
+					your screen to go to the Blocks Editor.
+				</p>
+				<div class="row">
+					<div class="col-md-1"></div>
+					<div class="col-md-10">
+						<img
+							src="/explore/sites/all/files/ai2tutorials/helloCodi/blocks.png"
+							style="border: grey solid 1px; width: 100%"
+							alt="switch to blocks editor button"
+						/>
+					</div>
+					<div class="col-md-1"></div>
+				</div>
+
+				<p>
+					Once you have the Blocks Editor in front of you, continue to the next
+					step to start programming your app with blocks.
+				</p>
+
+				<h3>Playing the Sound</h3>
+
+				<p>
+					<b>Step 1</b>. On the left side of the Blocks Editor, click the
+					<b>Button1</b> drawer to open it. Drag and drop the
+					<span class="controlblock-ai2">when Button1.Click</span> block in the
+					work area (the open area on the right).
+				</p>
+
+				<div class="row">
+					<div class="col-md-3"></div>
+					<div class="col-md-6">
+						<img
+							src="/explore/sites/all/files/ai2tutorials/helloCodi/buttonblocks.png"
+							style="border: grey solid 1px; width: 100%"
+							alt="screenshot of button.click block"
+						/>
+					</div>
+					<div class="col-md-3"></div>
+				</div>
+
+				<p>
+					Those mustard yellow blocks are called <b>event handler</b> blocks.
+					The event handler blocks specify how the mobile device should respond
+					to certain events: a button has been pressed, the phone is being
+					shaken, the user is dragging her finger over a canvas, etc.
+					<span class="controlblock-ai2">when Button1.Click</span> is an event
+					handler.
+				</p>
+
+				<p>
+					<b>Step 2a</b>. Click the <b>Sound1</b> drawer and drag the
+					<span class="callblock-ai2">Sound1.Play</span> block and connect it to
+					the "do" section of the
+					<span class="controlblock-ai2">when Button1.Click</span> block. The
+					blocks connect together like puzzle pieces and you can hear a clicking
+					sound when they connect.
+				</p>
+
+				<div class="row">
+					<div class="col-md-3"></div>
+					<div class="col-md-6">
+						<img
+							src="/explore/sites/all/files/ai2tutorials/helloCodi/soundblocks.png"
+							style="border: grey solid 1px; width: 100%"
+							alt="Sound.Play blocks"
+						/>
+					</div>
+					<div class="col-md-3"></div>
+				</div>
+
+				<p>
+					The purple blocks are called <b>command</b> blocks, which are placed
+					in the body of event handlers. When an event handler is executed, it
+					runs the sequence of commands in its body. A command is a block that
+					specifies an action to be performed (e.g., playing sound) when the
+					event (e.g., pressing Button1) is triggered.
+				</p>
+
+				<p>Your blocks should look like this at this point:</p>
+				<div class="row">
+					<div class="col-md-3">
+						<img
+							src="/explore/sites/all/files/ai2tutorials/helloCodi/button1click.png"
+							style="width: 100%"
+							alt="button.click blocks"
+						/>
+					</div>
+					<div class="col-md-9"></div>
+				</div>
+
+				<p>
+					Now you can see that the <b>command block</b> is in the
+					<b>event handler</b>. This set of blocks means; "when Button1 is
+					clicked, Sound1 will play." The event handler is like a category of
+					action (e.g., a button is being clicked), and the command specifies
+					the type of action and the details of the action (e.g., playing a
+					sound).
+				</p>
+
+				<p>
+					You can read more about the blocks and how they work here:
+					<a href="http://ai2.appinventor.mit.edu/reference/blocks/"
+						>App Inventor Built-in Blocks</a
+					>.
+				</p>
+
+				<p>
+					Try it out on your device or with the emulator! When you press the
+					button you should hear the bee buzz. Congratulations, your first app
+					is running!
+				</p>
+
+				<pre class="box">
+Note: there is a known issue with the Sound component on some devices. If you see an "OS Error" and the sound does not play - or is very delayed in playing, go back into the Designer and try using a Player component (found under Media) instead of the Sound component.</pre
+				>
+
+				<h3>Packaging your app</h3>
+
+				<p>
+					While your phone/tablet/emulator has been connected to App Inventor,
+					your app has been running in real time on your device. If you
+					disconnect the device/emulator, the app will vanish. You can always
+					make it return by reconnecting the device, but to have an app running
+					without being connected to App Inventor, you must "<b>package</b>" the
+					app to produce an application package (apk file).
+				</p>
+
+				<p>
+					For now, this last step, packaging apps, only works for Android
+					phones. We are actively working to bring this capability to iOS
+					devices soon!
+				</p>
+				<p>
+					To "package" the app to install on your device or to send to someone
+					else, click the <strong>Build</strong> tab at the top of the screen.
+					Under Build, there are two options available for you to choose from:
+				</p>
+
+				<div class="row">
+					<div class="col-md-6">
+						<img
+							src="/explore/sites/all/files/ai2tutorials/helloCodi/package.png"
+							style="border: grey solid 1px; width: 100%"
+							alt="package menu in App Inventor"
+						/>
+					</div>
+					<div class="col-md-6"></div>
+				</div>
+
+				<p>
+					1. <b>App (provide QR code):</b> You can generate a Barcode (a QR
+					Code), which you can use to install the app on a mobile device that
+					has a camera.
+				</p>
+
+				<p style="color: red">
+					this barcode is only good for two hours. If you want to share your app
+					with others via barcode over a longer period, you'll need to download
+					the .apk file to your computer and use a third-party software to
+					convert the file into a barcode. More information can be found
+					<a href="/explore/ai2/share">here</a>.
+				</p>
+
+				<p>
+					2. <b>App (save to my computer):</b> You can download the app to your
+					computer as an apk file, which you can distribute and share as you
+					like by manually installing it on other devices (sometimes called
+					<a
+						href="http://www.techrepublic.com/blog/smartphones/how-to-side-load-apps-on-your-android-device/3114"
+						target="blank"
+						>"side loading"</a
+					>).
+				</p>
+
+				<h4>Review</h4>
+
+				<p>Here are the key ideas covered so far:</p>
+
+				<ul>
+					<li>
+						You build apps by selecting components (ingredients) and then
+						telling them what to do and when to do it.
+					</li>
+					<li>
+						You use the <strong>Designer</strong> to select components and set
+						each component's properties. Some components are visible and some
+						aren't.
+					</li>
+					<li>
+						You can add media (sounds and images) to apps by uploading them from
+						your computer.
+					</li>
+					<li>
+						You use the <strong>Blocks Editor</strong> to assemble blocks that
+						define the components' behavior
+					</li>
+					<li>
+						<span class="controlblock-ai2">when ... do ...</span> blocks define
+						<em>event handlers</em>, that tell components what to do
+						<em>when</em> something happens.
+					</li>
+					<li>
+						<span class="callblock-ai2">call ...</span> blocks tell components
+						to do things.
+					</li>
+				</ul>
+
+				<h4 class="ai-header">Scan the Sample App to your Phone</h4>
+
+				<p>
+					Scan the following barcode onto your phone to install and run the
+					sample app.
+				</p>
+				<p></p>
+				<div class="row">
+					<div class="col-md-3">
+						<img
+							src="/explore/sites/all/files/ai2tutorials/helloCodi/HelloCodiBarcode.jpg"
+							width="100%"
+							alt="qr code for hellocodi apk"
+						/>
+					</div>
+					<div class="col-md-9"></div>
+				</div>
+
+				<p>
+					Or
+					<a
+						href="/explore/sites/all/files/ai2tutorials/helloCodi/HelloCodi.apk"
+						>download the apk</a
+					>
+				</p>
+				<h4 class="ai-header">Download Source Code</h4>
+
+				<p>
+					If you'd like to work with this sample in App Inventor, download the
+					<a
+						href="/explore/sites/all/files/ai2tutorials/helloCodi/HelloCodi.aia"
+						>source code</a
+					>
+					to your computer, then open App Inventor, click <b>Projects</b>,
+					choose <b>Import project (.aia) from my computer...</b>, and select
+					the source code you just downloaded.
+				</p>
+
+				<h4 class="ai-header">Next steps</h4>
+
+				<p>
+					Now that you know the basics of how App Inventor works we recommend
+					you:
+				</p>
+
+				<ul>
+					<li>
+						Complete additional <a href="/explore/ai2/tutorials">Tutorials</a>.
+					</li>
+					<li>
+						Review the
+						<a href="/explore/library">User Guide for App Inventor</a>.
+					</li>
+					<li>
+						Join the
+						<a href="https://community.appinventor.mit.edu"
+							>Community Discussion Forum</a
+						>.
+					</li>
+					<li>
+						Read the guide to
+						<a href="http://ai2.appinventor.mit.edu/reference/blocks/"
+							>Built-in Blocks</a
+						><a>.</a>
+					</li>
+					<a> </a>
+					<li>
+						<a
+							>Or, if you've been using the emulator and want to start using
+							your mobile, you can </a
+						><a href="/explore/ai2/setup">set up your Android/iOS device</a> to
+						build apps.
+					</li>
+				</ul>
+
+				<pre
+					class="ai-box"
+				>Something not working right? Visit the <a href="/explore/ai2/support/troubleshooting">troubleshooting page</a>, or check the <a href="https://community.appinventor.mit.edu">App Inventor Community Forum</a> for help.</pre>
+			</div>
+		</div>
+		<div class="read-button-container">
+			<button id="readButton" class="btn-read">Прочитать</button>
+		</div>
+		<script src="scripts/read-status.js"></script>
+		<script src="scripts/toast.js"></script>
+		<script src="scripts/header-loader.js"></script>
+		<script src="scripts/page-navigation.js"></script>
+	</body>
+</html>
