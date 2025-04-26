@@ -13,7 +13,10 @@ function markCompleted(stepId) {
 	var stepElem = document.getElementById(stepId)
 	if (stepElem) {
 		stepElem.classList.add('completed')
-		var content = stepElem.querySelector('.accordion-header')
-		if (content) content.classList.remove('open')
+		var content = stepElem.querySelector('.accordion-content')
+		if (content) {
+			content.classList.remove('open')
+			content.style.maxHeight = null
+		}
 	}
 }
