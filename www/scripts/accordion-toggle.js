@@ -8,3 +8,12 @@ document.querySelectorAll('.accordion-header').forEach(button => {
 			: null
 	})
 })
+// Кнопка "Пометить как выполнено" закрывает соответствующий аккордеон
+function markCompleted(stepId) {
+	var stepElem = document.getElementById(stepId)
+	if (stepElem) {
+		stepElem.classList.add('completed')
+		var content = stepElem.querySelector('.accordion-header')
+		if (content) content.classList.remove('open')
+	}
+}

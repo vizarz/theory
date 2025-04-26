@@ -39,14 +39,22 @@
 					</button>
 					<div class="accordion-content">
 						<p>
-							<li>Откройте MIT App Inventor.</li>
+							<li>
+								Откройте
+								<a href="https://appinventor.mit.edu" target="_blank"
+									>MIT App Inventor</a
+								>.
+							</li>
+							<li>Нажмите на кнопку "Create Apps!"</li>
 							<img class="project-img" src="images/mit_create_apps.jpeg" />
 							<li>Войдите в свою учетную запись.</li>
-							<li>Выберите "Projects" в верхнем меню.</li>
-							<li>Нажмите "Create Apps" → "Start new project".</li>
-							<li>
-								Введите название проекта, например, "HelloWorld", и нажмите OK.
-							</li>
+							<img class="project-img" src="images/mit_google_login.jpg" />
+
+							<li>Выберите "New Project" в верхнем меню.</li>
+							<img class="project-img" src="images/mit_new_project.jpg" />
+
+							<li>Введите название проекта "HelloWorld" и нажмите OK.</li>
+							<img class="project-img" src="images/mit_project_okey.jpeg" />
 						</p>
 						<button class="btn-read" onclick="markCompleted('step1')">
 							Пометить как выполнено
@@ -55,32 +63,109 @@
 				</div>
 				<div class="accordion-item" id="step2">
 					<button class="accordion-header" onclick="toggleStep('step2')">
-						Шаг 2: Создание проекта
+						Шаг 2: Добавление компонентов (вкладка Designer)
 					</button>
 					<div class="accordion-content">
 						<p>
-							Создайте новый проект в Unity и настройте его основные параметры.
+							<li>
+								В панели компонентов <b>Интерфейс пользователя</b> найдите
+								<b>Надпись</b>.
+							</li>
+							<img
+								class="project-img"
+								src="images/mit_project_user_interface.jpeg"
+							/>
+							<li>
+								Перетащите его на экран смартфона (в визуальном редакторе).
+							</li>
+							<img
+								class="project-img"
+								src="images/mit_project_add_label.jpeg"
+							/>
+							<li>
+								В свойствах (Properties) справа можно изменить:
+								<br />
+								<b>Текст</b> – оставьте пустым (пока ничего не отображается).
+								<br /><b>РазмерТекста</b> – например, 20 (чтобы текст был
+								крупнее). <br /><b>ЦветТекста</b> – выберите цвет (например,
+								чёрный или синий).
+							</li>
+							<img
+								style="width: 20%"
+								class="project-img"
+								src="images/mit_project_label_properties.jpeg"
+							/>
 						</p>
-						<button class="btn-read" onclick="markCompleted('step2')">
-							Пометить как выполнено
-						</button>
+						<p>
+							<li>
+								В панели компонентов <b>Интерфейс пользователя</b> найдите
+								<b>Кнопка</b>.
+							</li>
+							<img
+								class="project-img"
+								src="images/mit_project_user_interface.jpeg"
+							/>
+							<li>
+								Перетащите его на экран смартфона (в визуальном редакторе).
+							</li>
+							<img
+								class="project-img"
+								src="images/mit_project_add_button.jpeg"
+							/>
+							<li>
+								В свойствах (Properties) справа можно изменить:
+								<br />
+								<b>Текст</b> – "Привет!". <br /><b>РазмерТекста</b> – например,
+								20 (чтобы текст был крупнее). <br /><b>ЦветТекста</b>
+								– выберите цвет (например, чёрный или синий).
+							</li>
+							<img
+								style="width: 20%"
+								class="project-img"
+								src="images/mit_project_button_properties.jpeg"
+							/>
+							<button class="btn-read" onclick="markCompleted('step2')">
+								Пометить как выполнено
+							</button>
+						</p>
 					</div>
 				</div>
 				<div class="accordion-item" id="step3">
 					<button class="accordion-header" onclick="toggleStep('step3')">
-						Шаг 3: Разработка игрового процесса
+						Шаг 3: Программирование кнопки (вкладка Blocks)
 					</button>
 					<div class="accordion-content">
 						<p>
-							Добавьте основные компоненты, настройте сцены, реализуйте игровую
-							логику и т.д.
+							<li>Перейдите на вкладку <b>Blocks</b>.</li>
+							<img
+								class="project-img"
+								src="images/mit_project_transit_to_blocks.jpeg"
+							/>
+							<li>
+								В левой панели выберите Кнопка1 → нажмите на него и перетащите
+								блок: когда Кнопка1.Щелчок делать
+							</li>
+							<img
+								class="project-img"
+								src="images/mit_project_choose_button.jpeg"
+							/>
+							<li>
+								Теперь выберите Надпись1 → перетащите блок: присвоить
+								Надпись1.Текст
+								<br />Вставьте блок текста (из вкладки Текст) и присоедините его
+								к предыдущим блокам. <br />Вставьте текст "Привет, мир!" в блок
+								текста.
+							</li>
+							<img
+								class="project-img"
+								src="images/mit_project_helloworld_blocks.png"
+							/>
 						</p>
 						<button class="btn-read" onclick="markCompleted('step3')">
 							Пометить как выполнено
 						</button>
 					</div>
 				</div>
-				<!-- Дополнительные шаги можно добавить аналогичным образом -->
 			</div>
 		</div>
 		<div class="read-button-container">
@@ -88,16 +173,9 @@
 		</div>
 		<script src="scripts/read-status.js"></script>
 		<script src="scripts/toast.js"></script>
-		<script src="scripts/accordion-toggle.js"></script>
 		<script src="scripts/header-loader.js"></script>
 		<script src="scripts/page-navigation.js"></script>
-		<script>
-			function markCompleted(stepId) {
-				var stepElem = document.getElementById(stepId)
-				if (stepElem) {
-					stepElem.classList.toggle('completed')
-				}
-			}
-		</script>
+		<script src="scripts/accordion-project.js"></script>
+		<script src="scripts/accordion-toggle.js"></script>
 	</body>
 </html>
