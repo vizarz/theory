@@ -5,6 +5,13 @@
 		<title>Админ-панель</title>
 		<link rel="stylesheet" href="styles/styles.css" />
 		<link rel="stylesheet" href="styles/toast.css" />
+		<style>
+			.btn-read {
+				padding: 10px 20px;
+				cursor: pointer;
+			}
+			/* Оставляем стили модального окна и формы, как было ранее */
+		</style>
 	</head>
 	<body>
 		<div id="header"></div>
@@ -12,50 +19,97 @@
 			<h1>Админ-панель</h1>
 
 			<!-- Раздел смены пароля пользователя -->
-			<button id="toggleChangePasswordBtn" class="btn-read">
-				Сменить пароль пользователя
-			</button>
-			<div id="adminChangePasswordForm" class="slide-form">
-				<!-- Выпадающий список пользователей -->
-				<select id="userSelect" required>
-					<option value="">Выберите пользователя</option></select
-				><br />
-				<input
-					type="password"
-					id="newPassword"
-					placeholder="Новый пароль"
-					required
-				/><br />
-				<input
-					type="password"
-					id="confirmNewPassword"
-					placeholder="Повторите новый пароль"
-					required
-				/><br />
-				<button type="submit" id="submitChangePasswordBtn" class="btn-read">
-					Сменить пароль
+			<section id="changePasswordSection">
+				<h2>Смена пароля пользователя</h2>
+				<button id="toggleChangePasswordBtn" class="btn-read">
+					Сменить пароль пользователя
 				</button>
-			</div>
+				<div id="adminChangePasswordForm" class="slide-form">
+					<!-- Кнопка выбора пользователя через модальное окно -->
+					<button id="chooseUserBtnExternalCP" class="btn-read">
+						Выбрать пользователя
+					</button>
+					<!-- Метка для отображения выбранного пользователя -->
+					<span id="selectedUserLabelCP"></span>
+					<!-- Скрытый input для выбранного пользователя -->
+					<input type="hidden" id="userSelect" required />
+					<br />
+					<input
+						type="password"
+						id="newPassword"
+						placeholder="Новый пароль"
+						required
+					/><br />
+					<input
+						type="password"
+						id="confirmNewPassword"
+						placeholder="Повторите новый пароль"
+						required
+					/><br />
+					<button type="submit" id="submitChangePasswordBtn" class="btn-read">
+						Сменить пароль
+					</button>
+				</div>
+			</section>
+
+			<hr />
 
 			<!-- Раздел просмотра прочитанных страниц -->
-			<button id="togglePageReadsBtn" class="btn-read">
-				Просмотр прочитанных страниц
-			</button>
-			<div id="adminPageReadsForm" class="slide-form">
-				<!-- Выпадающий список пользователей -->
-				<select id="userSelectReads" required>
-					<option value="">Выберите пользователя</option></select
-				><br />
-				<button type="button" id="loadPageReadsBtn" class="btn-read">
-					Загрузить лог чтения
+			<section id="pageReadsSection">
+				<h2>Просмотр прочитанных страниц</h2>
+				<button id="togglePageReadsBtn" class="btn-read">
+					Просмотр прочитанных страниц
 				</button>
-				<!-- Контейнер для таблицы с логами -->
-				<div id="pageReadsTableContainer"></div>
+				<div id="adminPageReadsForm" class="slide-form">
+					<!-- Кнопка выбора пользователя через модальное окно -->
+					<button id="chooseUserBtnExternalPR" class="btn-read">
+						Выбрать пользователя
+					</button>
+					<!-- Метка для отображения выбранного пользователя -->
+					<span id="selectedUserLabelPR"></span>
+					<!-- Скрытый input для выбранного пользователя -->
+					<input type="hidden" id="userSelectReads" required />
+					<br />
+					<button type="button" id="loadPageReadsBtn" class="btn-read">
+						Загрузить лог чтения
+					</button>
+					<!-- Контейнер для таблицы с логами -->
+					<div id="pageReadsTableContainer"></div>
+				</div>
+			</section>
+		</div>
+
+		<!-- Модальное окно выбора пользователя -->
+		<div id="userSelectionModal" class="modal">
+			<div class="modal-content">
+				<h2>Выберите пользователя</h2>
+				<input
+					type="text"
+					id="userSearchInput"
+					placeholder="Введите имя или логин пользователя"
+				/>
+				<button id="searchUserBtn" class="btn-read">Найти</button>
+				<br />
+				<select
+					id="userList"
+					size="5"
+					style="
+						width: 100%;
+						margin-top: 10px;
+						margin-bottom: 10px;
+						overflow-y: auto;
+					"
+				></select>
+				<br />
+				<button id="applyUserBtn" class="btn-read">Применить</button>
+				<button id="closeUserModal" class="btn-read">Закрыть</button>
 			</div>
 		</div>
+
 		<script src="scripts/header-loader.js"></script>
 		<script src="scripts/profile-loader.js"></script>
 		<script src="scripts/toast.js"></script>
+		<script src="scripts/admin-user-modal.js"></script>
 		<script src="scripts/admin-changepassword.js"></script>
 		<script src="scripts/admin-page-reads.js"></script>
 	</body>

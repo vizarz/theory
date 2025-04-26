@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Компонент Label</title>
+		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/toast.css" />
+	</head>
+	<body>
+		<div id="header"></div>
+
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li><a href="#properties" class="nav-link">Свойства</a></li>
+				<li>
+					<div class="back-to-index">
+						<a href="index.html#section-2">Вернуться к оглавлению</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<h1>Label</h1>
+			<div class="container">
+				<p>
+					Компоненты Label используются для отображения текста. Метка выводит
+					текст, который задается с помощью свойства Text. Другие свойства,
+					которые можно настроить как в Designer, так и в редакторе Blocks,
+					контролируют внешний вид и размещение текста.
+				</p>
+				<ul>
+					<div id="properties">
+						<h2>Свойства</h2>
+						<dl>
+							<dt>BackgroundColor</dt>
+							<dd>
+								Определяет фоновый цвет метки в виде целого числа формата
+								alpha-red-green-blue.
+							</dd>
+
+							<dt>FontBold</dt>
+							<dd>
+								Определяет, должен ли текст метки отображаться жирным. Некоторые
+								шрифты не поддерживают жирное начертание.
+							</dd>
+
+							<dt>FontItalic</dt>
+							<dd>
+								Определяет, должен ли текст метки отображаться курсивом.
+								Некоторые шрифты не поддерживают курсив.
+							</dd>
+
+							<dt>FontSize</dt>
+							<dd>
+								Определяет размер шрифта текста метки, измеряемый в sp
+								(безразмерных пикселях).
+							</dd>
+
+							<dt>FontTypeface</dt>
+							<dd>
+								Указывает тип шрифта текста метки: default, serif, sans serif
+								или monospace.
+							</dd>
+
+							<dt>HTMLContent</dt>
+							<dd>
+								Возвращает содержимое метки в формате HTML. Полезно, если
+								свойство HTMLFormat установлено в true.
+							</dd>
+
+							<dt>HTMLFormat</dt>
+							<dd>
+								Определяет формат текста метки. Если true, текст форматируется
+								как HTML.
+							</dd>
+
+							<dt>HasMargins</dt>
+							<dd>
+								Определяет, должна ли метка иметь отступы. Это значение отступов
+								может не совпадать с отступами, заданными для компоновки в
+								дизайнере.
+							</dd>
+
+							<dt>Height</dt>
+							<dd>Задает вертикальную высоту метки в пикселях.</dd>
+
+							<dt>HeightPercent</dt>
+							<dd>
+								Задает вертикальную высоту метки как процент от высоты экрана.
+							</dd>
+
+							<dt>Text</dt>
+							<dd>Определяет текст, отображаемый на метке.</dd>
+
+							<dt>TextAlignment</dt>
+							<dd>
+								Определяет выравнивание текста метки: center, normal (например,
+								по левому краю при написании текста слева направо) или opposite
+								(например, по правому краю для текста слева направо).
+							</dd>
+
+							<dt>TextColor</dt>
+							<dd>
+								Задает цвет текста метки в виде целого числа формата
+								alpha-red-green-blue.
+							</dd>
+
+							<dt>Visible</dt>
+							<dd>
+								Определяет, должна ли метка отображаться на экране. Значение
+								true – если метка видима, и false – если скрыта.
+							</dd>
+
+							<dt>Width</dt>
+							<dd>Задает горизонтальную ширину метки в пикселях.</dd>
+
+							<dt>WidthPercent</dt>
+							<dd>
+								Задает горизонтальную ширину метки как процент от ширины экрана.
+							</dd>
+						</dl>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<div class="read-button-container">
+			<button id="readButton" class="btn-read">Прочитать</button>
+		</div>
+		<script src="scripts/toast.js"></script>
+		<script src="scripts/read-status.js"></script>
+		<script src="scripts/header-loader.js"></script>
+		<script src="scripts/page-navigation.js"></script>
+	</body>
+</html>

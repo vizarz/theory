@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Компонент LinearProgress</title>
+		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/toast.css" />
+	</head>
+	<body>
+		<div id="header"></div>
+
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<a href="#methods" class="nav-link">Методы</a>
+				</li>
+				<li><a href="#properties" class="nav-link">Свойства</a></li>
+				<li><a href="#events" class="nav-link">События</a></li>
+				<li>
+					<div class="back-to-index">
+						<a href="index.html#section-2">Вернуться к оглавлению</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<h1>LinearProgress</h1>
+			<div class="container">
+				<p>
+					Компонент отображает горизонтальную полосу прогресса, которая
+					визуализирует выполнение задачи (например, загрузки, обработки данных
+					или отслеживания этапов). Полезен для информирования пользователя о
+					текущем статусе длительных операций.
+				</p>
+				<ul>
+					<div id="methods">
+						<h2>Методы</h2>
+						<dl>
+							<dt>IncrementProgressBy(value)</dt>
+							<dd>
+								Увеличивает значение прогресса прогресс-бара на указанную
+								величину.
+							</dd>
+						</dl>
+					</div>
+					<div id="properties">
+						<h2>Свойства</h2>
+						<dl>
+							<dt>Indeterminate</dt>
+							<dd>
+								Указывает, находится ли прогресс-бар в режиме неопределенности.
+							</dd>
+
+							<dt>IndeterminateColor</dt>
+							<dd>Изменяет цвет прогресс-бара в режиме неопределенности.</dd>
+
+							<dt>Maximum</dt>
+							<dd>
+								Устанавливает верхнюю границу диапазона прогресс-бара
+								(максимальное значение).
+							</dd>
+
+							<dt>Minimum</dt>
+							<dd>
+								Устанавливает нижнюю границу диапазона прогресс-бара
+								(минимальное значение). Функция работает только для устройств с
+								API >= 26.
+							</dd>
+
+							<dt>Progress</dt>
+							<dd>Возвращает текущее значение прогресса прогресс-бара.</dd>
+
+							<dt>ProgressColor</dt>
+							<dd>Изменяет цвет заполненной части прогресс-бара.</dd>
+
+							<dt>Visible</dt>
+							<dd>
+								Определяет, должен ли LinearProgress отображаться на экране.
+								Значение true – если элемент виден, и false – если скрыт.
+							</dd>
+
+							<dt>Width</dt>
+							<dd>
+								Устанавливает горизонтальную ширину LinearProgress в пикселях.
+							</dd>
+
+							<dt>WidthPercent</dt>
+							<dd>
+								Устанавливает горизонтальную ширину LinearProgress как процент
+								от ширины экрана.
+							</dd>
+						</dl>
+					</div>
+					<div id="events">
+						<h2>События</h2>
+						<dl>
+							<dt>ProgressChanged(progress)</dt>
+							<dd>
+								Событие, которое указывает на изменение уровня прогресса в
+								прогресс-баре. Возвращает текущее значение прогресса. Если
+								свойство “Indeterminate” установлено в true, то возвращается
+								“0”.
+							</dd>
+						</dl>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<div class="read-button-container">
+			<button id="readButton" class="btn-read">Прочитать</button>
+		</div>
+		<script src="scripts/toast.js"></script>
+		<script src="scripts/read-status.js"></script>
+		<script src="scripts/header-loader.js"></script>
+		<script src="scripts/page-navigation.js"></script>
+	</body>
+</html>

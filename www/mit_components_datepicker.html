@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Компонент DatePicker</title>
+		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/toast.css" />
+	</head>
+	<body>
+		<div id="header"></div>
+
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<a href="#methods" class="nav-link">Методы</a>
+				</li>
+				<li><a href="#properties" class="nav-link">Свойства</a></li>
+				<li><a href="#events" class="nav-link">События</a></li>
+				<li>
+					<div class="back-to-index">
+						<a href="index.html#section-2">Вернуться к оглавлению</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<h1>DatePicker</h1>
+			<div class="container">
+				<p>
+					Кнопка, при нажатии на которую, открывается всплывающее окно,
+					позволяющее пользователю выбрать дату по Григорианскому календарю.
+				</p>
+				<p>
+					Примечание: Дата и время управляются с помощью методов компонента
+					Clock.
+				</p>
+				<ul>
+					<div id="methods">
+						<h2>Методы</h2>
+						<dl>
+							<dt>LaunchPicker()</dt>
+							<dd>
+								Запускает диалоговое окно DatePicker. Событие AfterDateSet
+								срабатывает после подтверждения пользователем выбранной даты.
+							</dd>
+
+							<dt>SetDateToDisplay(year, month, day)</dt>
+							<dd>
+								Позволяет задать дату для отображения при открытии DatePicker.
+								Допустимые значения: месяц – от 1 до 12, день – от 1 до 31.
+							</dd>
+
+							<dt>SetDateToDisplayFromInstant(instant)</dt>
+							<dd>
+								Позволяет задать дату для отображения при открытии DatePicker,
+								основанную на переданном моменте времени (instant).
+							</dd>
+						</dl>
+					</div>
+					<div id="properties">
+						<h2>Свойства</h2>
+						<dl>
+							<dt>BackgroundColor</dt>
+							<dd>
+								Определяет фоновый цвет DatePicker в виде целого числа формата
+								alpha-red-green-blue. Если установлено изображение, изменение
+								цвета не будет видно, пока изображение не удалено.
+							</dd>
+
+							<dt>Day</dt>
+							<dd>
+								Возвращает число дня месяца, который был выбран с помощью
+								DatePicker.
+							</dd>
+
+							<dt>Enabled</dt>
+							<dd>
+								Определяет, должен ли DatePicker быть активным и кликабельным.
+							</dd>
+
+							<dt>FontBold</dt>
+							<dd>
+								Определяет, должен ли текст DatePicker отображаться жирным.
+								Некоторые шрифты не поддерживают жирное начертание.
+							</dd>
+
+							<dt>FontItalic</dt>
+							<dd>
+								Определяет, должен ли текст DatePicker отображаться курсивом.
+								Некоторые шрифты не поддерживают курсив.
+							</dd>
+
+							<dt>FontSize</dt>
+							<dd>
+								Определяет размер шрифта текста DatePicker, измеряемый в sp
+								(безразмерных пикселях).
+							</dd>
+
+							<dt>FontTypeface</dt>
+							<dd>
+								Задает тип шрифта DatePicker: default, serif, sans serif,
+								monospace или custom. Для пользовательского шрифта загрузите
+								файл .ttf в медиа проекта.
+							</dd>
+
+							<dt>Height</dt>
+							<dd>Определяет вертикальную высоту DatePicker в пикселях.</dd>
+
+							<dt>HeightPercent</dt>
+							<dd>
+								Определяет вертикальную высоту DatePicker как процент от высоты
+								экрана.
+							</dd>
+
+							<dt>Image</dt>
+							<dd>
+								Указывает путь к изображению DatePicker. Если заданы и
+								изображение, и фоновый цвет, видимым будет только изображение.
+							</dd>
+
+							<dt>Instant</dt>
+							<dd>Возвращает момент времени выбранной даты.</dd>
+
+							<dt>Month</dt>
+							<dd>Возвращает номер месяца, выбранного с помощью DatePicker.</dd>
+
+							<dt>MonthInText</dt>
+							<dd>
+								Возвращает название месяца, выбранного с помощью DatePicker.
+							</dd>
+
+							<dt>Shape</dt>
+							<dd>
+								Определяет форму DatePicker. Допустимые значения: 0 (по
+								умолчанию), 1 (округлая), 2 (прямоугольная) и 3 (овал). Форма не
+								отображается, если используется изображение.
+							</dd>
+
+							<dt>ShowFeedback</dt>
+							<dd>
+								Определяет, должна ли отображаться визуальная обратная связь при
+								нажатии на DatePicker с изображением.
+							</dd>
+
+							<dt>Text</dt>
+							<dd>Определяет текст, отображаемый на DatePicker.</dd>
+
+							<dt>TextAlignment</dt>
+							<dd>
+								Определяет выравнивание текста DatePicker. Допустимые значения:
+								0 (обычное, например, по левому краю для текста слева направо),
+								1 (центр) или 2 (противоположное, например, по правому краю для
+								текста слева направо).
+							</dd>
+
+							<dt>TextColor</dt>
+							<dd>
+								Определяет цвет текста DatePicker в виде целого числа
+								alpha-red-green-blue.
+							</dd>
+
+							<dt>Visible</dt>
+							<dd>
+								Определяет, должен ли DatePicker отображаться на экране.
+								Значение true – если отображается, и false – если скрыт.
+							</dd>
+
+							<dt>Width</dt>
+							<dd>Определяет горизонтальную ширину DatePicker в пикселях.</dd>
+
+							<dt>WidthPercent</dt>
+							<dd>
+								Определяет горизонтальную ширину DatePicker как процент от
+								ширины экрана.
+							</dd>
+
+							<dt>Year</dt>
+							<dd>Возвращает год, выбранный с помощью DatePicker.</dd>
+						</dl>
+					</div>
+					<div id="events">
+						<h2>События</h2>
+						<dl>
+							<dt>AfterDateSet()</dt>
+							<dd>
+								Событие, которое срабатывает после того, как пользователь
+								выберет дату в диалоговом окне.
+							</dd>
+
+							<dt>GotFocus()</dt>
+							<dd>
+								Означает, что курсор переместился на DatePicker, и теперь по
+								нему можно кликнуть.
+							</dd>
+
+							<dt>LostFocus()</dt>
+							<dd>
+								Означает, что курсор переместился с DatePicker, и теперь по нему
+								нельзя кликнуть.
+							</dd>
+
+							<dt>TouchDown()</dt>
+							<dd>Означает, что DatePicker был нажат.</dd>
+
+							<dt>TouchUp()</dt>
+							<dd>Означает, что DatePicker был отпущен.</dd>
+						</dl>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<div class="read-button-container">
+			<button id="readButton" class="btn-read">Прочитать</button>
+		</div>
+		<script src="scripts/toast.js"></script>
+		<script src="scripts/read-status.js"></script>
+		<script src="scripts/header-loader.js"></script>
+		<script src="scripts/page-navigation.js"></script>
+	</body>
+</html>

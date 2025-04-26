@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Проект "Привет, мир!"</title>
+		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/toast.css" />
+	</head>
+	<body>
+		<div id="header"></div>
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<div class="back-to-index">
+						<a href="mit_projects.html">Вернуться к проектам</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<h1>Проект "Привет, мир!"</h1>
+			<p>
+				<strong>Цель</strong>: Создать простое мобильное приложение, которое при
+				нажатии на кнопку выводит сообщение "Привет, мир!".
+				<br />
+				Этот проект поможет познакомиться с основными элементами MIT App
+				Inventor: Добавление кнопки (Button) и надписи (Label) на экран.
+				Программирование реакции на нажатие кнопки с помощью блоков.
+			</p>
+			<p>
+				Следуйте приведенным ниже шагам для реализации проекта. После каждого
+				выполненного шага нажмите кнопку «Пометить как выполнено».
+			</p>
+			<div class="accordion">
+				<div class="accordion-item" id="step1">
+					<button class="accordion-header" onclick="toggleStep('step1')">
+						Шаг 1: Создание нового проекта
+					</button>
+					<div class="accordion-content">
+						<p>
+							<li>Откройте MIT App Inventor.</li>
+							<img class="project-img" src="images/mit_create_apps.jpeg" />
+							<li>Войдите в свою учетную запись.</li>
+							<li>Выберите "Projects" в верхнем меню.</li>
+							<li>Нажмите "Create Apps" → "Start new project".</li>
+							<li>
+								Введите название проекта, например, "HelloWorld", и нажмите OK.
+							</li>
+						</p>
+						<button class="btn-read" onclick="markCompleted('step1')">
+							Пометить как выполнено
+						</button>
+					</div>
+				</div>
+				<div class="accordion-item" id="step2">
+					<button class="accordion-header" onclick="toggleStep('step2')">
+						Шаг 2: Создание проекта
+					</button>
+					<div class="accordion-content">
+						<p>
+							Создайте новый проект в Unity и настройте его основные параметры.
+						</p>
+						<button class="btn-read" onclick="markCompleted('step2')">
+							Пометить как выполнено
+						</button>
+					</div>
+				</div>
+				<div class="accordion-item" id="step3">
+					<button class="accordion-header" onclick="toggleStep('step3')">
+						Шаг 3: Разработка игрового процесса
+					</button>
+					<div class="accordion-content">
+						<p>
+							Добавьте основные компоненты, настройте сцены, реализуйте игровую
+							логику и т.д.
+						</p>
+						<button class="btn-read" onclick="markCompleted('step3')">
+							Пометить как выполнено
+						</button>
+					</div>
+				</div>
+				<!-- Дополнительные шаги можно добавить аналогичным образом -->
+			</div>
+		</div>
+		<div class="read-button-container">
+			<button id="readButton" class="btn-read">Прочитать</button>
+		</div>
+		<script src="scripts/read-status.js"></script>
+		<script src="scripts/toast.js"></script>
+		<script src="scripts/accordion-toggle.js"></script>
+		<script src="scripts/header-loader.js"></script>
+		<script src="scripts/page-navigation.js"></script>
+		<script>
+			function markCompleted(stepId) {
+				var stepElem = document.getElementById(stepId)
+				if (stepElem) {
+					stepElem.classList.toggle('completed')
+				}
+			}
+		</script>
+	</body>
+</html>

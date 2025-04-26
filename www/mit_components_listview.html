@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Компонент ListView</title>
+		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/toast.css" />
+	</head>
+	<body>
+		<div id="header"></div>
+
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<a href="#methods" class="nav-link">Методы</a>
+				</li>
+				<li><a href="#properties" class="nav-link">Свойства</a></li>
+				<li><a href="#events" class="nav-link">События</a></li>
+				<li>
+					<div class="back-to-index">
+						<a href="index.html#section-2">Вернуться к оглавлению</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<h1>ListView</h1>
+			<div class="container">
+				<p>
+					Компонент ListView – это видимый элемент, который отображает список
+					текстовых и графических элементов на экране. Простые списки строк
+					можно задать с помощью свойства ElementsFromString. Более сложные
+					списки, содержащие несколько строк и/или изображений, можно создать,
+					используя свойства ListData и ListViewLayout.
+				</p>
+				<p>
+					<strong>Внимание:</strong> Этот компонент будет работать некорректно
+					на экранах с возможностью прокрутки, если его высота установлена в
+					режим Fill Parent.
+				</p>
+				<ul>
+					<div id="methods">
+						<h2>Методы</h2>
+						<dl>
+							<dt>AddItem(mainText, detailText, imageName)</dt>
+							<dd>Добавляет новый элемент в список.</dd>
+
+							<dt>AddItemAtIndex(index, mainText, detailText, imageName)</dt>
+							<dd>Добавляет новый элемент в список по заданному индексу.</dd>
+
+							<dt>AddItems(itemsList)</dt>
+							<dd>Добавляет новые элементы в список.</dd>
+
+							<dt>AddItemsAtIndex(index, itemsList)</dt>
+							<dd>Добавляет новые элементы в список по заданному индексу.</dd>
+
+							<dt>CreateElement(mainText, detailText, imageName)</dt>
+							<dd>
+								Создает элемент списка с указанным основным текстом,
+								дополнительным текстом и именем изображения.
+							</dd>
+
+							<dt>GetDetailText(listElement)</dt>
+							<dd>
+								Возвращает дополнительный текст (Detail Text) для данного
+								элемента ListView.
+							</dd>
+
+							<dt>GetImageName(listElement)</dt>
+							<dd>
+								Возвращает имя файла изображения, загруженного в Media, для
+								данного элемента ListView.
+							</dd>
+
+							<dt>GetMainText(listElement)</dt>
+							<dd>
+								Возвращает основной текст (Main Text) для данного элемента
+								ListView.
+							</dd>
+
+							<dt>RemoveItemAtIndex(index)</dt>
+							<dd>Удаляет элемент из списка по заданному индексу.</dd>
+						</dl>
+					</div>
+					<div id="properties">
+						<h2>Свойства</h2>
+						<dl>
+							<dt>BackgroundColor</dt>
+							<dd>Задает цвет фона ListView.</dd>
+
+							<dt>BounceEdgeEffect</dt>
+							<dd>
+								Устанавливает функцию эффекта отскока. Значение true включает
+								эффект, false – отключает.
+							</dd>
+
+							<dt>DividerColor</dt>
+							<dd>Задает цвет разделителя ListView.</dd>
+
+							<dt>DividerThickness</dt>
+							<dd>Определяет толщину разделителя в ListView.</dd>
+
+							<dt>ElementColor</dt>
+							<dd>Задает цвет элемента ListView.</dd>
+
+							<dt>ElementCornerRadius</dt>
+							<dd>Определяет радиус скругления углов элемента списка.</dd>
+
+							<dt>ElementMarginsWidth</dt>
+							<dd>Задает ширину отступов элемента ListView.</dd>
+
+							<dt>Elements</dt>
+							<dd>Задает список вариантов для отображения в ListView.</dd>
+
+							<dt>ElementsFromString</dt>
+							<dd>
+								Задает список вариантов как строку с элементами, разделенными
+								запятыми, например: Cheese,Fruit,Bacon,Radish.
+							</dd>
+
+							<dt>FontSizeDetail</dt>
+							<dd>
+								Определяет размер шрифта дополнительного текста элементов
+								ListView.
+							</dd>
+
+							<dt>FontTypeface</dt>
+							<dd>
+								Задает тип шрифта основного текста ListView (default, serif,
+								sans serif или monospace).
+							</dd>
+
+							<dt>FontTypefaceDetail</dt>
+							<dd>
+								Задает тип шрифта дополнительного текста ListView (default,
+								serif, sans serif или monospace).
+							</dd>
+
+							<dt>Height</dt>
+							<dd>Задает вертикальную высоту ListView в пикселях.</dd>
+
+							<dt>HeightPercent</dt>
+							<dd>
+								Задает вертикальную высоту ListView как процент от высоты
+								экрана.
+							</dd>
+
+							<dt>HintText</dt>
+							<dd>Устанавливает подсказку в строке фильтра.</dd>
+
+							<dt>ImageHeight</dt>
+							<dd>
+								Задает высоту изображения в макетах ListView, содержащих
+								изображения.
+							</dd>
+
+							<dt>ImageWidth</dt>
+							<dd>
+								Задает ширину изображения в макетах ListView, содержащих
+								изображения.
+							</dd>
+
+							<dt>ListData</dt>
+							<dd>
+								Задает данные для отображения в элементах ListView. Это свойство
+								определяет элементы, указанные в ListViewLayout. Например, если
+								выбран макет "Image,MainText", оно позволяет задать элементы,
+								каждый из которых содержит имя файла для Image и строку для
+								MainText. Свойство доступно только в Designer.
+							</dd>
+
+							<dt>ListViewLayout</dt>
+							<dd>Задает тип макета для строки ListView.</dd>
+
+							<dt>Orientation</dt>
+							<dd>
+								Определяет ориентацию макета. Допустимые значения: Vertical –
+								элементы располагаются вертикально друг за другом; Horizontal –
+								отображается один элемент за раз с возможностью пролистывания
+								влево или вправо.
+							</dd>
+
+							<dt>Selection</dt>
+							<dd>
+								Возвращает текст выбранного элемента ListView по позиции,
+								указанной в SelectionIndex.
+							</dd>
+
+							<dt>SelectionColor</dt>
+							<dd>Задает цвет выбранного элемента ListView.</dd>
+
+							<dt>SelectionDetailText</dt>
+							<dd>
+								Возвращает дополнительный (Secondary/Detail) текст элемента
+								ListView по позиции, указанной в SelectionIndex.
+							</dd>
+
+							<dt>SelectionIndex</dt>
+							<dd>
+								Устанавливает индекс выбранного элемента (начиная с 1). Если
+								элемент не выбран, значение равно 0. Если заданное значение
+								меньше 1 или больше числа элементов, SelectionIndex
+								устанавливается в 0, а Selection — в пустую строку.
+							</dd>
+
+							<dt>ShowFilterBar</dt>
+							<dd>
+								Устанавливает видимость строки фильтра. Значение true – строка
+								видна, false – скрыта.
+							</dd>
+
+							<dt>TextColor</dt>
+							<dd>Задает цвет основного текста элементов ListView.</dd>
+
+							<dt>TextColorDetail</dt>
+							<dd>Задает цвет дополнительного текста в макете ListView.</dd>
+
+							<dt>TextSize</dt>
+							<dd>
+								Определяет размер шрифта основного текста элемента ListView.
+							</dd>
+
+							<dt>Visible</dt>
+							<dd>
+								Определяет, должен ли ListView отображаться на экране (true –
+								виден, false – скрыт).
+							</dd>
+
+							<dt>Width</dt>
+							<dd>Задает горизонтальную ширину ListView в пикселях.</dd>
+
+							<dt>WidthPercent</dt>
+							<dd>
+								Задает горизонтальную ширину ListView как процент от ширины
+								экрана.
+							</dd>
+						</dl>
+					</div>
+					<div id="events">
+						<h2>События</h2>
+						<dl>
+							<dt>AfterPicking()</dt>
+							<dd>
+								Простое событие, которое срабатывает после выбора элемента из
+								списка. Выбранный элемент доступен через свойство Selection.
+							</dd>
+						</dl>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<div class="read-button-container">
+			<button id="readButton" class="btn-read">Прочитать</button>
+		</div>
+		<script src="scripts/toast.js"></script>
+		<script src="scripts/read-status.js"></script>
+		<script src="scripts/header-loader.js"></script>
+		<script src="scripts/page-navigation.js"></script>
+	</body>
+</html>

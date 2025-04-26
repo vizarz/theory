@@ -1,34 +1,36 @@
 document.addEventListener('DOMContentLoaded', function () {
+	console.log('admin-page-reads.js loaded')
+
+	// Кнопка для показа/скрытия формы просмотра прочитанных страниц
 	const toggleReadsBtn = document.getElementById('togglePageReadsBtn')
 	const pageReadsForm = document.getElementById('adminPageReadsForm')
 
 	toggleReadsBtn.addEventListener('click', () => {
 		pageReadsForm.classList.toggle('active')
-		if (pageReadsForm.classList.contains('active')) {
-			fetch('http://localhost:3000/api/admin/users', {
-				headers: {
-					'Content-Type': 'application/json',
-					Authorization: `Bearer ${localStorage.getItem('token')}`,
-				},
-			})
-				.then(response => response.json())
-				.then(users => {
-					const userSelectReads = document.getElementById('userSelectReads')
-					userSelectReads.innerHTML =
-						'<option value="">Выберите пользователя</option>'
-					users.forEach(user => {
-						const option = document.createElement('option')
-						option.value = user.username
-						option.textContent = `${user.username} — ${user.name}`
-						userSelectReads.appendChild(option)
-					})
-				})
-				.catch(error => {
-					showToast('Ошибка загрузки пользователей: ' + error.message, 'error')
-				})
-		}
 	})
 
+	// Обработчик кнопки выбора пользователя через модальное окно для логов
+	const chooseUserBtn = document.getElementById('chooseUserBtnExternalPR')
+	if (chooseUserBtn) {
+		chooseUserBtn.addEventListener('click', () => {
+			console.log('Кнопка chooseUserBtnExternalPR нажата')
+			openUserModal(function (selectedUsername) {
+				console.log('openUserModal callback вызвана с:', selectedUsername)
+				document.getElementById('userSelectReads').value = selectedUsername
+				let option = document.querySelector(
+					"#userList option[value='" + selectedUsername + "']"
+				)
+				let displayText = option ? option.textContent : selectedUsername
+				document.getElementById('selectedUserLabelPR').textContent =
+					'Выбран пользователь: ' + displayText
+				showToast(`Выбран пользователь: ${displayText}`, 'success')
+			})
+		})
+	} else {
+		console.log('Элемент chooseUserBtnExternalPR не найден')
+	}
+
+	// Обработчик загрузки логов для выбранного пользователя
 	document
 		.getElementById('loadPageReadsBtn')
 		.addEventListener('click', function (e) {

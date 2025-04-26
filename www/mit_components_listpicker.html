@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Компонент ListPicker</title>
+		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/toast.css" />
+	</head>
+	<body>
+		<div id="header"></div>
+
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<a href="#methods" class="nav-link">Методы</a>
+				</li>
+				<li><a href="#properties" class="nav-link">Свойства</a></li>
+				<li><a href="#events" class="nav-link">События</a></li>
+				<li>
+					<div class="back-to-index">
+						<a href="index.html#section-2">Вернуться к оглавлению</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<h1>ListPicker</h1>
+			<div class="container">
+				<p>
+					Кнопка, при нажатии на которую, отображается список текстов для выбора
+					пользователем. Тексты можно задавать через Designer или Blocks Editor,
+					устанавливая свойство ElementsFromString в виде объединенной строки с
+					разделителями (например, "choice 1, choice 2, choice 3"), либо задавая
+					свойство Elements как список в редакторе Blocks.
+				</p>
+				<p>
+					Установка свойства ShowFilterBar в true позволит выполнять поиск по
+					списку. Другие свойства, такие как TextAlignment, BackgroundColor и
+					т.д., влияют на внешний вид кнопки и определяют, можно ли по ней
+					кликнуть (свойство Enabled).
+				</p>
+				<ul>
+					<div id="methods">
+						<h2>Методы</h2>
+						<dl>
+							<dt>Open()</dt>
+							<dd>
+								Открывает ListPicker, как если бы пользователь по нему кликнул.
+							</dd>
+						</dl>
+					</div>
+					<div id="properties">
+						<h2>Свойства</h2>
+						<dl>
+							<dt>BackgroundColor</dt>
+							<dd>
+								Задает фоновый цвет ListPicker в виде целого числа формата
+								alpha-red-green-blue. Если установлено изображение, изменение
+								цвета не будет видно, пока изображение не удалено.
+							</dd>
+
+							<dt>Elements</dt>
+							<dd>Задает список вариантов для отображения.</dd>
+
+							<dt>ElementsFromString</dt>
+							<dd>
+								Задает список вариантов из строки, где значения разделены
+								запятыми.
+							</dd>
+
+							<dt>Enabled</dt>
+							<dd>
+								Определяет, должен ли ListPicker быть активным и кликабельным.
+							</dd>
+
+							<dt>FontBold</dt>
+							<dd>
+								Определяет, должен ли текст ListPicker отображаться жирным.
+								Некоторые шрифты не поддерживают жирное начертание.
+							</dd>
+
+							<dt>FontItalic</dt>
+							<dd>
+								Определяет, должен ли текст ListPicker отображаться курсивом.
+								Некоторые шрифты не поддерживают курсив.
+							</dd>
+
+							<dt>FontSize</dt>
+							<dd>
+								Задает размер шрифта текста ListPicker, измеряемый в sp
+								(безразмерных пикселях).
+							</dd>
+
+							<dt>FontTypeface</dt>
+							<dd>
+								Задает тип шрифта ListPicker: default, serif, sans serif,
+								monospace или custom. Для пользовательского шрифта загрузите
+								файл .ttf в медиа проекта.
+							</dd>
+
+							<dt>Height</dt>
+							<dd>Задает вертикальную высоту ListPicker в пикселях.</dd>
+							<dt>HeightPercent</dt>
+							<dd>
+								Задает вертикальную высоту ListPicker как процент от высоты
+								экрана.
+							</dd>
+
+							<dt>Image</dt>
+							<dd>
+								Задает путь к изображению ListPicker. Если установлены и
+								изображение, и фоновый цвет, отображается только изображение.
+							</dd>
+
+							<dt>ItemBackgroundColor</dt>
+							<dd>Задает фоновый цвет элементов списка ListPicker.</dd>
+
+							<dt>ItemTextColor</dt>
+							<dd>Задает цвет текста элементов списка ListPicker.</dd>
+
+							<dt>Selection</dt>
+							<dd>
+								Задает выбранный элемент. При непосредственном изменении
+								программой также изменяется свойство SelectionIndex на первый
+								элемент, соответствующий указанному значению. Если значение
+								отсутствует в Elements, SelectionIndex будет установлен в 0.
+							</dd>
+
+							<dt>SelectionIndex</dt>
+							<dd>Устанавливает индекс выбранного элемента.</dd>
+
+							<dt>Shape</dt>
+							<dd>
+								Задает форму ListPicker. Допустимые значения: 0 (по умолчанию),
+								1 (округлая), 2 (прямоугольная) и 3 (овал). Форма не
+								отображается, если используется изображение.
+							</dd>
+
+							<dt>ShowFeedback</dt>
+							<dd>
+								Определяет, должна ли отображаться визуальная обратная связь при
+								нажатии на ListPicker с изображением.
+							</dd>
+
+							<dt>ShowFilterBar</dt>
+							<dd>
+								Если установлено в true, ListPicker отображает строку поиска для
+								фильтрации списка.
+							</dd>
+
+							<dt>Text</dt>
+							<dd>Задает текст, отображаемый на ListPicker.</dd>
+
+							<dt>TextAlignment</dt>
+							<dd>
+								Определяет выравнивание текста ListPicker. Допустимые значения:
+								0 (обычное, например, по левому краю для текста слева направо),
+								1 (центр) или 2 (противоположное, например, по правому краю для
+								текста слева направо).
+							</dd>
+
+							<dt>TextColor</dt>
+							<dd>
+								Задает цвет текста ListPicker в виде целого числа формата
+								alpha-red-green-blue.
+							</dd>
+
+							<dt>Title</dt>
+							<dd>
+								Необязательное название, отображаемое в верхней части списка
+								вариантов.
+							</dd>
+
+							<dt>Visible</dt>
+							<dd>
+								Определяет, должен ли ListPicker отображаться на экране.
+								Значение true – если элемент виден, и false – если скрыт.
+							</dd>
+
+							<dt>Width</dt>
+							<dd>Задает горизонтальную ширину ListPicker в пикселях.</dd>
+
+							<dt>WidthPercent</dt>
+							<dd>
+								Задает горизонтальную ширину ListPicker как процент от ширины
+								экрана.
+							</dd>
+						</dl>
+					</div>
+					<div id="events">
+						<h2>События</h2>
+						<dl>
+							<dt>AfterPicking()</dt>
+							<dd>
+								Событие, которое срабатывает после завершения работы ListPicker
+								и заполнения свойств.
+							</dd>
+
+							<dt>BeforePicking()</dt>
+							<dd>
+								Срабатывает при нажатии на ListPicker или при его открытии через
+								метод Open, до того как список вариантов будет отображен. Может
+								использоваться для подготовки списка.
+							</dd>
+
+							<dt>GotFocus()</dt>
+							<dd>
+								Означает, что курсор переместился на ListPicker, и по нему можно
+								кликнуть.
+							</dd>
+
+							<dt>LostFocus()</dt>
+							<dd>
+								Означает, что курсор переместился с ListPicker, и теперь по нему
+								нельзя кликнуть.
+							</dd>
+
+							<dt>TouchDown()</dt>
+							<dd>Означает, что ListPicker был нажат.</dd>
+
+							<dt>TouchUp()</dt>
+							<dd>Означает, что ListPicker был отпущен.</dd>
+						</dl>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<div class="read-button-container">
+			<button id="readButton" class="btn-read">Прочитать</button>
+		</div>
+		<script src="scripts/toast.js"></script>
+		<script src="scripts/read-status.js"></script>
+		<script src="scripts/header-loader.js"></script>
+		<script src="scripts/page-navigation.js"></script>
+	</body>
+</html>

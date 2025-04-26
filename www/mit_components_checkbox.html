@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Компонент CheckBox</title>
+		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/toast.css" />
+	</head>
+	<body>
+		<div id="header"></div>
+
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li><a href="#properties" class="nav-link">Свойства</a></li>
+				<li><a href="#events" class="nav-link">События</a></li>
+				<li>
+					<div class="back-to-index">
+						<a href="index.html#section-2">Вернуться к оглавлению</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<h1>Компонент CheckBox</h1>
+			<div class="container">
+				<p>
+					Компоненты CheckBox могут обнаруживать касания пользователя и изменять
+					своё булево (логическое) состояние в ответ. Компонент CheckBox
+					генерирует событие при нажатии пользователя. Существует множество
+					свойств, влияющих на его внешний вид, которые можно настроить в
+					Дизайнере или редакторе блоков.
+				</p>
+				<ul>
+					<div id="properties">
+						<h2>Свойства</h2>
+						<dl>
+							<dt>BackgroundColor</dt>
+							<dd>
+								Определяет цвет фона CheckBox в виде целого числа формата
+								alpha-red-green-blue.
+							</dd>
+
+							<dt>Checked</dt>
+							<dd>
+								Устанавливается в true, если CheckBox отмечен, и в false – если
+								не отмечен.
+							</dd>
+
+							<dt>Enabled</dt>
+							<dd>
+								Определяет, должен ли CheckBox быть активным и кликабельным.
+							</dd>
+
+							<dt>FontBold</dt>
+							<dd>
+								Указывает, должен ли текст CheckBox быть жирным. Некоторые
+								шрифты не поддерживают жирное начертание.
+							</dd>
+
+							<dt>FontItalic</dt>
+							<dd>
+								Указывает, должен ли текст быть наклонным. Некоторые шрифты не
+								поддерживают наклонное начертание.
+							</dd>
+
+							<dt>FontSize</dt>
+							<dd>
+								Определяет размер шрифта текста CheckBox, измеряемый в sp
+								(scale-independent pixels).
+							</dd>
+
+							<dt>FontTypeface</dt>
+							<dd>
+								Определяет тип шрифта текста CheckBox. Возможные значения:
+								default, serif, sans serif, monospace.
+							</dd>
+
+							<dt>Height</dt>
+							<dd>Определяет вертикальную высоту CheckBox в пикселях.</dd>
+
+							<dt>HeightPercent</dt>
+							<dd>
+								Определяет вертикальную высоту CheckBox как процент от высоты
+								экрана.
+							</dd>
+
+							<dt>Text</dt>
+							<dd>Определяет текст, отображаемый на CheckBox.</dd>
+
+							<dt>TextColor</dt>
+							<dd>
+								Определяет цвет текста CheckBox в виде целого числа
+								(alpha-red-green-blue).
+							</dd>
+
+							<dt>Visible</dt>
+							<dd>
+								Определяет, должен ли CheckBox отображаться на экране. Значение
+								true – если видим, и false – если скрыт.
+							</dd>
+
+							<dt>Width</dt>
+							<dd>Определяет горизонтальную ширину CheckBox в пикселях.</dd>
+
+							<dt>WidthPercent</dt>
+							<dd>
+								Определяет горизонтальную ширину CheckBox как процент от ширины
+								экрана.
+							</dd>
+						</dl>
+					</div>
+					<div id="events">
+						<h2>События</h2>
+						<dl>
+							<dt>Changed()</dt>
+							<dd>
+								Событие возникает, когда пользователь нажимает на CheckBox, и
+								его состояние меняется.
+							</dd>
+
+							<dt>GotFocus()</dt>
+							<dd>
+								Событие возникает, когда CheckBox становится активным (получает
+								фокус).
+							</dd>
+
+							<dt>LostFocus()</dt>
+							<dd>Событие возникает, когда CheckBox утрачивает фокус.</dd>
+						</dl>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<div class="read-button-container">
+			<button id="readButton" class="btn-read">Прочитать</button>
+		</div>
+		<script src="scripts/toast.js"></script>
+		<script src="scripts/read-status.js"></script>
+		<script src="scripts/header-loader.js"></script>
+		<script src="scripts/page-navigation.js"></script>
+	</body>
+</html>
