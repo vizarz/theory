@@ -56,7 +56,11 @@
 							<li>Введите название проекта "HelloWorld" и нажмите OK.</li>
 							<img class="project-img" src="images/mit_project_okey.jpeg" />
 						</p>
-						<button class="btn-read" onclick="markCompleted('step1')">
+						<button
+							id="btn-step1"
+							class="btn-read"
+							onclick="markCompleted('step1', 'Создание нового проекта')"
+						>
 							Пометить как выполнено
 						</button>
 					</div>
@@ -125,7 +129,11 @@
 								src="images/mit_project_button_properties.jpeg"
 							/>
 						</p>
-						<button class="btn-read" onclick="markCompleted('step2')">
+						<button
+							id="btn-step2"
+							class="btn-read"
+							onclick="markCompleted('step2', 'Добавление компонентов')"
+						>
 							Пометить как выполнено
 						</button>
 					</div>
@@ -161,20 +169,50 @@
 								src="images/mit_project_helloworld_blocks.png"
 							/>
 						</p>
-						<button class="btn-read" onclick="markCompleted('step3')">
+						<button
+							id="btn-step3"
+							class="btn-read"
+							onclick="markCompleted('step3', 'Программирование кнопки')"
+						>
+							Пометить как выполнено
+						</button>
+					</div>
+				</div>
+				<div class="accordion-item" id="step4">
+					<button class="accordion-header" onclick="toggleStep('step4')">
+						Шаг 4: Загрузка и тестирование приложения
+					</button>
+					<div class="accordion-content">
+						<p>
+							Для изучения способов загрузки и тестирования приложения перейдите
+							к разделу
+							<a href="mit_introduction.html#download_tips" target="_blank">
+								«Загрузка и установка приложений»
+							</a>
+							на странице «Введение в MIT App Inventor». Там подробно описаны
+							все варианты установки и тестирования вашего проекта на мобильном
+							устройстве.
+						</p>
+						<img
+							class="project-img"
+							src="images/mit_project_testing_app.jpeg"
+						/>
+						<button
+							id="btn-step4"
+							class="btn-read"
+							onclick="markCompleted('step4', 'Загрузка и тестирование приложения')"
+						>
 							Пометить как выполнено
 						</button>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="read-button-container">
-			<button id="readButton" class="btn-read">Прочитать</button>
-		</div>
-		<script src="scripts/read-status.js"></script>
+
 		<script src="scripts/toast.js"></script>
 		<script src="scripts/header-loader.js"></script>
 		<script src="scripts/page-navigation.js"></script>
 		<script src="scripts/accordion-toggle.js"></script>
+		<script src="scripts/accordion-project.js"></script>
 	</body>
 </html>
