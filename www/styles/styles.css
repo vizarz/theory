@@ -278,7 +278,7 @@ p {
 }
 /* Тёмная боковая панель */
 body.dark-mode .sidebar {
-	background-color: #333; /* тёмный фон для сайдбара */
+	background-color: #333;
 	color: #ccc;
 }
 
