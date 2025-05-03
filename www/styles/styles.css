@@ -911,7 +911,7 @@ body.dark-mode .error-text {
 }
 
 .btn-primary {
-	background-color: #8fc202; /* Сплошной цвет вместо градиента */
+	background-color: #8fc202;
 	color: white;
 	box-shadow: 0 4px 15px rgba(143, 194, 2, 0.2);
 }
@@ -975,8 +975,6 @@ body.dark-mode .error-text {
 		transform: translateX(-50%) translateY(0px);
 	}
 }
-
-/* Тёмная тема */
 body.dark-mode .welcome-card {
 	background-color: #222;
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -1001,11 +999,13 @@ body.dark-mode .btn-secondary:hover {
 body.dark-mode .btn-text {
 	color: #8fc202;
 }
-
+body.dark-mode .btn-primary {
+	color: white;
+}
 body.dark-mode .footer-text {
 	color: #777;
 }
 
 body.dark-mode .welcome-container {
-	background-color: #181818; /* Темный фон */
+	background-color: #181818;
 }
