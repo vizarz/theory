@@ -36,11 +36,6 @@ fetch('header.html')
 		const headerElem = document.getElementById('header')
 		headerElem.innerHTML = data
 
-		// Применяем сохранённую тему
-		const isDarkMode = localStorage.getItem('darkMode') === 'true'
-		if (isDarkMode) {
-			document.body.classList.add('dark-mode')
-		}
 		updateThemeButton()
 
 		const themeToggleBtn = document.getElementById('theme-toggle-btn')
