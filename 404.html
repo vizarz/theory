@@ -2,13 +2,45 @@
 <html lang="ru">
 	<head>
 		<meta charset="UTF-8" />
-		<title>Ошибка 404</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Страница не найдена | 404</title>
 		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/toast.css" />
 	</head>
 	<body>
-		<h1>Ошибка 404: Страница не найдена</h1>
-		<p>Извините, запрашиваемая страница не существует.</p>
-		<a href="index.html">Вернуться на главную</a>
+		<div class="error-container">
+			<svg
+				class="error-icon floating"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				fill="#8fc202"
+			>
+				<path
+					d="M12 5.99L19.53 19H4.47L12 5.99M12 2L1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"
+				/>
+			</svg>
+
+			<h1 class="error-code">404</h1>
+
+			<p class="error-text">
+				Упс! Кажется, страница, которую вы ищете, была потеряна в цифровом мире.
+			</p>
+
+			<a href="/index.html" class="home-button">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="16"
+					height="16"
+					viewBox="0 0 24 24"
+					fill="currentColor"
+					style="margin-right: 8px; vertical-align: -2px"
+				>
+					<path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+				</svg>
+				Вернуться на главную
+			</a>
+		</div>
+
 		<script src="scripts/theme-change.js"></script>
 	</body>
 </html>
