@@ -778,7 +778,7 @@ body.dark-mode .accordion-item.completed .accordion-header {
 	font-size: 160px;
 	font-weight: 900;
 	margin: 0;
-	background: linear-gradient(135deg, #8fc202 0%, #2d5697 100%);
+	background: #8fc202;
 	-webkit-background-clip: text;
 	background-clip: text;
 	color: transparent;
@@ -793,7 +793,7 @@ body.dark-mode .accordion-item.completed .accordion-header {
 }
 
 .home-button {
-	background: linear-gradient(135deg, #8fc202 0%, #2d5697 100%);
+	background: #8fc202;
 	color: white;
 	border: none;
 	padding: 15px 30px;
@@ -813,7 +813,9 @@ body.dark-mode .accordion-item.completed .accordion-header {
 .home-button:active {
 	transform: translateY(1px);
 }
-
+body.dark-mode a.home-button {
+	color: white;
+}
 .error-icon {
 	width: 120px;
 	height: 120px;
