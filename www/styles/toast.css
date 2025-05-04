@@ -23,3 +23,7 @@
 	background-color: #f44336;
 	color: #fff;
 }
+.toast.warning {
+	background-color: #ffa500;
+	color: #fff;
+}

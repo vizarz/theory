@@ -18,27 +18,51 @@
 				</li>
 			</ul>
 		</div>
+
 		<div class="content">
-			<h1>Проект "Привет, мир!"</h1>
-			<p>
-				<strong>Цель</strong>: Создать простое мобильное приложение, которое при
-				нажатии на кнопку выводит сообщение "Привет, мир!".
-				<br />
-				Этот проект поможет познакомиться с основными элементами MIT App
-				Inventor: Добавление кнопки (Button) и надписи (Label) на экран.
-				Программирование реакции на нажатие кнопки с помощью блоков.
-			</p>
-			<p>
-				Следуйте приведенным ниже шагам для реализации проекта. После каждого
-				выполненного шага нажмите кнопку «Пометить как выполнено».
-			</p>
-			<div class="accordion">
-				<div class="accordion-item" id="step1">
-					<button class="accordion-header" onclick="toggleStep('step1')">
-						Шаг 1: Создание нового проекта
-					</button>
-					<div class="accordion-content">
-						<p>
+			<div class="project-container">
+				<div class="project-header">
+					<h1>Проект "Привет, мир!"</h1>
+					<p>
+						<strong>Цель</strong>: Создать простое мобильное приложение, которое
+						при нажатии на кнопку выводит сообщение "Привет, мир!".
+					</p>
+					<p>
+						Этот проект поможет познакомиться с основными элементами MIT App
+						Inventor: добавление кнопки (Button) и надписи (Label) на экран,
+						программирование реакции на нажатие кнопки с помощью блоков.
+					</p>
+				</div>
+
+				<!-- Индикатор прогресса с кружочками -->
+				<div class="steps-progress">
+					<div class="progress-line"></div>
+					<div class="progress-line-completed" id="progress-line"></div>
+
+					<div class="step-item" data-step="1">
+						<div class="step-circle" onclick="showStep(1)">1</div>
+						<div class="step-title">Создание проекта</div>
+					</div>
+
+					<div class="step-item" data-step="2">
+						<div class="step-circle" onclick="showStep(2)">2</div>
+						<div class="step-title">Добавление компонентов</div>
+					</div>
+
+					<div class="step-item" data-step="3">
+						<div class="step-circle" onclick="showStep(3)">3</div>
+						<div class="step-title">Программирование кнопки</div>
+					</div>
+
+					<div class="step-item" data-step="4">
+						<div class="step-circle" onclick="showStep(4)">4</div>
+						<div class="step-title">Тестирование приложения</div>
+					</div>
+				</div>
+				<div class="step-contents">
+					<div id="step-content-1" class="step-content">
+						<h2>Шаг 1: Создание нового проекта</h2>
+						<ul class="instruction-list">
 							<li>
 								Откройте
 								<a href="https://appinventor.mit.edu" target="_blank"
@@ -46,31 +70,50 @@
 								>.
 							</li>
 							<li>Нажмите на кнопку "Create Apps!"</li>
-							<img class="project-img" src="images/mit_create_apps.jpeg" />
+
+							<img
+								class="project-img"
+								src="images/mit_create_apps.jpeg"
+								alt="Создать приложение"
+							/>
+
 							<li>Войдите в свою учетную запись.</li>
-							<img class="project-img" src="images/mit_google_login.jpg" />
-
+							<img
+								class="project-img"
+								src="images/mit_google_login.jpg"
+								alt="Вход через Google"
+							/>
 							<li>Выберите "New Project" в верхнем меню.</li>
-							<img class="project-img" src="images/mit_new_project.jpg" />
-
+							<img
+								class="project-img"
+								src="images/mit_new_project.jpg"
+								alt="Новый проект"
+							/>
 							<li>Введите название проекта "HelloWorld" и нажмите OK.</li>
-							<img class="project-img" src="images/mit_project_okey.jpeg" />
-						</p>
-						<button
-							id="btn-step1"
-							class="btn-read"
-							onclick="markCompleted('step1', 'Создание нового проекта')"
-						>
-							Пометить как выполнено
-						</button>
+							<img
+								class="project-img"
+								src="images/mit_project_okey.jpeg"
+								alt="Название проекта"
+							/>
+						</ul>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" disabled>Назад</button>
+							<button
+								id="btn-step1"
+								class="step-btn btn-read"
+								onclick="markRead('step1', 'Создание нового проекта')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(2)">
+								Далее
+							</button>
+						</div>
 					</div>
-				</div>
-				<div class="accordion-item" id="step2">
-					<button class="accordion-header" onclick="toggleStep('step2')">
-						Шаг 2: Добавление компонентов (вкладка Designer)
-					</button>
-					<div class="accordion-content">
-						<p>
+					<div id="step-content-2" class="step-content">
+						<h2>Шаг 2: Добавление компонентов (вкладка Designer)</h2>
+						<ul class="instruction-list">
 							<li>
 								В панели компонентов <b>Интерфейс пользователя</b> найдите
 								<b>Надпись</b>.
@@ -78,6 +121,7 @@
 							<img
 								class="project-img"
 								src="images/mit_project_user_interface.jpeg"
+								alt="Интерфейс пользователя"
 							/>
 							<li>
 								Перетащите его на экран смартфона (в визуальном редакторе).
@@ -85,6 +129,7 @@
 							<img
 								class="project-img"
 								src="images/mit_project_add_label.jpeg"
+								alt="Добавление надписи"
 							/>
 							<li>
 								В свойствах (Properties) справа можно изменить:
@@ -95,59 +140,65 @@
 								чёрный или синий).
 							</li>
 							<img
-								style="width: 20%"
 								class="project-img"
+								style="width: 20%"
 								src="images/mit_project_label_properties.jpeg"
+								alt="Свойства надписи"
 							/>
-						</p>
-						<p>
 							<li>
 								В панели компонентов <b>Интерфейс пользователя</b> найдите
 								<b>Кнопка</b>.
 							</li>
-							<img
-								class="project-img"
-								src="images/mit_project_user_interface.jpeg"
-							/>
 							<li>
 								Перетащите его на экран смартфона (в визуальном редакторе).
 							</li>
 							<img
 								class="project-img"
 								src="images/mit_project_add_button.jpeg"
+								alt="Добавление кнопки"
 							/>
 							<li>
 								В свойствах (Properties) справа можно изменить:
 								<br />
 								<b>Текст</b> – "Привет!". <br /><b>РазмерТекста</b> – например,
-								20 (чтобы текст был крупнее). <br /><b>ЦветТекста</b>
-								– выберите цвет (например, чёрный или синий).
+								20 (чтобы текст был крупнее). <br /><b>ЦветТекста</b> – выберите
+								цвет (например, чёрный или синий).
 							</li>
 							<img
-								style="width: 20%"
 								class="project-img"
+								style="width: 20%"
 								src="images/mit_project_button_properties.jpeg"
+								alt="Свойства кнопки"
 							/>
-						</p>
-						<button
-							id="btn-step2"
-							class="btn-read"
-							onclick="markCompleted('step2', 'Добавление компонентов')"
-						>
-							Пометить как выполнено
-						</button>
+						</ul>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(1)">
+								Назад
+							</button>
+							<button
+								id="btn-step2"
+								class="step-btn btn-read"
+								onclick="markRead('step2', 'Добавление компонентов')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(3)">
+								Далее
+							</button>
+						</div>
 					</div>
-				</div>
-				<div class="accordion-item" id="step3">
-					<button class="accordion-header" onclick="toggleStep('step3')">
-						Шаг 3: Программирование кнопки (вкладка Blocks)
-					</button>
-					<div class="accordion-content">
-						<p>
+
+					<!-- Шаг 3 -->
+					<div id="step-content-3" class="step-content">
+						<h2>Шаг 3: Программирование кнопки (вкладка Blocks)</h2>
+
+						<ul class="instruction-list">
 							<li>Перейдите на вкладку <b>Blocks</b>.</li>
 							<img
 								class="project-img"
 								src="images/mit_project_transit_to_blocks.jpeg"
+								alt="Переход на вкладку Blocks"
 							/>
 							<li>
 								В левой панели выберите Кнопка1 → нажмите на него и перетащите
@@ -156,6 +207,7 @@
 							<img
 								class="project-img"
 								src="images/mit_project_choose_button.jpeg"
+								alt="Выбор кнопки"
 							/>
 							<li>
 								Теперь выберите Надпись1 → перетащите блок: присвоить
@@ -166,44 +218,64 @@
 							</li>
 							<img
 								class="project-img"
+								style="width: 50%"
 								src="images/mit_project_helloworld_blocks.png"
+								alt="Блоки программирования"
 							/>
-						</p>
-						<button
-							id="btn-step3"
-							class="btn-read"
-							onclick="markCompleted('step3', 'Программирование кнопки')"
-						>
-							Пометить как выполнено
-						</button>
+						</ul>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(2)">
+								Назад
+							</button>
+							<button
+								id="btn-step3"
+								class="step-btn btn-read"
+								onclick="markRead('step3', 'Программирование кнопки')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(4)">
+								Далее
+							</button>
+						</div>
 					</div>
-				</div>
-				<div class="accordion-item" id="step4">
-					<button class="accordion-header" onclick="toggleStep('step4')">
-						Шаг 4: Загрузка и тестирование приложения
-					</button>
-					<div class="accordion-content">
-						<p>
-							Для изучения способов загрузки и тестирования приложения перейдите
-							к разделу
-							<a href="mit_introduction.html#download_tips" target="_blank">
-								«Загрузка и установка приложений»
-							</a>
-							на странице «Введение в MIT App Inventor». Там подробно описаны
-							все варианты установки и тестирования вашего проекта на мобильном
-							устройстве.
-						</p>
-						<img
-							class="project-img"
-							src="images/mit_project_testing_app.jpeg"
-						/>
-						<button
-							id="btn-step4"
-							class="btn-read"
-							onclick="markCompleted('step4', 'Загрузка и тестирование приложения')"
-						>
-							Пометить как выполнено
-						</button>
+					<div id="step-content-4" class="step-content">
+						<h2>Шаг 4: Загрузка и тестирование приложения</h2>
+
+						<ul class="instruction-list">
+							<li>
+								Для изучения способов загрузки и тестирования приложения
+								перейдите к разделу
+								<a href="mit_introduction.html#download_tips" target="_blank">
+									«Загрузка и установка приложений»
+								</a>
+								на странице «Введение в MIT App Inventor».
+							</li>
+							<li>
+								Там подробно описаны все варианты установки и тестирования
+								вашего проекта на мобильном устройстве.
+							</li>
+							<img
+								class="project-img"
+								src="images/mit_project_testing_app.jpeg"
+								alt="Тестирование приложения"
+							/>
+						</ul>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(3)">
+								Назад
+							</button>
+							<button
+								id="btn-step4"
+								class="step-btn btn-read"
+								onclick="markRead('step4', 'Загрузка и тестирование приложения')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" disabled>Далее</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -211,8 +283,6 @@
 		<script src="scripts/theme-change.js"></script>
 		<script src="scripts/toast.js"></script>
 		<script src="scripts/header-loader.js"></script>
-		<script src="scripts/page-navigation.js"></script>
-		<script src="scripts/accordion-toggle.js"></script>
-		<script src="scripts/accordion-project.js"></script>
+		<script src="scripts/project-buttons.js"></script>
 	</body>
 </html>
