@@ -4,9 +4,18 @@ if (registerForm) {
 	registerForm.addEventListener('submit', async e => {
 		e.preventDefault()
 
+		// Проверка совпадения паролей перед отправкой
+		const password = e.target.password.value
+		const confirmPassword = e.target.confirmPassword.value
+
+		// Если пароли не совпадают - прервать отправку
+		if (password !== confirmPassword) {
+			showToast('Пароли не совпадают', 'error')
+			return // Останавливаем выполнение функции
+		}
+
 		const studentName = e.target.studentName.value
 		const username = e.target.username.value
-		const password = e.target.password.value
 		// Роль по умолчанию для регистрации — студент.
 		const role = 'student'
 

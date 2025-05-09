@@ -2,25 +2,86 @@
 <html lang="ru">
 	<head>
 		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
 		<title>Регистрация</title>
 		<link rel="stylesheet" href="styles/styles.css" />
 		<link rel="stylesheet" href="styles/toast.css" />
 	</head>
 	<body>
 		<div id="header"></div>
-		<div class="content">
-			<h1>Регистрация</h1>
-			<form id="register-form">
-				<input type="text" name="studentName" placeholder="Имя" required />
-				<input type="text" name="username" placeholder="Логин" required />
-				<input type="password" name="password" placeholder="Пароль" required />
-				<button type="submit" class="btn-read">Зарегистрироваться</button>
-			</form>
-			<p>Уже зарегистрированы? <a href="login.html">Войти</a></p>
+		<div class="main-container">
+			<div class="auth-container">
+				<div class="auth-card">
+					<div class="auth-header">
+						<h1>Создайте аккаунт</h1>
+						<p>Чтобы отслеживать прогресс обучения</p>
+					</div>
+
+					<form id="register-form">
+						<div class="input-group">
+							<label for="studentName">Как вас зовут?</label>
+							<input
+								type="text"
+								id="studentName"
+								name="studentName"
+								placeholder="Введите ваше имя"
+								required
+							/>
+						</div>
+
+						<div class="input-group">
+							<label for="username">Логин</label>
+							<input
+								type="text"
+								id="username"
+								name="username"
+								placeholder="Придумайте логин"
+								required
+							/>
+						</div>
+
+						<div class="input-group">
+							<label for="password">Пароль</label>
+							<input
+								type="password"
+								id="password"
+								name="password"
+								placeholder="Придумайте надежный пароль"
+								required
+							/>
+						</div>
+
+						<div class="input-group">
+							<label for="confirmPassword">Подтвердите пароль</label>
+							<input
+								type="password"
+								id="confirmPassword"
+								name="confirmPassword"
+								placeholder="Повторите пароль"
+								required
+							/>
+							<div class="password-error" id="password-error">
+								Пароли не совпадают
+							</div>
+						</div>
+
+						<button type="submit" class="auth-btn">Зарегистрироваться</button>
+					</form>
+
+					<div class="auth-links">
+						Уже есть аккаунт? <a href="login.html">Войти</a>
+					</div>
+				</div>
+			</div>
 		</div>
+
 		<script src="scripts/theme-change.js"></script>
 		<script src="scripts/header-loader.js"></script>
 		<script src="scripts/toast.js"></script>
+		<script src="scripts/password-check.js"></script>
 		<script src="scripts/auth.js"></script>
 	</body>
 </html>

@@ -2,21 +2,78 @@
 <html lang="ru">
 	<head>
 		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
 		<title>Вход</title>
 		<link rel="stylesheet" href="styles/styles.css" />
 		<link rel="stylesheet" href="styles/toast.css" />
+		<style>
+			/* Только уникальные стили, которых нет в styles.css */
+			.input-group input {
+				width: 100%; /* 90% в styles.css */
+				border: 1px solid #ddd;
+				border-radius: 6px;
+				background-color: #f9f9f9;
+				transition: all 0.3s;
+				box-sizing: border-box;
+			}
+
+			.input-group input:focus {
+				border-color: #8fc202;
+				background-color: #fff;
+				outline: none;
+				box-shadow: 0 0 0 3px rgba(143, 194, 2, 0.15);
+			}
+
+			/* Остальное удалено, так как уже есть в styles.css */
+		</style>
 	</head>
 	<body>
 		<div id="header"></div>
-		<div class="content">
-			<h1>Вход</h1>
-			<form id="login-form">
-				<input type="text" name="username" placeholder="Логин" required />
-				<input type="password" name="password" placeholder="Пароль" required />
-				<button type="submit" class="btn-read">Войти</button>
-			</form>
-			<p>Нет аккаунта? <a href="register.html">Зарегистрироваться</a></p>
+
+		<div class="main-container">
+			<div class="auth-container">
+				<div class="auth-card">
+					<div class="auth-header">
+						<h1>Вход в аккаунт</h1>
+						<p>Продолжите обучение с того, на чём остановились</p>
+					</div>
+
+					<form id="login-form">
+						<div class="input-group">
+							<label for="username">Логин</label>
+							<input
+								type="text"
+								id="username"
+								name="username"
+								placeholder="Введите ваш логин"
+								required
+							/>
+						</div>
+
+						<div class="input-group">
+							<label for="password">Пароль</label>
+							<input
+								type="password"
+								id="password"
+								name="password"
+								placeholder="Введите ваш пароль"
+								required
+							/>
+						</div>
+
+						<button type="submit" class="auth-btn">Войти</button>
+					</form>
+
+					<div class="auth-links">
+						Ещё нет аккаунта? <a href="register.html">Зарегистрироваться</a>
+					</div>
+				</div>
+			</div>
 		</div>
+
 		<script src="scripts/theme-change.js"></script>
 		<script src="scripts/header-loader.js"></script>
 		<script src="scripts/toast.js"></script>

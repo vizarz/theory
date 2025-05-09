@@ -183,38 +183,81 @@ body.dark-mode .block-example {
 .nav-link.active {
 	color: #8fc202;
 }
+/* Улучшенная навигация по вкладкам */
 .tabs__menu {
-	position: -webkit-sticky;
-	position: sticky;
-	top: 0;
-	background-color: #f9f9f9;
-	padding: 10px;
 	display: flex;
-	border-bottom: 2px solid #8fc202;
-}
-body.dark-mode .tabs__menu {
-	background-color: #222;
-	border-bottom: 2px solid #8fc202;
+	background-color: #f5f5f5;
+	border-radius: 8px;
+	overflow: hidden;
+	margin: 30px 0;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+
+	/* Добавляем sticky позиционирование */
+	position: sticky;
+	top: 2%; /* Отступ от верха страницы (учитываем высоту header) */
+	z-index: 100; /* Чтобы меню было поверх другого контента при прокрутке */
 }
 
-body.dark-mode .tabs__menu .tabs__menu-button {
+/* Улучшение дизайна для sticky состояния */
+.tabs__menu.is-sticky {
+	border-radius: 0 0 8px 8px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.section-header {
+	background: #f5f5f5;
+	padding: 20px;
+	border-radius: 8px;
+	margin: 30px 0 20px;
+	font-size: 20px;
+	font-weight: 600;
+	color: #333;
+	border-left: 5px solid #8fc202;
+}
+.tabs__menu-button {
+	text-decoration: none;
+	flex: 1;
+	padding: 15px 5px;
+	text-align: center;
+	background: transparent;
+	border: none;
+	font-size: 16px;
+	font-weight: 500;
+	color: #555;
+	position: relative;
+	transition: all 0.3s ease;
+}
+
+.tabs__menu-button.active {
+	background-color: #8fc202;
+	color: white;
+	font-weight: 600;
+}
+
+.tabs__menu-button:hover:not(.active) {
+	background-color: #e5e5e5;
+	color: #333;
+}
+body.dark-mode .hero-section {
+	background: linear-gradient(135deg, #6ea80c 0%, #4a7200 100%);
+}
+
+body.dark-mode .section-header {
+	background: #2a2a2a;
+	color: #e0e0e0;
+	border-left: 5px solid #8fc202;
+}
+
+body.dark-mode .tabs__menu {
+	background-color: #2a2a2a;
+}
+
+body.dark-mode .tabs__menu-button {
 	color: #ccc;
 }
 
-body.dark-mode .tabs__menu .tabs__menu-button:hover,
-body.dark-mode .tabs__menu .tabs__menu-button.active {
-	color: #8fc202;
-}
-.tabs__menu-button {
-	color: grey;
-	padding: 10px 15px;
-	text-decoration: none;
-	transition: color 0.5s;
-	cursor: pointer;
-}
-.tabs__menu-button:hover,
-.tabs__menu-button.active {
-	color: #8fc202;
+body.dark-mode .tabs__menu-button:hover:not(.active) {
+	background-color: #333;
+	color: #fff;
 }
 .section {
 	padding: 20px 0;
@@ -776,6 +819,41 @@ body.dark-mode .accordion-item.completed .accordion-header {
 	.img-container {
 		height: 150px;
 	}
+	.auth-container {
+		max-width: 100%;
+		padding: 0 10px;
+	}
+
+	.auth-card {
+		padding: 20px 15px;
+		border-radius: 8px;
+	}
+
+	.auth-header h1 {
+		font-size: 24px;
+	}
+
+	.auth-header p {
+		font-size: 14px;
+	}
+
+	.input-group label {
+		font-size: 15px;
+	}
+
+	.input-group input {
+		padding: 12px 12px;
+		font-size: 15px;
+	}
+
+	.auth-btn {
+		padding: 12px;
+		font-size: 16px;
+	}
+
+	.auth-links {
+		font-size: 14px;
+	}
 }
 .error-container {
 	display: flex;
@@ -1206,4 +1284,188 @@ body.dark-mode .prev-btn {
 	background-color: #333;
 	color: #ccc;
 	border-color: #555;
+}
+/* Специфичные стили для страницы регистрации */
+.main-container {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 40px 20px;
+}
+
+.auth-container {
+	width: 100%;
+	max-width: 450px;
+	margin: 0 auto;
+}
+
+.auth-card {
+	background: #fff;
+	border-radius: 10px;
+	padding: 30px;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+}
+
+.auth-card:hover {
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.auth-header {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.auth-header h1 {
+	font-size: 28px;
+	margin-bottom: 10px;
+	color: #333;
+}
+
+.auth-header p {
+	color: #666;
+	font-size: 16px;
+	margin-top: 0;
+}
+
+.input-group {
+	margin-bottom: 20px;
+	position: relative;
+}
+
+.input-group label {
+	display: block;
+	margin-bottom: 8px;
+	font-weight: 500;
+	color: #555;
+}
+/* Базовый стиль для фокуса на полях ввода */
+.input-group input:focus {
+	border-color: #8fc202;
+	background-color: #fff;
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(143, 194, 2, 0.15);
+}
+
+/* Переопределение стиля фокуса для поля с несовпадающими паролями */
+.input-group input.password-mismatch:focus {
+	border-color: #ff4d4d !important;
+	background-color: #fff !important;
+	box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.15) !important;
+}
+/* Переопределяем стиль input для этой формы */
+.input-group input {
+	width: 90%;
+	max-width: 100%;
+	padding: 14px 16px;
+	font-size: 16px;
+}
+
+.auth-btn {
+	display: block;
+	width: 100%;
+	padding: 14px;
+	background-color: #8fc202;
+	color: white;
+	border: none;
+	border-radius: 6px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	margin-top: 30px;
+}
+.auth-btn:hover {
+	background-color: #7da602;
+	transform: translateY(-2px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.auth-links {
+	text-align: center;
+	margin-top: 25px;
+	font-size: 15px;
+	color: #666;
+}
+/* Стиль для кнопки при несовпадающих паролях */
+.password-mismatch-btn {
+	border-color: #ff4d4d !important;
+}
+
+.password-mismatch-btn:hover {
+	background-color: #ff4d4d !important; /* Красный цвет при наведении */
+	transform: translateY(-2px); /* Сохраняем эффект движения */
+}
+.password-mismatch {
+	border-color: #ff4d4d !important;
+	background-color: #fff0f0 !important;
+}
+
+.password-error {
+	color: #ff4d4d;
+	font-size: 14px;
+	margin-top: 5px;
+	display: none;
+}
+
+/* Темная тема - только специфичные переопределения */
+body.dark-mode .auth-card {
+	background-color: #333;
+}
+
+body.dark-mode .auth-header h1 {
+	color: #e0e0e0;
+}
+body.dark-mode .input-group input.password-mismatch:focus {
+	border-color: #ff4d4d !important;
+	background-color: #333 !important;
+	box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.15) !important;
+}
+
+body.dark-mode .auth-header p,
+body.dark-mode .auth-links {
+	color: #aaa;
+}
+
+body.dark-mode .input-group label {
+	color: #ccc;
+}
+
+body.dark-mode .password-mismatch {
+	background-color: #3d2929 !important;
+}
+
+.hero-section h1 {
+	font-size: 36px;
+	margin-bottom: 20px;
+	font-weight: 700;
+	color: white;
+}
+.hero-section {
+	background: linear-gradient(135deg, #8fc202 0%, #6ea80c 100%);
+	color: white;
+	padding: 60px 30px;
+	border-radius: 12px;
+	margin-bottom: 40px;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hero-section::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: url('../images/codi-logo.svg') no-repeat right center;
+	background-size: contain;
+	opacity: 0.1;
+}
+
+.hero-section p {
+	font-size: 18px;
+	max-width: 80%;
+	line-height: 1.6;
 }

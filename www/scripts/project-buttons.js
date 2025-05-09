@@ -38,8 +38,22 @@ function showStep(stepNumber) {
 }
 
 // Отметить шаг как выполненный
+// Отметить шаг как выполненный
 function markRead(stepId, stepTitle) {
 	const token = localStorage.getItem('token')
+
+	// Проверка на вход в аккаунт
+	if (!token) {
+		showToast('Для отметки прогресса необходимо войти в аккаунт', 'error')
+
+		// Опционально: перенаправление на страницу входа
+		setTimeout(() => {
+			window.location.href = 'login.html'
+		}, 2000)
+
+		return // Прерываем выполнение функции
+	}
+
 	const project = document.querySelector('h1').innerText.trim()
 	const page = window.location.pathname.split('/').pop().replace('.html', '')
 	const now = new Date()
@@ -53,7 +67,7 @@ function markRead(stepId, stepTitle) {
 		const prevStepNumber = stepNumber - 1
 		if (!completedSteps[prevStepNumber]) {
 			// Показываем toast, если предыдущий шаг не выполнен
-			showToast('Пожалуйста, сначала выполните предыдущий шаг', 'warning')
+			showToast('Пожалуйста, сначала выполните предыдущий шаг', 'error')
 			return // Прерываем выполнение функции
 		}
 	}
@@ -79,7 +93,21 @@ function markRead(stepId, stepTitle) {
 			page,
 		}),
 	})
-		.then(response => response.json())
+		.then(response => {
+			// Проверка истечения срока действия токена
+			if (response.status === 401) {
+				// Токен недействителен или истек
+				localStorage.removeItem('token') // Удаляем недействительный токен
+				showToast('Сессия истекла. Пожалуйста, войдите снова', 'error')
+
+				setTimeout(() => {
+					window.location.href = 'login.html'
+				}, 2000)
+
+				throw new Error('Unauthorized')
+			}
+			return response.json()
+		})
 		.then(result => {
 			if (result.read) {
 				// Отметить шаг как выполненный в UI
@@ -97,6 +125,9 @@ function markRead(stepId, stepTitle) {
 
 				// Обновляем линию прогресса
 				updateProgressLine()
+
+				// Показываем toast об успешном выполнении
+				showToast('Шаг отмечен как выполненный!', 'success')
 			}
 		})
 		.catch(error => {
@@ -105,8 +136,12 @@ function markRead(stepId, stepTitle) {
 				btn.disabled = false
 				btn.innerText = 'Пометить как выполнено'
 			}
-			// Показываем toast с ошибкой
-			showToast('Ошибка при отметке шага', 'error')
+
+			// Показываем toast с ошибкой только если это не ошибка авторизации
+			// (чтобы избежать двойных сообщений)
+			if (error.message !== 'Unauthorized') {
+				showToast('Ошибка при отметке шага', 'error')
+			}
 		})
 }
 
