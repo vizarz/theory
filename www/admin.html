@@ -10,14 +10,12 @@
 				padding: 10px 20px;
 				cursor: pointer;
 			}
-			/* Оставляем стили модального окна и формы, как было ранее */
 		</style>
 	</head>
 	<body>
 		<div id="header"></div>
 		<div class="content">
 			<h1>Админ-панель</h1>
-
 			<!-- Раздел смены пароля пользователя -->
 			<section id="changePasswordSection">
 				<h2>Смена пароля пользователя</h2>
@@ -25,13 +23,10 @@
 					Сменить пароль пользователя
 				</button>
 				<div id="adminChangePasswordForm" class="slide-form">
-					<!-- Кнопка выбора пользователя через модальное окно -->
 					<button id="chooseUserBtnExternalCP" class="btn-read">
 						Выбрать пользователя
 					</button>
-					<!-- Метка для отображения выбранного пользователя -->
 					<span id="selectedUserLabelCP"></span>
-					<!-- Скрытый input для выбранного пользователя -->
 					<input type="hidden" id="userSelect" required />
 					<br />
 					<input
@@ -53,27 +48,21 @@
 			</section>
 
 			<hr />
-
-			<!-- Раздел просмотра прочитанных страниц -->
 			<section id="pageReadsSection">
 				<h2>Просмотр прочитанных страниц</h2>
 				<button id="togglePageReadsBtn" class="btn-read">
 					Просмотр прочитанных страниц
 				</button>
 				<div id="adminPageReadsForm" class="slide-form">
-					<!-- Кнопка выбора пользователя через модальное окно -->
 					<button id="chooseUserBtnExternalPR" class="btn-read">
 						Выбрать пользователя
 					</button>
-					<!-- Метка для отображения выбранного пользователя -->
 					<span id="selectedUserLabelPR"></span>
-					<!-- Скрытый input для выбранного пользователя -->
 					<input type="hidden" id="userSelectReads" required />
 					<br />
 					<button type="button" id="loadPageReadsBtn" class="btn-read">
 						Загрузить лог чтения
 					</button>
-					<!-- Контейнер для таблицы с логами -->
 					<div id="pageReadsTableContainer"></div>
 				</div>
 			</section>

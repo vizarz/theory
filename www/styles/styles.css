@@ -224,18 +224,23 @@ body.dark-mode .block-example {
 	font-weight: 500;
 	color: #555;
 	position: relative;
-	transition: all 0.3s ease;
+	transition: all 0.3s ease, font-weight 0.01s;
+	letter-spacing: 0;
 }
 
 .tabs__menu-button.active {
 	background-color: #8fc202;
 	color: white;
 	font-weight: 600;
+	letter-spacing: 0.01em; /* Немного увеличиваем расстояние между буквами */
+	transform: scale(1.01); /* Небольшое масштабирование */
 }
 
 .tabs__menu-button:hover:not(.active) {
 	background-color: #e5e5e5;
 	color: #333;
+	letter-spacing: 0.005em;
+	transform: scale(1.005);
 }
 body.dark-mode .hero-section {
 	background: linear-gradient(135deg, #6ea80c 0%, #4a7200 100%);
@@ -254,7 +259,12 @@ body.dark-mode .tabs__menu {
 body.dark-mode .tabs__menu-button {
 	color: #ccc;
 }
-
+body.dark-mode .tabs__menu-button.active {
+	background-color: #8fc202;
+	color: white;
+	letter-spacing: 0.01em;
+	transform: scale(1.01);
+}
 body.dark-mode .tabs__menu-button:hover:not(.active) {
 	background-color: #333;
 	color: #fff;
