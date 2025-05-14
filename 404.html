@@ -5,7 +5,26 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Страница не найдена | 404</title>
 		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="www/styles/styles.css" />
 		<link rel="stylesheet" href="styles/toast.css" />
+		<style>
+			/* Переопределяем анимацию только для этой страницы */
+			.error-icon.floating {
+				animation-name: error-float; /* Используем другую анимацию */
+			}
+
+			@keyframes error-float {
+				0% {
+					transform: translateY(0px);
+				}
+				50% {
+					transform: translateY(-15px);
+				}
+				100% {
+					transform: translateY(0px);
+				}
+			}
+		</style>
 	</head>
 	<body>
 		<div class="error-container">

@@ -67,7 +67,7 @@ fetch('header.html')
 				if (payload && payload.name) {
 					const nameElem = document.createElement('div')
 					nameElem.textContent = payload.name
-					nameElem.classList.add('profile-name')
+					nameElem.classList.add('profile-name-header')
 					dropdown.appendChild(nameElem)
 				}
 

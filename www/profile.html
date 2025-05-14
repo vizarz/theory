@@ -2,16 +2,174 @@
 <html lang="ru">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Профиль</title>
 		<link rel="stylesheet" href="styles/styles.css" />
 		<link rel="stylesheet" href="styles/toast.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		/>
 	</head>
 	<body>
 		<div id="header"></div>
-		<div class="content">
-			<h1>Ваш профиль</h1>
-			<div id="profile-info"></div>
+
+		<div class="up-content">
+			<div class="profile-container">
+				<div class="up-container">
+					<h1>Личный профиль</h1>
+					<!-- Новая карточка статистики после основной информации -->
+					<div class="up-card">
+						<h2>Статистика активности</h2>
+						<div class="up-stats-grid">
+							<div class="up-stat-item">
+								<div class="up-stat-icon">
+									<i class="fas fa-calendar-alt"></i>
+								</div>
+								<div class="up-stat-info">
+									<div class="up-stat-value" id="date-registered">-</div>
+									<div class="up-stat-label">Дата регистрации</div>
+								</div>
+							</div>
+
+							<div class="up-stat-item">
+								<div class="up-stat-icon">
+									<i class="fas fa-hourglass-half"></i>
+								</div>
+								<div class="up-stat-info">
+									<div class="up-stat-value" id="days-in-system">-</div>
+									<div class="up-stat-label">Стаж на сайте</div>
+								</div>
+							</div>
+
+							<div class="up-stat-item">
+								<div class="up-stat-icon">
+									<i class="fas fa-book-reader"></i>
+								</div>
+								<div class="up-stat-info">
+									<div class="up-stat-value" id="pages-read">-</div>
+									<div class="up-stat-label">Прочитано страниц</div>
+								</div>
+							</div>
+
+							<div class="up-stat-item">
+								<div class="up-stat-icon">
+									<i class="fas fa-clock"></i>
+								</div>
+								<div class="up-stat-info">
+									<div class="up-stat-value" id="last-activity">-</div>
+									<div class="up-stat-label">Последняя активность</div>
+								</div>
+							</div>
+
+							<div class="up-stat-item">
+								<div class="up-stat-icon">
+									<i class="fas fa-star"></i>
+								</div>
+								<div class="up-stat-info">
+									<div class="up-stat-value" id="favorite-section">-</div>
+									<div class="up-stat-label">Любимый раздел</div>
+								</div>
+							</div>
+
+							<div class="up-stat-item">
+								<div class="up-stat-icon">
+									<i class="fas fa-chart-line"></i>
+								</div>
+								<div class="up-stat-info">
+									<div class="up-stat-value" id="avg-activity">-</div>
+									<div class="up-stat-label">Среднее в день</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="up-card">
+						<div class="up-header">
+							<div class="up-avatar" id="profile-avatar">N</div>
+							<div class="up-details">
+								<div class="up-name" id="profile-name">Загрузка...</div>
+								<div class="up-role" id="profile-role">Загрузка...</div>
+							</div>
+						</div>
+
+						<ul class="up-info-list">
+							<li class="up-info-item">
+								<div class="up-info-icon"><i class="fas fa-user"></i></div>
+								<div class="up-info-label">Имя</div>
+								<div class="up-info-value" id="info-name">Загрузка...</div>
+							</li>
+							<li class="up-info-item">
+								<div class="up-info-icon">
+									<i class="fas fa-id-badge"></i>
+								</div>
+								<div class="up-info-label">Логин</div>
+								<div class="up-info-value" id="info-username">Загрузка...</div>
+							</li>
+							<li class="up-info-item">
+								<div class="up-info-icon">
+									<i class="fas fa-user-shield"></i>
+								</div>
+								<div class="up-info-label">Роль</div>
+								<div class="up-info-value" id="info-role">Загрузка...</div>
+							</li>
+						</ul>
+					</div>
+					<div class="up-card">
+						<div class="up-password-section">
+							<h2>Безопасность профиля</h2>
+							<p>
+								Для обеспечения безопасности вашего аккаунта регулярно меняйте
+								пароль.
+							</p>
+
+							<button id="changePasswordBtn" class="up-btn-change">
+								<i class="fas fa-key"></i> Изменить пароль
+							</button>
+
+							<div id="changePasswordForm" class="up-password-form">
+								<div class="up-input-row">
+									<input
+										type="password"
+										id="oldPassword"
+										class="up-password-input"
+										placeholder="Текущий пароль"
+									/>
+								</div>
+								<div class="up-input-row">
+									<input
+										type="password"
+										id="newPassword"
+										class="up-password-input"
+										placeholder="Новый пароль"
+									/>
+								</div>
+								<div class="up-input-row">
+									<input
+										type="password"
+										id="confirmNewPassword"
+										class="up-password-input"
+										placeholder="Подтвердите новый пароль"
+									/>
+								</div>
+
+								<div class="up-button-container">
+									<button
+										id="confirmChangeBtn"
+										class="up-btn-change up-primary"
+									>
+										Сохранить изменения
+									</button>
+									<button id="cancelChangeBtn" class="up-btn-change">
+										Отмена
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+
 		<script src="scripts/theme-change.js"></script>
 		<script src="scripts/header-loader.js"></script>
 		<script src="scripts/toast.js"></script>

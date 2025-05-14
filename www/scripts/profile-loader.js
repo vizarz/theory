@@ -1,7 +1,5 @@
 function b64DecodeUnicode(str) {
-	// Преобразуем Base64Url в стандартный Base64
 	str = str.replace(/-/g, '+').replace(/_/g, '/')
-	// Дополняем '=' если необходимо
 	while (str.length % 4) str += '='
 	return decodeURIComponent(
 		Array.prototype.map
@@ -12,73 +10,119 @@ function b64DecodeUnicode(str) {
 	)
 }
 
+function getInitials(name) {
+	if (!name || name === 'Не указано' || name === 'Загрузка...') {
+		return 'U'
+	}
+
+	const words = name.split(' ').filter(word => word.length > 0)
+
+	if (words.length === 0) {
+		return 'U'
+	} else if (words.length === 1) {
+		return words[0].charAt(0).toUpperCase()
+	} else {
+		return (words[0].charAt(0) + words[1].charAt(0)).toUpperCase()
+	}
+}
+
+async function loadUserStats() {
+	const token = localStorage.getItem('token')
+
+	try {
+		const response = await fetch('http://localhost:3000/api/profile/stats', {
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+		})
+
+		if (!response.ok) {
+			throw new Error('Не удалось загрузить статистику')
+		}
+
+		const stats = await response.json()
+
+		document.getElementById('date-registered').textContent =
+			stats.dateRegistered
+		document.getElementById('days-in-system').textContent =
+			stats.daysInSystem + ' дней'
+		document.getElementById('pages-read').textContent = stats.pagesRead
+		document.getElementById('last-activity').textContent = stats.lastActivity
+		document.getElementById('favorite-section').textContent =
+			stats.favoriteSection
+		document.getElementById('avg-activity').textContent = stats.avgActivity
+	} catch (error) {
+		console.error('Ошибка при загрузке статистики:', error)
+		const statFields = [
+			'date-registered',
+			'days-in-system',
+			'pages-read',
+			'last-activity',
+			'favorite-section',
+			'avg-activity',
+		]
+		statFields.forEach(field => {
+			document.getElementById(field).textContent = 'Нет данных'
+		})
+	}
+}
+
 document.addEventListener('DOMContentLoaded', function () {
-	const profileContainer = document.getElementById('profile-info')
 	const token = localStorage.getItem('token')
 
 	if (!token) {
-		profileContainer.innerHTML =
-			'<p>Вы не авторизованы. Пожалуйста, войдите в профиль.</p>'
+		window.location.href = 'login.html'
 		return
 	}
 
 	let payload = null
 	try {
 		const payloadBase64 = token.split('.')[1]
-		// Используем функцию для корректного декодирования UTF-8
 		payload = JSON.parse(b64DecodeUnicode(payloadBase64))
 	} catch (e) {
 		console.error('Ошибка декодирования токена:', e)
-		profileContainer.innerHTML =
-			'<p>Ошибка при загрузке информации о профиле.</p>'
+		showToast('Ошибка при загрузке профиля', 'error')
 		return
 	}
 
-	// Получаем необходимые поля: name, username и role
 	const name = payload.name || 'Не указано'
 	const username = payload.username || 'Не указан'
 	let role = payload.role || 'Не указана'
 
-	// Преобразуем роль: 'student' -> 'Студент', 'admin' -> 'Администратор'
+	let roleDisplay = role
 	if (role === 'student') {
-		role = 'Студент'
+		roleDisplay = 'Студент'
 	} else if (role === 'admin') {
-		role = 'Администратор'
+		roleDisplay = 'Администратор'
 	}
+	const initials = getInitials(name)
+	document.getElementById('profile-avatar').textContent = initials
+	document.getElementById('profile-name').textContent = name
+	document.getElementById('profile-role').textContent = roleDisplay
+	document.getElementById('profile-role').classList.add(role)
 
-	// Формируем HTML с информацией о профиле и кнопкой смены пароля
-	profileContainer.innerHTML = `
-        <p><strong>Имя:</strong> ${name}</p>
-        <p><strong>Username:</strong> ${username}</p>
-        <p><strong>Роль:</strong> ${role}</p>
-        <button id="changePasswordBtn" class="btn-read">Изменить пароль</button>
-        <div id="changePasswordForm" class="slide-form">
-            <input type="password" id="oldPassword" placeholder="Старый пароль" /><br/>
-            <input type="password" id="newPassword" placeholder="Новый пароль" /><br/>
-            <input type="password" id="confirmNewPassword" placeholder="Повторите новый пароль" /><br/>
-            <button id="confirmChangeBtn" class="btn-read">Подтвердить</button>
-            <button id="cancelChangeBtn" class="btn-read">Отменить</button>
-        </div>
-    `
+	document.getElementById('info-name').textContent = name
+	document.getElementById('info-username').textContent = username
+	document.getElementById('info-role').textContent = roleDisplay
 
-	// Обработчик показа формы с плавным слайдом (добавляем класс "active")
-	document
-		.getElementById('changePasswordBtn')
-		.addEventListener('click', function () {
+	const changePasswordBtn = document.getElementById('changePasswordBtn')
+	if (changePasswordBtn) {
+		changePasswordBtn.addEventListener('click', function () {
 			document.getElementById('changePasswordForm').classList.add('active')
+			this.style.display = 'none'
 		})
-
-	// Обработчик скрытия формы (удаляем класс "active")
-	document
-		.getElementById('cancelChangeBtn')
-		.addEventListener('click', function () {
+	}
+	const cancelChangeBtn = document.getElementById('cancelChangeBtn')
+	if (cancelChangeBtn) {
+		cancelChangeBtn.addEventListener('click', function () {
 			document.getElementById('changePasswordForm').classList.remove('active')
+			document.getElementById('changePasswordBtn').style.display =
+				'inline-block'
 		})
-
-	// Обработчик подтверждения смены пароля
-	document
-		.getElementById('confirmChangeBtn')
-		.addEventListener('click', function () {
+	}
+	const confirmChangeBtn = document.getElementById('confirmChangeBtn')
+	if (confirmChangeBtn) {
+		confirmChangeBtn.addEventListener('click', function () {
 			const oldPassword = document.getElementById('oldPassword').value.trim()
 			const newPassword = document.getElementById('newPassword').value.trim()
 			const confirmNewPassword = document
@@ -127,4 +171,6 @@ document.addEventListener('DOMContentLoaded', function () {
 					showToast('Ошибка: ' + error.message, 'error')
 				})
 		})
+	}
+	loadUserStats()
 })

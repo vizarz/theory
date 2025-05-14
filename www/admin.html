@@ -2,104 +2,584 @@
 <html lang="ru">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Админ-панель</title>
 		<link rel="stylesheet" href="styles/styles.css" />
 		<link rel="stylesheet" href="styles/toast.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		/>
 		<style>
-			.btn-read {
-				padding: 10px 20px;
+			/* Стили для админ-панели */
+			.admin-header {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-bottom: 30px;
+				border-bottom: 2px solid #8fc202;
+				padding-bottom: 10px;
+			}
+
+			.admin-header h1 {
+				margin: 0;
+				color: #333;
+			}
+
+			.admin-welcome {
+				margin-bottom: 30px;
+				padding: 15px;
+				background-color: #f6f9ee;
+				border-left: 4px solid #8fc202;
+				border-radius: 4px;
+			}
+
+			body.dark-mode .admin-welcome {
+				background-color: #222;
+				border-left-color: #8fc202;
+			}
+
+			.admin-section {
+				margin-bottom: 30px;
+				background: white;
+				border-radius: 10px;
+				box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+				overflow: hidden;
+				transition: transform 0.3s ease;
+			}
+
+			.admin-section:hover {
+				transform: translateY(-5px);
+			}
+
+			body.dark-mode .admin-section {
+				background: #222;
+				box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+			}
+
+			.section-header {
+				padding: 20px;
+				background: #f9f9f9;
+				border-bottom: 1px solid #eee;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			body.dark-mode .section-header {
+				background: #2a2a2a;
+				border-bottom-color: #444;
+			}
+
+			.section-header h2 {
+				margin: 0;
+				font-size: 20px;
+				display: flex;
+				align-items: center;
+			}
+
+			.section-header h2 i {
+				margin-right: 10px;
+				color: #8fc202;
+			}
+
+			.section-body {
+				padding: 20px;
+			}
+
+			.btn-toggle {
+				background-color: transparent;
+				border: 2px solid #8fc202;
+				color: #8fc202;
+				border-radius: 5px;
+				padding: 8px 16px;
 				cursor: pointer;
+				font-weight: 600;
+				display: flex;
+				align-items: center;
+				transition: all 0.3s;
+				font-size: 14px;
+			}
+
+			.btn-toggle i {
+				margin-left: 8px;
+				transition: transform 0.3s;
+			}
+
+			.btn-toggle:hover {
+				background-color: #f0f8e5;
+			}
+
+			body.dark-mode .btn-toggle:hover {
+				background-color: rgba(143, 194, 2, 0.1);
+			}
+
+			.btn-toggle.active i {
+				transform: rotate(180deg);
+			}
+
+			.slide-form {
+				max-height: 0;
+				overflow: hidden;
+				transition: max-height 0.5s ease;
+			}
+
+			.slide-form.active {
+				max-height: 1000px;
+			}
+
+			.action-btn {
+				background-color: #8fc202;
+				color: white;
+				border: none;
+				border-radius: 5px;
+				padding: 10px 18px;
+				margin-top: 15px;
+				cursor: pointer;
+				font-weight: 600;
+				transition: all 0.3s;
+			}
+
+			.action-btn:hover {
+				background-color: #7dab01;
+				transform: translateY(-2px);
+			}
+
+			.action-btn:disabled {
+				background-color: #cccccc;
+				cursor: not-allowed;
+			}
+
+			.user-selection {
+				display: flex;
+				align-items: center;
+				margin-bottom: 20px;
+				padding: 10px;
+				background-color: #f9f9f9;
+				border-radius: 5px;
+			}
+
+			body.dark-mode .user-selection {
+				background-color: #2a2a2a;
+			}
+
+			.user-label {
+				margin-left: 15px;
+				font-weight: 500;
+			}
+
+			.admin-input {
+				width: 100%;
+				max-width: 400px;
+				padding: 12px 15px;
+				margin-bottom: 15px;
+				border: 1px solid #ddd;
+				border-radius: 5px;
+				font-size: 16px;
+				transition: border-color 0.3s;
+				background-color: #f9f9f9;
+			}
+
+			.admin-input:focus {
+				outline: none;
+				border-color: #8fc202;
+				box-shadow: 0 0 0 2px rgba(143, 194, 2, 0.2);
+			}
+
+			body.dark-mode .admin-input {
+				background-color: #333;
+				border-color: #555;
+				color: #eee;
+			}
+
+			/* Стили для модального окна */
+			.modal {
+				display: none;
+				position: fixed;
+				z-index: 1000;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.6);
+				align-items: center;
+				justify-content: center;
+			}
+
+			.modal-content {
+				position: relative;
+				background-color: #fff;
+				max-width: 500px;
+				width: 90%;
+				padding: 30px;
+				border-radius: 10px;
+				box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+				animation: modalFadeIn 0.3s;
+			}
+
+			body.dark-mode .modal-content {
+				background-color: #222;
+				box-shadow: 0 5px 30px rgba(0, 0, 0, 0.6);
+			}
+
+			@keyframes modalFadeIn {
+				from {
+					opacity: 0;
+					transform: translateY(-50px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			.modal h2 {
+				margin-top: 0;
+				border-bottom: 2px solid #8fc202;
+				padding-bottom: 10px;
+				margin-bottom: 20px;
+			}
+
+			.modal-search {
+				display: flex;
+				margin-bottom: 15px;
+				gap: 10px;
+			}
+
+			.modal-search input {
+				flex: 1;
+			}
+
+			.user-select {
+				width: 100%;
+				padding: 10px;
+				border: 1px solid #ddd;
+				border-radius: 5px;
+				background-color: #f5f5f5;
+				margin: 15px 0;
+				font-family: inherit;
+				font-size: 16px;
+			}
+
+			body.dark-mode .user-select {
+				background-color: #333;
+				border-color: #555;
+				color: #eee;
+			}
+
+			.user-select option:hover {
+				background-color: #e0e0e0;
+			}
+
+			body.dark-mode .user-select option:hover {
+				background-color: #444;
+			}
+
+			.modal-actions {
+				display: flex;
+				justify-content: flex-end;
+				gap: 10px;
+				margin-top: 20px;
+			}
+
+			/* Стили для таблицы */
+			#pageReadsTableContainer {
+				margin-top: 20px;
+				max-height: 400px;
+				overflow-y: auto;
+				border-radius: 5px;
+				border: 1px solid #eee;
+			}
+
+			body.dark-mode #pageReadsTableContainer {
+				border-color: #444;
+			}
+
+			.admin-table {
+				width: 100%;
+				border-collapse: collapse;
+			}
+
+			.admin-table th,
+			.admin-table td {
+				padding: 12px 15px;
+				text-align: left;
+				border-bottom: 1px solid #eee;
+			}
+
+			body.dark-mode .admin-table th,
+			body.dark-mode .admin-table td {
+				border-color: #444;
+			}
+
+			.admin-table th {
+				background-color: #f9f9f9;
+				font-weight: 600;
+			}
+
+			body.dark-mode .admin-table th {
+				background-color: #333;
+			}
+
+			.admin-table tr:nth-child(even) {
+				background-color: #f5f5f5;
+			}
+
+			body.dark-mode .admin-table tr:nth-child(even) {
+				background-color: #2d2d2d;
+			}
+
+			.admin-table tr:hover {
+				background-color: #f0f8e5;
+			}
+
+			body.dark-mode .admin-table tr:hover {
+				background-color: #3a3a3a;
+			}
+
+			/* Адаптивность для мобильных устройств */
+			@media (max-width: 768px) {
+				.admin-header {
+					flex-direction: column;
+					align-items: flex-start;
+					gap: 10px;
+				}
+
+				.section-header {
+					flex-direction: column;
+					gap: 15px;
+				}
+
+				.modal-content {
+					padding: 20px;
+				}
+
+				.modal-search {
+					flex-direction: column;
+				}
 			}
 		</style>
 	</head>
 	<body>
 		<div id="header"></div>
-		<div class="content">
-			<h1>Админ-панель</h1>
-			<!-- Раздел смены пароля пользователя -->
-			<section id="changePasswordSection">
-				<h2>Смена пароля пользователя</h2>
-				<button id="toggleChangePasswordBtn" class="btn-read">
-					Сменить пароль пользователя
-				</button>
-				<div id="adminChangePasswordForm" class="slide-form">
-					<button id="chooseUserBtnExternalCP" class="btn-read">
-						Выбрать пользователя
-					</button>
-					<span id="selectedUserLabelCP"></span>
-					<input type="hidden" id="userSelect" required />
-					<br />
-					<input
-						type="password"
-						id="newPassword"
-						placeholder="Новый пароль"
-						required
-					/><br />
-					<input
-						type="password"
-						id="confirmNewPassword"
-						placeholder="Повторите новый пароль"
-						required
-					/><br />
-					<button type="submit" id="submitChangePasswordBtn" class="btn-read">
-						Сменить пароль
-					</button>
-				</div>
-			</section>
 
-			<hr />
-			<section id="pageReadsSection">
-				<h2>Просмотр прочитанных страниц</h2>
-				<button id="togglePageReadsBtn" class="btn-read">
-					Просмотр прочитанных страниц
-				</button>
-				<div id="adminPageReadsForm" class="slide-form">
-					<button id="chooseUserBtnExternalPR" class="btn-read">
-						Выбрать пользователя
-					</button>
-					<span id="selectedUserLabelPR"></span>
-					<input type="hidden" id="userSelectReads" required />
-					<br />
-					<button type="button" id="loadPageReadsBtn" class="btn-read">
-						Загрузить лог чтения
-					</button>
-					<div id="pageReadsTableContainer"></div>
+		<div class="content">
+			<div class="admin-header">
+				<h1><i class="fas fa-shield-alt"></i> Админ-панель</h1>
+				<div id="welcomeMessage" class="admin-welcome"></div>
+			</div>
+
+			<!-- Секция статистики (сохраняем как есть) -->
+			<div class="dashboard-container">
+				<div class="stat-card">
+					<h3>Всего пользователей</h3>
+					<div class="stat-number" id="totalUsers"></div>
+					<div class="stat-change" id="usersChange">за последнюю неделю</div>
 				</div>
-			</section>
+
+				<div class="stat-card">
+					<h3>Прочитанных страниц</h3>
+					<div class="stat-number" id="totalPages"></div>
+					<div class="stat-average" id="pagesAverage">
+						В среднем страниц на пользователя
+					</div>
+				</div>
+
+				<div class="stat-card">
+					<h3>Выполненных шагов</h3>
+					<div class="stat-number" id="totalSteps"></div>
+					<div class="stat-completion" id="stepsCompletion">
+						Завершено % всех начатых проектов
+					</div>
+				</div>
+			</div>
+
+			<!-- Секция смены пароля пользователя -->
+			<div class="admin-section">
+				<div class="section-header">
+					<h2><i class="fas fa-key"></i> Смена пароля пользователя</h2>
+					<button id="toggleChangePasswordBtn" class="btn-toggle">
+						Сменить пароль <i class="fas fa-chevron-down"></i>
+					</button>
+				</div>
+				<div class="section-body">
+					<div id="adminChangePasswordForm" class="slide-form">
+						<div class="user-selection">
+							<button id="chooseUserBtnExternalCP" class="action-btn">
+								<i class="fas fa-user"></i> Выбрать пользователя
+							</button>
+							<span id="selectedUserLabelCP" class="user-label"
+								>Пользователь не выбран</span
+							>
+							<input type="hidden" id="userSelect" required />
+						</div>
+
+						<input
+							type="password"
+							id="newPassword"
+							placeholder="Новый пароль"
+							class="admin-input"
+							required
+						/>
+						<input
+							type="password"
+							id="confirmNewPassword"
+							placeholder="Повторите новый пароль"
+							class="admin-input"
+							required
+						/>
+						<button
+							type="submit"
+							id="submitChangePasswordBtn"
+							class="action-btn"
+							disabled
+						>
+							<i class="fas fa-check"></i> Сменить пароль
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Секция просмотра прочитанных страниц -->
+			<div class="admin-section">
+				<div class="section-header">
+					<h2>
+						<i class="fas fa-book-reader"></i> Просмотр прочитанных страниц
+					</h2>
+					<button id="togglePageReadsBtn" class="btn-toggle">
+						Просмотр логов <i class="fas fa-chevron-down"></i>
+					</button>
+				</div>
+				<div class="section-body">
+					<div id="adminPageReadsForm" class="slide-form">
+						<div class="user-selection">
+							<button id="chooseUserBtnExternalPR" class="action-btn">
+								<i class="fas fa-user"></i> Выбрать пользователя
+							</button>
+							<span id="selectedUserLabelPR" class="user-label"
+								>Пользователь не выбран</span
+							>
+							<input type="hidden" id="userSelectReads" required />
+						</div>
+
+						<button
+							type="button"
+							id="loadPageReadsBtn"
+							class="action-btn"
+							disabled
+						>
+							<i class="fas fa-sync-alt"></i> Загрузить лог чтения
+						</button>
+						<div id="pageReadsTableContainer"></div>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<!-- Модальное окно выбора пользователя -->
 		<div id="userSelectionModal" class="modal">
 			<div class="modal-content">
-				<h2>Выберите пользователя</h2>
-				<input
-					type="text"
-					id="userSearchInput"
-					placeholder="Введите имя или логин пользователя"
-				/>
-				<button id="searchUserBtn" class="btn-read">Найти</button>
-				<br />
-				<select
-					id="userList"
-					size="5"
-					style="
-						width: 100%;
-						margin-top: 10px;
-						margin-bottom: 10px;
-						overflow-y: auto;
-					"
-				></select>
-				<br />
-				<button id="applyUserBtn" class="btn-read">Применить</button>
-				<button id="closeUserModal" class="btn-read">Закрыть</button>
+				<h2><i class="fas fa-users"></i> Выбор пользователя</h2>
+				<div class="modal-search">
+					<input
+						type="text"
+						id="userSearchInput"
+						class="admin-input"
+						placeholder="Введите имя или логин пользователя"
+					/>
+					<button id="searchUserBtn" class="action-btn">
+						<i class="fas fa-search"></i> Найти
+					</button>
+				</div>
+
+				<select id="userList" class="user-select" size="5"></select>
+
+				<div class="modal-actions">
+					<button id="closeUserModal" class="btn-toggle">Закрыть</button>
+					<button id="applyUserBtn" class="action-btn">Применить</button>
+				</div>
 			</div>
 		</div>
+
+		<!-- Скрипты -->
 		<script src="scripts/theme-change.js"></script>
 		<script src="scripts/header-loader.js"></script>
-		<script src="scripts/profile-loader.js"></script>
 		<script src="scripts/toast.js"></script>
+		<script src="scripts/admin-dashboard.js"></script>
 		<script src="scripts/admin-user-modal.js"></script>
 		<script src="scripts/admin-changepassword.js"></script>
 		<script src="scripts/admin-page-reads.js"></script>
+		<script>
+			// Скрипт для слайд-форм
+			document.addEventListener('DOMContentLoaded', function () {
+				const toggleChangePasswordBtn = document.getElementById(
+					'toggleChangePasswordBtn'
+				)
+				const togglePageReadsBtn = document.getElementById('togglePageReadsBtn')
+				const changePasswordForm = document.getElementById(
+					'adminChangePasswordForm'
+				)
+				const pageReadsForm = document.getElementById('adminPageReadsForm')
+
+				toggleChangePasswordBtn.addEventListener('click', function () {
+					changePasswordForm.classList.toggle('active')
+					this.classList.toggle('active')
+
+					if (this.classList.contains('active')) {
+						this.innerHTML = 'Скрыть форму <i class="fas fa-chevron-down"></i>'
+					} else {
+						this.innerHTML =
+							'Сменить пароль <i class="fas fa-chevron-down"></i>'
+					}
+				})
+
+				togglePageReadsBtn.addEventListener('click', function () {
+					pageReadsForm.classList.toggle('active')
+					this.classList.toggle('active')
+
+					if (this.classList.contains('active')) {
+						this.innerHTML = 'Скрыть логи <i class="fas fa-chevron-down"></i>'
+					} else {
+						this.innerHTML =
+							'Просмотр логов <i class="fas fa-chevron-down"></i>'
+					}
+				})
+
+				// Активируем кнопки при выборе пользователя
+				const userSelect = document.getElementById('userSelect')
+				const userSelectReads = document.getElementById('userSelectReads')
+				const submitChangePasswordBtn = document.getElementById(
+					'submitChangePasswordBtn'
+				)
+				const loadPageReadsBtn = document.getElementById('loadPageReadsBtn')
+
+				// Наблюдатель изменений для поля выбора пользователя
+				const observeUserField = function (field, button) {
+					const observer = new MutationObserver(function (mutations) {
+						button.disabled = !field.value
+					})
+
+					observer.observe(field, { attributes: true })
+				}
+
+				observeUserField(userSelect, submitChangePasswordBtn)
+				observeUserField(userSelectReads, loadPageReadsBtn)
+
+				// Приветствие администратора
+				const welcomeMessage = document.getElementById('welcomeMessage')
+				if (welcomeMessage) {
+					const token = localStorage.getItem('token')
+					if (token) {
+						try {
+							const payload = JSON.parse(atob(token.split('.')[1]))
+							const name = payload.name || 'Администратор'
+							welcomeMessage.innerHTML = `<i class="fas fa-user-circle"></i> Добро пожаловать, <strong>${name}</strong>!`
+						} catch (e) {
+							console.error('Ошибка при декодировании токена:', e)
+						}
+					}
+				}
+			})
+		</script>
 	</body>
 </html>

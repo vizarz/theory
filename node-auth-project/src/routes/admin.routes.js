@@ -35,7 +35,7 @@ router.post('/change-password', checkAuth, async (req, res) => {
 	}
 })
 
-// Эндпоинт GET /api/admin/users для получения списка пользователей (username и name)
+// Эндпоинт для получения списка пользователей (username и name)
 router.get('/users', checkAuth, async (req, res) => {
 	if (req.user.role !== 'admin') {
 		return res.status(403).send('Отказано в доступе')
@@ -49,7 +49,7 @@ router.get('/users', checkAuth, async (req, res) => {
 	}
 })
 
-// Эндпоинт GET /api/admin/page-reads для получения логов прочтения страниц пользователя
+// Эндпоинт для получения логов прочтения страниц пользователя
 router.get('/page-reads', checkAuth, async (req, res) => {
 	if (req.user.role !== 'admin') {
 		return res.status(403).send('Отказано в доступе')
