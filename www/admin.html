@@ -24,6 +24,7 @@
 			.admin-header h1 {
 				margin: 0;
 				color: #333;
+				border-bottom: 0;
 			}
 
 			.admin-welcome {
@@ -37,6 +38,9 @@
 			body.dark-mode .admin-welcome {
 				background-color: #222;
 				border-left-color: #8fc202;
+			}
+			body.dark-mode .admin-header h1 {
+				color: #fff;
 			}
 
 			.admin-section {
@@ -88,9 +92,9 @@
 			}
 
 			.btn-toggle {
-				background-color: transparent;
+				background-color: #8fc202;
 				border: 2px solid #8fc202;
-				color: #8fc202;
+				color: white;
 				border-radius: 5px;
 				padding: 8px 16px;
 				cursor: pointer;
@@ -107,7 +111,9 @@
 			}
 
 			.btn-toggle:hover {
-				background-color: #f0f8e5;
+				border: 2px solid #7dab01;
+
+				background-color: #7dab01;
 			}
 
 			body.dark-mode .btn-toggle:hover {
@@ -134,7 +140,7 @@
 				border: none;
 				border-radius: 5px;
 				padding: 10px 18px;
-				margin-top: 15px;
+
 				cursor: pointer;
 				font-weight: 600;
 				transition: all 0.3s;
@@ -366,7 +372,6 @@
 		<div class="content">
 			<div class="admin-header">
 				<h1><i class="fas fa-shield-alt"></i> Админ-панель</h1>
-				<div id="welcomeMessage" class="admin-welcome"></div>
 			</div>
 
 			<!-- Секция статистики (сохраняем как есть) -->

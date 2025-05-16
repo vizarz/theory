@@ -1,15 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-	console.log('admin-changepassword.js loaded')
-
-	// Кнопка для показа/скрытия формы смены пароля
-	const toggleBtn = document.getElementById('toggleChangePasswordBtn')
-	const changeForm = document.getElementById('adminChangePasswordForm')
-
-	toggleBtn.addEventListener('click', () => {
-		changeForm.classList.toggle('active')
-	})
-
-	// Обработчик кнопки выбора пользователя через модальное окно
 	const chooseUserBtn = document.getElementById('chooseUserBtnExternalCP')
 	if (chooseUserBtn) {
 		chooseUserBtn.addEventListener('click', () => {
@@ -17,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
 			openUserModal(function (selectedUsername) {
 				console.log('openUserModal callback вызвана с:', selectedUsername)
 				document.getElementById('userSelect').value = selectedUsername
-				// Ищем элемент из списка модального окна для отображения полного текста (username — имя)
 				let option = document.querySelector(
 					"#userList option[value='" + selectedUsername + "']"
 				)
@@ -31,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		console.log('Элемент chooseUserBtnExternalCP не найден')
 	}
 
-	// Обработчик отправки формы смены пароля
 	document
 		.getElementById('submitChangePasswordBtn')
 		.addEventListener('click', async function (e) {

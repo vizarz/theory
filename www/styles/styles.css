@@ -1903,3 +1903,37 @@ body.dark-mode .stat-average,
 body.dark-mode .stat-completion {
 	color: #bbb;
 }
+.modal-actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+	margin-top: 20px;
+}
+.modal-actions .btn-toggle,
+.modal-actions .action-btn {
+	font-size: 16px;
+	padding: 12px 20px;
+	margin: 0;
+	height: auto;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 100px;
+	box-sizing: border-box;
+}
+#closeUserModal {
+	border: 2px solid #8fc202;
+	background-color: transparent;
+	color: #8fc202;
+}
+
+#closeUserModal:hover {
+	background-color: rgba(143, 194, 2, 0.1);
+}
+
+body.dark-mode #closeUserModal:hover {
+	background-color: rgba(143, 194, 2, 0.2);
+}
+#applyUserBtn {
+	margin: 0;
+}

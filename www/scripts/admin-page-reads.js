@@ -1,15 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-	console.log('admin-page-reads.js loaded')
-
-	// Кнопка для показа/скрытия формы просмотра прочитанных страниц
-	const toggleReadsBtn = document.getElementById('togglePageReadsBtn')
-	const pageReadsForm = document.getElementById('adminPageReadsForm')
-
-	toggleReadsBtn.addEventListener('click', () => {
-		pageReadsForm.classList.toggle('active')
-	})
-
-	// Обработчик кнопки выбора пользователя через модальное окно для логов
 	const chooseUserBtn = document.getElementById('chooseUserBtnExternalPR')
 	if (chooseUserBtn) {
 		chooseUserBtn.addEventListener('click', () => {
@@ -29,8 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	} else {
 		console.log('Элемент chooseUserBtnExternalPR не найден')
 	}
-
-	// Обработчик загрузки логов для выбранного пользователя
 	document
 		.getElementById('loadPageReadsBtn')
 		.addEventListener('click', function (e) {
@@ -57,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 						'pageReadsTableContainer'
 					)
 					let tableHtml =
-						'<table><thead><tr><th>Страница</th><th>Время</th></tr></thead><tbody>'
+						'<table class="admin-table"><thead><tr><th>Страница</th><th>Время</th></tr></thead><tbody>'
 					pageReads.forEach(item => {
 						const dt = new Date(item.timestamp)
 						dt.setHours(dt.getHours() + 3)
