@@ -42,17 +42,14 @@ document.addEventListener('DOMContentLoaded', function () {
 			const data = { username: targetUsername, newPassword: newPassword }
 
 			try {
-				const response = await fetch(
-					'http://localhost:3000/api/admin/change-password',
-					{
-						method: 'POST',
-						headers: {
-							'Content-Type': 'application/json',
-							Authorization: `Bearer ${token}`,
-						},
-						body: JSON.stringify(data),
-					}
-				)
+				const response = await fetch(getApiUrl('admin/change-password'), {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+						Authorization: `Bearer ${token}`,
+					},
+					body: JSON.stringify(data),
+				})
 
 				if (!response.ok) {
 					const errorText = await response.text()

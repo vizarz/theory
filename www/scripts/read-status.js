@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const readButton = document.getElementById('readButton')
 
 	// Проверяем статус прочтения из базы
-	fetch(`http://localhost:3000/api/mark-read?page=${page}`, {
+	fetch(getApiUrl(`mark-read?page=${page}`), {
 		headers: {
 			Authorization: `Bearer ${token}`,
 		},
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 					const timestamp = now.toISOString().substring(0, 19).replace('T', ' ')
 					const data = { page, rusTitle, timestamp }
 
-					fetch('http://localhost:3000/api/mark-read', {
+					fetch(getApiUrl('mark-read'), {
 						method: 'POST',
 						headers: {
 							'Content-Type': 'application/json',

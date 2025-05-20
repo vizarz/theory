@@ -20,7 +20,7 @@ if (registerForm) {
 		const role = 'student'
 
 		try {
-			const response = await fetch('http://localhost:3000/api/auth/register', {
+			const response = await fetch(getApiUrl('auth/register'), {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ if (loginForm) {
 		const password = e.target.password.value
 
 		try {
-			const response = await fetch('http://localhost:3000/api/auth/login', {
+			const response = await fetch(getApiUrl('auth/login'), {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({ username, password }),

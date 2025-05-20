@@ -30,7 +30,7 @@ async function loadUserStats() {
 	const token = localStorage.getItem('token')
 
 	try {
-		const response = await fetch('http://localhost:3000/api/profile/stats', {
+		const response = await fetch(getApiUrl('profile/stats'), {
 			headers: {
 				Authorization: `Bearer ${token}`,
 			},
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				newPassword: newPassword,
 			}
 
-			fetch('http://localhost:3000/api/change-password', {
+			fetch(getApiUrl('change-password'), {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',

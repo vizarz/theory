@@ -8,9 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
 		const stepTitle = item.querySelector('.accordion-header').innerText.trim()
 		const btn = document.getElementById('btn-' + stepId)
 
-		// Проверяем статус шага
+		// Проверяем статус шага, используя getApiUrl вместо хардкод URL
 		fetch(
-			`http://localhost:3000/api/mark-read/step-status?page=${page}&step=${stepId}&stepTitle=${encodeURIComponent(
+			`${getApiUrl(
+				'mark-read/step-status'
+			)}?page=${page}&step=${stepId}&stepTitle=${encodeURIComponent(
 				stepTitle
 			)}&project=${encodeURIComponent(project)}`,
 			{ headers: { Authorization: `Bearer ${token}` } }
@@ -42,7 +44,7 @@ function markCompleted(stepId, stepTitle, btn, item) {
 	const now = new Date()
 	const timestamp = now.toISOString().substring(0, 19).replace('T', ' ')
 
-	fetch('http://localhost:3000/api/mark-read/step', {
+	fetch(getApiUrl('mark-read/step'), {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
@@ -65,7 +67,6 @@ function markCompleted(stepId, stepTitle, btn, item) {
 				}
 				if (item) {
 					item.classList.add('completed')
-					// Закрываем аккордеон
 					const content = item.querySelector('.accordion-content')
 					if (content) {
 						content.classList.remove('open')

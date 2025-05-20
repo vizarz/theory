@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 function loadDashboardStats() {
-	fetch('http://localhost:3000/api/admin/dashboard-stats', {
+	fetch(getApiUrl('admin/dashboard-stats'), {
 		headers: {
 			'Content-Type': 'application/json',
 			Authorization: `Bearer ${localStorage.getItem('token')}`,

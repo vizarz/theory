@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				return
 			}
 			fetch(
-				`http://localhost:3000/api/admin/page-reads?username=${encodeURIComponent(
+				`${getApiUrl('admin/page-reads')}?username=${encodeURIComponent(
 					username
 				)}`,
 				{

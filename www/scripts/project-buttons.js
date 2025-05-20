@@ -38,7 +38,6 @@ function showStep(stepNumber) {
 }
 
 // Отметить шаг как выполненный
-// Отметить шаг как выполненный
 function markRead(stepId, stepTitle) {
 	const token = localStorage.getItem('token')
 
@@ -79,7 +78,7 @@ function markRead(stepId, stepTitle) {
 		btn.innerText = 'Отправка...'
 	}
 
-	fetch('http://localhost:3000/api/mark-read/step', {
+	fetch(getApiUrl('mark-read/step'), {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
@@ -170,9 +169,10 @@ function checkStepStatus(stepId) {
 			stepTitle = 'Загрузка и тестирование приложения'
 			break
 	}
-
 	fetch(
-		`http://localhost:3000/api/mark-read/step-status?page=${page}&step=step${stepNumber}&stepTitle=${encodeURIComponent(
+		`${getApiUrl(
+			'mark-read/step-status'
+		)}?page=${page}&step=step${stepNumber}&stepTitle=${encodeURIComponent(
 			stepTitle
 		)}&project=${encodeURIComponent(project)}`,
 		{

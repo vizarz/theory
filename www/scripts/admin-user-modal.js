@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	// Загружаем список пользователей с сервера
 	function loadUsers() {
-		fetch('http://localhost:3000/api/admin/users', {
+		fetch(getApiUrl('admin/users'), {
 			headers: {
 				'Content-Type': 'application/json',
 				Authorization: `Bearer ${localStorage.getItem('token')}`,
