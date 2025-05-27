@@ -72,6 +72,12 @@ if (loginForm) {
 				const data = await response.json()
 				console.log('Данные входа', data)
 				localStorage.setItem('token', data.token)
+
+				// Запускаем heartbeat систему при успешном входе
+				if (window.userHeartbeat) {
+					window.userHeartbeat.onUserLogin()
+				}
+
 				showToast('Вы вошли в аккаунт', 'success')
 				setTimeout(() => {
 					window.location.href = 'index.html'
@@ -87,3 +93,44 @@ if (loginForm) {
 		}
 	})
 }
+
+// Функция выхода из системы
+function logout() {
+	// Останавливаем heartbeat при выходе
+	if (window.userHeartbeat) {
+		window.userHeartbeat.onUserLogout()
+	}
+
+	// Удаляем токен и перенаправляем на страницу входа
+	localStorage.removeItem('token')
+	showToast('Вы вышли из аккаунта', 'success')
+	setTimeout(() => {
+		window.location.href = 'login.html'
+	}, 1000)
+}
+
+// Проверка авторизации при загрузке страницы
+document.addEventListener('DOMContentLoaded', function () {
+	// Если пользователь на странице входа или регистрации и уже авторизован
+	const currentPage = window.location.pathname.split('/').pop()
+	const token = localStorage.getItem('token')
+
+	if (
+		token &&
+		(currentPage === 'login.html' || currentPage === 'register.html')
+	) {
+		// Перенаправляем на главную страницу
+		window.location.href = 'index.html'
+	}
+
+	// Если пользователь авторизован и heartbeat система доступна
+	if (
+		token &&
+		window.userHeartbeat &&
+		currentPage !== 'login.html' &&
+		currentPage !== 'register.html'
+	) {
+		// Убеждаемся, что heartbeat запущен
+		window.userHeartbeat.onUserLogin()
+	}
+})
