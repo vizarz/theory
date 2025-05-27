@@ -141,4 +141,36 @@ router.get('/dashboard-stats', checkAuth, async (req, res) => {
 		res.status(500).send('Ошибка при получении статистики')
 	}
 })
+
+router.get('/online-users', checkAuth, async (req, res) => {
+    if (req.user.role !== 'admin') {
+        return res.status(403).send('Отказано в доступе')
+    }
+
+    try {
+        // Сначала обновляем статусы - помечаем как оффлайн тех, кто не отправлял heartbeat больше 2 минут
+        await pool.query(`
+            UPDATE users 
+            SET is_online = FALSE 
+            WHERE last_heartbeat < DATE_SUB(NOW(), INTERVAL 2 MINUTE) 
+            AND is_online = TRUE
+        `);
+
+        // Получаем список онлайн пользователей
+        const [onlineUsers] = await pool.query(`
+            SELECT username, name, role, last_activity, last_heartbeat, is_online
+            FROM users 
+            WHERE is_online = TRUE
+            ORDER BY last_activity DESC
+        `);
+
+        res.json({
+            count: onlineUsers.length,
+            users: onlineUsers
+        });
+    } catch (error) {
+        console.error('Ошибка получения онлайн пользователей:', error);
+        res.status(500).send('Ошибка при получении списка онлайн пользователей');
+    }
+});
 module.exports = router
