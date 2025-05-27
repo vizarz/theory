@@ -2005,7 +2005,7 @@ body.dark-mode .admin-section {
 	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.section-header {
+.admin-section-header {
 	padding: 20px;
 	background: #f9f9f9;
 	border-bottom: 1px solid #eee;
@@ -2014,19 +2014,19 @@ body.dark-mode .admin-section {
 	align-items: center;
 }
 
-body.dark-mode .section-header {
+body.dark-mode .admin-section-header {
 	background: #2a2a2a;
 	border-bottom-color: #444;
 }
 
-.section-header h2 {
+.admin-section-header h2 {
 	margin: 0;
 	font-size: 20px;
 	display: flex;
 	align-items: center;
 }
 
-.section-header h2 i {
+.admin-section-header h2 i {
 	margin-right: 10px;
 	color: #8fc202;
 }
