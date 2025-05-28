@@ -2439,3 +2439,161 @@ body.dark-mode .empty-online-state {
 	margin: 0;
 	font-size: 14px;
 }
+/* Стили для секций пользователей */
+.users-section {
+	margin-bottom: 30px;
+}
+
+.users-section-header {
+	padding: 15px;
+	background: #f8f9fa;
+	border-radius: 8px 8px 0 0;
+	border-left: 4px solid #ddd;
+	margin-bottom: 15px;
+}
+
+body.dark-mode .users-section-header {
+	background: #2a2a2a;
+}
+
+.users-section-header h3 {
+	margin: 0;
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.users-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	gap: 15px;
+}
+
+/* Обновленные стили карточек пользователей */
+.user-card {
+	display: flex;
+	align-items: center;
+	padding: 15px;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+	position: relative;
+}
+
+body.dark-mode .user-card {
+	background: #333;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.user-card.online {
+	border-left: 4px solid #4caf50;
+}
+
+.user-card.offline {
+	border-left: 4px solid #f44336;
+	opacity: 0.8;
+}
+
+.user-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.user-avatar {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background: linear-gradient(135deg, #8fc202, #6ba002);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	margin-right: 15px;
+	flex-shrink: 0;
+}
+
+.online-indicator {
+	position: absolute;
+	bottom: 2px;
+	right: 2px;
+	width: 14px;
+	height: 14px;
+	background: #4caf50;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	animation: pulse 2s infinite;
+}
+
+body.dark-mode .online-indicator {
+	border-color: #333;
+}
+
+@keyframes pulse {
+	0% {
+		box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+	}
+	70% {
+		box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+	}
+	100% {
+		box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+	}
+}
+
+.user-info {
+	flex: 1;
+	min-width: 0;
+}
+
+.user-name {
+	font-weight: 600;
+	font-size: 16px;
+	color: #333;
+	margin-bottom: 4px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+body.dark-mode .user-name {
+	color: #eee;
+}
+
+.user-username {
+	color: #666;
+	font-size: 14px;
+	margin-bottom: 6px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+body.dark-mode .user-username {
+	color: #aaa;
+}
+
+.user-activity {
+	font-size: 12px;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+/* Обновленный счетчик */
+.online-count {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-weight: 600;
+	color: #333;
+}
+
+body.dark-mode .online-count {
+	color: #eee;
+}
