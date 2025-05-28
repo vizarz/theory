@@ -2439,7 +2439,6 @@ body.dark-mode .empty-online-state {
 	margin: 0;
 	font-size: 14px;
 }
-/* Стили для секций пользователей */
 .users-section {
 	margin-bottom: 30px;
 }
@@ -2470,7 +2469,6 @@ body.dark-mode .users-section-header {
 	gap: 15px;
 }
 
-/* Обновленные стили карточек пользователей */
 .user-card {
 	display: flex;
 	align-items: center;
@@ -2585,7 +2583,6 @@ body.dark-mode .user-username {
 	gap: 5px;
 }
 
-/* Обновленный счетчик */
 .online-count {
 	display: flex;
 	align-items: center;
