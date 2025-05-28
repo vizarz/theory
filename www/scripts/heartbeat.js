@@ -31,14 +31,50 @@ class UserHeartbeat {
 
 			if (!response.ok) {
 				console.warn('Heartbeat failed:', response.status)
-				// Если токен невалидный, останавливаем heartbeat
+				// Если токен невалидный или истек, обрабатываем это
 				if (response.status === 401) {
-					this.stopHeartbeat()
-					localStorage.removeItem('token')
+					this.handleTokenExpired()
 				}
+			} else {
+				// Heartbeat успешен - токен валидный
+				console.log('👤 Heartbeat успешен')
 			}
 		} catch (error) {
 			console.warn('Heartbeat error:', error)
+		}
+	}
+
+	// Обработка истекшего токена
+	handleTokenExpired() {
+		console.log('🚫 Токен истек или невалидный')
+
+		// Останавливаем heartbeat
+		this.stopHeartbeat()
+
+		// Удаляем токен из localStorage
+		localStorage.removeItem('token')
+
+		// Показываем уведомление пользователю
+		if (typeof showToast === 'function') {
+			showToast('Сессия истекла. Перенаправление на страницу входа...', 'error')
+		} else {
+			alert('Сессия истекла. Необходимо войти заново.')
+		}
+
+		// Перенаправляем на страницу входа через 2 секунды
+		setTimeout(() => {
+			this.redirectToLogin()
+		}, 2000)
+	}
+
+	// Перенаправление на страницу входа
+	redirectToLogin() {
+		const currentPage = window.location.pathname.split('/').pop()
+
+		// Проверяем, что мы не на странице входа или регистрации
+		if (currentPage !== 'login.html' && currentPage !== 'register.html') {
+			console.log('🔄 Перенаправление на страницу входа')
+			window.location.href = 'login.html'
 		}
 	}
 
@@ -80,6 +116,38 @@ class UserHeartbeat {
 		} catch (error) {
 			console.warn('Error setting offline status:', error)
 		}
+	}
+
+	// Проверка валидности токена (дополнительная проверка)
+	async checkTokenValidity() {
+		const token = localStorage.getItem('token')
+		if (!token) {
+			this.redirectToLogin()
+			return false
+		}
+
+		try {
+			const response = await fetch(getApiUrl('auth/verify-token'), {
+				method: 'POST',
+				headers: {
+					Authorization: `Bearer ${token}`,
+					'Content-Type': 'application/json',
+				},
+			})
+
+			if (response.ok) {
+				return true
+			} else if (response.status === 401) {
+				this.handleTokenExpired()
+				return false
+			}
+		} catch (error) {
+			console.warn('Ошибка проверки токена:', error)
+			// Не перенаправляем при сетевых ошибках
+			return true
+		}
+
+		return false
 	}
 
 	// Настройка слушателей активности пользователя
@@ -127,8 +195,14 @@ class UserHeartbeat {
 
 		window.addEventListener('focus', () => {
 			console.log('👤 Окно получило фокус')
-			this.sendHeartbeat()
+			// Проверяем токен при возвращении фокуса
+			this.checkTokenValidity()
 		})
+
+		// Дополнительная проверка токена каждые 5 минут
+		setInterval(() => {
+			this.checkTokenValidity()
+		}, 5 * 60 * 1000) // 5 минут
 	}
 
 	// Обновление при входе пользователя в систему
