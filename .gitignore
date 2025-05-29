@@ -3,3 +3,7 @@
 www/.DS_Store
 
 node-auth-project/.DS_Store
+www/.DS_Store
+.gitignore
+www/.DS_Store
+www/downloads/.DS_Store

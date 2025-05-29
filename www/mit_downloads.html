@@ -3,9 +3,14 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Загрузки в MIT App Inventor</title>
+		<title>Центр загрузок MIT App Inventor</title>
 		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/downloads.css" />
 		<link rel="stylesheet" href="styles/toast.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		/>
 	</head>
 	<body>
 		<div id="header"></div>
@@ -13,20 +18,328 @@
 			<ul class="menu-list">
 				<li>
 					<div class="back-to-index">
-						<a href="index.html">Вернуться к оглавлению</a>
+						<a href="index.html">
+							<i class="fas fa-arrow-left"></i>
+							Вернуться к оглавлению
+						</a>
 					</div>
 				</li>
 			</ul>
 		</div>
+
 		<div class="content">
-			<h1>Загрузки MIT App Inventor</h1>
-			<p>На этой странице будет центр загрузок MIT App Inventor</p>
+			<div class="downloads-container">
+				<!-- Заголовок страницы -->
+				<div class="downloads-header">
+					<h1>
+						<i class="fas fa-download"></i> Центр загрузок MIT App Inventor
+					</h1>
+					<p class="downloads-description">
+						Здесь вы найдете все необходимые файлы, проекты и инструменты для
+						работы с MIT App Inventor
+					</p>
+				</div>
+
+				<!-- Секция MIT App Inventor Tools -->
+				<div class="downloads-section">
+					<div class="section-header">
+						<h2><i class="fas fa-cogs"></i> Инструменты MIT App Inventor</h2>
+						<p>Официальные инструменты и компоненты для разработки</p>
+					</div>
+					<div class="downloads-grid">
+						<div class="download-card featured">
+							<div class="download-icon">
+								<i class="fab fa-windows"></i>
+							</div>
+							<div class="download-info">
+								<h3>MIT App Inventor для Windows</h3>
+								<p>Настольное приложение для Windows с автономной работой</p>
+								<div class="download-meta">
+									<span class="file-size">1,59 GB</span>
+									<span class="file-type">EXE</span>
+								</div>
+							</div>
+							<div class="download-actions">
+								<a
+									href="https://appinv.us/aisetup_win_30_265.exe"
+									target="_blank"
+									class="btn-download primary"
+								>
+									<i class="fas fa-download"></i>
+									Скачать
+								</a>
+								<button class="btn-info" onclick="showInfo('windows-info')">
+									<i class="fas fa-info-circle"></i>
+								</button>
+							</div>
+						</div>
+
+						<div class="download-card featured">
+							<div class="download-icon">
+								<i class="fab fa-apple"></i>
+							</div>
+							<div class="download-info">
+								<h3>MIT App Inventor для macOS</h3>
+								<p>Настольное приложение для macOS с автономной работой</p>
+								<div class="download-meta">
+									<span class="file-size">346 MB</span>
+									<span class="file-type">DMG</span>
+								</div>
+							</div>
+							<div class="download-actions">
+								<a
+									href="https://appinv.us/aisetup_mac_3.0rc3"
+									target="_blank"
+									class="btn-download primary"
+								>
+									<i class="fas fa-download"></i>
+									Скачать
+								</a>
+								<button class="btn-info" onclick="showInfo('mac-info')">
+									<i class="fas fa-info-circle"></i>
+								</button>
+							</div>
+						</div>
+
+						<div class="download-card">
+							<div class="download-icon">
+								<i class="fas fa-mobile-alt"></i>
+							</div>
+							<div class="download-info">
+								<h3>MIT AI2 Companion</h3>
+								<p>
+									Приложение для тестирования ваших проектов на мобильном
+									устройстве
+								</p>
+								<div class="download-meta">
+									<span class="file-size">15 MB</span>
+									<span class="file-type">Phone</span>
+								</div>
+							</div>
+							<div class="download-actions">
+								<a
+									href="https://play.google.com/store/apps/details?id=edu.mit.appinventor.aicompanion3"
+									target="_blank"
+									class="btn-download"
+								>
+									<i class="fab fa-google-play"></i>
+									Google Play
+								</a>
+								<a
+									href="https://apps.apple.com/app/mit-app-inventor/id1422259623"
+									target="_blank"
+									class="btn-download"
+								>
+									<i class="fab fa-app-store-ios"></i>
+									App Store
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="projects" class="downloads-section">
+					<div class="section-header">
+						<h2><i class="fas fa-project-diagram"></i> Готовые проекты</h2>
+						<p>Скачайте готовые проекты для изучения и использования</p>
+					</div>
+					<div class="downloads-grid">
+						<div class="download-card">
+							<div class="download-icon project-icon">
+								<i class="fas fa-globe"></i>
+							</div>
+							<div class="download-info">
+								<h3>Проект "Привет, мир!"</h3>
+								<p>Базовый проект для знакомства с MIT App Inventor</p>
+								<div class="download-meta">
+									<span class="file-size">2.5 KB</span>
+									<span class="file-type">AIA</span>
+								</div>
+							</div>
+							<div class="download-actions">
+								<button
+									class="btn-download"
+									onclick="downloadProject('hello-world')"
+								>
+									<i class="fas fa-download"></i>
+									Скачать
+								</button>
+								<a href="mit_project_hello_world.html" class="btn-info">
+									<i class="fas fa-book"></i>
+								</a>
+							</div>
+						</div>
+
+						<div class="download-card">
+							<div class="download-icon project-icon">
+								<i class="fas fa-calculator"></i>
+							</div>
+							<div class="download-info">
+								<h3>Калькулятор</h3>
+								<p>Простой калькулятор с базовыми математическими операциями</p>
+								<div class="download-meta">
+									<span class="file-size">8.2 KB</span>
+									<span class="file-type">AIA</span>
+								</div>
+							</div>
+							<div class="download-actions">
+								<button
+									class="btn-download"
+									onclick="downloadProject('calculator')"
+									disabled
+								>
+									<i class="fas fa-clock"></i>
+									Скоро
+								</button>
+								<button class="btn-info" onclick="showInfo('calculator-info')">
+									<i class="fas fa-info-circle"></i>
+								</button>
+							</div>
+						</div>
+
+						<div class="download-card">
+							<div class="download-icon project-icon">
+								<i class="fas fa-gamepad"></i>
+							</div>
+							<div class="download-info">
+								<h3>Игра "Угадай число"</h3>
+								<p>Интерактивная игра для изучения условий и циклов</p>
+								<div class="download-meta">
+									<span class="file-size">12.1 KB</span>
+									<span class="file-type">AIA</span>
+								</div>
+							</div>
+							<div class="download-actions">
+								<button
+									class="btn-download"
+									onclick="downloadProject('guess-number')"
+									disabled
+								>
+									<i class="fas fa-clock"></i>
+									Скоро
+								</button>
+								<button class="btn-info" onclick="showInfo('guess-info')">
+									<i class="fas fa-info-circle"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Секция ресурсов -->
+				<div class="downloads-section">
+					<div class="section-header">
+						<h2><i class="fas fa-palette"></i> Ресурсы и материалы</h2>
+						<p>Изображения, звуки и другие файлы для ваших проектов</p>
+					</div>
+					<div class="downloads-grid">
+						<div class="download-card">
+							<div class="download-icon resource-icon">
+								<i class="fas fa-images"></i>
+							</div>
+							<div class="download-info">
+								<h3>Набор иконок для приложений</h3>
+								<p>Коллекция векторных иконок в высоком разрешении</p>
+								<div class="download-meta">
+									<span class="file-size">5.8 MB</span>
+									<span class="file-type">ZIP</span>
+								</div>
+							</div>
+							<div class="download-actions">
+								<button
+									class="btn-download"
+									onclick="downloadResource('icons-pack')"
+								>
+									<i class="fas fa-download"></i>
+									Скачать
+								</button>
+								<button class="btn-info" onclick="showInfo('icons-info')">
+									<i class="fas fa-eye"></i>
+									Превью
+								</button>
+							</div>
+						</div>
+
+						<div class="download-card">
+							<div class="download-icon resource-icon">
+								<i class="fas fa-volume-up"></i>
+							</div>
+							<div class="download-info">
+								<h3>Звуковые эффекты</h3>
+								<p>Набор звуков для игр и интерактивных приложений</p>
+								<div class="download-meta">
+									<span class="file-size">12.3 MB</span>
+									<span class="file-type">ZIP</span>
+								</div>
+							</div>
+							<div class="download-actions">
+								<button
+									class="btn-download"
+									onclick="downloadResource('sounds-pack')"
+								>
+									<i class="fas fa-download"></i>
+									Скачать
+								</button>
+								<button class="btn-info" onclick="showInfo('sounds-info')">
+									<i class="fas fa-play"></i>
+									Прослушать
+								</button>
+							</div>
+						</div>
+
+						<div class="download-card">
+							<div class="download-icon resource-icon">
+								<i class="fas fa-file-pdf"></i>
+							</div>
+							<div class="download-info">
+								<h3>Шпаргалка по блокам</h3>
+								<p>PDF-справочник по всем блокам MIT App Inventor</p>
+								<div class="download-meta">
+									<span class="file-size">2.1 MB</span>
+									<span class="file-type">PDF</span>
+								</div>
+							</div>
+							<div class="download-actions">
+								<button
+									class="btn-download"
+									onclick="downloadResource('blocks-cheatsheet')"
+								>
+									<i class="fas fa-download"></i>
+									Скачать
+								</button>
+								<button
+									class="btn-info"
+									onclick="previewPDF('blocks-cheatsheet')"
+								>
+									<i class="fas fa-eye"></i>
+									Просмотр
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+		<div id="infoModal" class="modal">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 id="modalTitle">Информация</h3>
+					<span class="close" onclick="closeModal()">&times;</span>
+				</div>
+				<div class="modal-body">
+					<div id="modalContent"></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn-secondary" onclick="closeModal()">Закрыть</button>
+				</div>
+			</div>
+		</div>
+
 		<script src="scripts/config.js"></script>
 		<script src="scripts/heartbeat.js"></script>
 		<script src="scripts/theme-change.js"></script>
 		<script src="scripts/header-loader.js"></script>
 		<script src="scripts/page-navigation.js"></script>
 		<script src="scripts/toast.js"></script>
+		<script src="scripts/downloads.js"></script>
 	</body>
 </html>

@@ -106,7 +106,7 @@ function logout() {
 	showToast('Вы вышли из аккаунта', 'success')
 	setTimeout(() => {
 		window.location.href = 'login.html'
-	}, 1000)
+	}, 500)
 }
 
 // Проверка авторизации при загрузке страницы

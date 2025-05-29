@@ -37,8 +37,6 @@
 			<div class="admin-header">
 				<h1><i class="fas fa-shield-alt"></i> Админ-панель</h1>
 			</div>
-
-			<!-- Секция статистики (сохраняем как есть) -->
 			<div class="dashboard-container">
 				<div class="stat-card">
 					<h3>Всего пользователей</h3>
@@ -62,8 +60,6 @@
 					</div>
 				</div>
 			</div>
-
-			<!-- Секция смены пароля пользователя -->
 			<div class="admin-section">
 				<div class="admin-section-header">
 					<h2><i class="fas fa-key"></i> Смена пароля пользователя</h2>
@@ -108,8 +104,6 @@
 					</div>
 				</div>
 			</div>
-
-			<!-- Секция просмотра прочитанных страниц -->
 			<div class="admin-section">
 				<div class="admin-section-header">
 					<h2>
@@ -143,7 +137,6 @@
 					</div>
 				</div>
 			</div>
-			<!-- Добавьте эту секцию после секции просмотра прочитанных страниц -->
 			<div class="admin-section">
 				<div class="admin-section-header">
 					<h2><i class="fas fa-users"></i> Все пользователи</h2>
@@ -167,7 +160,6 @@
 			</div>
 		</div>
 
-		<!-- Модальное окно выбора пользователя -->
 		<div id="userSelectionModal" class="modal">
 			<div class="modal-content">
 				<h2><i class="fas fa-users"></i> Выбор пользователя</h2>
@@ -191,8 +183,6 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- Скрипты -->
 		<script src="scripts/config.js"></script>
 		<script src="scripts/heartbeat.js"></script>
 		<script src="scripts/admin-online-users.js"></script>
@@ -204,7 +194,6 @@
 		<script src="scripts/admin-changepassword.js"></script>
 		<script src="scripts/admin-page-reads.js"></script>
 		<script>
-			// Скрипт для слайд-форм
 			document.addEventListener('DOMContentLoaded', function () {
 				const toggleChangePasswordBtn = document.getElementById(
 					'toggleChangePasswordBtn'
@@ -225,7 +214,7 @@
 
 					if (this.classList.contains('active')) {
 						this.innerHTML = 'Скрыть онлайн <i class="fas fa-chevron-up"></i>'
-						// Загружаем данные при открытии
+
 						loadOnlineUsers()
 					} else {
 						this.innerHTML =
@@ -256,7 +245,6 @@
 					}
 				})
 
-				// Активируем кнопки при выборе пользователя
 				const userSelect = document.getElementById('userSelect')
 				const userSelectReads = document.getElementById('userSelectReads')
 				const submitChangePasswordBtn = document.getElementById(
@@ -264,7 +252,6 @@
 				)
 				const loadPageReadsBtn = document.getElementById('loadPageReadsBtn')
 
-				// Наблюдатель изменений для поля выбора пользователя
 				const observeUserField = function (field, button) {
 					const observer = new MutationObserver(function (mutations) {
 						button.disabled = !field.value
@@ -276,7 +263,6 @@
 				observeUserField(userSelect, submitChangePasswordBtn)
 				observeUserField(userSelectReads, loadPageReadsBtn)
 
-				// Приветствие администратора
 				const welcomeMessage = document.getElementById('welcomeMessage')
 				if (welcomeMessage) {
 					const token = localStorage.getItem('token')

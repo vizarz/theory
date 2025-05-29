@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Проект "Говорящее приложение"</title>
+		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/toast.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		/>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<div class="back-to-index">
+						<a href="mit_projects.html">
+							<i class="fas fa-arrow-left"></i>
+							Вернуться к проектам
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="content">
+			<div class="project-container">
+				<div class="project-header">
+					<h1>Проект "Говорящее приложение"</h1>
+					<p>
+						<strong>Цель</strong>: Создать приложение, которое превращает текст
+						в речь! Напиши что угодно, и приложение произнесёт это вслух.
+					</p>
+					<p>
+						Этот проект поможет изучить работу с компонентом "Текст в речь"
+						(Text to Speech), получение текста от пользователя через текстовое
+						поле (TextBox) и управление событиями кнопки для запуска
+						озвучивания.
+					</p>
+					<div class="project-features">
+						<h3><i class="fas fa-star"></i> Чему ты научишься:</h3>
+						<ul>
+							<li>
+								<i class="fas fa-microphone"></i> Использовать компонент "Текст
+								в речь"
+							</li>
+							<li>
+								<i class="fas fa-keyboard"></i> Получать текст от пользователя
+							</li>
+							<li>
+								<i class="fas fa-volume-up"></i> Управлять громкостью и
+								скоростью речи
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="steps-progress">
+					<div class="progress-line"></div>
+					<div class="progress-line-completed" id="progress-line"></div>
+
+					<div class="step-item" data-step="1">
+						<div class="step-circle" onclick="showStep(1)">1</div>
+						<div class="step-title">Добавь текстовое поле</div>
+					</div>
+
+					<div class="step-item" data-step="2">
+						<div class="step-circle" onclick="showStep(2)">2</div>
+						<div class="step-title">Добавь кнопку "Говорить"</div>
+					</div>
+
+					<div class="step-item" data-step="3">
+						<div class="step-circle" onclick="showStep(3)">3</div>
+						<div class="step-title">Добавь компонент "Текст в речь"</div>
+					</div>
+
+					<div class="step-item" data-step="4">
+						<div class="step-circle" onclick="showStep(4)">4</div>
+						<div class="step-title">Соедини блоки команд</div>
+					</div>
+				</div>
+
+				<div class="step-contents">
+					<div id="step-content-1" class="step-content">
+						<h2>Шаг 1: Добавление текстового поля</h2>
+						<ul class="instruction-list">
+							<li>
+								Откройте
+								<a href="https://appinventor.mit.edu" target="_blank"
+									>MIT App Inventor</a
+								>.
+							</li>
+							<li>Нажмите на кнопку "Create Apps!"</li>
+
+							<img
+								class="project-img"
+								src="images/mit_create_apps.jpeg"
+								alt="Создать приложение"
+							/>
+							<li>Войдите в свою учетную запись.</li>
+							<img
+								class="project-img"
+								src="images/mit_google_login.jpg"
+								alt="Вход через Google"
+							/>
+							<li>Выберите "New Project" в верхнем меню.</li>
+							<img
+								class="project-img"
+								src="images/mit_new_project.jpg"
+								alt="Новый проект"
+							/>
+							<li>Введите название проекта "SpeakingApp" и нажмите OK.</li>
+							<img
+								class="project-img"
+								src="images/mit_project_okey.jpeg"
+								alt="Название проекта"
+							/>
+
+							<li>
+								Для начала добавим текстовое поле. Из палитры
+								<strong>User Interface</strong> перетащите компонент
+								<strong>TextBox</strong> (Текст) под заголовок.
+							</li>
+							<img
+								class="project-img"
+								src="images/speaking_app_add_textbox.jpeg"
+								alt="Добавление текстового поля"
+							/>
+
+							<li>
+								Настройте свойства текстового поля:
+								<br />• <strong>Width</strong> (Ширина): Fill parent (Заполнить
+								родителя) <br />• <strong>Height</strong> (Высота): Automatic
+								(Автоматически) <br />• <strong>Hint</strong> (Подсказка):
+								"Введите текст, который нужно произнести" <br />•
+								<strong>MultiLine</strong> (Многострочный): True (Да) -
+								позволяет вводить несколько строк
+							</li>
+						</ul>
+
+						<div class="tip-box">
+							<i class="fas fa-lightbulb"></i>
+							<strong>Совет:</strong> Чем больше текстовое поле, тем удобнее
+							пользователю вводить длинные предложения. Многострочный режим
+							(MultiLine) позволяет вводить несколько строк текста.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" disabled>Назад</button>
+							<button
+								id="btn-step1"
+								class="step-btn btn-read"
+								onclick="markRead('step1', 'Добавление текстового поля')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(2)">
+								Далее
+							</button>
+						</div>
+					</div>
+
+					<div id="step-content-2" class="step-content">
+						<h2>Шаг 2: Добавление кнопки "Говорить"</h2>
+						<ul class="instruction-list">
+							<li>
+								Из палитры <strong>User Interface</strong> (Интерфейс
+								пользователя) перетащите компонент
+								<strong>Button</strong> (Кнопка) под текстовое поле.
+							</li>
+							<img
+								class="project-img"
+								src="images/speaking_app_add_button.jpeg"
+								alt="Добавление кнопки"
+							/>
+
+							<li>
+								В панели <strong>Properties</strong> (Свойства) настройте
+								кнопку: <br />• <strong>Text</strong> (Текст): "Говорить!"
+								<br />• <strong>FontSize</strong> (Размер шрифта): 18 <br />•
+								<strong>Width</strong> (Ширина): Fill parent (Заполнить
+								родителя) - чтобы кнопка была широкой <br />•
+								<strong>BackgroundColor</strong> (Цвет фона): Выберите приятный
+								цвет (например, зелёный)
+							</li>
+							<img
+								class="project-img"
+								src="images/speaking_app_button_properties.jpeg"
+								alt="Настройка свойств кнопки"
+							/>
+						</ul>
+
+						<div class="tip-box">
+							<i class="fas fa-lightbulb"></i>
+							<strong>Совет:</strong> Яркая кнопка с понятным названием и
+							иконкой делает интерфейс приложения более интуитивным и
+							привлекательным для пользователя.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(1)">
+								Назад
+							</button>
+							<button
+								id="btn-step2"
+								class="step-btn btn-read"
+								onclick="markRead('step2', 'Добавление кнопки Говорить')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(3)">
+								Далее
+							</button>
+						</div>
+					</div>
+					<div id="step-content-3" class="step-content">
+						<h2>Шаг 3: Добавление компонента "Текст в речь"</h2>
+						<ul class="instruction-list">
+							<li>
+								Теперь добавим невидимый компонент, который будет
+								преобразовывать текст в речь. Прокрутите список компонентов в
+								палитре и найдите раздел <strong>Media</strong> (Медиа).
+							</li>
+
+							<li>
+								Перетащите компонент <strong>TextToSpeech</strong> (Текст в
+								речь) на экран приложения. Обратите внимание, что этот компонент
+								появится не на экране, а в разделе
+								<strong>Non-visible components</strong> (Невидимые компоненты)
+								внизу экрана.
+							</li>
+							<img
+								class="project-img"
+								src="images/speaking_app_add_tts.jpeg"
+								alt="Добавление компонента TextToSpeech"
+							/>
+
+							<li>
+								Выберите компонент TextToSpeech1 в панели компонентов и
+								настройте его свойства:
+								<br />• <strong>Language</strong> (Язык): выберите язык для
+								чтения (например, "ru" для русского) <br />•
+								<strong>Country</strong> (Страна): RU <br />•
+								<strong>PitchScale</strong> (Высота голоса): 1.0 (стандартная
+								высота) <br />• <strong>SpeechRate</strong> (Скорость речи): 1.0
+								(стандартная скорость)
+							</li>
+						</ul>
+
+						<div class="warning-box">
+							<i class="fas fa-exclamation-triangle"></i>
+							<strong>Внимание:</strong> Компонент TextToSpeech использует
+							системные голоса, установленные на устройстве пользователя.
+							Поддерживаемые языки и качество голоса могут отличаться на разных
+							устройствах.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(2)">
+								Назад
+							</button>
+							<button
+								id="btn-step3"
+								class="step-btn btn-read"
+								onclick="markRead('step3', 'Добавление компонента Текст в речь')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(4)">
+								Далее
+							</button>
+						</div>
+					</div>
+
+					<!-- Шаг 4: Соединение блоков команд -->
+					<div id="step-content-4" class="step-content">
+						<h2>Шаг 4: Соединение блоков команд</h2>
+						<ul class="instruction-list">
+							<li>
+								Переключитесь на вкладку <strong>Blocks</strong> (Блоки) в
+								правом верхнем углу экрана, чтобы начать программирование логики
+								приложения.
+							</li>
+							<img
+								class="project-img"
+								src="images/mit_project_transit_to_blocks.jpeg"
+								alt="Переход на вкладку Blocks"
+							/>
+
+							<li>
+								Нажмите на <strong>Button1</strong> в списке компонентов слева.
+								Появится список доступных блоков для этого компонента.
+								Перетащите блок <strong>when Button1.Click do</strong>
+								(когда кнопка нажата, сделать) на рабочую область.
+							</li>
+							<img
+								class="project-img"
+								src="images/mit_project_choose_button.jpeg"
+								alt="Блок нажатия кнопки"
+							/>
+
+							<li>
+								Теперь нажмите на <strong>TextToSpeech1</strong> в списке
+								компонентов и перетащите блок
+								<strong>call TextToSpeech1.Speak</strong> (вызвать метод
+								Говорить) внутрь блока Button1.Click.
+							</li>
+
+							<li>
+								Нажмите на <strong>TextBox1</strong> в списке компонентов и
+								перетащите блок <strong>TextBox1.Text</strong> (текст из
+								текстового поля) в пустое место блока TextToSpeech1.Speak.
+							</li>
+							<img
+								class="project-img"
+								style="width: 50%"
+								src="images/speaking_app_complete_blocks.png"
+								alt="Соединение блоков команд"
+							/>
+
+							<li>
+								<strong>Протестируйте ваше приложение:</strong><br />
+								Чтобы увидеть ваше говорящее приложение в действии,
+								воспользуйтесь руководством по тестированию приложений в
+								<a href="mit_introduction.html#download_tips" target="_blank"
+									>нашем введении в MIT App Inventor</a
+								>. После запуска приложения введите любой текст и нажмите кнопку
+								"Говорить"!
+							</li>
+
+							<img
+								class="project-img"
+								src="images/mit_project_testing_app.jpeg"
+								alt="Тестирование приложения"
+							/>
+						</ul>
+
+						<div class="success-box">
+							<i class="fas fa-check-circle"></i>
+							<strong>Готово!</strong> Ваше приложение теперь может
+							преобразовывать введённый текст в речь. Попробуйте ввести разные
+							предложения и послушайте, как приложение их произносит.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(3)">
+								Назад
+							</button>
+							<button
+								id="btn-step4"
+								class="step-btn btn-read"
+								onclick="markRead('step4', 'Соединение блоков команд')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" disabled>Завершить</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="additional-resources">
+					<h3><i class="fas fa-download"></i> Скачать проект</h3>
+					<p>
+						Если у вас возникли сложности, вы можете скачать готовый файл
+						проекта в нашем центре загрузок:
+					</p>
+					<a href="mit_downloads.html#projects" class="download-link">
+						<i class="fas fa-external-link-alt"></i>
+						Перейти в центр загрузок
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<script src="scripts/config.js"></script>
+		<script src="scripts/heartbeat.js"></script>
+		<script src="scripts/theme-change.js"></script>
+		<script src="scripts/toast.js"></script>
+		<script src="scripts/header-loader.js"></script>
+		<script src="scripts/project-buttons.js"></script>
+	</body>
+</html>
