@@ -6,6 +6,11 @@
 		<title>Проекты</title>
 		<link rel="stylesheet" href="styles/styles.css" />
 		<link rel="stylesheet" href="styles/toast.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		/>
+		<link rel="stylesheet" href="styles/projects.css" />
 	</head>
 	<body>
 		<div id="header"></div>
@@ -26,11 +31,24 @@
 					<a href="mit_project_hello_world.html" class="project-link">
 						<div class="project-card">
 							<div class="project-image-container">
-								<img
-									src="images/mit_project_helloworld_preview.jpeg"
-									alt="Превью проекта"
-									class="project-image"
-								/>
+								<div class="hello-world-container">
+									<div class="floating-bubbles">
+										<div class="bubble bubble-1"></div>
+										<div class="bubble bubble-2"></div>
+										<div class="bubble bubble-3"></div>
+									</div>
+
+									<div class="phone">
+										<div class="phone-screen">
+											<div class="phone-header"></div>
+											<div class="phone-app">
+												<div class="hello-text">Привет, мир!</div>
+												<div class="hello-button">Привет!</div>
+											</div>
+											<div class="phone-home"></div>
+										</div>
+									</div>
+								</div>
 							</div>
 							<h3 class="project-title">Привет, мир!</h3>
 							<p class="project-difficulty">Сложность: Легкая</p>
@@ -39,25 +57,92 @@
 					<a href="mit_project_speaking_app.html" class="project-link">
 						<div class="project-card">
 							<div class="project-image-container">
-								<img
-									src="images/mit_project_speaking_app_preview.jpeg"
-									alt="Превью проекта"
-									class="project-image"
-								/>
+								<div class="speaking-app-container">
+									<div class="microphone-container">
+										<i class="fas fa-microphone-alt microphone-icon"></i>
+										<div class="speech-wave wave-1"></div>
+										<div class="speech-wave wave-2"></div>
+										<div class="speech-wave wave-3"></div>
+									</div>
+
+									<div class="speech-bubble">
+										<p>«Привет! Я могу говорить всё, что ты напишешь!»</p>
+									</div>
+								</div>
 							</div>
 							<h3 class="project-title">Говорящее приложение</h3>
 							<p class="project-difficulty">Сложность: Легкая</p>
 						</div>
 					</a>
-					<a href="project_details2.html" class="project-link">
+					<a href="mit_project_bouncing_ball.html" class="project-link">
 						<div class="project-card">
-							<img
-								src="images/project_sample2.png"
-								alt="Превью проекта"
-								class="project-image"
-							/>
-							<h3 class="project-title">Новый проект</h3>
-							<p class="project-difficulty">Сложность: Высокая</p>
+							<div class="project-image-container">
+								<div class="bouncing-ball-container">
+									<div class="ball"></div>
+
+									<!-- Direction arrows -->
+									<div class="direction-arrow arrow-up">
+										<i class="fas fa-arrow-up"></i>
+									</div>
+									<div class="direction-arrow arrow-down">
+										<i class="fas fa-arrow-down"></i>
+									</div>
+									<div class="direction-arrow arrow-left">
+										<i class="fas fa-arrow-left"></i>
+									</div>
+									<div class="direction-arrow arrow-right">
+										<i class="fas fa-arrow-right"></i>
+									</div>
+								</div>
+							</div>
+							<h3 class="project-title">Прыгающий мячик</h3>
+							<p class="project-difficulty">Сложность: Средняя</p>
+						</div>
+					</a>
+					<a href="mit_project_digital_artist.html" class="project-link">
+						<div class="project-card">
+							<div class="project-image-container">
+								<div class="drawing-canvas">
+									<!-- Drawing lines simulation -->
+									<div class="svg-container">
+										<svg
+											width="80%"
+											height="80%"
+											viewBox="0 0 240 200"
+											preserveAspectRatio="xMidYMid meet"
+										>
+											<path
+												d="M30,40 C60,35 90,60 120,50 S150,20 180,40"
+												stroke="#FF5722"
+												stroke-width="4"
+												fill="none"
+											/>
+											<path
+												d="M50,100 C80,120 110,90 140,110 S170,130 200,100"
+												stroke="#2196F3"
+												stroke-width="4"
+												fill="none"
+											/>
+											<path
+												d="M40,150 C70,180 100,160 130,170 S160,150 190,180"
+												stroke="#4CAF50"
+												stroke-width="4"
+												fill="none"
+											/>
+										</svg>
+									</div>
+
+									<!-- Pencil animation -->
+									<div class="pencil">
+										<i
+											class="fas fa-pencil-alt"
+											style="font-size: 2rem; color: #6b46c1"
+										></i>
+									</div>
+								</div>
+							</div>
+							<h3 class="project-title">Цифровой художник</h3>
+							<p class="project-difficulty">Сложность: Средняя</p>
 						</div>
 					</a>
 				</div>

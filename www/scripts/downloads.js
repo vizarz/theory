@@ -7,10 +7,15 @@ const downloadFiles = {
 		url: 'downloads/projects/HelloWorld.aia',
 		size: '2 KB',
 	},
-	calculator: {
-		name: 'Calculator.aia',
-		url: 'downloads/projects/Calculator.aia',
-		size: '8.2 KB',
+	'speaking-app': {
+		name: 'SpeakingApp.aia',
+		url: 'downloads/projects/SpeakingApp.aia',
+		size: '2 KB',
+	},
+	'bouncing-ball': {
+		name: 'BouncingBall.aia',
+		url: 'downloads/projects/BouncingBall.aia',
+		size: '2 KB',
 	},
 	'icons-pack': {
 		name: 'icons-pack.zip',

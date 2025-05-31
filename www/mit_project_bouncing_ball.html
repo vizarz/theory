@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Проект "Прыгающий мячик"</title>
+		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/toast.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		/>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<div class="back-to-index">
+						<a href="mit_projects.html">
+							<i class="fas fa-arrow-left"></i>
+							Вернуться к проектам
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="content">
+			<div class="project-container">
+				<div class="project-header">
+					<h1>Проект "Прыгающий мячик"</h1>
+					<p>
+						<strong>Цель</strong>: Создать игру, где мячик прыгает по экрану и
+						отскакивает от стенок. Ты сможешь управлять им, наклоняя телефон.
+					</p>
+					<p>
+						Этот проект поможет изучить, как использовать датчик движения
+						(акселерометр) в смартфоне, как программировать обнаружение
+						столкновений и как заставлять объекты двигаться на экране.
+					</p>
+					<div class="project-features">
+						<h3><i class="fas fa-star"></i> Чему ты научишься:</h3>
+						<ul>
+							<li>
+								<i class="fas fa-mobile-alt"></i> Использовать датчик движения
+								(акселерометр)
+							</li>
+							<li>
+								<i class="fas fa-puzzle-piece"></i> Программировать столкновения
+								со стенками
+							</li>
+							<li>
+								<i class="fas fa-arrows-alt"></i> Перемещать объекты на экране
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="steps-progress">
+					<div class="progress-line"></div>
+					<div class="progress-line-completed" id="progress-line"></div>
+
+					<div class="step-item" data-step="1">
+						<div class="step-circle" onclick="showStep(1)">1</div>
+						<div class="step-title">Добавь мячик на экран</div>
+					</div>
+
+					<div class="step-item" data-step="2">
+						<div class="step-circle" onclick="showStep(2)">2</div>
+						<div class="step-title">Добавь датчик движения</div>
+					</div>
+
+					<div class="step-item" data-step="3">
+						<div class="step-circle" onclick="showStep(3)">3</div>
+						<div class="step-title">Настрой столкновения</div>
+					</div>
+
+					<div class="step-item" data-step="4">
+						<div class="step-circle" onclick="showStep(4)">4</div>
+						<div class="step-title">Создай блоки движения</div>
+					</div>
+
+					<div class="step-item" data-step="5">
+						<div class="step-circle" onclick="showStep(5)">5</div>
+						<div class="step-title">Тестируй игру</div>
+					</div>
+				</div>
+
+				<div class="step-contents">
+					<div id="step-content-1" class="step-content">
+						<h2>Шаг 1: Добавление мячика на экран</h2>
+						<ul class="instruction-list">
+							<li>
+								Откройте
+								<a href="https://appinventor.mit.edu" target="_blank"
+									>MIT App Inventor</a
+								>
+								и создайте новый проект с названием "BouncingBall".
+							</li>
+							<img
+								class="project-img"
+								src="images/mit_create_apps.jpeg"
+								alt="Создать приложение"
+							/>
+
+							<li>
+								После создания проекта вы увидите вкладку Designer. Сначала нам
+								нужно добавить мячик на экран.
+							</li>
+
+							<li>
+								В левой части экрана найдите раздел
+								<strong>Drawing and Animation</strong> (Рисование и анимация).
+							</li>
+							<img
+								class="project-img"
+								src="images/bouncing_ball/ball_find_section.png"
+								alt="Раздел Drawing and Animation"
+							/>
+
+							<li>
+								Перетащите компонент <strong>Ball</strong> (Мяч) на экран вашего
+								приложения.
+							</li>
+							<img
+								class="project-img"
+								src="images/bouncing_ball/ball_add_component.png"
+								alt="Добавление мячика"
+							/>
+
+							<li>
+								Выберите добавленный мячик (Ball1) и настройте его свойства в
+								правой панели:
+								<br />• <strong>PaintColor</strong>: Выберите яркий цвет
+								(например, красный) <br />• <strong>Radius</strong>: 20 (размер
+								мячика) <br />• <strong>X</strong>: 160 (центр экрана по
+								горизонтали) <br />• <strong>Y</strong>: 240 (середина экрана по
+								вертикали)
+							</li>
+							<img
+								class="project-img"
+								src="images/bouncing_ball/ball_properties.png"
+								alt="Настройка свойств мячика"
+							/>
+						</ul>
+
+						<div class="tip-box">
+							<i class="fas fa-lightbulb"></i>
+							<strong>Совет:</strong> Чтобы мячик был хорошо виден, используйте
+							яркие контрастные цвета. Вы также можете изменить его размер через
+							свойство Radius.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" disabled>Назад</button>
+							<button
+								id="btn-step1"
+								class="step-btn btn-read"
+								onclick="markRead('step1', 'Добавление мячика на экран')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(2)">
+								Далее
+							</button>
+						</div>
+					</div>
+
+					<div id="step-content-2" class="step-content">
+						<h2>Шаг 2: Добавление датчика движения</h2>
+						<ul class="instruction-list">
+							<li>
+								Теперь добавим датчик движения, который будет определять наклон
+								телефона. В палитре компонентов найдите раздел
+								<strong>Sensors</strong> (Датчики).
+							</li>
+							<img
+								class="project-img"
+								src="images/bouncing_ball/ball_find_sensors.png"
+								alt="Раздел Sensors"
+							/>
+
+							<li>
+								Перетащите компонент
+								<strong>AccelerometerSensor</strong> (Акселерометр) на экран
+								приложения. Обратите внимание, что этот компонент появится в
+								разделе "Non-visible components" в нижней части экрана.
+							</li>
+							<img
+								class="project-img"
+								src="images/bouncing_ball/ball_add_accelerometer.png"
+								alt="Добавление акселерометра"
+							/>
+
+							<li>
+								Настройте свойства акселерометра:
+								<br />• <strong>Enabled</strong>: True (Включен) <br />•
+								<strong>MinimumInterval</strong>: 400 (миллисекунд между
+								обновлениями)
+							</li>
+							<img
+								class="project-img"
+								src="images/bouncing_ball/ball_accelerometer_props.png"
+								alt="Свойства акселерометра"
+							/>
+
+							<li>
+								Для того, чтобы мячик отскакивал от стенок, нам нужно добавить
+								компонент <strong>Canvas</strong> (Холст). Перейдите в раздел
+								<strong>Drawing and Animation</strong> и перетащите компонент
+								Canvas на экран.
+							</li>
+
+							<li>
+								Настройте свойства холста:
+								<br />• <strong>Width</strong>: Fill parent (Заполнить родителя)
+								<br />• <strong>Height</strong>: 300 (или другое значение, чтобы
+								заполнить большую часть экрана) <br />•
+								<strong>BackgroundColor</strong>: Светло-голубой или другой
+								приятный цвет
+							</li>
+							<img
+								class="project-img"
+								src="images/bouncing_ball/ball_canvas_setup.png"
+								alt="Настройка холста"
+							/>
+
+							<li>
+								Перетащите Ball1 (мячик) внутрь Canvas1 (холста), чтобы мячик
+								стал дочерним элементом холста. Это позволит нам определять
+								столкновения мячика с границами холста.
+							</li>
+						</ul>
+
+						<div class="warning-box">
+							<i class="fas fa-exclamation-triangle"></i>
+							<strong>Внимание:</strong> Датчик движения (акселерометр) работает
+							только на реальных устройствах. На эмуляторе вы не сможете
+							управлять мячиком наклоном, но сможете проверить отскок от стенок.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(1)">
+								Назад
+							</button>
+							<button
+								id="btn-step2"
+								class="step-btn btn-read"
+								onclick="markRead('step2', 'Добавление датчика движения')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(3)">
+								Далее
+							</button>
+						</div>
+					</div>
+
+					<div id="step-content-3" class="step-content">
+						<h2>Шаг 3: Настройка столкновений</h2>
+						<ul class="instruction-list">
+							<li>
+								Теперь настроим поведение мячика при столкновении с границами
+								экрана. Переключитесь на вкладку <strong>Blocks</strong> в
+								правом верхнем углу экрана.
+							</li>
+							<img
+								class="project-img"
+								src="images/mit_project_transit_to_blocks.jpeg"
+								alt="Переход на вкладку Blocks"
+							/>
+
+							<li>
+								В левой панели найдите Ball1 и нажмите на него. Из списка
+								доступных блоков выберите
+								<strong>when Ball1.EdgeReached</strong> (когда мячик достиг
+								края).
+							</li>
+							<img
+								class="project-img"
+								src="images/bouncing_ball/ball_edge_reached_block.png"
+								alt="Блок EdgeReached"
+							/>
+
+							<li>
+								Этот блок срабатывает, когда мячик сталкивается с краем холста.
+								Внутри этого блока нам нужно добавить действие, которое
+								"отразит" мячик от стенки.
+							</li>
+
+							<li>
+								Снова найдите Ball1 в левой панели и выберите
+								<strong>call Ball1.Bounce</strong>
+								(вызвать метод Отскок). Поместите этот блок внутрь блока
+								EdgeReached.
+							</li>
+							<img
+								class="project-img"
+								src="images/bouncing_ball/ball_bounce_method.png"
+								alt="Метод Bounce"
+							/>
+
+							<li>
+								В блок <strong>call Ball1.Bounce</strong> добавьте числовой
+								параметр. Для этого перейдите в раздел <strong>Math</strong> и
+								выберите блок с числом. Установите значение 30. Это угол
+								отражения мячика.
+							</li>
+							<img
+								class="project-img"
+								src="images/bouncing_ball/ball_bounce_angle.png"
+								alt="Установка угла отражения"
+							/>
+						</ul>
+
+						<div class="tip-box">
+							<i class="fas fa-lightbulb"></i>
+							<strong>Совет:</strong> Метод Bounce заставляет мяч отскакивать от
+							края под определённым углом. Если вы хотите, чтобы отскок был
+							более реалистичным, можете использовать другие значения угла или
+							создать случайное значение для каждого отскока.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(2)">
+								Назад
+							</button>
+							<button
+								id="btn-step3"
+								class="step-btn btn-read"
+								onclick="markRead('step3', 'Настройка столкновений')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(4)">
+								Далее
+							</button>
+						</div>
+					</div>
+
+					<div id="step-content-4" class="step-content">
+						<h2>Шаг 4: Создание блоков движения</h2>
+						<ul class="instruction-list">
+							<li>
+								Теперь добавим блоки, которые будут перемещать мячик в
+								зависимости от наклона телефона. В левой панели найдите
+								AccelerometerSensor1 и выберите блок
+								<strong>when AccelerometerSensor1.AccelerationChanged</strong>.
+							</li>
+							<img
+								class="project-img"
+								src="images/bouncing_ball/ball_acceleration_changed.png"
+								alt="Блок AccelerationChanged"
+							/>
+
+							<li>
+								Этот блок будет срабатывать каждый раз, когда пользователь
+								наклоняет телефон. Блок имеет три параметра: xAccel, yAccel и
+								zAccel, которые представляют ускорение по каждой оси.
+							</li>
+
+							<li>
+								Теперь нам нужно передвинуть мячик на основе данных
+								акселерометра. Найдите Ball1 в левой панели и выберите блок
+								<strong>set Ball1.X to</strong>.
+							</li>
+							<img
+								class="project-img"
+								src="images/bouncing_ball/ball_set_x.png"
+								alt="Установка координаты X"
+							/>
+
+							<li>
+								Для установки новой координаты X, мы будем использовать текущее
+								положение мячика и добавлять к нему значение, основанное на
+								показаниях акселерометра:
+								<br />1. Из раздела Math выберите блок "+" (сложение) <br />2. В
+								левую часть блока сложения поместите <strong>Ball1.X</strong>
+								<br />3. В правую часть блока сложения поместите
+								<strong>xAccel</strong> из блока AccelerationChanged, но
+								умноженный на -1
+							</li>
+							<img
+								class="project-img"
+								src="images/bouncing_ball/ball_x_formula.png"
+								alt="Формула для координаты X"
+							/>
+
+							<li>
+								Аналогично сделаем для координаты Y. Добавьте блок
+								<strong>set Ball1.Y to</strong> и настройте похожую формулу,
+								используя Ball1.Y и yAccel.
+							</li>
+							<img
+								class="project-img"
+								src="images/bouncing_ball/ball_y_formula.png"
+								alt="Формула для координаты Y"
+							/>
+
+							<li>
+								Вот как должны выглядеть ваши блоки кода для управления
+								движением мячика:
+							</li>
+							<img
+								class="project-img"
+								src="images/bouncing_ball/ball_complete_code.png"
+								alt="Полный код движения мячика"
+							/>
+						</ul>
+
+						<div class="tip-box">
+							<i class="fas fa-lightbulb"></i>
+							<strong>Хитрость:</strong> Мы умножаем xAccel и yAccel на
+							отрицательное число (-1 или другой множитель), чтобы мячик
+							двигался в правильном направлении. Вы можете настроить
+							чувствительность, изменив этот множитель. Например, -2 сделает
+							движения более резкими, а -0.5 — более плавными.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(3)">
+								Назад
+							</button>
+							<button
+								id="btn-step4"
+								class="step-btn btn-read"
+								onclick="markRead('step4', 'Создание блоков движения')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(5)">
+								Далее
+							</button>
+						</div>
+					</div>
+
+					<div id="step-content-5" class="step-content">
+						<h2>Шаг 5: Тестирование игры</h2>
+						<ul class="instruction-list">
+							<li>
+								<strong>Протестируйте ваше приложение:</strong><br />
+								Для тестирования вашей игры воспользуйтесь руководством по
+								тестированию приложений в
+								<a href="mit_introduction.html#download_tips" target="_blank"
+									>нашем введении в MIT App Inventor</a
+								>.
+							</li>
+
+							<li>
+								Для наилучших результатов рекомендуется тестировать это
+								приложение на реальном устройстве, а не на эмуляторе, так как
+								эмулятор не имеет акселерометра.
+							</li>
+							<img
+								class="project-img"
+								src="images/bouncing_ball/ball_testing_app.png"
+								alt="Тестирование приложения"
+							/>
+
+							<li>
+								<strong>Проверьте работу:</strong>
+								<br />• Наклоните телефон в разные стороны — мячик должен
+								двигаться в направлении наклона <br />• Убедитесь, что мячик
+								отскакивает от краёв экрана <br />• Попробуйте разные скорости
+								движения и наклоны телефона
+							</li>
+
+							<li>
+								<strong>Возможные улучшения игры:</strong>
+								<br />• Добавьте звуковые эффекты при столкновении мячика со
+								стенками <br />• Добавьте счётчик отскоков или таймер для
+								соревнований <br />• Добавьте препятствия или цели для мячика
+								<br />• Измените цвет мячика при столкновениях <br />• Добавьте
+								кнопку для изменения скорости движения
+							</li>
+						</ul>
+
+						<div class="success-box">
+							<i class="fas fa-check-circle"></i>
+							<strong>Готово!</strong> Вы создали интерактивную игру с
+							использованием датчика движения! Теперь вы знаете, как работать с
+							акселерометром, создавать движущиеся объекты и обрабатывать
+							столкновения в MIT App Inventor.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(4)">
+								Назад
+							</button>
+							<button
+								id="btn-step5"
+								class="step-btn btn-read"
+								onclick="markRead('step5', 'Тестирование игры')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" disabled>Завершить</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="additional-resources">
+					<h3><i class="fas fa-download"></i> Скачать проект</h3>
+					<p>
+						Если у вас возникли сложности, вы можете скачать готовый файл
+						проекта в нашем центре загрузок:
+					</p>
+					<a href="mit_downloads.html#projects" class="download-link">
+						<i class="fas fa-external-link-alt"></i>
+						Перейти в центр загрузок
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<script src="scripts/config.js"></script>
+		<script src="scripts/heartbeat.js"></script>
+		<script src="scripts/theme-change.js"></script>
+		<script src="scripts/toast.js"></script>
+		<script src="scripts/header-loader.js"></script>
+		<script src="scripts/project-buttons.js"></script>
+	</body>
+</html>

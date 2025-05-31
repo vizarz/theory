@@ -1,0 +1,357 @@
+.drawing-canvas {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: #f1f1f1;
+	border: 4px solid #d1d1d1;
+	border-radius: 0.75rem;
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.svg-container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.bouncing-ball-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: #e6f0ff;
+	border-radius: 0.75rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.ball {
+	width: 4rem;
+	height: 4rem;
+	background-color: #ef4444;
+	border-radius: 50%;
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+	animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-30px);
+	}
+}
+
+.direction-arrow {
+	position: absolute;
+	color: #3b82f6;
+	font-size: 1.5rem;
+}
+
+.arrow-up {
+	top: 1rem;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.arrow-down {
+	bottom: 1rem;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.arrow-left {
+	left: 1rem;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.arrow-right {
+	right: 1rem;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.pencil {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	animation: draw 3s infinite ease-in-out;
+}
+
+@keyframes draw {
+	0% {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	25% {
+		transform: translate(-35%, -35%) rotate(5deg);
+	}
+	50% {
+		transform: translate(-20%, -50%) rotate(0deg);
+	}
+	75% {
+		transform: translate(-35%, -65%) rotate(-5deg);
+	}
+	100% {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+}
+.speaking-app-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: #f0f9ff;
+	border-radius: 0.75rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.microphone-container {
+	position: relative;
+	margin-bottom: 1rem;
+}
+
+.microphone-icon {
+	font-size: 3.5rem;
+	color: #0ea5e9;
+}
+
+.speech-wave {
+	position: absolute;
+	border: 2px solid #06b6d4;
+	border-radius: 50%;
+	animation: wave 2s infinite linear;
+}
+
+.wave-1 {
+	width: 3rem;
+	height: 3rem;
+	right: -0.5rem;
+	top: 0.5rem;
+}
+
+.wave-2 {
+	width: 5rem;
+	height: 5rem;
+	right: -1.5rem;
+	top: 0;
+	animation-delay: 0.3s;
+}
+
+.wave-3 {
+	width: 7rem;
+	height: 7rem;
+	right: -2.5rem;
+	top: -0.5rem;
+	animation-delay: 0.6s;
+}
+
+@keyframes wave {
+	0% {
+		transform: scale(0.8);
+		opacity: 0.3;
+	}
+	50% {
+		transform: scale(1.2);
+		opacity: 0.7;
+	}
+	100% {
+		transform: scale(0.8);
+		opacity: 0.3;
+	}
+}
+
+.speech-bubble {
+	background-color: #fff;
+	padding: 0.75rem 1rem;
+	border-radius: 0.75rem;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+	margin-top: 1rem;
+	max-width: 80%;
+	position: relative;
+}
+
+.speech-bubble::before {
+	content: '';
+	position: absolute;
+	top: -0.5rem;
+	left: 50%;
+	transform: translateX(-50%);
+	border-width: 0 0.5rem 0.5rem 0.5rem;
+	border-style: solid;
+	border-color: transparent transparent #fef3c7 transparent;
+}
+/* Стили для проекта "Привет, мир!" - уменьшенная версия */
+.hello-world-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(135deg, #a5f3fc, #e0f2fe);
+	border-radius: 0.75rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.phone {
+	position: relative;
+	width: 7rem; /* Уменьшено с 10rem */
+	height: 13rem; /* Уменьшено с 18rem */
+	background-color: #1e293b;
+	border-radius: 1rem;
+	padding: 0.5rem; /* Уменьшено с 0.75rem */
+	box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.3);
+}
+
+.phone-screen {
+	width: 100%;
+	height: 100%;
+	background-color: #f8fafc;
+	border-radius: 0.75rem;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.phone-header {
+	height: 1rem; /* Уменьшено с 1.5rem */
+	background-color: #0ea5e9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.phone-app {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 0.5rem; /* Уменьшено с 1rem */
+}
+
+.hello-text {
+	font-size: 0.8rem; /* Уменьшено с 1.25rem */
+	font-weight: bold;
+	text-align: center;
+	color: #0f172a;
+	margin-top: 1rem; /* Уменьшено с 2rem */
+	opacity: 0;
+	animation: appear 3s infinite;
+}
+
+.hello-button {
+	background-color: #22c55e;
+	color: white;
+	border-radius: 0.35rem; /* Уменьшено с 0.5rem */
+	padding: 0.35rem; /* Уменьшено с 0.5rem */
+	text-align: center;
+	margin: 0 auto;
+	width: 80%;
+	font-size: 0.65rem; /* Добавлен меньший размер шрифта */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	animation: pulse 3s infinite;
+}
+
+@keyframes appear {
+	0%,
+	30% {
+		opacity: 0;
+		transform: translateY(5px);
+	}
+	40%,
+	90% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(0);
+	}
+}
+
+@keyframes pulse {
+	0%,
+	30% {
+		transform: scale(1);
+	}
+	35% {
+		transform: scale(0.95);
+	}
+	40% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.phone-home {
+	width: 1.5rem; /* Уменьшено с 2rem */
+	height: 0.2rem; /* Уменьшено с 0.25rem */
+	background-color: #cbd5e1;
+	border-radius: 0.1rem;
+	margin: 0.25rem auto; /* Уменьшено с 0.5rem */
+}
+
+.floating-bubbles {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.bubble {
+	position: absolute;
+	border-radius: 50%;
+	opacity: 0.7;
+	animation: float 6s infinite ease-in-out;
+}
+
+.bubble-1 {
+	width: 2rem; /* Уменьшено с 3rem */
+	height: 2rem; /* Уменьшено с 3rem */
+	background-color: rgba(96, 165, 250, 0.3);
+	top: 0.5rem;
+	left: 0.5rem;
+}
+
+.bubble-2 {
+	width: 1.5rem; /* Уменьшено с 2rem */
+	height: 1.5rem; /* Уменьшено с 2rem */
+	background-color: rgba(14, 165, 233, 0.3);
+	bottom: 0.5rem;
+	right: 0.5rem;
+	animation-delay: 1s;
+}
+
+.bubble-3 {
+	width: 2.5rem; /* Уменьшено с 4rem */
+	height: 2.5rem; /* Уменьшено с 4rem */
+	background-color: rgba(56, 189, 248, 0.2);
+	bottom: 0.5rem;
+	left: 1rem;
+	animation-delay: 2s;
+}
+
+@keyframes float {
+	0%,
+	100% {
+		transform: translateY(0) rotate(0deg);
+	}
+	50% {
+		transform: translateY(-10px) rotate(5deg);
+	}
+}

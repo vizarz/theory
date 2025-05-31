@@ -635,7 +635,7 @@ body.dark-mode .modal-content {
 	opacity: 0.8;
 }
 #pageReadsTableContainer table {
-	width: 50%;
+	width: 60%;
 	table-layout: auto;
 }
 #pageReadsTableContainer {
@@ -2677,26 +2677,6 @@ body.dark-mode .downloads-description {
 	margin-bottom: 50px;
 }
 
-.stat-card {
-	background: #fff;
-	border-radius: 12px;
-	padding: 25px;
-	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-	display: flex;
-	align-items: center;
-	gap: 20px;
-	transition: transform 0.3s ease;
-}
-
-body.dark-mode .stat-card {
-	background: #333;
-	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.stat-card:hover {
-	transform: translateY(-5px);
-}
-
 .stat-icon {
 	width: 60px;
 	height: 60px;
@@ -3103,11 +3083,6 @@ body.dark-mode .modal-footer {
 @media (max-width: 480px) {
 	.downloads-stats {
 		grid-template-columns: 1fr;
-	}
-
-	.stat-card {
-		flex-direction: column;
-		text-align: center;
 	}
 
 	.downloads-header h1 {

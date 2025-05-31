@@ -81,6 +81,10 @@
 						<div class="step-circle" onclick="showStep(4)">4</div>
 						<div class="step-title">Соедини блоки команд</div>
 					</div>
+					<div class="step-item" data-step="5">
+						<div class="step-circle" onclick="showStep(5)">5</div>
+						<div class="step-title">Тестируй приложение</div>
+					</div>
 				</div>
 
 				<div class="step-contents">
@@ -275,7 +279,7 @@
 						</div>
 					</div>
 
-					<!-- Шаг 4: Соединение блоков команд -->
+					<!-- 2. Модифицировать 4-й шаг, убрав оттуда текст о тестировании -->
 					<div id="step-content-4" class="step-content">
 						<h2>Шаг 4: Соединение блоков команд</h2>
 						<ul class="instruction-list">
@@ -320,7 +324,29 @@
 								src="images/speaking_app_complete_blocks.png"
 								alt="Соединение блоков команд"
 							/>
+						</ul>
 
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(3)">
+								Назад
+							</button>
+							<button
+								id="btn-step4"
+								class="step-btn btn-read"
+								onclick="markRead('step4', 'Соединение блоков команд')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(5)">
+								Далее
+							</button>
+						</div>
+					</div>
+
+					<!-- 3. Добавить 5-й шаг для тестирования приложения -->
+					<div id="step-content-5" class="step-content">
+						<h2>Шаг 5: Тестирование приложения</h2>
+						<ul class="instruction-list">
 							<li>
 								<strong>Протестируйте ваше приложение:</strong><br />
 								Чтобы увидеть ваше говорящее приложение в действии,
@@ -346,13 +372,13 @@
 						</div>
 
 						<div class="step-navigation">
-							<button class="step-btn prev-btn" onclick="showStep(3)">
+							<button class="step-btn prev-btn" onclick="showStep(4)">
 								Назад
 							</button>
 							<button
-								id="btn-step4"
+								id="btn-step5"
 								class="step-btn btn-read"
-								onclick="markRead('step4', 'Соединение блоков команд')"
+								onclick="markRead('step5', 'Тестирование приложения')"
 							>
 								Пометить как выполнено
 							</button>
@@ -360,7 +386,6 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="additional-resources">
 					<h3><i class="fas fa-download"></i> Скачать проект</h3>
 					<p>
