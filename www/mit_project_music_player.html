@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Проект "Музыкальный плеер"</title>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../www/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../www/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../www/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="../www/site.webmanifest" />
+		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/toast.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		/>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<div class="back-to-index">
+						<a href="mit_projects.html">
+							<i class="fas fa-arrow-left"></i>
+							Вернуться к проектам
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="content">
+			<div class="project-container">
+				<div class="project-header">
+					<h1>Проект "Музыкальный плеер"</h1>
+					<p>
+						<strong>Цель</strong>: Создать простой музыкальный плеер, который
+						воспроизводит твои любимые мелодии! Ты сможешь включать музыку,
+						останавливать её и выбирать разные песни.
+					</p>
+					<p>
+						Этот проект познакомит тебя с работой с аудиофайлами в приложении,
+						созданием пользовательского интерфейса для воспроизведения музыки и
+						управлением компонентами воспроизведения звука.
+					</p>
+					<div class="project-features">
+						<h3><i class="fas fa-star"></i> Чему ты научишься:</h3>
+						<ul>
+							<li>
+								<i class="fas fa-music"></i> Добавлять аудио файлы в приложение
+							</li>
+							<li>
+								<i class="fas fa-play-circle"></i> Управлять воспроизведением
+								звука
+							</li>
+							<li>
+								<i class="fas fa-list"></i> Создавать список воспроизведения
+							</li>
+							<li>
+								<i class="fas fa-volume-up"></i> Настраивать громкость
+								воспроизведения
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="steps-progress">
+					<div class="progress-line"></div>
+					<div class="progress-line-completed" id="progress-line"></div>
+
+					<div class="step-item" data-step="1">
+						<div class="step-circle" onclick="showStep(1)">1</div>
+						<div class="step-title">Добавь аудио ресурсы</div>
+					</div>
+
+					<div class="step-item" data-step="2">
+						<div class="step-circle" onclick="showStep(2)">2</div>
+						<div class="step-title">Создай интерфейс плеера</div>
+					</div>
+
+					<div class="step-item" data-step="3">
+						<div class="step-circle" onclick="showStep(3)">3</div>
+						<div class="step-title">Добавь список песен</div>
+					</div>
+
+					<div class="step-item" data-step="4">
+						<div class="step-circle" onclick="showStep(4)">4</div>
+						<div class="step-title">Запрограммируй кнопки управления</div>
+					</div>
+
+					<div class="step-item" data-step="5">
+						<div class="step-circle" onclick="showStep(5)">5</div>
+						<div class="step-title">Тестируй приложение</div>
+					</div>
+				</div>
+
+				<div class="step-contents">
+					<div id="step-content-1" class="step-content">
+						<h2>Шаг 1: Добавление аудио ресурсов</h2>
+						<ul class="instruction-list">
+							<li>
+								Откройте
+								<a href="https://appinventor.mit.edu" target="_blank"
+									>MIT App Inventor</a
+								>
+								и создайте новый проект с названием "MusicPlayer".
+							</li>
+							<img
+								class="project-img"
+								src="images/mit_create_apps.jpeg"
+								alt="Создать приложение"
+							/>
+
+							<li>
+								Перед началом работы с интерфейсом, нам нужно добавить
+								аудиофайлы для воспроизведения. В панели "Palette" (Палитра)
+								справа найдите раздел "Media" (Медиа).
+							</li>
+							<img
+								class="project-img"
+								src="images/music_player/music_player_media_section.png"
+								alt="Раздел Медиа"
+							/>
+
+							<li>
+								Перетащите компонент <strong>Player</strong> (Проигрыватель) на
+								экран вашего приложения. Обратите внимание, что этот компонент
+								появится в разделе "Non-visible components" (Невидимые
+								компоненты) внизу экрана.
+							</li>
+							<img
+								class="project-img"
+								src="images/music_player/music_player_add_player.png"
+								alt="Добавление проигрывателя"
+							/>
+
+							<li>
+								Теперь нам нужно загрузить аудиофайлы в проект. Нажмите на
+								"Upload File..." (Загрузить файл...) в разделе "Media" (Медиа).
+							</li>
+							<img
+								class="project-img"
+								src="images/music_player/music_player_upload_audio.png"
+								alt="Загрузка аудиофайла"
+							/>
+
+							<li>
+								Загрузите несколько MP3-файлов с музыкой. Для учебного проекта
+								можно использовать короткие аудиофайлы или звуковые эффекты.
+							</li>
+
+							<li>
+								После загрузки вы увидите ваши аудиофайлы в списке медиа-файлов.
+								Они будут автоматически доступны в вашем проекте.
+							</li>
+							<img
+								class="project-img"
+								src="images/music_player/music_player_media_list.png"
+								alt="Список загруженных аудиофайлов"
+							/>
+						</ul>
+
+						<div class="tip-box">
+							<i class="fas fa-lightbulb"></i>
+							<strong>Совет:</strong> Используйте файлы MP3 небольшого размера,
+							чтобы ваше приложение не было слишком тяжелым. Для учебных целей
+							достаточно файлов размером до 1 МБ.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" disabled>Назад</button>
+							<button
+								id="btn-step1"
+								class="step-btn btn-read"
+								onclick="markRead('step1', 'Добавление аудио ресурсов')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(2)">
+								Далее
+							</button>
+						</div>
+					</div>
+
+					<div id="step-content-2" class="step-content">
+						<h2>Шаг 2: Создание интерфейса плеера</h2>
+						<ul class="instruction-list">
+							<li>
+								Теперь создадим интерфейс для нашего музыкального плеера. В
+								разделе <strong>Layout</strong> (Макет) перетащите компонент
+								<strong>VerticalArrangement</strong> (Вертикальное расположение)
+								на экран.
+							</li>
+							<img
+								class="project-img"
+								src="images/music_player/music_player_add_vertical.png"
+								alt="Добавление вертикального расположения"
+							/>
+
+							<li>
+								Настройте свойства VerticalArrangement1:
+								<br />• <strong>Width</strong> (Ширина): Fill parent (Заполнить
+								родителя) <br />• <strong>Height</strong> (Высота): Fill parent
+								(Заполнить родителя) <br />•
+								<strong>BackgroundColor</strong> (Цвет фона): Выберите приятный
+								цвет для фона
+							</li>
+
+							<li>
+								Добавим заголовок плеера. Из раздела
+								<strong>User Interface</strong> (Интерфейс пользователя)
+								перетащите компонент <strong>Label</strong> (Метка) в
+								VerticalArrangement1.
+							</li>
+
+							<li>
+								Настройте свойства Label1:
+								<br />• <strong>Text</strong> (Текст): "Мой музыкальный плеер"
+								<br />• <strong>TextColor</strong> (Цвет текста): Выберите
+								контрастный цвет <br />• <strong>FontSize</strong> (Размер
+								шрифта): 20 <br />• <strong>FontBold</strong> (Жирный шрифт):
+								True (Да)
+							</li>
+
+							<li>
+								Добавим метку для отображения названия текущей песни. Перетащите
+								еще одну <strong>Label</strong>
+								(Метку) в VerticalArrangement1 под заголовком.
+							</li>
+
+							<li>
+								Настройте свойства Label2:
+								<br />• <strong>Text</strong> (Текст): "Сейчас играет: ничего не
+								выбрано" <br />• <strong>Width</strong> (Ширина): Fill parent
+								(Заполнить родителя) <br />•
+								<strong>TextAlignment</strong> (Выравнивание текста): Center (По
+								центру) <br />• <strong>FontSize</strong> (Размер шрифта): 16
+							</li>
+
+							<li>
+								Теперь добавим кнопки управления воспроизведением. Из раздела
+								<strong>Layout</strong> (Макет) перетащите компонент
+								<strong>HorizontalArrangement</strong> (Горизонтальное
+								расположение) в VerticalArrangement1 под метками.
+							</li>
+
+							<li>
+								Настройте свойства HorizontalArrangement1:
+								<br />• <strong>Width</strong> (Ширина): Fill parent (Заполнить
+								родителя) <br />•
+								<strong>AlignHorizontal</strong> (Горизонтальное выравнивание):
+								Center (По центру)
+							</li>
+
+							<li>
+								Из раздела <strong>User Interface</strong> (Интерфейс
+								пользователя) перетащите три компонента
+								<strong>Button</strong> (Кнопка) в HorizontalArrangement1.
+							</li>
+
+							<li>
+								Настройте свойства первой кнопки (Button1):
+								<br />• <strong>Text</strong> (Текст): "◀" (символ "назад")
+								<br />• <strong>Width</strong> (Ширина): 60 пикселей <br />•
+								<strong>FontSize</strong> (Размер шрифта): 20
+							</li>
+
+							<li>
+								Настройте свойства второй кнопки (Button2):
+								<br />• <strong>Text</strong> (Текст): "▶" (символ
+								"воспроизвести") <br />• <strong>Width</strong> (Ширина): 60
+								пикселей <br />• <strong>FontSize</strong> (Размер шрифта): 20
+							</li>
+
+							<li>
+								Настройте свойства третьей кнопки (Button3):
+								<br />• <strong>Text</strong> (Текст): "▶▶" (символ "вперед")
+								<br />• <strong>Width</strong> (Ширина): 60 пикселей <br />•
+								<strong>FontSize</strong> (Размер шрифта): 20
+							</li>
+							<img
+								class="project-img"
+								src="images/music_player/music_player_controls.png"
+								alt="Кнопки управления плеером"
+							/>
+
+							<li>
+								Добавим ползунок громкости. Из раздела
+								<strong>User Interface</strong> (Интерфейс пользователя)
+								перетащите компонент <strong>Slider</strong> (Ползунок) в
+								VerticalArrangement1 под кнопками управления.
+							</li>
+
+							<li>
+								Настройте свойства Slider1:
+								<br />• <strong>Width</strong> (Ширина): Fill parent (Заполнить
+								родителя) <br />• <strong>MinValue</strong> (Минимальное
+								значение): 0 <br />• <strong>MaxValue</strong> (Максимальное
+								значение): 100 <br />• <strong>ThumbPosition</strong> (Положение
+								ползунка): 50
+							</li>
+						</ul>
+
+						<div class="tip-box">
+							<i class="fas fa-lightbulb"></i>
+							<strong>Совет:</strong> Вместо текстовых символов для кнопок вы
+							можете использовать изображения. Загрузите иконки воспроизведения,
+							паузы и перемотки, а затем установите их как фон кнопок с помощью
+							свойства <strong>Image</strong>.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(1)">
+								Назад
+							</button>
+							<button
+								id="btn-step2"
+								class="step-btn btn-read"
+								onclick="markRead('step2', 'Создание интерфейса плеера')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(3)">
+								Далее
+							</button>
+						</div>
+					</div>
+
+					<div id="step-content-3" class="step-content">
+						<h2>Шаг 3: Добавление списка песен</h2>
+						<ul class="instruction-list">
+							<li>
+								Теперь добавим список песен, из которого пользователь сможет
+								выбирать музыку для воспроизведения. Из раздела
+								<strong>User Interface</strong> (Интерфейс пользователя)
+								перетащите компонент <strong>ListView</strong> (Список) в
+								VerticalArrangement1 под ползунком громкости.
+							</li>
+							<img
+								class="project-img"
+								src="images/music_player/music_player_add_listview.png"
+								alt="Добавление списка песен"
+							/>
+
+							<li>
+								Настройте свойства ListView1:
+								<br />• <strong>Width</strong> (Ширина): Fill parent (Заполнить
+								родителя) <br />• <strong>Height</strong> (Высота): 200 пикселей
+								<br />• <strong>BackgroundColor</strong> (Цвет фона): Выберите
+								контрастный цвет к фону приложения
+							</li>
+
+							<li>
+								Теперь перейдем во вкладку <strong>Blocks</strong> (Блоки) для
+								инициализации списка песен.
+							</li>
+							<img
+								class="project-img"
+								src="images/mit_project_transit_to_blocks.jpeg"
+								alt="Переход на вкладку Blocks"
+							/>
+
+							<li>
+								Первым делом создадим глобальную переменную для хранения списка
+								песен. В категории <strong>Variables</strong> (Переменные)
+								выберите блок
+								<strong>initialize global name to</strong> (инициализировать
+								глобальную переменную).
+							</li>
+
+							<li>
+								Измените имя переменной на <strong>songsList</strong> (список
+								песен).
+							</li>
+
+							<li>
+								В категории <strong>Lists</strong> (Списки) найдите блок
+								<strong>create empty list</strong> (создать пустой список) и
+								соедините его с переменной <strong>songsList</strong>.
+							</li>
+
+							<li>
+								Теперь создадим еще одну глобальную переменную для хранения
+								путей к аудиофайлам. В категории
+								<strong>Variables</strong> выберите еще один блок
+								<strong>initialize global name to</strong>.
+							</li>
+
+							<li>
+								Измените имя переменной на <strong>songPaths</strong> (пути к
+								песням).
+							</li>
+
+							<li>
+								Соедините еще один блок <strong>create empty list</strong> с
+								переменной <strong>songPaths</strong>.
+							</li>
+							<img
+								class="project-img"
+								src="images/music_player/music_player_init_variables.png"
+								alt="Инициализация переменных"
+							/>
+
+							<li>
+								Теперь заполним списки названиями песен и путями к файлам. В
+								категории <strong>Lists</strong> найдите блок
+								<strong>add items to list</strong> (добавить элементы в список).
+							</li>
+
+							<li>
+								Перетащите блок <strong>add items to list</strong> под блок
+								инициализации переменной <strong>songsList</strong>.
+							</li>
+
+							<li>
+								В первое поле блока <strong>add items to list</strong> поместите
+								переменную <strong>songsList</strong>. Затем добавьте названия
+								песен, которые вы загрузили в проект, используя текстовые блоки
+								из категории <strong>Text</strong>. Например: <br />• "Песня 1"
+								<br />• "Песня 2" <br />• "Песня 3"
+							</li>
+
+							<li>
+								Аналогично заполните список <strong>songPaths</strong>.
+								Используйте блок <strong>add items to list</strong>
+								и добавьте имена файлов для каждой песни, например:
+								<br />• "song1.mp3" <br />• "song2.mp3" <br />• "song3.mp3"
+							</li>
+							<img
+								class="project-img"
+								src="images/music_player/music_player_fill_lists.png"
+								alt="Заполнение списков песен"
+							/>
+
+							<li>
+								Теперь нам нужно заполнить ListView1 названиями песен. В
+								категории <strong>ListView1</strong> найдите блок
+								<strong>ListView1.Elements</strong> (элементы списка).
+							</li>
+
+							<li>
+								Перетащите блок <strong>set ListView1.Elements to</strong> после
+								заполнения списков песен.
+							</li>
+
+							<li>
+								В поле блока
+								<strong>set ListView1.Elements to</strong> поместите переменную
+								<strong>songsList</strong>.
+							</li>
+							<img
+								class="project-img"
+								src="images/music_player/music_player_set_listview.png"
+								alt="Заполнение ListView"
+							/>
+						</ul>
+
+						<div class="warning-box">
+							<i class="fas fa-exclamation-triangle"></i>
+							<strong>Важно:</strong> Убедитесь, что порядок песен в списке
+							<strong>songsList</strong> соответствует порядку файлов в списке
+							<strong>songPaths</strong>. Это необходимо для правильного
+							воспроизведения выбранной песни.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(2)">
+								Назад
+							</button>
+							<button
+								id="btn-step3"
+								class="step-btn btn-read"
+								onclick="markRead('step3', 'Добавление списка песен')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(4)">
+								Далее
+							</button>
+						</div>
+					</div>
+
+					<div id="step-content-4" class="step-content">
+						<h2>Шаг 4: Программирование кнопок управления</h2>
+						<ul class="instruction-list">
+							<li>
+								Теперь запрограммируем логику работы нашего музыкального плеера.
+								Сначала создадим глобальную переменную для хранения текущего
+								индекса песни.
+							</li>
+
+							<li>
+								В категории <strong>Variables</strong> (Переменные) выберите
+								блок <strong>initialize global name to</strong> и назовите
+								переменную <strong>currentSongIndex</strong>.
+							</li>
+
+							<li>
+								Установите начальное значение
+								<strong>currentSongIndex</strong> равным 1 (первая песня в
+								списке).
+							</li>
+							<img
+								class="project-img"
+								src="images/music_player/music_player_current_index.png"
+								alt="Инициализация текущего индекса"
+							/>
+
+							<li>
+								Теперь запрограммируем выбор песни из списка. В категории
+								<strong>ListView1</strong> найдите блок
+								<strong>when ListView1.AfterPicking</strong> (после выбора
+								элемента из списка).
+							</li>
+
+							<li>
+								Внутри этого блока нам нужно:
+								<br />1. Получить индекс выбранной песни <br />2. Обновить
+								currentSongIndex <br />3. Установить источник для Player1
+								<br />4. Начать воспроизведение
+							</li>
+
+							<li>
+								Сначала получим индекс выбранной песни. В категории
+								<strong>ListView1</strong> найдите блок
+								<strong>ListView1.Selection</strong> (выбранный элемент).
+							</li>
+
+							<li>
+								В категории <strong>Lists</strong> найдите блок
+								<strong>index in list</strong> (индекс в списке). В первое поле
+								поместите <strong>songsList</strong>, а во второе -
+								<strong>ListView1.Selection</strong>.
+							</li>
+
+							<li>
+								Обновите currentSongIndex, используя блок
+								<strong>set currentSongIndex to</strong> и результат блока
+								<strong>index in list</strong>.
+							</li>
+
+							<li>
+								Теперь установим источник для Player1. В категории
+								<strong>Player1</strong> найдите блок
+								<strong>set Player1.Source to</strong>.
+							</li>
+
+							<li>
+								Для получения пути к файлу используйте блок
+								<strong>select list item</strong> из категории
+								<strong>Lists</strong>. В первое поле поместите
+								<strong>songPaths</strong>, а во второе -
+								<strong>currentSongIndex</strong>.
+							</li>
+
+							<li>
+								Добавьте блок <strong>call Player1.Start</strong> для начала
+								воспроизведения.
+							</li>
+
+							<li>
+								Обновите текст Label2, чтобы показать название текущей песни.
+								Используйте блок
+								<strong>set Label2.Text to</strong> и объедините текст "Сейчас
+								играет: " с выбранным элементом из списка
+								<strong>songsList</strong>.
+							</li>
+							<img
+								class="project-img"
+								src="images/music_player/music_player_listview_picking.png"
+								alt="Обработка выбора песни"
+							/>
+
+							<li>
+								Теперь запрограммируем кнопку воспроизведения/паузы (Button2).
+								Найдите блок
+								<strong>when Button2.Click</strong>.
+							</li>
+
+							<li>
+								Внутри этого блока нам нужно проверить, воспроизводится ли
+								музыка сейчас, и соответственно либо приостановить, либо
+								продолжить воспроизведение.
+							</li>
+
+							<li>
+								Используйте блок <strong>if then else</strong> из категории
+								<strong>Control</strong>.
+							</li>
+
+							<li>
+								В условие поместите блок <strong>Player1.IsPlaying</strong> из
+								категории <strong>Player1</strong>.
+							</li>
+
+							<li>
+								В блок <strong>then</strong> (тогда) добавьте: <br />1.
+								<strong>call Player1.Pause</strong> для приостановки
+								воспроизведения <br />2.
+								<strong>set Button2.Text to</strong> "▶" (символ
+								воспроизведения)
+							</li>
+
+							<li>
+								В блок <strong>else</strong> (иначе) добавьте: <br />1.
+								<strong>call Player1.Start</strong> для начала воспроизведения
+								<br />2. <strong>set Button2.Text to</strong> "❚❚" (символ
+								паузы)
+							</li>
+							<img
+								class="project-img"
+								src="images/music_player/music_player_play_pause.png"
+								alt="Кнопка воспроизведения/паузы"
+							/>
+
+							<li>
+								Запрограммируем кнопку "предыдущая песня" (Button1). Найдите
+								блок <strong>when Button1.Click</strong>.
+							</li>
+
+							<li>
+								Внутри этого блока нам нужно:
+								<br />1. Уменьшить currentSongIndex на 1 <br />2. Проверить, не
+								вышли ли мы за границы списка <br />3. Установить новый источник
+								для Player1 <br />4. Начать воспроизведение
+							</li>
+
+							<li>
+								Используйте блок <strong>set currentSongIndex to</strong> и
+								уменьшите значение на 1 с помощью блока
+								<strong>currentSongIndex - 1</strong>.
+							</li>
+
+							<li>
+								Добавьте проверку границ с помощью блока
+								<strong>if then</strong>. В условие поместите блок
+								<strong>currentSongIndex < 1</strong>.
+							</li>
+
+							<li>
+								В блок <strong>then</strong> добавьте
+								<strong>set currentSongIndex to</strong> и установите значение
+								равным длине списка <strong>songsList</strong> с помощью блока
+								<strong>length of list</strong>.
+							</li>
+
+							<li>
+								Аналогично запрограммируйте кнопку "следующая песня" (Button3),
+								но увеличивайте currentSongIndex на 1 и проверяйте, не превысили
+								ли вы длину списка.
+							</li>
+							<img
+								class="project-img"
+								src="images/music_player/music_player_next_prev.png"
+								alt="Кнопки следующей и предыдущей песни"
+							/>
+
+							<li>
+								Наконец, запрограммируем ползунок громкости. Найдите блок
+								<strong>when Slider1.PositionChanged</strong>.
+							</li>
+
+							<li>
+								Внутри этого блока добавьте
+								<strong>set Player1.Volume to</strong> и установите значение
+								равным <strong>Slider1.ThumbPosition / 100</strong> (поскольку
+								громкость в Player1 устанавливается в диапазоне от 0 до 1).
+							</li>
+							<img
+								class="project-img"
+								src="images/music_player/music_player_volume.png"
+								alt="Управление громкостью"
+							/>
+						</ul>
+
+						<div class="tip-box">
+							<i class="fas fa-lightbulb"></i>
+							<strong>Совет:</strong> Для улучшения пользовательского опыта
+							добавьте обработку события <strong>Player1.Completed</strong>,
+							чтобы автоматически переходить к следующей песне, когда текущая
+							закончится.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(3)">
+								Назад
+							</button>
+							<button
+								id="btn-step4"
+								class="step-btn btn-read"
+								onclick="markRead('step4', 'Программирование кнопок управления')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(5)">
+								Далее
+							</button>
+						</div>
+					</div>
+
+					<div id="step-content-5" class="step-content">
+						<h2>Шаг 5: Тестирование приложения</h2>
+						<ul class="instruction-list">
+							<li>
+								<strong>Протестируйте ваше приложение:</strong><br />
+								Чтобы увидеть ваш музыкальный плеер в действии, воспользуйтесь
+								руководством по тестированию приложений в
+								<a href="mit_introduction.html#download_tips" target="_blank"
+									>нашем введении в MIT App Inventor</a
+								>.
+							</li>
+							<img
+								class="project-img"
+								src="images/music_player/music_player_testing.png"
+								alt="Тестирование приложения"
+							/>
+
+							<li>
+								<strong>Проверьте основные функции:</strong>
+								<br />• Выбор песни из списка <br />• Воспроизведение и пауза
+								<br />• Переключение между песнями с помощью кнопок "вперед" и
+								"назад" <br />• Регулировка громкости
+							</li>
+
+							<li>
+								<strong>Возможные улучшения приложения:</strong>
+								<br />• Добавьте индикатор прогресса воспроизведения <br />•
+								Реализуйте функцию перемотки песни <br />• Добавьте возможность
+								создания плейлистов <br />• Добавьте обложки альбомов для песен
+								<br />• Реализуйте режимы случайного воспроизведения и повтора
+							</li>
+						</ul>
+
+						<div class="success-box">
+							<i class="fas fa-check-circle"></i>
+							<strong>Поздравляем!</strong> Вы создали приложение "Музыкальный
+							плеер"! Теперь у вас есть собственный проигрыватель музыки,
+							который может воспроизводить ваши любимые песни.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(4)">
+								Назад
+							</button>
+							<button
+								id="btn-step5"
+								class="step-btn btn-read"
+								onclick="markRead('step5', 'Тестирование приложения')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" disabled>Завершить</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="additional-resources">
+					<h3><i class="fas fa-download"></i> Скачать проект</h3>
+					<p>
+						Если у вас возникли сложности, вы можете скачать готовый файл
+						проекта в нашем центре загрузок:
+					</p>
+					<a href="mit_downloads.html#projects" class="download-link">
+						<i class="fas fa-external-link-alt"></i>
+						Перейти в центр загрузок
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<script src="scripts/config.js"></script>
+		<script src="scripts/heartbeat.js"></script>
+		<script src="scripts/theme-change.js"></script>
+		<script src="scripts/toast.js"></script>
+		<script src="scripts/header-loader.js"></script>
+		<script src="scripts/project-buttons.js"></script>
+	</body>
+</html>

@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Проект "Магический шар"</title>
+		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/toast.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		/>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<div class="back-to-index">
+						<a href="mit_projects.html">
+							<i class="fas fa-arrow-left"></i>
+							Вернуться к проектам
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="content">
+			<div class="project-container">
+				<div class="project-header">
+					<h1>Проект "Магический шар"</h1>
+					<p>
+						<strong>Цель</strong>: Создать приложение с волшебным шаром, которое
+						отвечает на вопросы пользователя, когда он встряхивает телефон.
+					</p>
+					<p>
+						Этот проект научит тебя работать с датчиком движения
+						(акселерометром), создавать списки данных и выбирать случайные
+						элементы из списка.
+					</p>
+					<div class="project-features">
+						<h3><i class="fas fa-star"></i> Чему ты научишься:</h3>
+						<ul>
+							<li>
+								<i class="fas fa-mobile-alt"></i> Распознавать встряхивание
+								телефона
+							</li>
+							<li>
+								<i class="fas fa-random"></i> Выбирать случайные ответы из
+								списка
+							</li>
+							<li><i class="fas fa-list"></i> Работать со списками данных</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="steps-progress">
+					<div class="progress-line"></div>
+					<div class="progress-line-completed" id="progress-line"></div>
+
+					<div class="step-item" data-step="1">
+						<div class="step-circle" onclick="showStep(1)">1</div>
+						<div class="step-title">Создай список ответов</div>
+					</div>
+
+					<div class="step-item" data-step="2">
+						<div class="step-circle" onclick="showStep(2)">2</div>
+						<div class="step-title">Добавь датчик движения</div>
+					</div>
+
+					<div class="step-item" data-step="3">
+						<div class="step-circle" onclick="showStep(3)">3</div>
+						<div class="step-title">Нарисуй волшебный шар</div>
+					</div>
+
+					<div class="step-item" data-step="4">
+						<div class="step-circle" onclick="showStep(4)">4</div>
+						<div class="step-title">Добавь случайный выбор</div>
+					</div>
+
+					<div class="step-item" data-step="5">
+						<div class="step-circle" onclick="showStep(5)">5</div>
+						<div class="step-title">Тестируй приложение</div>
+					</div>
+				</div>
+
+				<div class="step-contents">
+					<div id="step-content-1" class="step-content">
+						<h2>Шаг 1: Создание списка ответов</h2>
+						<ul class="instruction-list">
+							<li>
+								Откройте
+								<a href="https://appinventor.mit.edu" target="_blank"
+									>MIT App Inventor</a
+								>
+								и создайте новый проект с названием "MagicBall".
+							</li>
+							<img
+								class="project-img"
+								src="images/mit_create_apps.jpeg"
+								alt="Создать приложение"
+							/>
+
+							<li>
+								Первым делом создадим список возможных ответов волшебного шара.
+								Перейдите во вкладку <strong>Blocks</strong>
+								в правом верхнем углу экрана.
+							</li>
+							<img
+								class="project-img"
+								src="images/mit_project_transit_to_blocks.jpeg"
+								alt="Переход на вкладку Blocks"
+							/>
+
+							<li>
+								Нажмите на категорию <strong>Variables</strong> (Переменные) в
+								левой панели, затем выберите
+								<strong>initialize global name to</strong> (инициализировать
+								глобальную переменную).
+							</li>
+							<img
+								class="project-img"
+								src="images/magic_ball/magic_ball_create_variable.png"
+								alt="Создание глобальной переменной"
+							/>
+
+							<li>
+								Измените имя переменной на <strong>answers</strong> (ответы).
+							</li>
+
+							<li>
+								Теперь нам нужно создать список ответов. В левой панели выберите
+								категорию <strong>Lists</strong> (Списки) и найдите блок
+								<strong>create empty list</strong> (создать пустой список).
+							</li>
+							<img
+								class="project-img"
+								src="images/magic_ball/magic_ball_create_list.png"
+								alt="Создание списка"
+							/>
+
+							<li>
+								Перетащите блок <strong>create empty list</strong> и соедините
+								его с переменной <strong>answers</strong>.
+							</li>
+
+							<li>
+								Теперь добавим ответы в список. В категории
+								<strong>Lists</strong> найдите блок
+								<strong>add items to list</strong> (добавить элементы в список).
+							</li>
+
+							<li>
+								Перетащите блок <strong>add items to list</strong> в рабочую
+								область и соедините его с блоком инициализации переменной
+								<strong>answers</strong>.
+							</li>
+
+							<li>
+								В первое поле блока
+								<strong>add items to list</strong> перетащите вашу переменную
+								<strong>answers</strong> из категории
+								<strong>Variables</strong>.
+							</li>
+
+							<li>
+								Теперь добавим ответы. В категории
+								<strong>Text</strong> выберите блок с текстом и добавьте его в
+								блок <strong>add items to list</strong>. Напишите первый ответ,
+								например, "Да!".
+							</li>
+
+							<li>
+								Нажмите на синий значок "+" в блоке
+								<strong>add items to list</strong>, чтобы добавить еще поля для
+								ответов.
+							</li>
+
+							<li>
+								Добавьте еще несколько ответов, например:
+								<br />• "Нет." <br />• "Возможно..." <br />• "Спроси позже"
+								<br />• "Однозначно!" <br />• "Не рассчитывай на это" <br />•
+								"Мои источники говорят - да" <br />• "Вероятность невелика"
+							</li>
+							<img
+								class="project-img"
+								src="images/magic_ball/magic_ball_answers_list.png"
+								alt="Список ответов"
+							/>
+						</ul>
+
+						<div class="tip-box">
+							<i class="fas fa-lightbulb"></i>
+							<strong>Совет:</strong> Вы можете добавить любое количество
+							ответов! Чем больше ответов, тем разнообразнее будет реагировать
+							ваш магический шар.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" disabled>Назад</button>
+							<button
+								id="btn-step1"
+								class="step-btn btn-read"
+								onclick="markRead('step1', 'Создание списка ответов')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(2)">
+								Далее
+							</button>
+						</div>
+					</div>
+
+					<div id="step-content-2" class="step-content">
+						<h2>Шаг 2: Добавление датчика движения</h2>
+						<ul class="instruction-list">
+							<li>
+								Теперь перейдите обратно во вкладку
+								<strong>Designer</strong> для добавления компонентов интерфейса
+								и датчиков.
+							</li>
+
+							<li>
+								В левой панели найдите раздел
+								<strong>Sensors</strong> (Датчики).
+							</li>
+							<img
+								class="project-img"
+								src="images/magic_ball/magic_ball_sensors_section.png"
+								alt="Раздел Sensors"
+							/>
+
+							<li>
+								Перетащите компонент
+								<strong>AccelerometerSensor</strong> (Акселерометр) на экран
+								приложения. Обратите внимание, что этот компонент появится в
+								разделе "Non-visible components" (Невидимые компоненты) внизу
+								экрана.
+							</li>
+							<img
+								class="project-img"
+								src="images/magic_ball/magic_ball_add_accelerometer.png"
+								alt="Добавление акселерометра"
+							/>
+
+							<li>
+								Выберите добавленный компонент AccelerometerSensor1 и настройте
+								его свойства в правой панели:
+								<br />• <strong>Enabled</strong> (Включен): True (Да) - чтобы
+								датчик работал <br />•
+								<strong>MinimumInterval</strong> (Минимальный интервал): 400 -
+								интервал обновления в миллисекундах <br />•
+								<strong>Sensitivity</strong> (Чувствительность): Установите
+								значение от 20 до 25 - чувствительность определения встряхивания
+							</li>
+							<img
+								class="project-img"
+								src="images/magic_ball/magic_ball_accelerometer_properties.png"
+								alt="Настройка акселерометра"
+							/>
+						</ul>
+
+						<div class="warning-box">
+							<i class="fas fa-exclamation-triangle"></i>
+							<strong>Внимание:</strong> Акселерометр работает только на
+							реальных устройствах! При тестировании на эмуляторе вам
+							понадобится использовать кнопку вместо встряхивания.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(1)">
+								Назад
+							</button>
+							<button
+								id="btn-step2"
+								class="step-btn btn-read"
+								onclick="markRead('step2', 'Добавление датчика движения')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(3)">
+								Далее
+							</button>
+						</div>
+					</div>
+
+					<div id="step-content-3" class="step-content">
+						<h2>Шаг 3: Создание интерфейса волшебного шара</h2>
+						<ul class="instruction-list">
+							<li>
+								Теперь создадим интерфейс нашего приложения. В разделе
+								<strong>Layout</strong> (Макет) перетащите компонент
+								<strong>VerticalArrangement</strong> (Вертикальное расположение)
+								на экран.
+							</li>
+							<img
+								class="project-img"
+								src="images/magic_ball/magic_ball_add_vertical.png"
+								alt="Добавление вертикального расположения"
+							/>
+
+							<li>
+								Настройте свойства VerticalArrangement1:
+								<br />• <strong>Width</strong> (Ширина): Fill parent (Заполнить
+								родителя) <br />• <strong>Height</strong> (Высота): Fill parent
+								(Заполнить родителя) <br />•
+								<strong>AlignHorizontal</strong> (Горизонтальное выравнивание):
+								Center (По центру) <br />•
+								<strong>AlignVertical</strong> (Вертикальное выравнивание):
+								Center (По центру) <br />•
+								<strong>BackgroundColor</strong> (Цвет фона): Выберите
+								тёмно-синий цвет
+							</li>
+
+							<li>
+								Добавим заголовок. Из раздела
+								<strong>User Interface</strong> (Интерфейс пользователя)
+								перетащите компонент <strong>Label</strong> (Метка) в
+								VerticalArrangement1.
+							</li>
+
+							<li>
+								Настройте свойства Label1:
+								<br />• <strong>Text</strong> (Текст): "Магический шар" <br />•
+								<strong>TextColor</strong> (Цвет текста): White (Белый) <br />•
+								<strong>FontSize</strong> (Размер шрифта): 24 <br />•
+								<strong>FontBold</strong> (Жирный шрифт): True (Да)
+							</li>
+
+							<li>
+								Теперь создадим сам шар. Из раздела
+								<strong>Drawing and Animation</strong> (Рисование и анимация)
+								перетащите компонент <strong>Canvas</strong> (Холст) в
+								VerticalArrangement1 под Label1.
+							</li>
+							<img
+								class="project-img"
+								src="images/magic_ball/magic_ball_add_canvas.png"
+								alt="Добавление холста"
+							/>
+
+							<li>
+								Настройте свойства Canvas1:
+								<br />• <strong>Width</strong> (Ширина): 300 пикселей <br />•
+								<strong>Height</strong> (Высота): 300 пикселей <br />•
+								<strong>BackgroundColor</strong> (Цвет фона): None (Нет) или тот
+								же цвет, что и фон VerticalArrangement1
+							</li>
+
+							<li>
+								Теперь добавим изображение шара. Из раздела
+								<strong>Drawing and Animation</strong> перетащите компонент
+								<strong>Ball</strong> (Мяч) на Canvas1.
+							</li>
+
+							<li>
+								Настройте свойства Ball1:
+								<br />• <strong>Radius</strong> (Радиус): 100 - чтобы шар был
+								большим <br />• <strong>PaintColor</strong> (Цвет): Black
+								(Чёрный) <br />• <strong>X</strong>: 150 - центр холста по
+								горизонтали <br />• <strong>Y</strong>: 150 - центр холста по
+								вертикали
+							</li>
+							<img
+								class="project-img"
+								src="images/magic_ball/magic_ball_ball_properties.png"
+								alt="Настройка шара"
+							/>
+
+							<li>
+								Теперь добавим место для отображения ответа. Из раздела
+								<strong>User Interface</strong> перетащите компонент
+								<strong>Label</strong> (Метка) на Canvas1.
+							</li>
+
+							<li>
+								Настройте свойства Label2:
+								<br />• <strong>Text</strong> (Текст): "Встряхни телефон, чтобы
+								получить ответ" <br />• <strong>TextColor</strong> (Цвет
+								текста): White (Белый) <br />• <strong>FontSize</strong> (Размер
+								шрифта): 18 <br />• <strong>X</strong>: 150 - центр холста по
+								горизонтали <br />• <strong>Y</strong>: 150 - центр холста по
+								вертикали
+							</li>
+
+							<li>
+								Для тестирования на эмуляторе добавим кнопку. Из раздела
+								<strong>User Interface</strong> перетащите компонент
+								<strong>Button</strong> (Кнопка) в VerticalArrangement1 под
+								Canvas1.
+							</li>
+
+							<li>
+								Настройте свойства Button1:
+								<br />• <strong>Text</strong> (Текст): "Встряхнуть (для
+								эмулятора)" <br />• <strong>Width</strong> (Ширина): Automatic
+								(Автоматически) <br />• <strong>FontSize</strong> (Размер
+								шрифта): 16
+							</li>
+							<img
+								class="project-img"
+								src="images/magic_ball/magic_ball_complete_ui.png"
+								alt="Готовый интерфейс"
+							/>
+						</ul>
+
+						<div class="tip-box">
+							<i class="fas fa-lightbulb"></i>
+							<strong>Совет:</strong> Убедитесь, что Label2 (метка для ответа)
+							находится над Ball1 (шаром). Для этого вы можете изменить порядок
+							компонентов в панели Components, перетаскивая их вверх или вниз.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(2)">
+								Назад
+							</button>
+							<button
+								id="btn-step3"
+								class="step-btn btn-read"
+								onclick="markRead('step3', 'Создание интерфейса волшебного шара')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(4)">
+								Далее
+							</button>
+						</div>
+					</div>
+
+					<div id="step-content-4" class="step-content">
+						<h2>Шаг 4: Добавление случайного выбора</h2>
+						<ul class="instruction-list">
+							<li>
+								Теперь запрограммируем логику приложения. Вернитесь во вкладку
+								<strong>Blocks</strong>.
+							</li>
+
+							<li>
+								Сначала запрограммируем реакцию на встряхивание. В левой панели
+								найдите компонент
+								<strong>AccelerometerSensor1</strong> и выберите блок
+								<strong>when AccelerometerSensor1.Shaking</strong> (когда
+								акселерометр обнаруживает встряхивание).
+							</li>
+							<img
+								class="project-img"
+								src="images/magic_ball/magic_ball_shaking_event.png"
+								alt="Событие встряхивания"
+							/>
+
+							<li>
+								Теперь нам нужно выбрать случайный ответ из списка. В категории
+								<strong>Lists</strong> (Списки) найдите блок
+								<strong>select list item</strong> (выбрать элемент списка).
+							</li>
+
+							<li>
+								Перетащите блок <strong>select list item</strong> в рабочую
+								область.
+							</li>
+
+							<li>
+								В первое поле блока <strong>select list item</strong> перетащите
+								вашу переменную <strong>answers</strong> из категории
+								<strong>Variables</strong>.
+							</li>
+
+							<li>
+								Для выбора случайного индекса элемента нам нужно сгенерировать
+								случайное число. В категории <strong>Math</strong> найдите блок
+								<strong>random integer from 1 to</strong> (случайное целое число
+								от 1 до).
+							</li>
+
+							<li>
+								Перетащите этот блок во второе поле блока
+								<strong>select list item</strong>.
+							</li>
+
+							<li>
+								Нам нужно узнать количество элементов в списке ответов. В
+								категории <strong>Lists</strong> найдите блок
+								<strong>length of list</strong> (длина списка).
+							</li>
+
+							<li>
+								Перетащите блок <strong>length of list</strong> во второе поле
+								блока <strong>random integer</strong>.
+							</li>
+
+							<li>
+								В блок <strong>length of list</strong> добавьте переменную
+								<strong>answers</strong>.
+							</li>
+
+							<li>
+								Теперь нам нужно отобразить выбранный ответ. В левой панели
+								найдите компонент <strong>Label2</strong> (метка для ответа) и
+								выберите блок <strong>set Label2.Text to</strong> (установить
+								текст метки).
+							</li>
+
+							<li>
+								Перетащите блок <strong>set Label2.Text to</strong> внутрь блока
+								<strong>when AccelerometerSensor1.Shaking</strong>.
+							</li>
+
+							<li>
+								Перетащите ранее созданный блок
+								<strong>select list item</strong> в поле блока
+								<strong>set Label2.Text to</strong>.
+							</li>
+							<img
+								class="project-img"
+								src="images/magic_ball/magic_ball_random_selection.png"
+								alt="Случайный выбор ответа"
+							/>
+
+							<li>
+								Теперь запрограммируем кнопку для тестирования на эмуляторе.
+								Найдите компонент <strong>Button1</strong> и выберите блок
+								<strong>when Button1.Click</strong> (при нажатии на кнопку).
+							</li>
+
+							<li>
+								Скопируйте содержимое блока
+								<strong>when AccelerometerSensor1.Shaking</strong> (блок
+								<strong>set Label2.Text to</strong> с вложенными блоками) и
+								вставьте его в блок <strong>when Button1.Click</strong>.
+							</li>
+							<img
+								class="project-img"
+								src="images/magic_ball/magic_ball_button_click.png"
+								alt="Обработка нажатия кнопки"
+							/>
+						</ul>
+
+						<div class="warning-box">
+							<i class="fas fa-exclamation-triangle"></i>
+							<strong>Важно:</strong> Убедитесь, что в блоке
+							<strong>random integer</strong> начальное значение установлено как
+							1, а не 0, поскольку индексы в списках MIT App Inventor начинаются
+							с 1, а не с 0.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(3)">
+								Назад
+							</button>
+							<button
+								id="btn-step4"
+								class="step-btn btn-read"
+								onclick="markRead('step4', 'Добавление случайного выбора')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(5)">
+								Далее
+							</button>
+						</div>
+					</div>
+
+					<div id="step-content-5" class="step-content">
+						<h2>Шаг 5: Тестирование приложения</h2>
+						<ul class="instruction-list">
+							<li>
+								<strong>Протестируйте ваше приложение:</strong><br />
+								Чтобы увидеть ваш магический шар в действии, воспользуйтесь
+								руководством по тестированию приложений в
+								<a href="mit_introduction.html#download_tips" target="_blank"
+									>нашем введении в MIT App Inventor</a
+								>.
+							</li>
+							<img
+								class="project-img"
+								src="images/magic_ball/magic_ball_testing.png"
+								alt="Тестирование приложения"
+							/>
+
+							<li>
+								<strong>Тестирование на эмуляторе:</strong>
+								<br />• Запустите приложение на эмуляторе <br />• Нажмите кнопку
+								"Встряхнуть (для эмулятора)" <br />• Проверьте, что на экране
+								появляется случайный ответ из вашего списка
+							</li>
+
+							<li>
+								<strong>Тестирование на реальном устройстве:</strong>
+								<br />• Подумайте о вопросе, на который вы хотите получить ответ
+								<br />• Встряхните телефон <br />• Проверьте, что на экране
+								появляется случайный ответ из вашего списка <br />• Попробуйте
+								встряхнуть телефон несколько раз, чтобы увидеть разные ответы
+							</li>
+						</ul>
+
+						<div class="success-box">
+							<i class="fas fa-check-circle"></i>
+							<strong>Поздравляем!</strong> Вы создали приложение "Магический
+							шар"! Теперь у вас есть цифровой советчик, который будет отвечать
+							на ваши вопросы простым встряхиванием телефона.
+						</div>
+
+						<div class="tip-box">
+							<i class="fas fa-lightbulb"></i>
+							<strong>Идеи для улучшения:</strong>
+							<ul class="improvement-list">
+								<li>Добавьте звуковой эффект при появлении ответа</li>
+								<li>Создайте анимацию для шара (например, вращение)</li>
+								<li>Добавьте поле для ввода вопроса</li>
+								<li>
+									Создайте разные категории ответов (позитивные, негативные,
+									нейтральные)
+								</li>
+								<li>
+									Добавьте возможность сохранять историю вопросов и ответов
+								</li>
+							</ul>
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(4)">
+								Назад
+							</button>
+							<button
+								id="btn-step5"
+								class="step-btn btn-read"
+								onclick="markRead('step5', 'Тестирование приложения')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" disabled>Завершить</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="additional-resources">
+					<h3><i class="fas fa-download"></i> Скачать проект</h3>
+					<p>
+						Если у вас возникли сложности, вы можете скачать готовый файл
+						проекта в нашем центре загрузок:
+					</p>
+					<a href="mit_downloads.html#projects" class="download-link">
+						<i class="fas fa-external-link-alt"></i>
+						Перейти в центр загрузок
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<script src="scripts/config.js"></script>
+		<script src="scripts/heartbeat.js"></script>
+		<script src="scripts/theme-change.js"></script>
+		<script src="scripts/toast.js"></script>
+		<script src="scripts/header-loader.js"></script>
+		<script src="scripts/project-buttons.js"></script>
+	</body>
+</html>
