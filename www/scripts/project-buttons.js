@@ -1,5 +1,6 @@
 let currentStep = 1
 const completedSteps = {}
+const stepsData = {} // Новый объект для хранения данных о шагах
 
 // Показать выбранный шаг
 function showStep(stepNumber) {
@@ -41,38 +42,42 @@ function getTotalSteps() {
 	return document.querySelectorAll('.step-item').length
 }
 
-// Получить название шага по его номеру
-function getStepTitle(stepNumber) {
-	const stepElement = document.querySelector(
-		`.step-item[data-step="${stepNumber}"]`
-	)
-	if (stepElement) {
-		const titleElement = stepElement.querySelector('.step-title')
-		if (titleElement) {
-			return titleElement.textContent.trim()
-		}
-	}
-
-	// Если не нашли через .step-title, попробуем через заголовок шага
+// Получение полного названия шага из заголовка h2
+function getFullStepTitle(stepNumber) {
 	const stepContent = document.getElementById(`step-content-${stepNumber}`)
 	if (stepContent) {
 		const header = stepContent.querySelector('h2')
 		if (header) {
-			// Берем текст после "Шаг N: " (если есть)
-			const headerText = header.textContent.trim()
-			const match = headerText.match(/Шаг \d+: (.+)/)
-			if (match && match[1]) {
-				return match[1].trim()
-			}
-			return headerText
+			// Берем полный текст заголовка
+			return header.textContent.trim()
 		}
 	}
-
 	return `Шаг ${stepNumber}`
 }
 
+// Инициализация данных о шагах при загрузке страницы
+function initStepsData() {
+	const totalSteps = getTotalSteps()
+
+	for (let i = 1; i <= totalSteps; i++) {
+		// Получаем полное название шага из заголовка
+		const fullTitle = getFullStepTitle(i)
+
+		// Сохраняем в объект stepsData
+		stepsData[i] = {
+			fullTitle: fullTitle,
+			// Извлекаем часть после "Шаг N: " если есть
+			title: fullTitle.replace(/^Шаг \d+: /, ''),
+		}
+
+		console.log(
+			`Шаг ${i}: "${stepsData[i].title}" (полный: "${stepsData[i].fullTitle}")`
+		)
+	}
+}
+
 // Отметить шаг как выполненный
-function markRead(stepId, stepTitle) {
+function markRead(stepId, providedStepTitle) {
 	const token = localStorage.getItem('token')
 
 	// Проверка на вход в аккаунт
@@ -92,6 +97,11 @@ function markRead(stepId, stepTitle) {
 	// Получаем номер шага из ID
 	const stepNumber = parseInt(stepId.replace('step', ''))
 
+	// Используем название шага из stepsData для согласованности
+	const stepTitle = stepsData[stepNumber]
+		? stepsData[stepNumber].title
+		: providedStepTitle
+
 	// Проверка на выполнение предыдущего шага (кроме шага 1)
 	if (stepNumber > 1) {
 		const prevStepNumber = stepNumber - 1
@@ -108,6 +118,10 @@ function markRead(stepId, stepTitle) {
 		btn.disabled = true
 		btn.innerText = 'Отправка...'
 	}
+
+	console.log(
+		`Отправка на сервер: проект="${project}", шаг="${stepId}", название="${stepTitle}"`
+	)
 
 	fetch(getApiUrl('mark-read/step'), {
 		method: 'POST',
@@ -175,16 +189,21 @@ function markRead(stepId, stepTitle) {
 }
 
 // Проверить, выполнен ли шаг
-function checkStepStatus(stepId) {
+function checkStepStatus(stepNumber) {
 	const token = localStorage.getItem('token')
 	if (!token) return
 
 	const project = document.querySelector('h1').innerText.trim()
 	const page = window.location.pathname.split('/').pop().replace('.html', '')
-	const stepNumber = stepId // теперь передаем просто номер
 
-	// Получаем название шага динамически из содержимого страницы
-	const stepTitle = getStepTitle(stepNumber)
+	// Используем название шага из stepsData для согласованности
+	const stepTitle = stepsData[stepNumber]
+		? stepsData[stepNumber].title
+		: `Шаг ${stepNumber}`
+
+	console.log(
+		`Проверка статуса: проект="${project}", шаг="step${stepNumber}", название="${stepTitle}"`
+	)
 
 	fetch(
 		`${getApiUrl(
@@ -234,6 +253,9 @@ function updateProgressLine() {
 
 // Инициализация при загрузке страницы
 document.addEventListener('DOMContentLoaded', function () {
+	// Инициализация данных о шагах
+	initStepsData()
+
 	// Показываем первый шаг
 	showStep(currentStep)
 
