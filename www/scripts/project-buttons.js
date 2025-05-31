@@ -1,5 +1,4 @@
 let currentStep = 1
-const totalSteps = 4
 const completedSteps = {}
 
 // Показать выбранный шаг
@@ -28,13 +27,48 @@ function showStep(stepNumber) {
 		const header = document.querySelector(`#step-content-${stepNumber} h2`)
 		if (header) {
 			const offsetPosition =
-				header.getBoundingClientRect().top + window.pageYOffset - 80 // 80px отступ сверху
+				header.getBoundingClientRect().top + window.pageYOffset - 80
 			window.scrollTo({
 				top: offsetPosition,
 				behavior: 'smooth',
 			})
 		}
-	}, 100) // Небольшая задержка для стабильности
+	}, 100)
+}
+
+// Получить общее количество шагов на странице
+function getTotalSteps() {
+	return document.querySelectorAll('.step-item').length
+}
+
+// Получить название шага по его номеру
+function getStepTitle(stepNumber) {
+	const stepElement = document.querySelector(
+		`.step-item[data-step="${stepNumber}"]`
+	)
+	if (stepElement) {
+		const titleElement = stepElement.querySelector('.step-title')
+		if (titleElement) {
+			return titleElement.textContent.trim()
+		}
+	}
+
+	// Если не нашли через .step-title, попробуем через заголовок шага
+	const stepContent = document.getElementById(`step-content-${stepNumber}`)
+	if (stepContent) {
+		const header = stepContent.querySelector('h2')
+		if (header) {
+			// Берем текст после "Шаг N: " (если есть)
+			const headerText = header.textContent.trim()
+			const match = headerText.match(/Шаг \d+: (.+)/)
+			if (match && match[1]) {
+				return match[1].trim()
+			}
+			return headerText
+		}
+	}
+
+	return `Шаг ${stepNumber}`
 }
 
 // Отметить шаг как выполненный
@@ -44,13 +78,10 @@ function markRead(stepId, stepTitle) {
 	// Проверка на вход в аккаунт
 	if (!token) {
 		showToast('Для отметки прогресса необходимо войти в аккаунт', 'error')
-
-		// Опционально: перенаправление на страницу входа
 		setTimeout(() => {
 			window.location.href = 'login.html'
 		}, 2000)
-
-		return // Прерываем выполнение функции
+		return
 	}
 
 	const project = document.querySelector('h1').innerText.trim()
@@ -67,7 +98,7 @@ function markRead(stepId, stepTitle) {
 		if (!completedSteps[prevStepNumber]) {
 			// Показываем toast, если предыдущий шаг не выполнен
 			showToast('Пожалуйста, сначала выполните предыдущий шаг', 'error')
-			return // Прерываем выполнение функции
+			return
 		}
 	}
 
@@ -96,7 +127,7 @@ function markRead(stepId, stepTitle) {
 			// Проверка истечения срока действия токена
 			if (response.status === 401) {
 				// Токен недействителен или истек
-				localStorage.removeItem('token') // Удаляем недействительный токен
+				localStorage.removeItem('token')
 				showToast('Сессия истекла. Пожалуйста, войдите снова', 'error')
 
 				setTimeout(() => {
@@ -137,7 +168,6 @@ function markRead(stepId, stepTitle) {
 			}
 
 			// Показываем toast с ошибкой только если это не ошибка авторизации
-			// (чтобы избежать двойных сообщений)
 			if (error.message !== 'Unauthorized') {
 				showToast('Ошибка при отметке шага', 'error')
 			}
@@ -153,22 +183,9 @@ function checkStepStatus(stepId) {
 	const page = window.location.pathname.split('/').pop().replace('.html', '')
 	const stepNumber = stepId // теперь передаем просто номер
 
-	// Определяем название шага
-	let stepTitle = ''
-	switch (parseInt(stepNumber)) {
-		case 1:
-			stepTitle = 'Создание нового проекта'
-			break
-		case 2:
-			stepTitle = 'Добавление компонентов'
-			break
-		case 3:
-			stepTitle = 'Программирование кнопки'
-			break
-		case 4:
-			stepTitle = 'Загрузка и тестирование приложения'
-			break
-	}
+	// Получаем название шага динамически из содержимого страницы
+	const stepTitle = getStepTitle(stepNumber)
+
 	fetch(
 		`${getApiUrl(
 			'mark-read/step-status'
@@ -207,6 +224,7 @@ function checkStepStatus(stepId) {
 
 // Обновить линию прогресса
 function updateProgressLine() {
+	const totalSteps = getTotalSteps()
 	const completedCount = Object.keys(completedSteps).length
 	const progressPercentage = (completedCount / totalSteps) * 100
 	document.getElementById(
@@ -218,6 +236,9 @@ function updateProgressLine() {
 document.addEventListener('DOMContentLoaded', function () {
 	// Показываем первый шаг
 	showStep(currentStep)
+
+	// Определяем общее количество шагов
+	const totalSteps = getTotalSteps()
 
 	// Проверяем статус каждого шага
 	for (let i = 1; i <= totalSteps; i++) {
