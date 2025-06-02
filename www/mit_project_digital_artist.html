@@ -74,7 +74,6 @@
 					</div>
 				</div>
 
-				<!-- Индикатор прогресса с кружочками -->
 				<div class="steps-progress">
 					<div class="progress-line"></div>
 					<div class="progress-line-completed" id="progress-line"></div>
@@ -106,7 +105,6 @@
 				</div>
 
 				<div class="step-contents">
-					<!-- Шаг 1: Добавление холста для рисования -->
 					<div id="step-content-1" class="step-content">
 						<h2>Шаг 1: Добавление холста для рисования</h2>
 						<ul class="instruction-list">
@@ -124,19 +122,9 @@
 							/>
 
 							<li>
-								После создания проекта вы увидите вкладку Designer. Здесь мы
-								создадим интерфейс приложения.
-							</li>
-
-							<li>
 								В левой части экрана найдите раздел
 								<strong>Drawing and Animation</strong> (Рисование и анимация).
 							</li>
-							<img
-								class="project-img"
-								src="images/digital_artist/digital_artist_drawing_section.jpeg"
-								alt="Раздел Drawing and Animation"
-							/>
 
 							<li>
 								Перетащите компонент <strong>Canvas</strong> (Холст) на экран
@@ -145,7 +133,7 @@
 							</li>
 							<img
 								class="project-img"
-								src="images/digital_artist/digital_artist_add_canvas.jpeg"
+								src="images/digital_artist_add_canvas.jpeg"
 								alt="Добавление холста"
 							/>
 
@@ -161,11 +149,6 @@
 								<strong>LineWidth</strong> (Ширина линии): 3 - хорошая стартовая
 								толщина
 							</li>
-							<img
-								class="project-img"
-								src="images/digital_artist/digital_artist_canvas_properties.jpeg"
-								alt="Настройка свойств холста"
-							/>
 						</ul>
 
 						<div class="tip-box">
@@ -190,20 +173,19 @@
 						</div>
 					</div>
 
-					<!-- Шаг 2: Создание кнопок для выбора цветов -->
 					<div id="step-content-2" class="step-content">
 						<h2>Шаг 2: Создание кнопок для выбора цветов</h2>
 						<ul class="instruction-list">
 							<li>
 								Теперь создадим панель с кнопками для выбора разных цветов. Из
 								палитры
-								<strong>Layout</strong> (Макет) перетащите компонент
+								<strong>Layout</strong> (Расположение) перетащите компонент
 								<strong>HorizontalArrangement</strong>
 								(Горизонтальное расположение) под холст.
 							</li>
 							<img
 								class="project-img"
-								src="images/digital_artist/digital_artist_add_horizontal.jpeg"
+								src="images/digital_artist_add_horizontal.jpeg"
 								alt="Добавление горизонтального контейнера"
 							/>
 
@@ -223,7 +205,7 @@
 							</li>
 							<img
 								class="project-img"
-								src="images/digital_artist/digital_artist_add_color_buttons.jpeg"
+								src="images/digital_artist_add_color_buttons.jpeg"
 								alt="Добавление кнопок цветов"
 							/>
 
@@ -238,11 +220,6 @@
 								40 пикселей <br />• <strong>Height</strong> (Высота): 40
 								пикселей
 							</li>
-							<img
-								class="project-img"
-								src="images/digital_artist/digital_artist_color_buttons.jpeg"
-								alt="Настройка кнопок цветов"
-							/>
 						</ul>
 
 						<div class="tip-box">
@@ -269,7 +246,6 @@
 						</div>
 					</div>
 
-					<!-- Шаг 3: Программирование рисования -->
 					<div id="step-content-3" class="step-content">
 						<h2>Шаг 3: Программирование рисования</h2>
 						<ul class="instruction-list">
@@ -291,11 +267,6 @@
 								<strong>when Canvas1.Dragged</strong> (когда проводим пальцем по
 								холсту).
 							</li>
-							<img
-								class="project-img"
-								src="images/digital_artist/digital_artist_canvas_dragged.jpeg"
-								alt="Блок Canvas.Dragged"
-							/>
 
 							<li>
 								Этот блок срабатывает, когда пользователь проводит пальцем по
@@ -308,11 +279,6 @@
 								<strong>call Canvas1.DrawLine</strong> (нарисовать линию).
 								Поместите этот блок внутрь блока Canvas1.Dragged.
 							</li>
-							<img
-								class="project-img"
-								src="images/digital_artist/digital_artist_draw_line.jpeg"
-								alt="Блок DrawLine"
-							/>
 
 							<li>
 								Блок DrawLine требует четыре параметра - начальные и конечные
@@ -327,7 +293,8 @@
 							</li>
 							<img
 								class="project-img"
-								src="images/digital_artist/digital_artist_complete_draw.jpeg"
+								style="width: 40%"
+								src="images/digital_artist_draw_line.png"
 								alt="Полный блок рисования"
 							/>
 
@@ -340,16 +307,16 @@
 								<strong>set Canvas1.PaintColor to</strong> <br />4. Выберите
 								красный цвет в качестве значения
 							</li>
-							<img
-								class="project-img"
-								src="images/digital_artist/digital_artist_color_button_click.jpeg"
-								alt="Обработка нажатия на кнопку цвета"
-							/>
 
 							<li>
 								Повторите эти действия для всех кнопок цветов, выбирая
 								соответствующий цвет для каждой.
 							</li>
+							<img
+								class="project-img"
+								src="images/digital_artist_color_button_click.jpeg"
+								alt="Обработка нажатия на кнопку цвета"
+							/>
 						</ul>
 
 						<div class="warning-box">
@@ -377,7 +344,6 @@
 						</div>
 					</div>
 
-					<!-- Шаг 4: Добавление кнопки очистки -->
 					<div id="step-content-4" class="step-content">
 						<h2>Шаг 4: Добавление кнопки очистки</h2>
 						<ul class="instruction-list">
@@ -393,7 +359,7 @@
 							</li>
 							<img
 								class="project-img"
-								src="images/digital_artist/digital_artist_add_clear_button.jpeg"
+								src="images/digital_artist_add_clear_button.jpeg"
 								alt="Добавление кнопки очистки"
 							/>
 
@@ -406,11 +372,6 @@
 								<strong>BackgroundColor</strong> (Цвет фона): Серый или другой
 								нейтральный цвет
 							</li>
-							<img
-								class="project-img"
-								src="images/digital_artist/digital_artist_clear_button_properties.jpeg"
-								alt="Настройка кнопки очистки"
-							/>
 
 							<li>
 								Вернитесь на вкладку <strong>Blocks</strong> для
@@ -430,7 +391,8 @@
 							</li>
 							<img
 								class="project-img"
-								src="images/digital_artist/digital_artist_clear_code.jpeg"
+								style="width: 40%"
+								src="images/digital_artist_clear_code.png"
 								alt="Код очистки холста"
 							/>
 						</ul>
@@ -475,7 +437,7 @@
 							</li>
 							<img
 								class="project-img"
-								src="images/digital_artist/digital_artist_testing.jpeg"
+								src="images/mit_project_testing_app.jpeg"
 								alt="Тестирование приложения"
 							/>
 
@@ -528,7 +490,6 @@
 					</div>
 				</div>
 
-				<!-- Дополнительные ресурсы -->
 				<div class="additional-resources">
 					<h3><i class="fas fa-download"></i> Скачать проект</h3>
 					<p>

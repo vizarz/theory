@@ -124,26 +124,37 @@
 
 							<li>
 								После создания проекта вы увидите вкладку Designer. Сначала нам
-								нужно добавить мячик на экран.
+								нужно добавить холст на экран.
 							</li>
 
 							<li>
 								В левой части экрана найдите раздел
 								<strong>Drawing and Animation</strong> (Рисование и анимация).
 							</li>
+
+							<li>
+								Перетащите компонент <strong>Canvas</strong> (Холст) на экран
+								вашего приложения.
+							</li>
 							<img
 								class="project-img"
-								src="images/bouncing_ball/ball_find_section.png"
-								alt="Раздел Drawing and Animation"
+								src="images/ball_add_canvas.jpeg"
+								alt="Добавление холста"
 							/>
-
+							<li>
+								Выберите добавленный холст (Холст1) и настройте его свойства в
+								правой панели:
+								<br />• <strong>Width</strong>: Fill parent (Заполнить родителя)
+								<br />• <strong>Height</strong>: Fill parent (Заполнить
+								родителя) <br />
+							</li>
 							<li>
 								Перетащите компонент <strong>Ball</strong> (Мяч) на экран вашего
 								приложения.
 							</li>
 							<img
 								class="project-img"
-								src="images/bouncing_ball/ball_add_component.png"
+								src="images/ball_add_component.jpeg"
 								alt="Добавление мячика"
 							/>
 
@@ -152,15 +163,10 @@
 								правой панели:
 								<br />• <strong>PaintColor</strong>: Выберите яркий цвет
 								(например, красный) <br />• <strong>Radius</strong>: 20 (размер
-								мячика) <br />• <strong>X</strong>: 160 (центр экрана по
-								горизонтали) <br />• <strong>Y</strong>: 240 (середина экрана по
+								мячика) <br />• <strong>X</strong>: 140 (центр экрана по
+								горизонтали) <br />• <strong>Y</strong>: 150 (середина экрана по
 								вертикали)
 							</li>
-							<img
-								class="project-img"
-								src="images/bouncing_ball/ball_properties.png"
-								alt="Настройка свойств мячика"
-							/>
 						</ul>
 
 						<div class="tip-box">
@@ -191,14 +197,8 @@
 							<li>
 								Теперь добавим датчик движения, который будет определять наклон
 								телефона. В палитре компонентов найдите раздел
-								<strong>Sensors</strong> (Датчики).
+								<strong>Sensors</strong> (Сенсоры).
 							</li>
-							<img
-								class="project-img"
-								src="images/bouncing_ball/ball_find_sensors.png"
-								alt="Раздел Sensors"
-							/>
-
 							<li>
 								Перетащите компонент
 								<strong>AccelerometerSensor</strong> (Акселерометр) на экран
@@ -207,48 +207,9 @@
 							</li>
 							<img
 								class="project-img"
-								src="images/bouncing_ball/ball_add_accelerometer.png"
+								src="images/ball_add_accelerometer.jpeg"
 								alt="Добавление акселерометра"
 							/>
-
-							<li>
-								Настройте свойства акселерометра:
-								<br />• <strong>Enabled</strong>: True (Включен) <br />•
-								<strong>MinimumInterval</strong>: 400 (миллисекунд между
-								обновлениями)
-							</li>
-							<img
-								class="project-img"
-								src="images/bouncing_ball/ball_accelerometer_props.png"
-								alt="Свойства акселерометра"
-							/>
-
-							<li>
-								Для того, чтобы мячик отскакивал от стенок, нам нужно добавить
-								компонент <strong>Canvas</strong> (Холст). Перейдите в раздел
-								<strong>Drawing and Animation</strong> и перетащите компонент
-								Canvas на экран.
-							</li>
-
-							<li>
-								Настройте свойства холста:
-								<br />• <strong>Width</strong>: Fill parent (Заполнить родителя)
-								<br />• <strong>Height</strong>: 300 (или другое значение, чтобы
-								заполнить большую часть экрана) <br />•
-								<strong>BackgroundColor</strong>: Светло-голубой или другой
-								приятный цвет
-							</li>
-							<img
-								class="project-img"
-								src="images/bouncing_ball/ball_canvas_setup.png"
-								alt="Настройка холста"
-							/>
-
-							<li>
-								Перетащите Ball1 (мячик) внутрь Canvas1 (холста), чтобы мячик
-								стал дочерним элементом холста. Это позволит нам определять
-								столкновения мячика с границами холста.
-							</li>
 						</ul>
 
 						<div class="warning-box">
@@ -290,16 +251,11 @@
 							/>
 
 							<li>
-								В левой панели найдите Ball1 и нажмите на него. Из списка
+								В левой панели найдите Шар1 и нажмите на него. Из списка
 								доступных блоков выберите
 								<strong>when Ball1.EdgeReached</strong> (когда мячик достиг
 								края).
 							</li>
-							<img
-								class="project-img"
-								src="images/bouncing_ball/ball_edge_reached_block.png"
-								alt="Блок EdgeReached"
-							/>
 
 							<li>
 								Этот блок срабатывает, когда мячик сталкивается с краем холста.
@@ -308,16 +264,11 @@
 							</li>
 
 							<li>
-								Снова найдите Ball1 в левой панели и выберите
+								Снова найдите Шар1 в левой панели и выберите
 								<strong>call Ball1.Bounce</strong>
 								(вызвать метод Отскок). Поместите этот блок внутрь блока
-								EdgeReached.
+								ДостигнутКрай.
 							</li>
-							<img
-								class="project-img"
-								src="images/bouncing_ball/ball_bounce_method.png"
-								alt="Метод Bounce"
-							/>
 
 							<li>
 								В блок <strong>call Ball1.Bounce</strong> добавьте числовой
@@ -327,8 +278,9 @@
 							</li>
 							<img
 								class="project-img"
-								src="images/bouncing_ball/ball_bounce_angle.png"
-								alt="Установка угла отражения"
+								style="width: 40%"
+								src="images/ball_edge_reached.png"
+								alt="Блок EdgeReached"
 							/>
 						</ul>
 
@@ -366,11 +318,6 @@
 								AccelerometerSensor1 и выберите блок
 								<strong>when AccelerometerSensor1.AccelerationChanged</strong>.
 							</li>
-							<img
-								class="project-img"
-								src="images/bouncing_ball/ball_acceleration_changed.png"
-								alt="Блок AccelerationChanged"
-							/>
 
 							<li>
 								Этот блок будет срабатывать каждый раз, когда пользователь
@@ -383,11 +330,6 @@
 								акселерометра. Найдите Ball1 в левой панели и выберите блок
 								<strong>set Ball1.X to</strong>.
 							</li>
-							<img
-								class="project-img"
-								src="images/bouncing_ball/ball_set_x.png"
-								alt="Установка координаты X"
-							/>
 
 							<li>
 								Для установки новой координаты X, мы будем использовать текущее
@@ -399,41 +341,27 @@
 								<strong>xAccel</strong> из блока AccelerationChanged, но
 								умноженный на -1
 							</li>
-							<img
-								class="project-img"
-								src="images/bouncing_ball/ball_x_formula.png"
-								alt="Формула для координаты X"
-							/>
 
 							<li>
 								Аналогично сделаем для координаты Y. Добавьте блок
 								<strong>set Ball1.Y to</strong> и настройте похожую формулу,
 								используя Ball1.Y и yAccel.
 							</li>
-							<img
-								class="project-img"
-								src="images/bouncing_ball/ball_y_formula.png"
-								alt="Формула для координаты Y"
-							/>
 
-							<li>
-								Вот как должны выглядеть ваши блоки кода для управления
-								движением мячика:
-							</li>
 							<img
 								class="project-img"
-								src="images/bouncing_ball/ball_complete_code.png"
-								alt="Полный код движения мячика"
+								src="images/ball_acceleration_changed.png"
+								alt="Блок AccelerationChanged"
 							/>
 						</ul>
 
 						<div class="tip-box">
 							<i class="fas fa-lightbulb"></i>
-							<strong>Хитрость:</strong> Мы умножаем xAccel и yAccel на
-							отрицательное число (-1 или другой множитель), чтобы мячик
-							двигался в правильном направлении. Вы можете настроить
-							чувствительность, изменив этот множитель. Например, -2 сделает
-							движения более резкими, а -0.5 — более плавными.
+							<strong>Хитрость:</strong> Мы умножаем xAccel на отрицательное
+							число (-1 или другой множитель), чтобы мячик двигался в правильном
+							направлении. Вы можете настроить чувствительность, изменив этот
+							множитель. Например, -2 сделает движения более резкими, а -0.5 —
+							более плавными.
 						</div>
 
 						<div class="step-navigation">
@@ -464,17 +392,17 @@
 									>нашем введении в MIT App Inventor</a
 								>.
 							</li>
+							<img
+								class="project-img"
+								src="images/mit_project_testing_app.jpeg"
+								alt="Тестирование приложения"
+							/>
 
 							<li>
 								Для наилучших результатов рекомендуется тестировать это
 								приложение на реальном устройстве, а не на эмуляторе, так как
 								эмулятор не имеет акселерометра.
 							</li>
-							<img
-								class="project-img"
-								src="images/bouncing_ball/ball_testing_app.png"
-								alt="Тестирование приложения"
-							/>
 
 							<li>
 								<strong>Проверьте работу:</strong>

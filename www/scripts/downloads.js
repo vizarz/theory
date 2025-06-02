@@ -17,6 +17,22 @@ const downloadFiles = {
 		url: 'downloads/projects/BouncingBall.aia',
 		size: '2 KB',
 	},
+	'music-player': {
+		name: 'MusicPlayer.aia',
+		url: 'downloads/projects/MusicPlayer.aia',
+		size: '2 KB',
+	},
+	'digital-artist': {
+		name: 'DigitalArtist.aia',
+		url: 'downloads/projects/DigitalArtist.aia',
+		size: '2 KB',
+	},
+	'magic-ball': {
+		name: 'MagicBall.aia',
+		url: 'downloads/projects/MagicBall.aia',
+		size: '2 KB',
+	},
+
 	'icons-pack': {
 		name: 'icons-pack.zip',
 		url: 'downloads/resources/icons-pack.zip',

@@ -953,6 +953,36 @@ body.dark-mode .accordion-item.completed .accordion-header {
 	.help-cards {
 		grid-template-columns: 1fr;
 	}
+	.intro-feature-card {
+		flex-direction: column;
+	}
+
+	.intro-feature-card .intro-icon {
+		margin-right: 0;
+		margin-bottom: 1rem;
+	}
+	.downloads-stats {
+		grid-template-columns: 1fr;
+	}
+
+	.downloads-header h1 {
+		font-size: 2em;
+		flex-direction: column;
+		gap: 10px;
+	}
+	.intro-resources-card {
+		flex-direction: column;
+	}
+
+	.intro-icon {
+		margin-right: 0;
+		margin-bottom: 1rem;
+	}
+
+	.intro-method-box img {
+		width: 100%;
+		max-width: 300px;
+	}
 }
 .error-container {
 	display: flex;
@@ -1138,12 +1168,12 @@ body.dark-mode .error-text {
 	top: 0;
 	left: 50%;
 	transform: translateX(-50%);
-	animation: float 6s ease-in-out infinite;
+	animation: imgfloat 6s ease-in-out infinite;
 	width: auto;
 	height: 100%;
 	object-fit: contain;
 }
-@keyframes float {
+@keyframes imgfloat {
 	0% {
 		transform: translateX(-50%) translateY(0px);
 	}
@@ -3080,14 +3110,189 @@ body.dark-mode .modal-footer {
 	background: #5a6268;
 }
 
-@media (max-width: 480px) {
-	.downloads-stats {
-		grid-template-columns: 1fr;
-	}
+.intro-resources-card {
+	display: flex;
+	background-color: #f0f7ff;
+	border-radius: 8px;
+	padding: 1.2rem;
+	margin: 1.5rem 0;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	border-left: 5px solid #0066cc;
+}
 
-	.downloads-header h1 {
-		font-size: 2em;
-		flex-direction: column;
-		gap: 10px;
-	}
+.intro-icon {
+	font-size: 2rem;
+	color: #0066cc;
+	margin-right: 1.2rem;
+	display: flex;
+	align-items: center;
+}
+
+.intro-content {
+	flex: 1;
+}
+
+.intro-content h3 {
+	margin-top: 0;
+	color: #0066cc;
+	border-bottom: none;
+	padding-bottom: 0;
+}
+.intro-button {
+	display: inline-block;
+	background-color: #0066cc;
+	color: white !important;
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+	text-decoration: none;
+	margin-top: 0.5rem;
+	font-weight: bold;
+	transition: background-color 0.3s;
+}
+
+.intro-button:hover {
+	background-color: #0055aa;
+	text-decoration: none;
+}
+
+.intro-method-box {
+	background-color: #f9f9f9;
+	border-radius: 8px;
+	padding: 1.2rem;
+	margin: 1rem 0 1.5rem;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.intro-method-box h5 {
+	margin-top: 0;
+	color: #333;
+	font-size: 1.1rem;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.intro-method-box ol {
+	padding-left: 1.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.intro-method-box li {
+	margin-bottom: 0.5rem;
+}
+
+.intro-method-box img {
+	margin: 1rem 0;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	display: block;
+}
+
+/* Темная тема */
+body.dark-mode .intro-resources-card {
+	background-color: #1a2633;
+	border-left-color: #0066cc;
+}
+
+body.dark-mode .intro-method-box {
+	background-color: #2a2a2a;
+}
+
+body.dark-mode .intro-method-box h5 {
+	color: #e0e0e0;
+}
+
+body.dark-mode .intro-method-box img {
+	border-color: #444;
+}
+
+body.dark-mode .intro-button {
+	background-color: #0066cc;
+}
+
+body.dark-mode .intro-button:hover {
+	background-color: #0077ee;
+}
+
+.intro-feature-card {
+	display: flex;
+	background-color: #f8f9fa;
+	border-radius: 8px;
+	padding: 1.2rem;
+	margin: 1.5rem 0;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	border-left: 5px solid #4285f4;
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.intro-feature-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Используем уже существующие стили для intro-icon и intro-content */
+
+/* Специфичные стили для карточек режимов */
+#designer .intro-feature-card {
+	border-left-color: #0f9d58; /* Зеленый для дизайнера */
+}
+
+#designer .intro-feature-card .intro-icon {
+	color: #0f9d58;
+}
+
+#designer .intro-feature-card .intro-button {
+	background-color: #0f9d58;
+}
+#designer .intro-feature-card .intro-button:hover {
+	background-color: #0b8043;
+}
+
+#blocks .intro-feature-card {
+	border-left-color: #db4437; 
+}
+
+#blocks .intro-feature-card .intro-icon {
+	color: #db4437;
+}
+
+#blocks .intro-feature-card .intro-button {
+	background-color: #db4437;
+}
+
+#blocks .intro-feature-card .intro-button:hover {
+	background-color: #c53929;
+}
+
+/* Темная тема */
+body.dark-mode .intro-feature-card {
+	background-color: #2a2a2a;
+}
+
+body.dark-mode #designer .intro-feature-card {
+	border-left-color: #34a853;
+}
+
+body.dark-mode #blocks .intro-feature-card {
+	border-left-color: #ea4335;
+}
+
+#designer .intro-feature-card .intro-content h3 {
+	color: #0f9d58;
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+#blocks .intro-feature-card .intro-content h3 {
+	color: #db4437;
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+body.dark-mode #designer .intro-feature-card .intro-content h3 {
+	color: #34a853;
+}
+
+body.dark-mode #blocks .intro-feature-card .intro-content h3 {
+	color: #ea4335;
 }
