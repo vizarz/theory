@@ -49,31 +49,34 @@
 				<div class="project-header">
 					<h1>Проект "Музыкальный плеер"</h1>
 					<p>
-						<strong>Цель</strong>: Создать простой музыкальный плеер, который
-						воспроизводит твои любимые мелодии! Ты сможешь включать музыку,
-						останавливать её и выбирать разные песни.
+						<strong>Цель</strong>: Создать приложение для воспроизведения музыки
+						с функциями выбора песен, управления воспроизведением и регулировкой
+						громкости.
 					</p>
 					<p>
-						Этот проект познакомит тебя с работой с аудиофайлами в приложении,
-						созданием пользовательского интерфейса для воспроизведения музыки и
-						управлением компонентами воспроизведения звука.
+						Этот проект научит вас работать с аудиофайлами, создавать
+						интерактивный интерфейс и программировать кнопки управления
+						мультимедиа.
 					</p>
 					<div class="project-features">
-						<h3><i class="fas fa-star"></i> Чему ты научишься:</h3>
+						<h3><i class="fas fa-star"></i> Чему вы научитесь:</h3>
 						<ul>
 							<li>
-								<i class="fas fa-music"></i> Добавлять аудио файлы в приложение
+								<i class="fas fa-music"></i> Добавлять и воспроизводить
+								аудиофайлы
 							</li>
 							<li>
-								<i class="fas fa-play-circle"></i> Управлять воспроизведением
-								звука
+								<i class="fas fa-play-circle"></i> Создавать кнопки управления
+								воспроизведением
+							</li>
+							<li><i class="fas fa-list"></i> Работать со списками песен</li>
+							<li>
+								<i class="fas fa-volume-up"></i> Реализовывать регулировку
+								громкости
 							</li>
 							<li>
-								<i class="fas fa-list"></i> Создавать список воспроизведения
-							</li>
-							<li>
-								<i class="fas fa-volume-up"></i> Настраивать громкость
-								воспроизведения
+								<i class="fas fa-redo"></i> Создавать циклическое переключение
+								песен
 							</li>
 						</ul>
 					</div>
@@ -85,33 +88,33 @@
 
 					<div class="step-item" data-step="1">
 						<div class="step-circle" onclick="showStep(1)">1</div>
-						<div class="step-title">Добавь аудио ресурсы</div>
+						<div class="step-title">Подготовка ресурсов</div>
 					</div>
 
 					<div class="step-item" data-step="2">
 						<div class="step-circle" onclick="showStep(2)">2</div>
-						<div class="step-title">Создай интерфейс плеера</div>
+						<div class="step-title">Создание интерфейса</div>
 					</div>
 
 					<div class="step-item" data-step="3">
 						<div class="step-circle" onclick="showStep(3)">3</div>
-						<div class="step-title">Добавь список песен</div>
+						<div class="step-title">Настройка списка песен</div>
 					</div>
 
 					<div class="step-item" data-step="4">
 						<div class="step-circle" onclick="showStep(4)">4</div>
-						<div class="step-title">Запрограммируй кнопки управления</div>
+						<div class="step-title">Программирование функций</div>
 					</div>
 
 					<div class="step-item" data-step="5">
 						<div class="step-circle" onclick="showStep(5)">5</div>
-						<div class="step-title">Тестируй приложение</div>
+						<div class="step-title">Тестирование плеера</div>
 					</div>
 				</div>
 
 				<div class="step-contents">
 					<div id="step-content-1" class="step-content">
-						<h2>Шаг 1: Добавление аудио ресурсов</h2>
+						<h2>Шаг 1: Подготовка аудио ресурсов</h2>
 						<ul class="instruction-list">
 							<li>
 								Откройте
@@ -127,59 +130,83 @@
 							/>
 
 							<li>
-								Перед началом работы с интерфейсом, нам нужно добавить
-								аудиофайлы для воспроизведения. В панели "Palette" (Палитра)
-								справа найдите раздел "Media" (Медиа).
+								Нам понадобятся аудиофайлы для воспроизведения. В панели
+								"Palette" (Палитра) найдите раздел "Media" (Медиа).
 							</li>
-							<img
-								class="project-img"
-								src="images/music_player/music_player_media_section.png"
-								alt="Раздел Медиа"
-							/>
 
 							<li>
 								Перетащите компонент <strong>Player</strong> (Проигрыватель) на
-								экран вашего приложения. Обратите внимание, что этот компонент
-								появится в разделе "Non-visible components" (Невидимые
-								компоненты) внизу экрана.
+								экран. Этот компонент появится в разделе "Non-visible
+								components" (Невидимые компоненты).
 							</li>
 							<img
 								class="project-img"
-								src="images/music_player/music_player_add_player.png"
+								src="images/music_player_add_player.jpeg"
 								alt="Добавление проигрывателя"
 							/>
 
 							<li>
-								Теперь нам нужно загрузить аудиофайлы в проект. Нажмите на
-								"Upload File..." (Загрузить файл...) в разделе "Media" (Медиа).
+								Для этого проекта мы будем использовать три песни:
+								<ul>
+									<li><strong>song1.mp3</strong> - "Энергичная"</li>
+									<li><strong>song2.mp3</strong> - "Спокойная"</li>
+									<li><strong>song3.mp3</strong> - "Веселая"</li>
+								</ul>
+							</li>
+
+							<li>
+								Загрузите аудиофайлы в проект:
+								<ol>
+									<li>
+										Скачайте все три песни из нашего
+										<a
+											href="mit_downloads.html#resources"
+											class="highlight-link"
+											>центра загрузок</a
+										>
+										в разделе "Музыка для проектов"
+									</li>
+									<li>Распакуйте ZIP-архив с песнями</li>
+									<li>
+										В MIT App Inventor нажмите на "Upload File..." (Загрузить
+										файл...) в разделе "Media" (Медиа)
+									</li>
+									<li>Выберите и загрузите все три MP3-файла</li>
+								</ol>
 							</li>
 							<img
 								class="project-img"
-								src="images/music_player/music_player_upload_audio.png"
+								src="images/music_player_upload_audio.jpeg"
 								alt="Загрузка аудиофайла"
 							/>
 
 							<li>
-								Загрузите несколько MP3-файлов с музыкой. Для учебного проекта
-								можно использовать короткие аудиофайлы или звуковые эффекты.
+								После загрузки вы увидите все три аудиофайла в списке
+								медиа-ресурсов. Убедитесь, что имена файлов совпадают с теми,
+								что будут использоваться в коде: song1.mp3, song2.mp3 и
+								song3.mp3.
 							</li>
-
-							<li>
-								После загрузки вы увидите ваши аудиофайлы в списке медиа-файлов.
-								Они будут автоматически доступны в вашем проекте.
-							</li>
-							<img
-								class="project-img"
-								src="images/music_player/music_player_media_list.png"
-								alt="Список загруженных аудиофайлов"
-							/>
 						</ul>
 
 						<div class="tip-box">
 							<i class="fas fa-lightbulb"></i>
-							<strong>Совет:</strong> Используйте файлы MP3 небольшого размера,
-							чтобы ваше приложение не было слишком тяжелым. Для учебных целей
-							достаточно файлов размером до 1 МБ.
+							<strong>Специально подготовленные файлы:</strong> Мы подготовили
+							три оптимизированные песни для этого проекта, которые имеют
+							небольшой размер и идеально подходят для использования в MIT App
+							Inventor. Скачайте их в нашем
+							<a href="mit_downloads.html#resources" class="highlight-link"
+								>центре загрузок</a
+							>
+							в разделе "Музыка для проектов".
+						</div>
+
+						<div class="warning-box">
+							<i class="fas fa-exclamation-triangle"></i>
+							<strong>Важно:</strong> Используйте именно файлы song1.mp3,
+							song2.mp3 и song3.mp3, чтобы код из следующих шагов работал
+							корректно без необходимости изменений. Если вы решите использовать
+							свои аудиофайлы, убедитесь, что вы соответственно изменили их
+							имена в блоках программирования.
 						</div>
 
 						<div class="step-navigation">
@@ -187,7 +214,7 @@
 							<button
 								id="btn-step1"
 								class="step-btn btn-read"
-								onclick="markRead('step1', 'Добавление аудио ресурсов')"
+								onclick="markRead('step1', 'Подготовка аудио ресурсов')"
 							>
 								Пометить как выполнено
 							</button>
@@ -201,127 +228,182 @@
 						<h2>Шаг 2: Создание интерфейса плеера</h2>
 						<ul class="instruction-list">
 							<li>
-								Теперь создадим интерфейс для нашего музыкального плеера. В
-								разделе <strong>Layout</strong> (Макет) перетащите компонент
-								<strong>VerticalArrangement</strong> (Вертикальное расположение)
-								на экран.
+								Создадим интерфейс нашего музыкального плеера, начиная с
+								основного контейнера:
+								<ol>
+									<li>
+										В разделе <strong>Layout</strong> (Макет) найдите компонент
+										<strong>VerticalArrangement</strong>
+									</li>
+									<li>Перетащите его на экран приложения</li>
+									<li>
+										В свойствах установите <strong>Width</strong> (Ширина) и
+										<strong>Height</strong> (Высота): Fill parent
+									</li>
+									<li>
+										В <strong>BackgroundColor</strong> выберите приятный цвет
+										фона (например, светло-синий или серый)
+									</li>
+								</ol>
 							</li>
 							<img
 								class="project-img"
-								src="images/music_player/music_player_add_vertical.png"
+								src="images/music_player_add_vertical.jpeg"
 								alt="Добавление вертикального расположения"
 							/>
 
 							<li>
-								Настройте свойства VerticalArrangement1:
-								<br />• <strong>Width</strong> (Ширина): Fill parent (Заполнить
-								родителя) <br />• <strong>Height</strong> (Высота): Fill parent
-								(Заполнить родителя) <br />•
-								<strong>BackgroundColor</strong> (Цвет фона): Выберите приятный
-								цвет для фона
-							</li>
-
-							<li>
-								Добавим заголовок плеера. Из раздела
-								<strong>User Interface</strong> (Интерфейс пользователя)
-								перетащите компонент <strong>Label</strong> (Метка) в
-								VerticalArrangement1.
-							</li>
-
-							<li>
-								Настройте свойства Label1:
-								<br />• <strong>Text</strong> (Текст): "Мой музыкальный плеер"
-								<br />• <strong>TextColor</strong> (Цвет текста): Выберите
-								контрастный цвет <br />• <strong>FontSize</strong> (Размер
-								шрифта): 20 <br />• <strong>FontBold</strong> (Жирный шрифт):
-								True (Да)
-							</li>
-
-							<li>
-								Добавим метку для отображения названия текущей песни. Перетащите
-								еще одну <strong>Label</strong>
-								(Метку) в VerticalArrangement1 под заголовком.
-							</li>
-
-							<li>
-								Настройте свойства Label2:
-								<br />• <strong>Text</strong> (Текст): "Сейчас играет: ничего не
-								выбрано" <br />• <strong>Width</strong> (Ширина): Fill parent
-								(Заполнить родителя) <br />•
-								<strong>TextAlignment</strong> (Выравнивание текста): Center (По
-								центру) <br />• <strong>FontSize</strong> (Размер шрифта): 16
-							</li>
-
-							<li>
-								Теперь добавим кнопки управления воспроизведением. Из раздела
-								<strong>Layout</strong> (Макет) перетащите компонент
-								<strong>HorizontalArrangement</strong> (Горизонтальное
-								расположение) в VerticalArrangement1 под метками.
-							</li>
-
-							<li>
-								Настройте свойства HorizontalArrangement1:
-								<br />• <strong>Width</strong> (Ширина): Fill parent (Заполнить
-								родителя) <br />•
-								<strong>AlignHorizontal</strong> (Горизонтальное выравнивание):
-								Center (По центру)
-							</li>
-
-							<li>
-								Из раздела <strong>User Interface</strong> (Интерфейс
-								пользователя) перетащите три компонента
-								<strong>Button</strong> (Кнопка) в HorizontalArrangement1.
-							</li>
-
-							<li>
-								Настройте свойства первой кнопки (Button1):
-								<br />• <strong>Text</strong> (Текст): "◀" (символ "назад")
-								<br />• <strong>Width</strong> (Ширина): 60 пикселей <br />•
-								<strong>FontSize</strong> (Размер шрифта): 20
-							</li>
-
-							<li>
-								Настройте свойства второй кнопки (Button2):
-								<br />• <strong>Text</strong> (Текст): "▶" (символ
-								"воспроизвести") <br />• <strong>Width</strong> (Ширина): 60
-								пикселей <br />• <strong>FontSize</strong> (Размер шрифта): 20
-							</li>
-
-							<li>
-								Настройте свойства третьей кнопки (Button3):
-								<br />• <strong>Text</strong> (Текст): "▶▶" (символ "вперед")
-								<br />• <strong>Width</strong> (Ширина): 60 пикселей <br />•
-								<strong>FontSize</strong> (Размер шрифта): 20
+								Добавим заголовок плеера:
+								<ol>
+									<li>
+										Из раздела <strong>User Interface</strong> перетащите
+										компонент <strong>Label</strong> в VerticalArrangement1
+									</li>
+									<li>
+										В свойствах установите <strong>Text</strong>: "Мой
+										музыкальный плеер"
+									</li>
+									<li>
+										Установите <strong>TextColor</strong>: контрастный к фону
+										цвет
+									</li>
+									<li>
+										Установите <strong>FontSize</strong>: 20 и
+										<strong>FontBold</strong>: True
+									</li>
+									<li>Установите <strong>TextAlignment</strong>: Center</li>
+								</ol>
 							</li>
 							<img
 								class="project-img"
-								src="images/music_player/music_player_controls.png"
-								alt="Кнопки управления плеером"
+								src="images/music_player_add_label.jpeg"
+								alt="Добавление заголовка плеера"
 							/>
 
 							<li>
-								Добавим ползунок громкости. Из раздела
-								<strong>User Interface</strong> (Интерфейс пользователя)
-								перетащите компонент <strong>Slider</strong> (Ползунок) в
-								VerticalArrangement1 под кнопками управления.
+								Добавим надпись для отображения текущей песни:
+								<ol>
+									<li>
+										Перетащите еще одну <strong>Label</strong> в
+										VerticalArrangement1 под заголовком
+									</li>
+									<li>
+										В свойствах установите <strong>Text</strong>: "Сейчас
+										играет: ничего не выбрано"
+									</li>
+									<li>
+										Установите <strong>Width</strong>: Fill parent и
+										<strong>TextAlignment</strong>: Center
+									</li>
+									<li>Установите <strong>FontSize</strong>: 16</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/music_player_add_label2.jpeg"
+								alt="Добавление метки текущей песни"
+							/>
+
+							<li>
+								Создадим панель с кнопками управления:
+								<ol>
+									<li>
+										Из раздела <strong>Layout</strong> перетащите
+										<strong>HorizontalArrangement</strong> в
+										VerticalArrangement1
+									</li>
+									<img
+										class="project-img"
+										src="images/music_player_add_horizontal.jpeg"
+										alt="Добавление панели с кнопками управления"
+									/>
+									<li>
+										Установите <strong>Width</strong>: Fill parent и
+										<strong>AlignHorizontal</strong>: Center
+									</li>
+									<li>
+										Из раздела <strong>User Interface</strong> перетащите три
+										<strong>Button</strong> в HorizontalArrangement1
+									</li>
+									<img
+										class="project-img"
+										src="images/music_player_add_buttons.jpeg"
+										alt="Добавление кнопок управления"
+									/>
+								</ol>
 							</li>
 
 							<li>
-								Настройте свойства Slider1:
-								<br />• <strong>Width</strong> (Ширина): Fill parent (Заполнить
-								родителя) <br />• <strong>MinValue</strong> (Минимальное
-								значение): 0 <br />• <strong>MaxValue</strong> (Максимальное
-								значение): 100 <br />• <strong>ThumbPosition</strong> (Положение
-								ползунка): 50
+								Настроим кнопки управления:
+								<ol>
+									<li>
+										Кнопка 1 (предыдущая песня): <strong>Text</strong>: "◀",
+										<strong>Width</strong>: 60, <strong>FontSize</strong>: 20
+									</li>
+									<li>
+										Кнопка 2 (воспроизведение/пауза): <strong>Text</strong>:
+										"▶", <strong>Width</strong>: 60, <strong>FontSize</strong>:
+										20
+									</li>
+									<li>
+										Кнопка 3 (следующая песня): <strong>Text</strong>: "▶▶",
+										<strong>Width</strong>: 60, <strong>FontSize</strong>: 20
+									</li>
+								</ol>
 							</li>
+
+							<li>
+								Добавим ползунок громкости:
+								<ol>
+									<li>
+										Из раздела <strong>User Interface</strong> перетащите
+										компонент <strong>Slider</strong> в VerticalArrangement1
+									</li>
+									<li>Установите <strong>Width</strong>: Fill parent</li>
+									<li>
+										Установите <strong>MinValue</strong>: 0,
+										<strong>MaxValue</strong>: 100,
+										<strong>ThumbPosition</strong>: 50
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/music_player_add_slider.jpeg"
+								alt="Добавление ползунка громкости"
+							/>
+
+							<li>
+								Наконец, добавим список песен:
+								<ol>
+									<li>
+										Из раздела <strong>User Interface</strong> перетащите
+										компонент <strong>ListView</strong> в VerticalArrangement1
+									</li>
+									<li>
+										Установите <strong>Width</strong>: Fill parent и
+										<strong>Height</strong>: 200
+									</li>
+									<li>
+										Установите <strong>BackgroundColor</strong> - выберите
+										контрастный к фону цвет
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/music_player_add_listview.jpeg"
+								alt="Добавление списка песен"
+							/>
 						</ul>
 
 						<div class="tip-box">
 							<i class="fas fa-lightbulb"></i>
-							<strong>Совет:</strong> Вместо текстовых символов для кнопок вы
-							можете использовать изображения. Загрузите иконки воспроизведения,
-							паузы и перемотки, а затем установите их как фон кнопок с помощью
-							свойства <strong>Image</strong>.
+							<strong>Совет по дизайну:</strong> Вместо символов можно
+							использовать иконки для кнопок, загрузив их как изображения и
+							установив в свойстве <strong>Image</strong> кнопок. Также можно
+							добавить небольшие отступы между элементами, настраивая свойство
+							<strong>Margin</strong>.
 						</div>
 
 						<div class="step-navigation">
@@ -342,32 +424,11 @@
 					</div>
 
 					<div id="step-content-3" class="step-content">
-						<h2>Шаг 3: Добавление списка песен</h2>
+						<h2>Шаг 3: Настройка списка песен</h2>
 						<ul class="instruction-list">
 							<li>
-								Теперь добавим список песен, из которого пользователь сможет
-								выбирать музыку для воспроизведения. Из раздела
-								<strong>User Interface</strong> (Интерфейс пользователя)
-								перетащите компонент <strong>ListView</strong> (Список) в
-								VerticalArrangement1 под ползунком громкости.
-							</li>
-							<img
-								class="project-img"
-								src="images/music_player/music_player_add_listview.png"
-								alt="Добавление списка песен"
-							/>
-
-							<li>
-								Настройте свойства ListView1:
-								<br />• <strong>Width</strong> (Ширина): Fill parent (Заполнить
-								родителя) <br />• <strong>Height</strong> (Высота): 200 пикселей
-								<br />• <strong>BackgroundColor</strong> (Цвет фона): Выберите
-								контрастный цвет к фону приложения
-							</li>
-
-							<li>
-								Теперь перейдем во вкладку <strong>Blocks</strong> (Блоки) для
-								инициализации списка песен.
+								Перейдите во вкладку <strong>Blocks</strong> (Блоки) для
+								программирования логики приложения.
 							</li>
 							<img
 								class="project-img"
@@ -376,106 +437,225 @@
 							/>
 
 							<li>
-								Первым делом создадим глобальную переменную для хранения списка
-								песен. В категории <strong>Variables</strong> (Переменные)
-								выберите блок
-								<strong>initialize global name to</strong> (инициализировать
-								глобальную переменную).
-							</li>
-
-							<li>
-								Измените имя переменной на <strong>songsList</strong> (список
-								песен).
-							</li>
-
-							<li>
-								В категории <strong>Lists</strong> (Списки) найдите блок
-								<strong>create empty list</strong> (создать пустой список) и
-								соедините его с переменной <strong>songsList</strong>.
-							</li>
-
-							<li>
-								Теперь создадим еще одну глобальную переменную для хранения
-								путей к аудиофайлам. В категории
-								<strong>Variables</strong> выберите еще один блок
-								<strong>initialize global name to</strong>.
-							</li>
-
-							<li>
-								Измените имя переменной на <strong>songPaths</strong> (пути к
-								песням).
-							</li>
-
-							<li>
-								Соедините еще один блок <strong>create empty list</strong> с
-								переменной <strong>songPaths</strong>.
+								Создадим блок инициализации, который будет выполняться при
+								запуске приложения:
+								<ol>
+									<li>
+										В левой панели найдите компонент <strong>Screen1</strong>
+									</li>
+									<li>
+										Выберите блок <strong>when Screen1.Initialize</strong>
+									</li>
+									<li>Перетащите этот блок в рабочую область</li>
+								</ol>
 							</li>
 							<img
 								class="project-img"
-								src="images/music_player/music_player_init_variables.png"
-								alt="Инициализация переменных"
+								style="width: 30%"
+								src="images/music_player_screen_initialize.png"
+								alt="Блок инициализации экрана"
 							/>
 
 							<li>
-								Теперь заполним списки названиями песен и путями к файлам. В
-								категории <strong>Lists</strong> найдите блок
-								<strong>add items to list</strong> (добавить элементы в список).
+								Создадим список названий песен:
+								<ol>
+									<li>
+										В левой панели выберите категорию <strong>Variables</strong>
+									</li>
+									<li>
+										Найдите блок <strong>initialize global name to</strong>
+									</li>
+									<li>
+										Перетащите блок в рабочую область (не обязательно внутрь
+										блока initialize)
+									</li>
+									<li>Измените имя переменной на <strong>songsList</strong></li>
+								</ol>
 							</li>
 
 							<li>
-								Перетащите блок <strong>add items to list</strong> под блок
-								инициализации переменной <strong>songsList</strong>.
-							</li>
-
-							<li>
-								В первое поле блока <strong>add items to list</strong> поместите
-								переменную <strong>songsList</strong>. Затем добавьте названия
-								песен, которые вы загрузили в проект, используя текстовые блоки
-								из категории <strong>Text</strong>. Например: <br />• "Песня 1"
-								<br />• "Песня 2" <br />• "Песня 3"
-							</li>
-
-							<li>
-								Аналогично заполните список <strong>songPaths</strong>.
-								Используйте блок <strong>add items to list</strong>
-								и добавьте имена файлов для каждой песни, например:
-								<br />• "song1.mp3" <br />• "song2.mp3" <br />• "song3.mp3"
+								Заполним список названиями песен:
+								<ol>
+									<li>
+										В категории <strong>Lists</strong> найдите блок
+										<strong>make a list</strong>
+									</li>
+									<li>
+										Перетащите блок в поле значения переменной
+										<strong>songsList</strong>
+									</li>
+									<li>
+										Нажмите на синий значок "+" на блоке
+										<strong>make a list</strong> нужное количество раз, чтобы
+										добавить поля для всех ваших песен
+									</li>
+									<li>
+										В категории <strong>Text</strong> выберите текстовый блок
+										(кавычки)
+									</li>
+									<li>
+										Заполните текстовые блоки названиями песен (например: "Песня
+										1 - Название", "Песня 2 - Название", "Песня 3 - Название")
+									</li>
+								</ol>
 							</li>
 							<img
 								class="project-img"
-								src="images/music_player/music_player_fill_lists.png"
-								alt="Заполнение списков песен"
+								src="images/music_player_songs_list.png"
+								alt="Создание списка песен"
 							/>
 
 							<li>
-								Теперь нам нужно заполнить ListView1 названиями песен. В
-								категории <strong>ListView1</strong> найдите блок
-								<strong>ListView1.Elements</strong> (элементы списка).
-							</li>
-
-							<li>
-								Перетащите блок <strong>set ListView1.Elements to</strong> после
-								заполнения списков песен.
-							</li>
-
-							<li>
-								В поле блока
-								<strong>set ListView1.Elements to</strong> поместите переменную
-								<strong>songsList</strong>.
+								Аналогично создадим список путей к файлам песен:
+								<ol>
+									<li>
+										Снова воспользуйтесь блоком
+										<strong>initialize global name to</strong>
+									</li>
+									<li>Назовите переменную <strong>songPaths</strong></li>
+									<li>
+										Создайте список с помощью блока <strong>make a list</strong>
+									</li>
+									<li>
+										Заполните список именами MP3-файлов, которые вы загрузили
+										(например: "song1.mp3", "song2.mp3", "song3.mp3")
+									</li>
+								</ol>
 							</li>
 							<img
 								class="project-img"
-								src="images/music_player/music_player_set_listview.png"
-								alt="Заполнение ListView"
+								src="images/music_player_paths_list.png"
+								alt="Создание списка путей к файлам"
+							/>
+
+							<li>
+								Создадим переменную для хранения индекса текущей песни:
+								<ol>
+									<li>
+										Добавьте еще один блок
+										<strong>initialize global name to</strong>
+									</li>
+									<li>Назовите переменную <strong>currentSongIndex</strong></li>
+									<li>
+										Установите начальное значение равным 1 (в MIT App Inventor
+										индексы списков начинаются с 1)
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								style="width: 40%"
+								src="images/music_player_current_index.png"
+								alt="Инициализация текущего индекса"
+							/>
+
+							<li>
+								Теперь добавим код инициализации в блок
+								<strong>when Screen1.Initialize</strong>:
+								<ol>
+									<li>
+										Заполним ListView1 названиями песен:
+										<ul>
+											<li>
+												В категории <strong>ListView1</strong> найдите блок
+												<strong>set ListView1.Elements to</strong>
+											</li>
+											<li>
+												Перетащите этот блок внутрь блока
+												<strong>when Screen1.Initialize</strong>
+											</li>
+											<li>
+												В поле значения перетащите переменную
+												<strong>global songsList</strong> из категории
+												<strong>Variables</strong>
+											</li>
+										</ul>
+									</li>
+								</ol>
+							</li>
+
+							<li>
+								Установим начальный источник для Player1:
+								<ol>
+									<li>
+										В категории <strong>Player1</strong> найдите блок
+										<strong>set Player1.Source to</strong>
+									</li>
+									<li>
+										Перетащите этот блок внутрь блока
+										<strong>when Screen1.Initialize</strong> под предыдущим
+										блоком
+									</li>
+									<li>
+										В категории <strong>Lists</strong> найдите блок
+										<strong>select list item</strong>
+									</li>
+									<li>
+										Перетащите этот блок в поле значения
+										<strong>set Player1.Source to</strong>
+									</li>
+									<li>
+										В первое поле блока
+										<strong>select list item</strong> перетащите
+										<strong>global songPaths</strong>
+									</li>
+									<li>
+										Во второе поле перетащите
+										<strong>global currentSongIndex</strong>
+									</li>
+								</ol>
+							</li>
+
+							<li>
+								Установим начальный текст для метки текущей песни:
+								<ol>
+									<li>
+										В категории <strong>Label2</strong> найдите блок
+										<strong>set Label2.Text to</strong>
+									</li>
+									<li>
+										Перетащите этот блок внутрь блока
+										<strong>when Screen1.Initialize</strong> под предыдущими
+										блоками
+									</li>
+									<li>
+										В категории <strong>Text</strong> найдите блок
+										<strong>join</strong>
+									</li>
+									<li>
+										Перетащите блок <strong>join</strong> в поле значения
+										<strong>set Label2.Text to</strong>
+									</li>
+									<li>
+										В первое поле блока <strong>join</strong> введите текст
+										"Сейчас играет: "
+									</li>
+									<li>
+										Во второе поле перетащите блок
+										<strong>select list item</strong>
+									</li>
+									<li>
+										В блоке <strong>select list item</strong>: в первое поле -
+										<strong>global songsList</strong>, во второе -
+										<strong>global currentSongIndex</strong>
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/music_player_initial_label.png"
+								alt="Установка начального текста метки"
 							/>
 						</ul>
 
 						<div class="warning-box">
 							<i class="fas fa-exclamation-triangle"></i>
-							<strong>Важно:</strong> Убедитесь, что порядок песен в списке
-							<strong>songsList</strong> соответствует порядку файлов в списке
-							<strong>songPaths</strong>. Это необходимо для правильного
-							воспроизведения выбранной песни.
+							<strong>Важно!</strong> Порядок песен в списке
+							<strong>songsList</strong> должен точно соответствовать порядку
+							файлов в списке <strong>songPaths</strong>. Например, если "Песня
+							1" находится на первой позиции в <strong>songsList</strong>, то
+							"song1.mp3" должен быть на первой позиции в
+							<strong>songPaths</strong>.
 						</div>
 
 						<div class="step-navigation">
@@ -485,7 +665,7 @@
 							<button
 								id="btn-step3"
 								class="step-btn btn-read"
-								onclick="markRead('step3', 'Добавление списка песен')"
+								onclick="markRead('step3', 'Настройка списка песен')"
 							>
 								Пометить как выполнено
 							</button>
@@ -496,204 +676,431 @@
 					</div>
 
 					<div id="step-content-4" class="step-content">
-						<h2>Шаг 4: Программирование кнопок управления</h2>
+						<h2>Шаг 4: Программирование функций управления</h2>
 						<ul class="instruction-list">
 							<li>
-								Теперь запрограммируем логику работы нашего музыкального плеера.
-								Сначала создадим глобальную переменную для хранения текущего
-								индекса песни.
+								<strong>Программирование выбора песни из списка:</strong>
+								<ol>
+									<li>
+										В левой панели найдите компонент <strong>ListView1</strong>
+									</li>
+									<li>
+										Выберите блок <strong>when ListView1.AfterPicking</strong>
+									</li>
+									<li>Перетащите этот блок в рабочую область</li>
+									<li>
+										Этот блок активируется, когда пользователь выбирает песню из
+										списка
+									</li>
+								</ol>
 							</li>
 
 							<li>
-								В категории <strong>Variables</strong> (Переменные) выберите
-								блок <strong>initialize global name to</strong> и назовите
-								переменную <strong>currentSongIndex</strong>.
+								<strong>Обновление индекса текущей песни:</strong>
+								<ol>
+									<li>
+										В категории <strong>Variables</strong> найдите блок
+										<strong>set global currentSongIndex to</strong>
+									</li>
+									<li>
+										Перетащите этот блок внутрь блока
+										<strong>when ListView1.AfterPicking</strong>
+									</li>
+									<li>
+										В категории <strong>ListView1</strong> найдите блок
+										<strong>ListView1.SelectionIndex</strong>
+									</li>
+									<li>
+										Перетащите его в поле значения
+										<strong>set global currentSongIndex to</strong>
+									</li>
+								</ol>
 							</li>
 
 							<li>
-								Установите начальное значение
-								<strong>currentSongIndex</strong> равным 1 (первая песня в
-								списке).
+								<strong>Установка источника для воспроизведения:</strong>
+								<ol>
+									<li>
+										В категории <strong>Player1</strong> найдите блок
+										<strong>set Player1.Source to</strong>
+									</li>
+									<li>
+										Перетащите этот блок внутрь блока
+										<strong>when ListView1.AfterPicking</strong> под предыдущим
+										блоком
+									</li>
+									<li>
+										В категории <strong>Lists</strong> найдите блок
+										<strong>select list item</strong>
+									</li>
+									<li>
+										Перетащите его в поле значения
+										<strong>set Player1.Source to</strong>
+									</li>
+									<li>
+										В блоке <strong>select list item</strong>: в первое поле -
+										<strong>global songPaths</strong>, во второе -
+										<strong>global currentSongIndex</strong>
+									</li>
+								</ol>
+							</li>
+
+							<li>
+								<strong>Запуск воспроизведения:</strong>
+								<ol>
+									<li>
+										В категории <strong>Player1</strong> найдите блок
+										<strong>call Player1.Start</strong>
+									</li>
+									<li>
+										Перетащите этот блок внутрь блока
+										<strong>when ListView1.AfterPicking</strong> под предыдущими
+										блоками
+									</li>
+								</ol>
+							</li>
+
+							<li>
+								<strong>Обновление текста с названием песни:</strong>
+								<ol>
+									<li>
+										В категории <strong>Label2</strong> найдите блок
+										<strong>set Label2.Text to</strong>
+									</li>
+									<li>
+										Перетащите этот блок внутрь блока
+										<strong>when ListView1.AfterPicking</strong> под предыдущими
+										блоками
+									</li>
+									<li>
+										В категории <strong>Text</strong> найдите блок
+										<strong>join</strong>
+									</li>
+									<li>
+										Перетащите блок <strong>join</strong> в поле значения
+										<strong>set Label2.Text to</strong>
+									</li>
+									<li>
+										В первое поле блока <strong>join</strong> введите текст
+										"Сейчас играет: "
+									</li>
+									<li>
+										В категории <strong>Lists</strong> найдите блок
+										<strong>select list item</strong>
+									</li>
+									<li>
+										Перетащите его во второе поле блока <strong>join</strong>
+									</li>
+									<li>
+										В блоке <strong>select list item</strong>: в первое поле -
+										<strong>global songsList</strong>, во второе -
+										<strong>global currentSongIndex</strong>
+									</li>
+								</ol>
+							</li>
+
+							<li>
+								<strong>Обновление значка кнопки воспроизведения/паузы:</strong>
+								<ol>
+									<li>
+										В категории <strong>Button2</strong> найдите блок
+										<strong>set Button2.Text to</strong>
+									</li>
+									<li>
+										Перетащите этот блок внутрь блока
+										<strong>when ListView1.AfterPicking</strong> под предыдущими
+										блоками
+									</li>
+									<li>В поле значения введите текст "❚❚" (символ паузы)</li>
+								</ol>
 							</li>
 							<img
 								class="project-img"
-								src="images/music_player/music_player_current_index.png"
-								alt="Инициализация текущего индекса"
+								src="images/music_player_listview_corrected.png"
+								alt="Программирование выбора песни из списка"
 							/>
-
 							<li>
-								Теперь запрограммируем выбор песни из списка. В категории
-								<strong>ListView1</strong> найдите блок
-								<strong>when ListView1.AfterPicking</strong> (после выбора
-								элемента из списка).
+								<strong>Программирование кнопки воспроизведения/паузы:</strong>
+								<ol>
+									<li>
+										В левой панели найдите компонент <strong>Button2</strong>
+									</li>
+									<li>Выберите блок <strong>when Button2.Click</strong></li>
+									<li>Перетащите этот блок в рабочую область</li>
+									<li>
+										В категории <strong>Control</strong> найдите блок
+										<strong>if then else</strong>
+									</li>
+									<li>
+										Перетащите этот блок внутрь блока
+										<strong>when Button2.Click</strong>
+									</li>
+									<li>
+										В категории <strong>Player1</strong> найдите блок
+										<strong>Player1.IsPlaying</strong>
+									</li>
+									<li>
+										Перетащите его в условие блока <strong>if then else</strong>
+									</li>
+								</ol>
 							</li>
 
 							<li>
-								Внутри этого блока нам нужно:
-								<br />1. Получить индекс выбранной песни <br />2. Обновить
-								currentSongIndex <br />3. Установить источник для Player1
-								<br />4. Начать воспроизведение
+								<strong>Действия для паузы (когда музыка играет):</strong>
+								<ol>
+									<li>
+										В категории <strong>Player1</strong> найдите блок
+										<strong>call Player1.Pause</strong>
+									</li>
+									<li>
+										Перетащите этот блок в секцию <strong>then</strong> блока
+										<strong>if then else</strong>
+									</li>
+									<li>
+										В категории <strong>Button2</strong> найдите блок
+										<strong>set Button2.Text to</strong>
+									</li>
+									<li>
+										Перетащите этот блок в секцию <strong>then</strong> под
+										предыдущим блоком
+									</li>
+									<li>
+										В поле значения введите текст "▶" (символ воспроизведения)
+									</li>
+								</ol>
 							</li>
 
 							<li>
-								Сначала получим индекс выбранной песни. В категории
-								<strong>ListView1</strong> найдите блок
-								<strong>ListView1.Selection</strong> (выбранный элемент).
-							</li>
-
-							<li>
-								В категории <strong>Lists</strong> найдите блок
-								<strong>index in list</strong> (индекс в списке). В первое поле
-								поместите <strong>songsList</strong>, а во второе -
-								<strong>ListView1.Selection</strong>.
-							</li>
-
-							<li>
-								Обновите currentSongIndex, используя блок
-								<strong>set currentSongIndex to</strong> и результат блока
-								<strong>index in list</strong>.
-							</li>
-
-							<li>
-								Теперь установим источник для Player1. В категории
-								<strong>Player1</strong> найдите блок
-								<strong>set Player1.Source to</strong>.
-							</li>
-
-							<li>
-								Для получения пути к файлу используйте блок
-								<strong>select list item</strong> из категории
-								<strong>Lists</strong>. В первое поле поместите
-								<strong>songPaths</strong>, а во второе -
-								<strong>currentSongIndex</strong>.
-							</li>
-
-							<li>
-								Добавьте блок <strong>call Player1.Start</strong> для начала
-								воспроизведения.
-							</li>
-
-							<li>
-								Обновите текст Label2, чтобы показать название текущей песни.
-								Используйте блок
-								<strong>set Label2.Text to</strong> и объедините текст "Сейчас
-								играет: " с выбранным элементом из списка
-								<strong>songsList</strong>.
-							</li>
-							<img
-								class="project-img"
-								src="images/music_player/music_player_listview_picking.png"
-								alt="Обработка выбора песни"
-							/>
-
-							<li>
-								Теперь запрограммируем кнопку воспроизведения/паузы (Button2).
-								Найдите блок
-								<strong>when Button2.Click</strong>.
-							</li>
-
-							<li>
-								Внутри этого блока нам нужно проверить, воспроизводится ли
-								музыка сейчас, и соответственно либо приостановить, либо
-								продолжить воспроизведение.
-							</li>
-
-							<li>
-								Используйте блок <strong>if then else</strong> из категории
-								<strong>Control</strong>.
-							</li>
-
-							<li>
-								В условие поместите блок <strong>Player1.IsPlaying</strong> из
-								категории <strong>Player1</strong>.
-							</li>
-
-							<li>
-								В блок <strong>then</strong> (тогда) добавьте: <br />1.
-								<strong>call Player1.Pause</strong> для приостановки
-								воспроизведения <br />2.
-								<strong>set Button2.Text to</strong> "▶" (символ
-								воспроизведения)
-							</li>
-
-							<li>
-								В блок <strong>else</strong> (иначе) добавьте: <br />1.
-								<strong>call Player1.Start</strong> для начала воспроизведения
-								<br />2. <strong>set Button2.Text to</strong> "❚❚" (символ
-								паузы)
+								<strong
+									>Действия для воспроизведения (когда музыка на паузе):</strong
+								>
+								<ol>
+									<li>
+										В категории <strong>Player1</strong> найдите блок
+										<strong>call Player1.Start</strong>
+									</li>
+									<li>
+										Перетащите этот блок в секцию <strong>else</strong> блока
+										<strong>if then else</strong>
+									</li>
+									<li>
+										В категории <strong>Button2</strong> найдите блок
+										<strong>set Button2.Text to</strong>
+									</li>
+									<li>
+										Перетащите этот блок в секцию <strong>else</strong> под
+										предыдущим блоком
+									</li>
+									<li>В поле значения введите текст "❚❚" (символ паузы)</li>
+								</ol>
 							</li>
 							<img
 								class="project-img"
-								src="images/music_player/music_player_play_pause.png"
+								style="width: 40%"
+								src="images/music_player_play_pause_corrected.png"
 								alt="Кнопка воспроизведения/паузы"
 							/>
 
 							<li>
-								Запрограммируем кнопку "предыдущая песня" (Button1). Найдите
-								блок <strong>when Button1.Click</strong>.
+								<strong>Программирование кнопки "предыдущая песня":</strong>
+								<ol>
+									<li>
+										В левой панели найдите компонент <strong>Button1</strong>
+									</li>
+									<li>Выберите блок <strong>when Button1.Click</strong></li>
+									<li>Перетащите этот блок в рабочую область</li>
+								</ol>
 							</li>
 
 							<li>
-								Внутри этого блока нам нужно:
-								<br />1. Уменьшить currentSongIndex на 1 <br />2. Проверить, не
-								вышли ли мы за границы списка <br />3. Установить новый источник
-								для Player1 <br />4. Начать воспроизведение
+								<strong>Уменьшение индекса текущей песни:</strong>
+								<ol>
+									<li>
+										В категории <strong>Variables</strong> найдите блок
+										<strong>set global currentSongIndex to</strong>
+									</li>
+									<li>
+										Перетащите этот блок внутрь блока
+										<strong>when Button1.Click</strong>
+									</li>
+									<li>
+										В категории <strong>Math</strong> найдите блок с оператором
+										минус <strong>_ - _</strong>
+									</li>
+									<li>
+										Перетащите этот блок в поле значения
+										<strong>set global currentSongIndex to</strong>
+									</li>
+									<li>
+										В левое поле блока <strong>_ - _</strong> перетащите блок
+										<strong>global currentSongIndex</strong> из категории
+										<strong>Variables</strong>
+									</li>
+									<li>
+										В правое поле блока <strong>_ - _</strong> введите число 1
+									</li>
+								</ol>
 							</li>
 
 							<li>
-								Используйте блок <strong>set currentSongIndex to</strong> и
-								уменьшите значение на 1 с помощью блока
-								<strong>currentSongIndex - 1</strong>.
+								<strong>Проверка на выход за границы списка:</strong>
+								<ol>
+									<li>
+										В категории <strong>Control</strong> найдите блок
+										<strong>if then</strong>
+									</li>
+									<li>
+										Перетащите этот блок внутрь блока
+										<strong>when Button1.Click</strong> под предыдущим блоком
+									</li>
+									<li>
+										В категории <strong>Logic</strong> найдите блок сравнения
+										<strong>_ &lt; _</strong> (меньше)
+									</li>
+									<li>
+										Перетащите этот блок в условие блока
+										<strong>if then</strong>
+									</li>
+									<li>
+										В левое поле блока <strong>_ &lt; _</strong> перетащите блок
+										<strong>global currentSongIndex</strong>
+									</li>
+									<li>
+										В правое поле блока <strong>_ &lt; _</strong> введите число
+										1
+									</li>
+								</ol>
 							</li>
 
 							<li>
-								Добавьте проверку границ с помощью блока
-								<strong>if then</strong>. В условие поместите блок
-								<strong>currentSongIndex < 1</strong>.
+								<strong>Действия при выходе за нижнюю границу:</strong>
+								<ol>
+									<li>
+										В категории <strong>Variables</strong> найдите блок
+										<strong>set global currentSongIndex to</strong>
+									</li>
+									<li>
+										Перетащите этот блок в секцию <strong>then</strong> блока
+										<strong>if then</strong>
+									</li>
+									<li>
+										В категории <strong>Lists</strong> найдите блок
+										<strong>length of list</strong>
+									</li>
+									<li>
+										Перетащите этот блок в поле значения
+										<strong>set global currentSongIndex to</strong>
+									</li>
+									<li>
+										В поле блока <strong>length of list</strong> перетащите блок
+										<strong>global songsList</strong>
+									</li>
+								</ol>
 							</li>
 
 							<li>
-								В блок <strong>then</strong> добавьте
-								<strong>set currentSongIndex to</strong> и установите значение
-								равным длине списка <strong>songsList</strong> с помощью блока
-								<strong>length of list</strong>.
-							</li>
-
-							<li>
-								Аналогично запрограммируйте кнопку "следующая песня" (Button3),
-								но увеличивайте currentSongIndex на 1 и проверяйте, не превысили
-								ли вы длину списка.
+								<strong>Обновление источника и начало воспроизведения:</strong>
+								<ol>
+									<li>
+										После блока <strong>if then</strong> добавьте блок
+										<strong>set Player1.Source to</strong>
+									</li>
+									<li>
+										Настройте его так же, как в обработчике выбора песни
+										(используя блок <strong>select list item</strong>)
+									</li>
+									<li>Добавьте блок <strong>call Player1.Start</strong></li>
+									<li>
+										Обновите текст Label2 (как в обработчике выбора песни)
+									</li>
+									<li>Установите текст Button2 на "❚❚" (символ паузы)</li>
+								</ol>
 							</li>
 							<img
 								class="project-img"
-								src="images/music_player/music_player_next_prev.png"
-								alt="Кнопки следующей и предыдущей песни"
+								src="images/music_player_previous_song.png"
+								alt="Кнопка предыдущей песни"
 							/>
 
 							<li>
-								Наконец, запрограммируем ползунок громкости. Найдите блок
-								<strong>when Slider1.PositionChanged</strong>.
-							</li>
-
-							<li>
-								Внутри этого блока добавьте
-								<strong>set Player1.Volume to</strong> и установите значение
-								равным <strong>Slider1.ThumbPosition / 100</strong> (поскольку
-								громкость в Player1 устанавливается в диапазоне от 0 до 1).
+								<strong>Программирование кнопки "следующая песня":</strong>
+								<ol>
+									<li>Аналогично запрограммируйте обработчик для Button3</li>
+									<li>
+										Отличия: увеличивайте индекс (+1 вместо -1) и проверяйте
+										верхнюю границу (&gt; вместо &lt;)
+									</li>
+									<li>
+										При выходе за верхнюю границу устанавливайте индекс равным 1
+									</li>
+									<li>
+										Остальные действия идентичны кнопке "предыдущая песня"
+									</li>
+								</ol>
 							</li>
 							<img
 								class="project-img"
-								src="images/music_player/music_player_volume.png"
+								src="images/music_player_next_song.png"
+								alt="Кнопка следующей песни"
+							/>
+
+							<li>
+								<strong>Настройка ползунка громкости:</strong>
+								<ol>
+									<li>
+										В левой панели найдите компонент <strong>Slider1</strong>
+									</li>
+									<li>
+										Выберите блок <strong>when Slider1.PositionChanged</strong>
+									</li>
+									<li>Перетащите этот блок в рабочую область</li>
+									<li>
+										В категории <strong>Player1</strong> найдите блок
+										<strong>set Player1.Volume to</strong>
+									</li>
+									<li>
+										Перетащите этот блок внутрь блока
+										<strong>when Slider1.PositionChanged</strong>
+									</li>
+									<li>
+										В категории <strong>Math</strong> найдите блок деления
+										<strong>_ / _</strong>
+									</li>
+									<li>
+										Перетащите этот блок в поле значения
+										<strong>set Player1.Volume to</strong>
+									</li>
+									<li>
+										В левое поле блока деления перетащите блок
+										<strong>Slider1.ThumbPosition</strong> из категории
+										<strong>Slider1</strong>
+									</li>
+									<li>В правое поле блока деления введите число 100</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/music_player_volume_corrected.png"
 								alt="Управление громкостью"
 							/>
 						</ul>
 
 						<div class="tip-box">
 							<i class="fas fa-lightbulb"></i>
-							<strong>Совет:</strong> Для улучшения пользовательского опыта
-							добавьте обработку события <strong>Player1.Completed</strong>,
-							чтобы автоматически переходить к следующей песне, когда текущая
-							закончится.
+							<strong>Совет:</strong> Для улучшения кода вы можете создать
+							процедуру для переключения песен с параметром "направление"
+							(например, -1 для предыдущей песни и +1 для следующей). Это
+							позволит избежать дублирования кода и сделает его более
+							поддерживаемым.
+						</div>
+
+						<div class="warning-box">
+							<i class="fas fa-exclamation-triangle"></i>
+							<strong>Важно!</strong> При программировании кнопок переключения
+							песен всегда выполняйте все три действия: обновление источника
+							Player1, запуск воспроизведения И обновление текста Label2.
+							Пропуск любого из этих шагов приведет к некорректной работе
+							приложения.
 						</div>
 
 						<div class="step-navigation">
@@ -703,7 +1110,7 @@
 							<button
 								id="btn-step4"
 								class="step-btn btn-read"
-								onclick="markRead('step4', 'Программирование кнопок управления')"
+								onclick="markRead('step4', 'Программирование функций управления')"
 							>
 								Пометить как выполнено
 							</button>
@@ -712,9 +1119,8 @@
 							</button>
 						</div>
 					</div>
-
 					<div id="step-content-5" class="step-content">
-						<h2>Шаг 5: Тестирование приложения</h2>
+						<h2>Шаг 5: Тестирование плеера</h2>
 						<ul class="instruction-list">
 							<li>
 								<strong>Протестируйте ваше приложение:</strong><br />
@@ -722,35 +1128,22 @@
 								руководством по тестированию приложений в
 								<a href="mit_introduction.html#download_tips" target="_blank"
 									>нашем введении в MIT App Inventor</a
-								>.
+								>. После запуска приложения выберите песню из списка и
+								используйте кнопки управления!
 							</li>
+
 							<img
 								class="project-img"
-								src="images/music_player/music_player_testing.png"
+								src="images/mit_project_testing_app.jpeg"
 								alt="Тестирование приложения"
 							/>
-
-							<li>
-								<strong>Проверьте основные функции:</strong>
-								<br />• Выбор песни из списка <br />• Воспроизведение и пауза
-								<br />• Переключение между песнями с помощью кнопок "вперед" и
-								"назад" <br />• Регулировка громкости
-							</li>
-
-							<li>
-								<strong>Возможные улучшения приложения:</strong>
-								<br />• Добавьте индикатор прогресса воспроизведения <br />•
-								Реализуйте функцию перемотки песни <br />• Добавьте возможность
-								создания плейлистов <br />• Добавьте обложки альбомов для песен
-								<br />• Реализуйте режимы случайного воспроизведения и повтора
-							</li>
 						</ul>
 
 						<div class="success-box">
 							<i class="fas fa-check-circle"></i>
-							<strong>Поздравляем!</strong> Вы создали приложение "Музыкальный
-							плеер"! Теперь у вас есть собственный проигрыватель музыки,
-							который может воспроизводить ваши любимые песни.
+							<strong>Поздравляем!</strong> Ваш музыкальный плеер теперь готов!
+							Вы можете выбирать песни из списка, управлять воспроизведением и
+							регулировать громкость прямо в вашем приложении.
 						</div>
 
 						<div class="step-navigation">
@@ -760,7 +1153,7 @@
 							<button
 								id="btn-step5"
 								class="step-btn btn-read"
-								onclick="markRead('step5', 'Тестирование приложения')"
+								onclick="markRead('step5', 'Тестирование плеера')"
 							>
 								Пометить как выполнено
 							</button>

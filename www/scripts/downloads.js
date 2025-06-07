@@ -40,8 +40,8 @@ const downloadFiles = {
 	},
 	'sounds-pack': {
 		name: 'sounds-pack.zip',
-		url: 'downloads/resources/sounds-pack.zip',
-		size: '12.3 MB',
+		url: 'downloads/projects/sounds-pack.zip',
+		size: '1.5 MB',
 	},
 	'blocks-cheatsheet': {
 		name: 'MIT-App-Inventor-Blocks-Cheatsheet.pdf',
