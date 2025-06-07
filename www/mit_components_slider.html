@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Компонент Slider</title>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../www/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../www/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../www/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="../www/site.webmanifest" />
+		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/toast.css" />
+	</head>
+	<body>
+		<div id="header"></div>
+
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<a href="#methods" class="nav-link">Методы</a>
+				</li>
+				<li><a href="#properties" class="nav-link">Свойства</a></li>
+				<li><a href="#events" class="nav-link">События</a></li>
+				<li>
+					<div class="back-to-index">
+						<a href="index.html#section-2">Вернуться к оглавлению</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<h1>Slider</h1>
+			<div class="container">
+				<p>
+					Компонент Slider представляет собой ползунок, который позволяет
+					пользователю выбрать значение путем перемещения "бегунка" между
+					минимальным и максимальным значениями. Компонент имеет настраиваемый
+					диапазон значений и может использоваться для различных функций
+					управления, таких как настройка громкости, яркости или любых других
+					параметров, требующих выбора значения из диапазона.
+				</p>
+				<p>
+					Когда пользователь перемещает бегунок, происходит событие
+					PositionChanged, которое может быть использовано для обновления других
+					компонентов или выполнения действий в зависимости от выбранного
+					значения.
+				</p>
+				<ul>
+					<div id="methods">
+						<h2>Методы</h2>
+						<p>У компонента Slider нет специальных методов.</p>
+					</div>
+					<div id="properties">
+						<h2>Свойства</h2>
+						<dl>
+							<dt>BackgroundColor</dt>
+							<dd>Определяет цвет фона ползунка.</dd>
+
+							<dt>ColorLeft</dt>
+							<dd>Определяет цвет ползунка слева от бегунка.</dd>
+
+							<dt>ColorRight</dt>
+							<dd>Определяет цвет ползунка справа от бегунка.</dd>
+
+							<dt>Enabled</dt>
+							<dd>
+								Определяет, включен ли ползунок. Если установлено значение
+								False, пользователь не сможет взаимодействовать с ползунком.
+							</dd>
+
+							<dt>Height</dt>
+							<dd>Определяет высоту компонента в пикселях.</dd>
+
+							<dt>MaxValue</dt>
+							<dd>
+								Определяет максимальное значение ползунка. Начальное значение:
+								100.
+							</dd>
+
+							<dt>MinValue</dt>
+							<dd>
+								Определяет минимальное значение ползунка. Начальное значение: 0.
+							</dd>
+
+							<dt>ThumbEnabled</dt>
+							<dd>
+								Определяет, можно ли перемещать бегунок. Если установлено
+								значение False, пользователь не сможет изменить позицию бегунка.
+							</dd>
+
+							<dt>ThumbPosition</dt>
+							<dd>
+								Определяет текущую позицию бегунка на ползунке. Значение должно
+								быть между MinValue и MaxValue.
+							</dd>
+
+							<dt>Visible</dt>
+							<dd>Определяет, виден ли компонент на экране.</dd>
+
+							<dt>Width</dt>
+							<dd>Определяет ширину компонента в пикселях.</dd>
+						</dl>
+					</div>
+					<div id="events">
+						<h2>События</h2>
+						<dl>
+							<dt>PositionChanged(thumbPosition)</dt>
+							<dd>
+								Событие, которое происходит, когда пользователь изменяет
+								положение бегунка. Параметр thumbPosition содержит новое
+								значение позиции бегунка.
+							</dd>
+						</dl>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<div class="read-button-container">
+			<button id="readButton" class="btn-read">Прочитать</button>
+		</div>
+		<script src="scripts/config.js"></script>
+		<script src="scripts/heartbeat.js"></script>
+		<script src="scripts/theme-change.js"></script>
+		<script src="scripts/toast.js"></script>
+		<script src="scripts/read-status.js"></script>
+		<script src="scripts/header-loader.js"></script>
+		<script src="scripts/page-navigation.js"></script>
+	</body>
+</html>

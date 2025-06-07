@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Компонент Screen</title>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../www/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../www/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../www/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="../www/site.webmanifest" />
+		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/toast.css" />
+	</head>
+	<body>
+		<div id="header"></div>
+
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<a href="#methods" class="nav-link">Методы</a>
+				</li>
+				<li><a href="#properties" class="nav-link">Свойства</a></li>
+				<li><a href="#events" class="nav-link">События</a></li>
+				<li>
+					<div class="back-to-index">
+						<a href="index.html#section-2">Вернуться к оглавлению</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<h1>Screen</h1>
+			<div class="container">
+				<p>
+					Компонент Screen представляет собой основной контейнер, на котором
+					размещаются все остальные компоненты вашего приложения. Каждое
+					приложение MIT App Inventor должно иметь хотя бы один Screen. У
+					некоторых приложений может быть более одного экрана, между которыми
+					пользователь может переключаться.
+				</p>
+				<p>
+					Компонент Screen имеет свойства, которые определяют характеристики
+					приложения, включая заголовок, отображаемый в верхней части экрана,
+					цвет фона, ориентацию экрана и поведение при инициализации.
+				</p>
+				<ul>
+					<div id="methods">
+						<h2>Методы</h2>
+						<dl>
+							<dt>AskForPermission(permissionName)</dt>
+							<dd>
+								Запрашивает у пользователя разрешение, указанное в параметре
+								permissionName.
+							</dd>
+
+							<dt>HideKeyboard()</dt>
+							<dd>Скрывает клавиатуру, если она отображается на экране.</dd>
+
+							<dt>CloseApplication()</dt>
+							<dd>Закрывает приложение.</dd>
+
+							<dt>CloseScreenAnimation(animType)</dt>
+							<dd>
+								Определяет анимацию при закрытии текущего экрана и возврате к
+								предыдущему. Допустимые значения для animType: default, fade,
+								zoom, slidehorizontal, slidevertical, none.
+							</dd>
+
+							<dt>OpenScreenAnimation(animType)</dt>
+							<dd>
+								Определяет анимацию при открытии нового экрана. Допустимые
+								значения такие же, как у CloseScreenAnimation.
+							</dd>
+
+							<dt>OpenAnotherScreen(screenName)</dt>
+							<dd>
+								Открывает другой экран в приложении. Имя экрана указывается в
+								параметре screenName.
+							</dd>
+
+							<dt>OpenAnotherScreenWithStartValue(screenName, startValue)</dt>
+							<dd>
+								Открывает другой экран и передает значение startValue, которое
+								может быть получено через событие OtherScreenClosed.
+							</dd>
+
+							<dt>CloseScreen()</dt>
+							<dd>
+								Закрывает текущий экран и возвращает к предыдущему экрану.
+							</dd>
+
+							<dt>CloseScreenWithValue(result)</dt>
+							<dd>
+								Закрывает текущий экран и возвращает значение result предыдущему
+								экрану.
+							</dd>
+
+							<dt>CloseScreenWithPlainText(result)</dt>
+							<dd>
+								Закрывает текущий экран и возвращает текстовое значение result
+								предыдущему экрану.
+							</dd>
+
+							<dt>ShowStatusBar()</dt>
+							<dd>
+								Показывает системную строку состояния (только для Android 5.0 и
+								выше).
+							</dd>
+
+							<dt>HideStatusBar()</dt>
+							<dd>
+								Скрывает системную строку состояния (только для Android 5.0 и
+								выше).
+							</dd>
+
+							<dt>ShowListsAsJson(boolean)</dt>
+							<dd>
+								Определяет, должны ли списки в этом приложении преобразовываться
+								в формат JSON при преобразовании в текст.
+							</dd>
+						</dl>
+					</div>
+					<div id="properties">
+						<h2>Свойства</h2>
+						<dl>
+							<dt>AboutScreen</dt>
+							<dd>Текст для отображения в диалоговом окне "О программе".</dd>
+
+							<dt>AccentColor</dt>
+							<dd>
+								Определяет цвет акцента для устройств, работающих на Android 5.0
+								и выше.
+							</dd>
+
+							<dt>AlignHorizontal</dt>
+							<dd>
+								Определяет горизонтальное выравнивание компонентов на экране
+								(1=left, 2=center, 3=right).
+							</dd>
+
+							<dt>AlignVertical</dt>
+							<dd>
+								Определяет вертикальное выравнивание компонентов на экране
+								(1=top, 2=center, 3=bottom).
+							</dd>
+
+							<dt>AppName</dt>
+							<dd>Название приложения, которое появится в лаунчере Android.</dd>
+
+							<dt>BackgroundColor</dt>
+							<dd>Определяет цвет фона экрана.</dd>
+
+							<dt>BackgroundImage</dt>
+							<dd>Определяет фоновое изображение экрана.</dd>
+
+							<dt>CloseScreenAnimation</dt>
+							<dd>
+								Определяет анимацию при закрытии экрана (default, fade, zoom,
+								slidehorizontal, slidevertical, none).
+							</dd>
+
+							<dt>Height</dt>
+							<dd>Высота экрана (только для чтения).</dd>
+
+							<dt>Icon</dt>
+							<dd>
+								Имя файла изображения, которое будет использоваться в качестве
+								иконки приложения в лаунчере Android.
+							</dd>
+
+							<dt>OpenScreenAnimation</dt>
+							<dd>
+								Определяет анимацию при открытии экрана (default, fade, zoom,
+								slidehorizontal, slidevertical, none).
+							</dd>
+
+							<dt>PrimaryColor</dt>
+							<dd>
+								Определяет основной цвет темы для устройств, работающих на
+								Android 5.0 и выше.
+							</dd>
+
+							<dt>PrimaryColorDark</dt>
+							<dd>
+								Определяет темный основной цвет темы для устройств, работающих
+								на Android 5.0 и выше.
+							</dd>
+
+							<dt>ScreenOrientation</dt>
+							<dd>
+								Определяет ориентацию экрана (unspecified, landscape, portrait,
+								sensor, user, behind, nosensor, etc.).
+							</dd>
+
+							<dt>Scrollable</dt>
+							<dd>
+								Определяет, можно ли прокручивать экран, если содержимое не
+								помещается.
+							</dd>
+
+							<dt>ShowListsAsJson</dt>
+							<dd>
+								Определяет, должны ли списки в этом приложении преобразовываться
+								в формат JSON при преобразовании в текст.
+							</dd>
+
+							<dt>ShowStatusBar</dt>
+							<dd>Определяет, отображается ли строка состояния.</dd>
+
+							<dt>Sizing</dt>
+							<dd>
+								Определяет, как экран должен изменять размер при изменении
+								размера окна (fixed, responsive).
+							</dd>
+
+							<dt>Theme</dt>
+							<dd>
+								Определяет тему оформления экрана (classic, device default, holo
+								dark, holo light, black title text on white background, etc.).
+							</dd>
+
+							<dt>Title</dt>
+							<dd>Заголовок, отображаемый в верхней части экрана.</dd>
+
+							<dt>TitleVisible</dt>
+							<dd>Определяет, отображается ли заголовок экрана.</dd>
+
+							<dt>VersionCode</dt>
+							<dd>
+								Код версии приложения, используемый для определения обновлений.
+							</dd>
+
+							<dt>VersionName</dt>
+							<dd>
+								Название версии приложения, которое отображается пользователям.
+							</dd>
+
+							<dt>Width</dt>
+							<dd>Ширина экрана (только для чтения).</dd>
+						</dl>
+					</div>
+					<div id="events">
+						<h2>События</h2>
+						<dl>
+							<dt>BackPressed()</dt>
+							<dd>
+								Событие, которое происходит при нажатии пользователем кнопки
+								"Назад" на устройстве.
+							</dd>
+
+							<dt>
+								ErrorOccurred(component, functionName, errorNumber, message)
+							</dt>
+							<dd>
+								Событие, которое происходит при возникновении ошибки в любом
+								компоненте.
+							</dd>
+
+							<dt>Initialize()</dt>
+							<dd>Событие, которое происходит при инициализации экрана.</dd>
+
+							<dt>OtherScreenClosed(otherScreenName, result)</dt>
+							<dd>
+								Событие, которое происходит, когда другой экран в приложении
+								закрывается и возвращает результат.
+							</dd>
+
+							<dt>PermissionDenied(component, functionName, permissionName)</dt>
+							<dd>
+								Событие, которое происходит, когда пользователь отклоняет запрос
+								на разрешение.
+							</dd>
+
+							<dt>PermissionGranted(permissionName)</dt>
+							<dd>
+								Событие, которое происходит, когда пользователь предоставляет
+								запрошенное разрешение.
+							</dd>
+
+							<dt>ScreenOrientationChanged()</dt>
+							<dd>
+								Событие, которое происходит при изменении ориентации экрана.
+							</dd>
+						</dl>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<div class="read-button-container">
+			<button id="readButton" class="btn-read">Прочитать</button>
+		</div>
+		<script src="scripts/config.js"></script>
+		<script src="scripts/heartbeat.js"></script>
+		<script src="scripts/theme-change.js"></script>
+		<script src="scripts/toast.js"></script>
+		<script src="scripts/read-status.js"></script>
+		<script src="scripts/header-loader.js"></script>
+		<script src="scripts/page-navigation.js"></script>
+	</body>
+</html>

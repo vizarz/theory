@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Компонент WebViewer</title>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../www/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../www/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../www/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="../www/site.webmanifest" />
+		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/toast.css" />
+	</head>
+	<body>
+		<div id="header"></div>
+
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<a href="#methods" class="nav-link">Методы</a>
+				</li>
+				<li><a href="#properties" class="nav-link">Свойства</a></li>
+				<li><a href="#events" class="nav-link">События</a></li>
+				<li>
+					<div class="back-to-index">
+						<a href="index.html#section-2">Вернуться к оглавлению</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<h1>WebViewer</h1>
+			<div class="container">
+				<p>
+					Компонент WebViewer представляет собой встроенный веб-браузер, который
+					позволяет отображать веб-страницы и HTML-контент непосредственно в
+					вашем приложении. С помощью этого компонента можно загружать контент
+					из интернета, локальные HTML-файлы, а также создавать интерактивные
+					элементы с использованием HTML, CSS и JavaScript.
+				</p>
+				<p>
+					WebViewer может использоваться для различных целей, включая
+					отображение веб-сайтов, создание гибридных приложений, а также
+					обеспечение взаимодействия между блоками App Inventor и веб-контентом
+					через свойство WebViewString.
+				</p>
+				<ul>
+					<div id="methods">
+						<h2>Методы</h2>
+						<dl>
+							<dt>CanGoBack()</dt>
+							<dd>
+								Проверяет, возможно ли вернуться на предыдущую страницу в
+								истории просмотра. Возвращает true, если возврат возможен, и
+								false в противном случае.
+							</dd>
+
+							<dt>CanGoForward()</dt>
+							<dd>
+								Проверяет, возможно ли перейти на следующую страницу в истории
+								просмотра. Возвращает true, если переход вперед возможен, и
+								false в противном случае.
+							</dd>
+
+							<dt>ClearCaches()</dt>
+							<dd>
+								Очищает кэш браузера, который содержит данные загруженных
+								страниц и ресурсов.
+							</dd>
+
+							<dt>ClearCookies()</dt>
+							<dd>
+								Очищает все файлы cookie, которые были сохранены веб-браузером.
+							</dd>
+
+							<dt>ClearLocations()</dt>
+							<dd>
+								Очищает сохраненные данные о местоположении для всех сайтов.
+							</dd>
+
+							<dt>GoBack()</dt>
+							<dd>
+								Возвращает пользователя на предыдущую страницу в истории
+								просмотра, если такая страница существует.
+							</dd>
+
+							<dt>GoForward()</dt>
+							<dd>
+								Переходит к следующей странице в истории просмотра, если такая
+								страница существует.
+							</dd>
+
+							<dt>GoHome()</dt>
+							<dd>Загружает URL, указанный в свойстве HomeUrl.</dd>
+
+							<dt>GoToUrl(url)</dt>
+							<dd>
+								Загружает веб-страницу по указанному URL или путь к локальному
+								HTML-файлу.
+							</dd>
+
+							<dt>RunJavaScript(js)</dt>
+							<dd>
+								Выполняет указанный JavaScript-код в контексте текущей
+								веб-страницы.
+							</dd>
+
+							<dt>StopLoading()</dt>
+							<dd>Останавливает загрузку текущей страницы.</dd>
+						</dl>
+					</div>
+					<div id="properties">
+						<h2>Свойства</h2>
+						<dl>
+							<dt>CurrentPageTitle</dt>
+							<dd>
+								Возвращает заголовок текущей загруженной страницы (только для
+								чтения).
+							</dd>
+
+							<dt>CurrentUrl</dt>
+							<dd>
+								Возвращает URL текущей загруженной страницы (только для чтения).
+							</dd>
+
+							<dt>FollowLinks</dt>
+							<dd>
+								Определяет, разрешено ли пользователю переходить по ссылкам на
+								странице. Если установлено значение False, ссылки не будут
+								работать.
+							</dd>
+
+							<dt>Height</dt>
+							<dd>Определяет высоту компонента.</dd>
+
+							<dt>HomeUrl</dt>
+							<dd>
+								Определяет URL, который будет загружаться при вызове метода
+								GoHome или при первоначальной загрузке компонента.
+							</dd>
+
+							<dt>IgnoreSslErrors</dt>
+							<dd>
+								Определяет, должны ли игнорироваться ошибки SSL-сертификатов при
+								загрузке страниц. Установка значения True может быть
+								небезопасной.
+							</dd>
+
+							<dt>PromptforPermission</dt>
+							<dd>
+								Определяет, должен ли WebViewer запрашивать разрешение у
+								пользователя для доступа к данным, таким как геолокация или
+								хранилище.
+							</dd>
+
+							<dt>UsesLocation</dt>
+							<dd>
+								Определяет, разрешено ли веб-страницам получать информацию о
+								местоположении устройства.
+							</dd>
+
+							<dt>Visible</dt>
+							<dd>Определяет, видим ли компонент на экране.</dd>
+
+							<dt>WebViewString</dt>
+							<dd>
+								Строка, которая может быть использована для обмена данными между
+								блоками App Inventor и JavaScript в веб-странице. Это свойство
+								доступно в JavaScript через переменную
+								window.AppInventor.getWebViewString() и
+								window.AppInventor.setWebViewString().
+							</dd>
+
+							<dt>Width</dt>
+							<dd>Определяет ширину компонента.</dd>
+						</dl>
+					</div>
+					<div id="events">
+						<h2>События</h2>
+						<dl>
+							<dt>BeforePageLoad(url)</dt>
+							<dd>
+								Событие, которое происходит непосредственно перед загрузкой
+								страницы. Параметр url содержит URL загружаемой страницы.
+							</dd>
+
+							<dt>ErrorOccurred(errorCode, description, failingUrl)</dt>
+							<dd>
+								Событие, которое происходит при возникновении ошибки во время
+								загрузки страницы. Параметры включают код ошибки, описание
+								проблемы и URL, на котором произошла ошибка.
+							</dd>
+
+							<dt>PageLoaded(url)</dt>
+							<dd>
+								Событие, которое происходит после успешной загрузки страницы.
+								Параметр url содержит URL загруженной страницы.
+							</dd>
+
+							<dt>WebViewStringChange(value)</dt>
+							<dd>
+								Событие, которое происходит при изменении значения свойства
+								WebViewString, обычно из JavaScript в веб-странице. Параметр
+								value содержит новое значение строки.
+							</dd>
+						</dl>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<div class="read-button-container">
+			<button id="readButton" class="btn-read">Прочитать</button>
+		</div>
+		<script src="scripts/config.js"></script>
+		<script src="scripts/heartbeat.js"></script>
+		<script src="scripts/theme-change.js"></script>
+		<script src="scripts/toast.js"></script>
+		<script src="scripts/read-status.js"></script>
+		<script src="scripts/header-loader.js"></script>
+		<script src="scripts/page-navigation.js"></script>
+	</body>
+</html>

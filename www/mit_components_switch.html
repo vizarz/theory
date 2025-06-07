@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Компонент Switch</title>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../www/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../www/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../www/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="../www/site.webmanifest" />
+		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/toast.css" />
+	</head>
+	<body>
+		<div id="header"></div>
+
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<a href="#methods" class="nav-link">Методы</a>
+				</li>
+				<li><a href="#properties" class="nav-link">Свойства</a></li>
+				<li><a href="#events" class="nav-link">События</a></li>
+				<li>
+					<div class="back-to-index">
+						<a href="index.html#section-2">Вернуться к оглавлению</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<h1>Switch</h1>
+			<div class="container">
+				<p>
+					Компонент Switch представляет собой переключатель, который имеет два
+					состояния: включено (On) и выключено (Off). Пользователь может менять
+					состояние, проводя пальцем по переключателю или нажимая на него. В
+					отличие от CheckBox, Switch имеет более современный внешний вид и
+					часто используется в мобильных приложениях для включения/отключения
+					настроек и функций.
+				</p>
+				<p>
+					Switch может отображать текст рядом с переключателем для обозначения
+					управляемой функции. Компонент генерирует событие Changed, когда
+					пользователь меняет его состояние.
+				</p>
+				<ul>
+					<div id="methods">
+						<h2>Методы</h2>
+						<p>У компонента Switch нет специальных методов.</p>
+					</div>
+					<div id="properties">
+						<h2>Свойства</h2>
+						<dl>
+							<dt>BackgroundColor</dt>
+							<dd>Определяет цвет фона компонента Switch.</dd>
+
+							<dt>Enabled</dt>
+							<dd>
+								Определяет, включен ли компонент. Если установлено значение
+								False, пользователь не сможет взаимодействовать с
+								переключателем.
+							</dd>
+
+							<dt>FontBold</dt>
+							<dd>
+								Определяет, отображается ли текст рядом с переключателем
+								полужирным шрифтом.
+							</dd>
+
+							<dt>FontItalic</dt>
+							<dd>
+								Определяет, отображается ли текст рядом с переключателем
+								курсивом.
+							</dd>
+
+							<dt>FontSize</dt>
+							<dd>
+								Определяет размер шрифта текста, отображаемого рядом с
+								переключателем.
+							</dd>
+
+							<dt>FontTypeface</dt>
+							<dd>
+								Определяет гарнитуру шрифта для текста рядом с переключателем.
+							</dd>
+
+							<dt>Height</dt>
+							<dd>Определяет высоту компонента в пикселях.</dd>
+
+							<dt>On</dt>
+							<dd>
+								Определяет, находится ли переключатель в положении "включено"
+								(True) или "выключено" (False).
+							</dd>
+
+							<dt>Text</dt>
+							<dd>Определяет текст, отображаемый рядом с переключателем.</dd>
+
+							<dt>TextColor</dt>
+							<dd>
+								Определяет цвет текста, отображаемого рядом с переключателем.
+							</dd>
+
+							<dt>ThumbColorActive</dt>
+							<dd>
+								Определяет цвет ползунка (круглой части переключателя) в
+								активном состоянии (когда переключатель включен).
+							</dd>
+
+							<dt>ThumbColorInactive</dt>
+							<dd>
+								Определяет цвет ползунка в неактивном состоянии (когда
+								переключатель выключен).
+							</dd>
+
+							<dt>TrackColorActive</dt>
+							<dd>
+								Определяет цвет дорожки (фоновой части переключателя) в активном
+								состоянии (когда переключатель включен).
+							</dd>
+
+							<dt>TrackColorInactive</dt>
+							<dd>
+								Определяет цвет дорожки в неактивном состоянии (когда
+								переключатель выключен).
+							</dd>
+
+							<dt>Visible</dt>
+							<dd>Определяет, виден ли компонент на экране.</dd>
+
+							<dt>Width</dt>
+							<dd>Определяет ширину компонента в пикселях.</dd>
+						</dl>
+					</div>
+					<div id="events">
+						<h2>События</h2>
+						<dl>
+							<dt>Changed()</dt>
+							<dd>
+								Событие, которое происходит, когда пользователь меняет состояние
+								переключателя (с включенного на выключенное или наоборот). Чтобы
+								определить текущее состояние переключателя, используйте свойство
+								On.
+							</dd>
+						</dl>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<div class="read-button-container">
+			<button id="readButton" class="btn-read">Прочитать</button>
+		</div>
+		<script src="scripts/config.js"></script>
+		<script src="scripts/heartbeat.js"></script>
+		<script src="scripts/theme-change.js"></script>
+		<script src="scripts/toast.js"></script>
+		<script src="scripts/read-status.js"></script>
+		<script src="scripts/header-loader.js"></script>
+		<script src="scripts/page-navigation.js"></script>
+	</body>
+</html>

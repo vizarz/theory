@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Компонент Notifier</title>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../www/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../www/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../www/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="../www/site.webmanifest" />
+		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/toast.css" />
+	</head>
+	<body>
+		<div id="header"></div>
+
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<a href="#methods" class="nav-link">Методы</a>
+				</li>
+				<li><a href="#properties" class="nav-link">Свойства</a></li>
+				<li><a href="#events" class="nav-link">События</a></li>
+				<li>
+					<div class="back-to-index">
+						<a href="index.html#section-2">Вернуться к оглавлению</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<h1>Notifier</h1>
+			<div class="container">
+				<p>
+					Компонент Notifier – это невидимый компонент, который позволяет
+					отображать различные типы предупреждений, уведомлений и диалоговых
+					окон. Компонент имеет три основных типа сообщений: предупреждение
+					(alert), подтверждение (confirmation) и запрос (prompt).
+				</p>
+				<p>
+					<strong>Предупреждение:</strong> Диалоговое окно с сообщением и
+					кнопкой ОК.
+				</p>
+				<p>
+					<strong>Подтверждение:</strong> Диалоговое окно с сообщением и двумя
+					кнопками: ОК и Отмена.
+				</p>
+				<p>
+					<strong>Запрос:</strong> Диалоговое окно с сообщением, текстовым полем
+					для ввода и кнопками ОК и Отмена.
+				</p>
+				<ul>
+					<div id="methods">
+						<h2>Методы</h2>
+						<dl>
+							<dt>DismissProgressDialog()</dt>
+							<dd>
+								Закрывает диалоговое окно с индикатором прогресса, ранее
+								отображенное с помощью ShowProgressDialog.
+							</dd>
+
+							<dt>LogError(message)</dt>
+							<dd>
+								Записывает сообщение об ошибке в журнал устройства Android,
+								используя журнал ошибок.
+							</dd>
+
+							<dt>LogInfo(message)</dt>
+							<dd>
+								Записывает информационное сообщение в журнал устройства Android,
+								используя информационный журнал.
+							</dd>
+
+							<dt>LogWarning(message)</dt>
+							<dd>
+								Записывает предупреждающее сообщение в журнал устройства
+								Android, используя журнал предупреждений.
+							</dd>
+
+							<dt>ShowAlert(message)</dt>
+							<dd>Отображает предупреждение с заданным сообщением.</dd>
+
+							<dt>
+								ShowChooseDialog(message, title, button1Text, button2Text,
+								cancelable)
+							</dt>
+							<dd>
+								Отображает диалоговое окно выбора с двумя кнопками. В ответ на
+								нажатие кнопки происходит событие AfterChoosing.
+							</dd>
+
+							<dt>ShowMessageDialog(message, title, buttonText)</dt>
+							<dd>
+								Отображает диалоговое окно с сообщением и одной кнопкой. В ответ
+								на нажатие кнопки происходит событие MessageDialogClosed.
+							</dd>
+
+							<dt>ShowPasswordDialog(message, title, cancelable)</dt>
+							<dd>
+								Отображает диалоговое окно для ввода пароля. В ответ на нажатие
+								кнопок OK или Отмена происходит событие AfterTextInput.
+							</dd>
+
+							<dt>ShowProgressDialog(message, title)</dt>
+							<dd>
+								Отображает диалоговое окно с индикатором прогресса. Используйте
+								этот метод для случаев, когда длительная операция препятствует
+								работе приложения.
+							</dd>
+
+							<dt>ShowTextDialog(message, title, cancelable)</dt>
+							<dd>
+								Отображает диалоговое окно для ввода текста. В ответ на нажатие
+								кнопок OK или Отмена происходит событие AfterTextInput.
+							</dd>
+						</dl>
+					</div>
+					<div id="properties">
+						<h2>Свойства</h2>
+						<dl>
+							<dt>BackgroundColor</dt>
+							<dd>Определяет цвет фона для диалоговых окон.</dd>
+
+							<dt>NotifierLength</dt>
+							<dd>
+								Определяет продолжительность всплывающего уведомления: 1
+								(короткое) или 2 (длительное).
+							</dd>
+
+							<dt>TextColor</dt>
+							<dd>Определяет цвет текста для диалоговых окон.</dd>
+						</dl>
+					</div>
+					<div id="events">
+						<h2>События</h2>
+						<dl>
+							<dt>AfterChoosing(choice)</dt>
+							<dd>
+								Событие, которое происходит после того, как пользователь выбрал
+								одну из кнопок в диалоговом окне, отображенном с помощью
+								ShowChooseDialog.
+							</dd>
+
+							<dt>AfterTextInput(response, text)</dt>
+							<dd>
+								Событие, которое происходит после того, как пользователь ввел
+								текст в диалоговом окне, отображенном с помощью ShowTextDialog
+								или ShowPasswordDialog.
+							</dd>
+
+							<dt>ChoosingCanceled()</dt>
+							<dd>
+								Событие, которое происходит, когда пользователь отменяет
+								диалоговое окно выбора, отображенное с помощью ShowChooseDialog.
+							</dd>
+
+							<dt>MessageDialogClosed()</dt>
+							<dd>
+								Событие, которое происходит, когда пользователь закрывает
+								диалоговое окно сообщения, отображенное с помощью
+								ShowMessageDialog.
+							</dd>
+						</dl>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<div class="read-button-container">
+			<button id="readButton" class="btn-read">Прочитать</button>
+		</div>
+		<script src="scripts/config.js"></script>
+		<script src="scripts/heartbeat.js"></script>
+		<script src="scripts/theme-change.js"></script>
+		<script src="scripts/toast.js"></script>
+		<script src="scripts/read-status.js"></script>
+		<script src="scripts/header-loader.js"></script>
+		<script src="scripts/page-navigation.js"></script>
+	</body>
+</html>

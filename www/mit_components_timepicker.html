@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Компонент TimePicker</title>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../www/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../www/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../www/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="../www/site.webmanifest" />
+		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/toast.css" />
+	</head>
+	<body>
+		<div id="header"></div>
+
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<a href="#methods" class="nav-link">Методы</a>
+				</li>
+				<li><a href="#properties" class="nav-link">Свойства</a></li>
+				<li><a href="#events" class="nav-link">События</a></li>
+				<li>
+					<div class="back-to-index">
+						<a href="index.html#section-2">Вернуться к оглавлению</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+			<h1>TimePicker</h1>
+			<div class="container">
+				<p>
+					Компонент TimePicker предоставляет пользователю возможность выбора
+					времени (часы и минуты). При нажатии на компонент открывается
+					стандартный диалог выбора времени Android, который позволяет
+					пользователю выбрать конкретное время.
+				</p>
+				<p>
+					После выбора времени происходит событие AfterTimeSet, которое можно
+					использовать для выполнения действий на основе выбранного времени.
+					Компонент также предоставляет свойства для получения выбранных часов и
+					минут.
+				</p>
+				<ul>
+					<div id="methods">
+						<h2>Методы</h2>
+						<dl>
+							<dt>LaunchPicker()</dt>
+							<dd>
+								Открывает диалог выбора времени, чтобы пользователь мог выбрать
+								время.
+							</dd>
+						</dl>
+					</div>
+					<div id="properties">
+						<h2>Свойства</h2>
+						<dl>
+							<dt>BackgroundColor</dt>
+							<dd>Определяет цвет фона компонента TimePicker.</dd>
+
+							<dt>Enabled</dt>
+							<dd>
+								Определяет, включен ли компонент. Если значение установлено как
+								False, компонент будет отключен и пользователь не сможет с ним
+								взаимодействовать.
+							</dd>
+
+							<dt>FontBold</dt>
+							<dd>Определяет, отображается ли текст полужирным шрифтом.</dd>
+
+							<dt>FontItalic</dt>
+							<dd>Определяет, отображается ли текст курсивом.</dd>
+
+							<dt>FontSize</dt>
+							<dd>
+								Определяет размер шрифта текста, отображаемого в компоненте.
+							</dd>
+
+							<dt>FontTypeface</dt>
+							<dd>Определяет гарнитуру шрифта для текста.</dd>
+
+							<dt>Height</dt>
+							<dd>Определяет высоту компонента.</dd>
+
+							<dt>Hour</dt>
+							<dd>
+								Определяет текущий выбранный час (0-23). Можно установить это
+								свойство, чтобы программно задать час.
+							</dd>
+
+							<dt>Image</dt>
+							<dd>
+								Определяет изображение, которое будет отображаться на
+								компоненте. Если изображение задано, оно будет отображаться
+								вместо текста.
+							</dd>
+
+							<dt>Instant</dt>
+							<dd>
+								Определяет текущее выбранное время в виде объекта Instant. Можно
+								использовать для работы с датой и временем в приложении.
+							</dd>
+
+							<dt>Minute</dt>
+							<dd>
+								Определяет текущую выбранную минуту (0-59). Можно установить это
+								свойство, чтобы программно задать минуту.
+							</dd>
+
+							<dt>TextAlignment</dt>
+							<dd>
+								Определяет выравнивание текста в компоненте. Возможные значения:
+								0 (по левому краю), 1 (по центру), 2 (по правому краю).
+							</dd>
+
+							<dt>TextColor</dt>
+							<dd>Определяет цвет текста, отображаемого в компоненте.</dd>
+
+							<dt>Visible</dt>
+							<dd>Определяет, видим ли компонент.</dd>
+
+							<dt>Width</dt>
+							<dd>Определяет ширину компонента.</dd>
+						</dl>
+					</div>
+					<div id="events">
+						<h2>События</h2>
+						<dl>
+							<dt>AfterTimeSet()</dt>
+							<dd>
+								Событие, которое происходит после того, как пользователь
+								установил время в диалоговом окне выбора времени.
+							</dd>
+
+							<dt>GotFocus()</dt>
+							<dd>
+								Событие, которое происходит, когда компонент получает фокус.
+							</dd>
+
+							<dt>LostFocus()</dt>
+							<dd>
+								Событие, которое происходит, когда компонент теряет фокус.
+							</dd>
+
+							<dt>TouchDown()</dt>
+							<dd>
+								Событие, которое происходит, когда пользователь начинает
+								касаться компонента.
+							</dd>
+
+							<dt>TouchUp()</dt>
+							<dd>
+								Событие, которое происходит, когда пользователь прекращает
+								касаться компонента.
+							</dd>
+						</dl>
+					</div>
+				</ul>
+			</div>
+		</div>
+		<div class="read-button-container">
+			<button id="readButton" class="btn-read">Прочитать</button>
+		</div>
+		<script src="scripts/config.js"></script>
+		<script src="scripts/heartbeat.js"></script>
+		<script src="scripts/theme-change.js"></script>
+		<script src="scripts/toast.js"></script>
+		<script src="scripts/read-status.js"></script>
+		<script src="scripts/header-loader.js"></script>
+		<script src="scripts/page-navigation.js"></script>
+	</body>
+</html>
