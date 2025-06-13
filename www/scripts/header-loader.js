@@ -29,6 +29,167 @@ function updateThemeButton() {
 	}
 }
 
+// Функция для преобразования бокового меню в табы на мобильных устройствах
+function setupMobileNavigation() {
+	// Проверяем, есть ли на странице боковое меню
+	const sidebar = document.querySelector('.sidebar')
+	if (!sidebar) return
+
+	const menuLinks = sidebar.querySelectorAll('.nav-link')
+	if (menuLinks.length === 0) return
+	function handleScroll() {
+		if (window.innerWidth <= 800) {
+			const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+			if (scrollTop > 70) {
+				// Немного больше высоты шапки
+				sidebar.classList.add('scrolled')
+			} else {
+				sidebar.classList.remove('scrolled')
+			}
+		}
+	}
+	window.addEventListener('scroll', handleScroll)
+	handleScroll()
+
+	// Создаем карту разделов и соответствующих им ссылок в меню
+	const sectionMap = {}
+	menuLinks.forEach(link => {
+		const targetId = link.getAttribute('href').replace('#', '')
+		const targetSection = document.getElementById(targetId)
+		if (targetSection) {
+			sectionMap[targetId] = {
+				section: targetSection,
+				link: link,
+			}
+		}
+	})
+
+	// Функция для определения текущего видимого раздела
+	function determineActiveSection() {
+		// Высота прилипающего меню + шапки + небольшой отступ
+		const offset = 120
+
+		// Находим раздел, который сейчас видим в окне просмотра
+		let currentSectionId = null
+		let maxVisibleHeight = 0
+
+		for (const id in sectionMap) {
+			const section = sectionMap[id].section
+			const rect = section.getBoundingClientRect()
+
+			// Проверяем, виден ли раздел в окне просмотра
+			// Учитываем отступ для прилипающего меню
+			if (rect.top <= offset && rect.bottom > offset) {
+				const visibleHeight =
+					Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, offset)
+
+				// Выбираем раздел с наибольшей видимой областью
+				if (visibleHeight > maxVisibleHeight) {
+					maxVisibleHeight = visibleHeight
+					currentSectionId = id
+				}
+			}
+		}
+
+		return currentSectionId
+	}
+
+	// Функция для центрирования активного пункта меню
+	function centerActiveMenuItem(activeLink) {
+		if (!activeLink || window.innerWidth > 800) return
+
+		const navContainer = activeLink.closest('.menu-list')
+		if (!navContainer) return
+
+		const linkPosition = activeLink.offsetLeft
+		const linkWidth = activeLink.offsetWidth
+		const containerWidth = navContainer.offsetWidth
+
+		// Рассчитываем позицию скролла, чтобы активный пункт был в центре
+		const scrollPosition = linkPosition - containerWidth / 2 + linkWidth / 2
+
+		// Плавно прокручиваем меню
+		navContainer.scrollTo({
+			left: scrollPosition,
+			behavior: 'smooth',
+		})
+	}
+
+	// Функция для обновления активного пункта меню
+	function updateActiveMenuItem() {
+		const activeSectionId = determineActiveSection()
+
+		if (activeSectionId) {
+			// Удаляем класс active со всех ссылок
+			menuLinks.forEach(link => link.classList.remove('active'))
+
+			// Добавляем класс active к активной ссылке
+			const activeLink = sectionMap[activeSectionId].link
+			activeLink.classList.add('active')
+
+			// Центрируем активный пункт меню
+			centerActiveMenuItem(activeLink)
+
+			// Обновляем URL без перезагрузки страницы, если активный раздел изменился
+			if (window.location.hash !== '#' + activeSectionId) {
+				history.replaceState(null, null, '#' + activeSectionId)
+			}
+		}
+	}
+
+	// Обработчик события прокрутки
+	let scrollTimer
+	window.addEventListener('scroll', function () {
+		// Используем debounce для оптимизации производительности
+		clearTimeout(scrollTimer)
+		scrollTimer = setTimeout(updateActiveMenuItem, 100)
+	})
+
+	// Запускаем при инициализации
+	updateActiveMenuItem()
+	// Функция для проверки, активна ли ссылка (соответствует ли текущему якорю)
+	function updateActiveLink() {
+		const currentHash =
+			window.location.hash || menuLinks[0].getAttribute('href')
+
+		menuLinks.forEach(link => {
+			if (link.getAttribute('href') === currentHash) {
+				link.classList.add('active')
+			} else {
+				link.classList.remove('active')
+			}
+		})
+	}
+
+	// Добавляем обработчики событий для переключения активного состояния
+	menuLinks.forEach(link => {
+		link.addEventListener('click', function () {
+			menuLinks.forEach(l => l.classList.remove('active'))
+			this.classList.add('active')
+
+			// Прокручиваем до выбранного элемента в горизонтальном меню (для мобильных)
+			if (window.innerWidth <= 800) {
+				const navContainer = link.closest('.menu-list')
+				const linkPosition = link.offsetLeft
+				const containerWidth = navContainer.offsetWidth
+				const scrollPosition =
+					linkPosition - containerWidth / 2 + link.offsetWidth / 2
+
+				navContainer.scrollTo({
+					left: scrollPosition,
+					behavior: 'smooth',
+				})
+			}
+		})
+	})
+
+	// Устанавливаем начальное активное состояние
+	updateActiveLink()
+
+	// Обновляем активное состояние при изменении хэша
+	window.addEventListener('hashchange', updateActiveLink)
+}
+
 fetch('header.html')
 	.then(response => response.text())
 	.then(data => {
@@ -104,5 +265,33 @@ fetch('header.html')
 				console.error('Ошибка декодирования токена', e)
 			}
 		}
+
+		// Инициализация мобильного меню ПОСЛЕ загрузки header.html
+		const mobileMenuButton = document.querySelector('.mobile-menu-button')
+		const mobileMenu = document.querySelector('.mobile-menu')
+		const mobileMenuClose = document.querySelector('.mobile-menu-close')
+
+		if (mobileMenuButton && mobileMenu && mobileMenuClose) {
+			// Открытие меню
+			mobileMenuButton.addEventListener('click', function () {
+				mobileMenu.classList.add('active')
+				document.body.style.overflow = 'hidden' // Предотвращаем прокрутку страницы
+			})
+
+			// Закрытие меню
+			mobileMenuClose.addEventListener('click', function () {
+				mobileMenu.classList.remove('active')
+				document.body.style.overflow = '' // Возвращаем прокрутку
+			})
+		}
+
+		// Вызываем функцию настройки мобильной навигации
+		setupMobileNavigation()
 	})
 	.catch(error => console.error('Ошибка загрузки header:', error))
+
+// Также инициализируем мобильную навигацию при полной загрузке страницы,
+// чтобы учесть возможное изменение хэша или других условий
+document.addEventListener('DOMContentLoaded', function () {
+	setupMobileNavigation()
+})

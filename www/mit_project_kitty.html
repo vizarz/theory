@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Проект "Мурлыкающий котёнок"</title>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../www/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../www/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../www/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="../www/site.webmanifest" />
+		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/toast.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		/>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<div class="back-to-index">
+						<a href="mit_projects.html">
+							<i class="fas fa-arrow-left"></i>
+							Вернуться к проектам
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="content">
+			<div class="project-container">
+				<div class="project-header">
+					<h1>Проект "Мурлыкающий котёнок"</h1>
+					<p>
+						<strong>Цель</strong>: Создать простое интерактивное приложение, в
+						котором при касании изображения котёнка будет воспроизводиться звук
+						мурчания.
+					</p>
+					<p>
+						Этот проект научит вас работать с изображениями, звуками и
+						обрабатывать события касания на экране. Идеально подходит для
+						начинающих пользователей MIT App Inventor.
+					</p>
+					<div class="project-features">
+						<h3><i class="fas fa-star"></i> Чему вы научитесь:</h3>
+						<ul>
+							<li>
+								<i class="fas fa-image"></i> Добавлять и настраивать изображения
+							</li>
+							<li>
+								<i class="fas fa-volume-up"></i> Работать со звуковыми файлами
+							</li>
+							<li>
+								<i class="fas fa-hand-pointer"></i> Обрабатывать события касания
+							</li>
+							<li>
+								<i class="fas fa-mobile-alt"></i> Создавать простые
+								интерактивные приложения
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="steps-progress">
+					<div class="progress-line"></div>
+					<div class="progress-line-completed" id="progress-line"></div>
+
+					<div class="step-item" data-step="1">
+						<div class="step-circle" onclick="showStep(1)">1</div>
+						<div class="step-title">Подготовка ресурсов</div>
+					</div>
+
+					<div class="step-item" data-step="2">
+						<div class="step-circle" onclick="showStep(2)">2</div>
+						<div class="step-title">Создание интерфейса</div>
+					</div>
+
+					<div class="step-item" data-step="3">
+						<div class="step-circle" onclick="showStep(3)">3</div>
+						<div class="step-title">Программирование</div>
+					</div>
+
+					<div class="step-item" data-step="4">
+						<div class="step-circle" onclick="showStep(4)">4</div>
+						<div class="step-title">Тестирование</div>
+					</div>
+				</div>
+
+				<div class="step-contents">
+					<div id="step-content-1" class="step-content">
+						<h2>Шаг 1: Подготовка ресурсов</h2>
+						<ul class="instruction-list">
+							<li>
+								Откройте
+								<a href="https://appinventor.mit.edu" target="_blank"
+									>MIT App Inventor</a
+								>
+								и создайте новый проект с названием "PurringKitten".
+							</li>
+							<img
+								class="project-img"
+								src="images/mit_create_apps.jpeg"
+								alt="Создать приложение"
+							/>
+
+							<li>
+								Для этого проекта нам понадобятся два ресурса:
+								<ol>
+									<li>
+										<strong>Изображение котёнка</strong> - привлекательное
+										изображение котёнка для главного экрана
+									</li>
+									<li>
+										<strong>Звук мурчания</strong> - аудиофайл с мурчанием
+										котёнка
+									</li>
+								</ol>
+							</li>
+
+							<li>
+								Скачайте необходимые ресурсы из нашего
+								<a href="mit_downloads.html#resources" class="highlight-link"
+									>центра загрузок</a
+								>
+								в разделе "Ресурсы и материалы".
+								<ol>
+									<li>
+										Найдите и скачайте ZIP-архив "kitten_resources.zip", в
+										котором содержатся все необходимые файлы для проекта
+									</li>
+									<li>
+										Распакуйте архив - внутри вы найдёте файл изображения
+										"kitten.png" и звуковой файл "purr.mp3"
+									</li>
+									<li>
+										Теперь эти файлы готовы для загрузки в ваш проект MIT App
+										Inventor
+									</li>
+								</ol>
+							</li>
+
+							<li>
+								Загрузите скачанные файлы в ваш проект MIT App Inventor:
+								<ol>
+									<li>
+										В правой панели "Media" (Медиа) нажмите кнопку "Upload
+										File..." (Загрузить файл...)
+									</li>
+									<li>Выберите и загрузите сначала файл "kitten.png"</li>
+									<li>Повторите процесс для файла "purr.mp3"</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/music_player_upload_audio.jpeg"
+								alt="Загрузка медиа-файлов"
+							/>
+
+							<li>
+								После загрузки вы увидите оба файла в списке медиа-ресурсов
+								вашего проекта.
+							</li>
+						</ul>
+
+						<div class="tip-box">
+							<i class="fas fa-lightbulb"></i>
+							<strong>Совет:</strong> Если у вас нет возможности скачать
+							ресурсы, вы можете использовать любое подходящее изображение
+							котёнка и звук мурчания. Просто убедитесь, что изображение имеет
+							формат .png или .jpg, а звук - формат .mp3 или .wav.
+						</div>
+
+						<div class="warning-box">
+							<i class="fas fa-exclamation-triangle"></i>
+							<strong>Важно:</strong> Убедитесь, что имена загруженных файлов
+							совпадают с именами, которые будут использоваться в проекте
+							(kitten.png и purr.mp3). Если имена файлов отличаются, вам нужно
+							будет соответствующим образом изменить их в блоках
+							программирования.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" disabled>Назад</button>
+							<button
+								id="btn-step1"
+								class="step-btn btn-read"
+								onclick="markRead('step1', 'Подготовка ресурсов')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(2)">
+								Далее
+							</button>
+						</div>
+					</div>
+
+					<div id="step-content-2" class="step-content">
+						<h2>Шаг 2: Создание интерфейса приложения</h2>
+						<ul class="instruction-list">
+							<li>
+								Создадим простой и привлекательный интерфейс для нашего
+								приложения. Начнем с основного контейнера:
+								<ol>
+									<li>
+										В разделе <strong>Layout</strong> (Макет) найдите компонент
+										<strong>VerticalArrangement</strong>
+									</li>
+									<li>Перетащите его на экран приложения</li>
+									<li>
+										В свойствах установите <strong>Width</strong> (Ширина) и
+										<strong>Height</strong> (Высота): Fill parent
+									</li>
+									<li>
+										В <strong>BackgroundColor</strong> выберите приятный светлый
+										цвет (например, светло-голубой или светло-розовый)
+									</li>
+									<li>
+										Установите <strong>AlignHorizontal</strong> и
+										<strong>AlignVertical</strong> в значение Center (по центру)
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/kitten_vertical_arrangement.png"
+								alt="Добавление вертикального расположения"
+							/>
+
+							<li>
+								Добавим заголовок приложения:
+								<ol>
+									<li>
+										Из раздела <strong>User Interface</strong> перетащите
+										компонент <strong>Label</strong> в VerticalArrangement1
+									</li>
+									<li>
+										В свойствах установите <strong>Text</strong>: "Погладь
+										котёнка!"
+									</li>
+									<li>
+										Установите <strong>TextColor</strong>: контрастный цвет
+										(например, тёмно-синий)
+									</li>
+									<li>
+										Установите <strong>FontSize</strong>: 22 и
+										<strong>FontBold</strong>: True
+									</li>
+									<li>
+										Установите <strong>Width</strong>: Fill parent и
+										<strong>TextAlignment</strong>: Center
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/kitten_add_label.png"
+								alt="Добавление заголовка"
+							/>
+
+							<li>
+								Теперь добавим изображение котёнка:
+								<ol>
+									<li>
+										Из раздела <strong>User Interface</strong> перетащите
+										компонент <strong>Image</strong> в VerticalArrangement1 под
+										заголовком
+									</li>
+									<li>
+										В свойствах <strong>Picture</strong> выберите загруженный
+										файл "kitten.png"
+									</li>
+									<li>
+										Установите <strong>Width</strong> и <strong>Height</strong>:
+										300 пикселей (или подходящий размер)
+									</li>
+									<li>
+										Убедитесь, что свойство
+										<strong>Clickable</strong> установлено в значение True
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/kitten_add_image.png"
+								alt="Добавление изображения котёнка"
+							/>
+
+							<li>
+								Добавим невидимый компонент для воспроизведения звука:
+								<ol>
+									<li>
+										В разделе <strong>Media</strong> найдите компонент
+										<strong>Sound</strong>
+									</li>
+									<li>
+										Перетащите его на экран (он появится в разделе "Non-visible
+										components")
+									</li>
+									<li>
+										В свойствах <strong>Source</strong> выберите загруженный
+										файл "purr.mp3"
+									</li>
+									<li>
+										Установите <strong>MinimumInterval</strong> в значение 500
+										(это предотвратит слишком частое воспроизведение звука при
+										быстрых повторных касаниях)
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/kitten_add_sound.png"
+								alt="Добавление компонента звука"
+							/>
+
+							<li>
+								Для более привлекательного интерфейса добавим пояснительный
+								текст под изображением:
+								<ol>
+									<li>
+										Перетащите еще один компонент <strong>Label</strong> в
+										VerticalArrangement1 под изображением
+									</li>
+									<li>
+										В свойствах установите <strong>Text</strong>: "Коснись
+										котёнка, чтобы услышать мурчание"
+									</li>
+									<li>
+										Установите <strong>FontSize</strong>: 16 и
+										<strong>TextColor</strong>: серый цвет
+									</li>
+									<li>
+										Установите <strong>Width</strong>: Fill parent и
+										<strong>TextAlignment</strong>: Center
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/kitten_final_interface.png"
+								alt="Готовый интерфейс приложения"
+							/>
+						</ul>
+
+						<div class="tip-box">
+							<i class="fas fa-lightbulb"></i>
+							<strong>Совет по дизайну:</strong> Для более приятного визуального
+							эффекта вы можете добавить небольшие отступы между элементами,
+							настраивая свойство <strong>Margin</strong> для каждого
+							компонента. Также можно добавить компонент
+							<strong>HorizontalArrangement</strong> с невидимым фоном для
+							создания дополнительного пространства между элементами.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(1)">
+								Назад
+							</button>
+							<button
+								id="btn-step2"
+								class="step-btn btn-read"
+								onclick="markRead('step2', 'Создание интерфейса приложения')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(3)">
+								Далее
+							</button>
+						</div>
+					</div>
+
+					<div id="step-content-3" class="step-content">
+						<h2>Шаг 3: Программирование интерактивности</h2>
+						<ul class="instruction-list">
+							<li>
+								Перейдите во вкладку <strong>Blocks</strong> (Блоки) для
+								программирования логики приложения.
+							</li>
+							<img
+								class="project-img"
+								src="images/mit_project_transit_to_blocks.jpeg"
+								alt="Переход на вкладку Blocks"
+							/>
+
+							<li>
+								Программирование реакции на касание изображения котёнка:
+								<ol>
+									<li>
+										В левой панели найдите компонент
+										<strong>Image1</strong> (ваше изображение котёнка)
+									</li>
+									<li>
+										Выберите блок <strong>when Image1.Click</strong> - это
+										событие, которое будет происходить при касании изображения
+									</li>
+									<li>Перетащите этот блок в рабочую область</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								style="width: 40%"
+								src="images/kitten_image_click_block.png"
+								alt="Блок обработки касания изображения"
+							/>
+
+							<li>
+								Добавление анимации при касании:
+								<ol>
+									<li>
+										В категории <strong>Image1</strong> найдите блок
+										<strong>call Image1.Bounce</strong>
+									</li>
+									<li>
+										Перетащите этот блок внутрь блока
+										<strong>when Image1.Click</strong>
+									</li>
+									<li>
+										В параметр <strong>duration</strong> введите значение 500
+										(миллисекунд) - это будет мягкая короткая анимация
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								style="width: 50%"
+								src="images/kitten_bounce_block.png"
+								alt="Добавление анимации"
+							/>
+
+							<li>
+								Воспроизведение звука мурчания:
+								<ol>
+									<li>
+										В левой панели найдите компонент <strong>Sound1</strong>
+									</li>
+									<li>Выберите блок <strong>call Sound1.Play</strong></li>
+									<li>
+										Перетащите этот блок внутрь блока
+										<strong>when Image1.Click</strong> под блоком анимации
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/kitten_complete_blocks.png"
+								alt="Полный код обработки касания"
+							/>
+
+							<li>
+								Дополнительно добавим инициализацию при запуске приложения:
+								<ol>
+									<li>
+										В левой панели найдите компонент <strong>Screen1</strong>
+									</li>
+									<li>
+										Выберите блок <strong>when Screen1.Initialize</strong>
+									</li>
+									<li>Перетащите этот блок в рабочую область</li>
+									<li>
+										В категории <strong>Sound1</strong> найдите блок
+										<strong>set Sound1.Source to</strong>
+									</li>
+									<li>
+										Перетащите этот блок внутрь блока
+										<strong>when Screen1.Initialize</strong>
+									</li>
+									<li>
+										В поле значения введите текст "purr.mp3" или выберите
+										соответствующий ресурс
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								style="width: 60%"
+								src="images/kitten_initialize_block.png"
+								alt="Инициализация при запуске"
+							/>
+						</ul>
+
+						<div class="tip-box">
+							<i class="fas fa-lightbulb"></i>
+							<strong>Совет по улучшению:</strong> Вы можете сделать приложение
+							еще более интерактивным, добавив несколько разных звуков и
+							случайный выбор между ними при каждом касании. Для этого создайте
+							список звуков и используйте блок
+							<strong>random integer</strong> для выбора случайного звука из
+							списка.
+						</div>
+
+						<div class="warning-box">
+							<i class="fas fa-exclamation-triangle"></i>
+							<strong>Важно!</strong> Если вы используете звук с другим именем
+							файла, убедитесь, что указали правильное имя в блоке
+							<strong>set Sound1.Source to</strong>. Также убедитесь, что
+							свойство <strong>Clickable</strong> для изображения установлено в
+							значение True, иначе обработчик Click не будет работать.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(2)">
+								Назад
+							</button>
+							<button
+								id="btn-step3"
+								class="step-btn btn-read"
+								onclick="markRead('step3', 'Программирование интерактивности')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(4)">
+								Далее
+							</button>
+						</div>
+					</div>
+
+					<div id="step-content-4" class="step-content">
+						<h2>Шаг 4: Тестирование приложения</h2>
+						<ul class="instruction-list">
+							<li>
+								<strong>Протестируйте ваше приложение:</strong><br />
+								Чтобы проверить работу приложения "Мурлыкающий котёнок",
+								воспользуйтесь одним из способов тестирования, описанных в
+								<a href="mit_introduction.html#download_tips" target="_blank"
+									>нашем введении в MIT App Inventor</a
+								>:
+								<ol>
+									<li>
+										Подключите реальное Android-устройство через Wi-Fi или USB
+									</li>
+									<li>Используйте эмулятор</li>
+									<li>Создайте APK-файл и установите его на устройство</li>
+								</ol>
+							</li>
+
+							<li>
+								<strong>Как проверить работу приложения:</strong>
+								<ol>
+									<li>Запустите приложение на устройстве или эмуляторе</li>
+									<li>
+										Убедитесь, что изображение котёнка отображается корректно
+									</li>
+									<li>Коснитесь изображения котёнка</li>
+									<li>
+										Проверьте, что происходит анимация (лёгкое подпрыгивание
+										изображения)
+									</li>
+									<li>Убедитесь, что воспроизводится звук мурчания</li>
+									<li>
+										Проверьте, работает ли приложение при повторных касаниях
+									</li>
+								</ol>
+							</li>
+
+							<img
+								class="project-img"
+								src="images/kitten_app_testing.png"
+								alt="Тестирование приложения"
+							/>
+						</ul>
+
+						<div class="tip-box">
+							<i class="fas fa-lightbulb"></i>
+							<strong>Совет по отладке:</strong> Если звук не воспроизводится,
+							проверьте следующее:
+							<ol>
+								<li>Убедитесь, что звук правильно загружен в проект</li>
+								<li>
+									Проверьте, что имя файла в блоке
+									<strong>set Sound1.Source to</strong> точно соответствует
+									имени загруженного файла
+								</li>
+								<li>
+									Убедитесь, что на устройстве включен звук и установлена
+									достаточная громкость
+								</li>
+							</ol>
+						</div>
+
+						<div class="success-box">
+							<i class="fas fa-check-circle"></i>
+							<strong>Поздравляем!</strong> Вы успешно создали приложение
+							"Мурлыкающий котёнок"! Это простое, но интерактивное приложение
+							демонстрирует основные принципы работы с изображениями, звуками и
+							обработкой пользовательских действий в MIT App Inventor. Теперь вы
+							можете расширить его, добавив больше функций или создать
+							собственное приложение на основе полученных знаний.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(3)">
+								Назад
+							</button>
+							<button
+								id="btn-step4"
+								class="step-btn btn-read"
+								onclick="markRead('step4', 'Тестирование приложения')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" disabled>Завершить</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="additional-resources">
+					<h3><i class="fas fa-download"></i> Скачать проект</h3>
+					<p>
+						Если у вас возникли сложности, вы можете скачать готовый файл
+						проекта в нашем центре загрузок:
+					</p>
+					<a href="mit_downloads.html#projects" class="download-link">
+						<i class="fas fa-external-link-alt"></i>
+						Перейти в центр загрузок
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<script src="scripts/config.js"></script>
+		<script src="scripts/heartbeat.js"></script>
+		<script src="scripts/theme-change.js"></script>
+		<script src="scripts/toast.js"></script>
+		<script src="scripts/header-loader.js"></script>
+		<script src="scripts/project-buttons.js"></script>
+	</body>
+</html>

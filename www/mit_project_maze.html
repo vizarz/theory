@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Проект "Лабиринт приключений"</title>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../www/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../www/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../www/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="../www/site.webmanifest" />
+		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/toast.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		/>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<div class="back-to-index">
+						<a href="mit_projects.html">
+							<i class="fas fa-arrow-left"></i>
+							Вернуться к проектам
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="content">
+			<div class="project-container">
+				<div class="project-header">
+					<h1>Проект "Лабиринт приключений"</h1>
+					<p>
+						<strong>Цель</strong>: Создать интерактивную игру-лабиринт, в
+						которой игрок управляет персонажем с помощью кнопок направления и
+						должен найти выход из лабиринта.
+					</p>
+					<p>
+						Этот проект научит вас создавать элементы управления, работать с
+						координатами объектов и добавлять игровую логику. Отличный шаг для
+						тех, кто хочет создавать собственные игры на MIT App Inventor.
+					</p>
+					<div class="project-features">
+						<h3><i class="fas fa-star"></i> Чему вы научитесь:</h3>
+						<ul>
+							<li>
+								<i class="fas fa-gamepad"></i> Создавать элементы управления для
+								игры
+							</li>
+							<li>
+								<i class="fas fa-map-marked-alt"></i> Работать с фоновыми
+								изображениями и спрайтами
+							</li>
+							<li>
+								<i class="fas fa-compass"></i> Программировать движение объекта
+								по координатам
+							</li>
+							<li>
+								<i class="fas fa-trophy"></i> Добавлять условия победы в игре
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="steps-progress">
+					<div class="progress-line"></div>
+					<div class="progress-line-completed" id="progress-line"></div>
+
+					<div class="step-item" data-step="1">
+						<div class="step-circle" onclick="showStep(1)">1</div>
+						<div class="step-title">Подготовка ресурсов</div>
+					</div>
+
+					<div class="step-item" data-step="2">
+						<div class="step-circle" onclick="showStep(2)">2</div>
+						<div class="step-title">Создание интерфейса</div>
+					</div>
+
+					<div class="step-item" data-step="3">
+						<div class="step-circle" onclick="showStep(3)">3</div>
+						<div class="step-title">Программирование движения</div>
+					</div>
+
+					<div class="step-item" data-step="4">
+						<div class="step-circle" onclick="showStep(4)">4</div>
+						<div class="step-title">Условие победы и тестирование</div>
+					</div>
+				</div>
+
+				<div class="step-contents">
+					<div id="step-content-1" class="step-content">
+						<h2>Шаг 1: Подготовка ресурсов</h2>
+						<ul class="instruction-list">
+							<li>
+								Откройте
+								<a href="https://appinventor.mit.edu" target="_blank"
+									>MIT App Inventor</a
+								>
+								и создайте новый проект с названием "MazeAdventure" или
+								"ЛабиринтПриключений".
+							</li>
+							<img
+								class="project-img"
+								src="images/mit_create_apps.jpeg"
+								alt="Создать приложение"
+							/>
+
+							<li>
+								Для этого проекта нам понадобятся следующие ресурсы:
+								<ol>
+									<li>
+										<strong>Изображение лабиринта</strong> - фон с изображением
+										лабиринта
+									</li>
+									<li>
+										<strong>Изображение персонажа</strong> - небольшой спрайт,
+										который будет перемещаться по лабиринту
+									</li>
+								</ol>
+							</li>
+
+							<li>
+								Скачайте необходимые ресурсы из нашего
+								<a href="mit_downloads.html#resources" class="highlight-link"
+									>центра загрузок</a
+								>
+								в разделе "Ресурсы и материалы".
+								<ol>
+									<li>
+										Найдите и скачайте ZIP-архив "maze_resources.zip", в котором
+										содержатся все необходимые файлы для проекта
+									</li>
+									<li>
+										Распакуйте архив - внутри вы найдёте файл изображения
+										лабиринта "maze_background.png" и изображение персонажа
+										"character.png"
+									</li>
+									<li>
+										Теперь эти файлы готовы для загрузки в ваш проект MIT App
+										Inventor
+									</li>
+								</ol>
+							</li>
+
+							<li>
+								Загрузите скачанные файлы в ваш проект MIT App Inventor:
+								<ol>
+									<li>
+										В правой панели "Media" (Медиа) нажмите кнопку "Upload
+										File..." (Загрузить файл...)
+									</li>
+									<li>
+										Выберите и загрузите сначала файл "maze_background.png"
+									</li>
+									<li>Повторите процесс для файла "character.png"</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/upload_media_files.png"
+								alt="Загрузка медиа-файлов"
+							/>
+
+							<li>
+								После загрузки вы увидите оба файла в списке медиа-ресурсов
+								вашего проекта.
+							</li>
+						</ul>
+
+						<div class="tip-box">
+							<i class="fas fa-lightbulb"></i>
+							<strong>Совет:</strong> Если вы хотите создать собственное
+							изображение лабиринта, убедитесь, что стены имеют четкие границы и
+							достаточную ширину, чтобы персонаж не мог "перепрыгнуть" через
+							них. Также оставьте четкий путь от начала до конца лабиринта.
+						</div>
+
+						<div class="warning-box">
+							<i class="fas fa-exclamation-triangle"></i>
+							<strong>Важно:</strong> Изображение персонажа должно быть
+							достаточно маленьким (рекомендуется размер около 40x40 пикселей),
+							чтобы он мог проходить по коридорам лабиринта. Также лучше
+							использовать изображение с прозрачным фоном (формат PNG).
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" disabled>Назад</button>
+							<button
+								id="btn-step1"
+								class="step-btn btn-read"
+								onclick="markRead('step1', 'Подготовка ресурсов')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(2)">
+								Далее
+							</button>
+						</div>
+					</div>
+
+					<div id="step-content-2" class="step-content">
+						<h2>Шаг 2: Создание интерфейса игры</h2>
+						<ul class="instruction-list">
+							<li>
+								Создадим игровое поле и элементы управления. Начнем с настройки
+								экрана:
+								<ol>
+									<li>
+										В списке компонентов выберите <strong>Screen1</strong>
+									</li>
+									<li>
+										В свойствах <strong>Title</strong> введите "Лабиринт
+										приключений"
+									</li>
+									<li>
+										Установите <strong>ScreenOrientation</strong> в значение
+										"Portrait" (портретная ориентация)
+									</li>
+								</ol>
+							</li>
+
+							<li>
+								Добавим компонент Canvas для игрового поля:
+								<ol>
+									<li>
+										В разделе <strong>Drawing and Animation</strong> (Рисование
+										и анимация) найдите компонент
+										<strong>Canvas</strong> (Холст)
+									</li>
+									<li>Перетащите его на экран приложения</li>
+									<li>
+										В свойствах установите <strong>Width</strong> (Ширина): Fill
+										parent
+									</li>
+									<li>
+										Установите <strong>Height</strong> (Высота): 300 пикселей
+										(или другое подходящее значение)
+									</li>
+									<li>
+										В свойстве <strong>BackgroundImage</strong> выберите
+										загруженный файл "maze_background.png"
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/maze_add_canvas.png"
+								alt="Добавление Canvas с фоном лабиринта"
+							/>
+
+							<li>
+								Добавим спрайт персонажа:
+								<ol>
+									<li>
+										В разделе <strong>Drawing and Animation</strong> найдите
+										компонент <strong>ImageSprite</strong> (Спрайт изображения)
+									</li>
+									<li>Перетащите его на Canvas1</li>
+									<li>
+										В свойстве <strong>Picture</strong> выберите загруженный
+										файл "character.png"
+									</li>
+									<li>
+										Установите <strong>Width</strong> и <strong>Height</strong>:
+										40 пикселей (или другой подходящий размер)
+									</li>
+									<li>
+										Установите начальные координаты <strong>X</strong> и
+										<strong>Y</strong> для позиции старта в лабиринте (например,
+										X: 30, Y: 30)
+									</li>
+									<li>Установите <strong>Speed</strong> (Скорость): 5</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/maze_add_sprite.png"
+								alt="Добавление спрайта персонажа"
+							/>
+
+							<li>
+								Теперь создадим блок кнопок управления:
+								<ol>
+									<li>
+										В разделе <strong>Layout</strong> найдите компонент
+										<strong>HorizontalArrangement</strong>
+									</li>
+									<li>Перетащите его на экран под Canvas1</li>
+									<li>
+										Установите <strong>Width</strong>: Fill parent и
+										<strong>AlignHorizontal</strong>: Center
+									</li>
+									<li>
+										В <strong>HorizontalArrangement</strong> перетащите
+										компонент <strong>VerticalArrangement</strong>
+									</li>
+									<li>
+										Установите <strong>Width</strong> и <strong>Height</strong>:
+										Automatic
+									</li>
+								</ol>
+							</li>
+
+							<li>
+								Добавим кнопки управления:
+								<ol>
+									<li>
+										В разделе <strong>User Interface</strong> найдите компонент
+										<strong>Button</strong>
+									</li>
+									<li>
+										Перетащите одну кнопку в центр
+										<strong>VerticalArrangement</strong> и установите ее
+										свойства:
+										<ul>
+											<li><strong>Text</strong>: "↑" (стрелка вверх)</li>
+											<li><strong>Width</strong>: 80 пикселей</li>
+											<li><strong>Height</strong>: 60 пикселей</li>
+											<li><strong>FontSize</strong>: 24</li>
+											<li>
+												<strong>BackgroundColor</strong>: выберите цвет на ваш
+												вкус
+											</li>
+										</ul>
+									</li>
+									<li>
+										Добавьте <strong>HorizontalArrangement</strong> под кнопкой
+										вверх
+									</li>
+									<li>
+										Перетащите три кнопки в этот
+										<strong>HorizontalArrangement</strong> и настройте их:
+										<ul>
+											<li>
+												Кнопка влево: <strong>Text</strong>: "←", те же размеры
+												и стиль
+											</li>
+											<li>
+												Кнопка вниз: <strong>Text</strong>: "↓", те же размеры и
+												стиль
+											</li>
+											<li>
+												Кнопка вправо: <strong>Text</strong>: "→", те же размеры
+												и стиль
+											</li>
+										</ul>
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/maze_control_buttons.png"
+								alt="Создание кнопок управления"
+							/>
+
+							<li>
+								Добавим невидимый компонент для отображения сообщения о победе:
+								<ol>
+									<li>
+										В разделе <strong>User Interface</strong> найдите компонент
+										<strong>Notifier</strong>
+									</li>
+									<li>
+										Перетащите его на экран (он появится в разделе "Non-visible
+										components")
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/maze_complete_interface.png"
+								alt="Готовый интерфейс игры"
+							/>
+						</ul>
+
+						<div class="tip-box">
+							<i class="fas fa-lightbulb"></i>
+							<strong>Совет по дизайну:</strong> Вы можете создать более
+							привлекательные кнопки, используя изображения стрелок вместо
+							символов. Для этого загрузите изображения стрелок в ваш проект и
+							используйте свойство <strong>Image</strong> у кнопок вместо
+							текста.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(1)">
+								Назад
+							</button>
+							<button
+								id="btn-step2"
+								class="step-btn btn-read"
+								onclick="markRead('step2', 'Создание интерфейса игры')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(3)">
+								Далее
+							</button>
+						</div>
+					</div>
+
+					<div id="step-content-3" class="step-content">
+						<h2>Шаг 3: Программирование движения персонажа</h2>
+						<ul class="instruction-list">
+							<li>
+								Перейдите во вкладку <strong>Blocks</strong> (Блоки) для
+								программирования логики игры.
+							</li>
+							<img
+								class="project-img"
+								src="images/mit_project_transit_to_blocks.jpeg"
+								alt="Переход на вкладку Blocks"
+							/>
+
+							<li>
+								Сначала определим переменную шага для перемещения:
+								<ol>
+									<li>
+										В левой панели выберите раздел
+										<strong>Variables</strong> (Переменные)
+									</li>
+									<li>
+										Нажмите <strong>Initialize global name to</strong> для
+										создания глобальной переменной
+									</li>
+									<li>
+										Назовите переменную <strong>stepSize</strong> и установите
+										начальное значение 10
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								style="width: 40%"
+								src="images/maze_step_variable.png"
+								alt="Создание переменной шага"
+							/>
+
+							<li>
+								Теперь запрограммируем действие кнопки "Вверх":
+								<ol>
+									<li>
+										В левой панели найдите компонент
+										<strong>Button1</strong> (кнопка со стрелкой вверх)
+									</li>
+									<li>
+										Выберите блок <strong>when Button1.Click</strong> - это
+										событие, которое будет происходить при нажатии кнопки
+									</li>
+									<li>Перетащите этот блок в рабочую область</li>
+									<li>
+										В категории <strong>ImageSprite1</strong> найдите блок
+										<strong>set ImageSprite1.Y to</strong>
+									</li>
+									<li>
+										Перетащите этот блок внутрь блока
+										<strong>when Button1.Click</strong>
+									</li>
+									<li>
+										В категории <strong>Math</strong> найдите блок операции
+										вычитания (-) и перетащите его в поле значения Y
+									</li>
+									<li>
+										В левую часть блока вычитания поместите блок
+										<strong>ImageSprite1.Y</strong>
+									</li>
+									<li>
+										В правую часть блока вычитания поместите блок
+										<strong>get global stepSize</strong>
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								style="width: 60%"
+								src="images/maze_up_button.png"
+								alt="Программирование кнопки Вверх"
+							/>
+
+							<li>
+								Аналогично запрограммируем кнопку "Вниз" (Button2):
+								<ol>
+									<li>Создайте блок <strong>when Button2.Click</strong></li>
+									<li>
+										Внутри используйте <strong>set ImageSprite1.Y to</strong>
+									</li>
+									<li>Используйте блок сложения (+) вместо вычитания</li>
+									<li>
+										Добавьте <strong>ImageSprite1.Y</strong> и
+										<strong>get global stepSize</strong>
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								style="width: 60%"
+								src="images/maze_down_button.png"
+								alt="Программирование кнопки Вниз"
+							/>
+
+							<li>
+								Запрограммируем кнопку "Влево" (Button3):
+								<ol>
+									<li>Создайте блок <strong>when Button3.Click</strong></li>
+									<li>
+										Внутри используйте <strong>set ImageSprite1.X to</strong>
+									</li>
+									<li>
+										Используйте блок вычитания (-) и добавьте
+										<strong>ImageSprite1.X</strong> и
+										<strong>get global stepSize</strong>
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								style="width: 60%"
+								src="images/maze_left_button.png"
+								alt="Программирование кнопки Влево"
+							/>
+
+							<li>
+								Запрограммируем кнопку "Вправо" (Button4):
+								<ol>
+									<li>Создайте блок <strong>when Button4.Click</strong></li>
+									<li>
+										Внутри используйте <strong>set ImageSprite1.X to</strong>
+									</li>
+									<li>
+										Используйте блок сложения (+) и добавьте
+										<strong>ImageSprite1.X</strong> и
+										<strong>get global stepSize</strong>
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								style="width: 60%"
+								src="images/maze_right_button.png"
+								alt="Программирование кнопки Вправо"
+							/>
+						</ul>
+
+						<div class="tip-box">
+							<i class="fas fa-lightbulb"></i>
+							<strong>Совет по улучшению:</strong> Для более плавного управления
+							вы можете добавить обработку событий <strong>TouchDown</strong> и
+							<strong>TouchUp</strong> для кнопок, чтобы персонаж двигался, пока
+							кнопка нажата, и останавливался при отпускании.
+						</div>
+
+						<div class="warning-box">
+							<i class="fas fa-exclamation-triangle"></i>
+							<strong>Важно!</strong> В данной реализации персонаж может
+							проходить через стены лабиринта, так как мы не добавили проверку
+							столкновений. Для более сложной игры можно добавить обработку
+							столкновений, используя свойство <strong>CollidingWith</strong> и
+							дополнительные спрайты для стен.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(2)">
+								Назад
+							</button>
+							<button
+								id="btn-step3"
+								class="step-btn btn-read"
+								onclick="markRead('step3', 'Программирование движения персонажа')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(4)">
+								Далее
+							</button>
+						</div>
+					</div>
+
+					<div id="step-content-4" class="step-content">
+						<h2>Шаг 4: Добавление условия победы и тестирование</h2>
+						<ul class="instruction-list">
+							<li>
+								Добавим проверку условия победы, когда персонаж достигает
+								определенной точки (выхода из лабиринта).
+							</li>
+
+							<li>
+								Сначала создадим глобальные переменные для координат выхода:
+								<ol>
+									<li>
+										В разделе <strong>Variables</strong> создайте глобальную
+										переменную <strong>exitX</strong> и установите значение,
+										соответствующее X-координате выхода из вашего лабиринта
+										(например, 270)
+									</li>
+									<li>
+										Аналогично создайте переменную <strong>exitY</strong> и
+										установите значение Y-координаты выхода (например, 250)
+									</li>
+									<li>
+										Создайте переменную <strong>winDistance</strong> со
+										значением 20 - это будет допустимое расстояние до точки
+										выхода для победы
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								style="width: 40%"
+								src="images/maze_exit_variables.png"
+								alt="Создание переменных для выхода"
+							/>
+
+							<li>
+								Создадим процедуру для проверки победы:
+								<ol>
+									<li>
+										В разделе <strong>Procedures</strong> выберите
+										<strong>to procedure</strong> и создайте процедуру с именем
+										<strong>checkWin</strong>
+									</li>
+									<li>
+										В категории <strong>Control</strong> найдите блок
+										<strong>if then</strong> и перетащите его в процедуру
+									</li>
+									<li>
+										В категории <strong>Logic</strong> найдите блок сравнения <
+										(меньше) и перетащите его в условие if
+									</li>
+									<li>
+										В категории <strong>Math</strong> найдите блок функции
+										<strong>sqrt</strong> (квадратный корень) и поместите его в
+										левую часть сравнения
+									</li>
+									<li>
+										Внутри блока квадратного корня поместите блок сложения (+)
+									</li>
+									<li>
+										В первую часть сложения поместите операцию возведения в
+										степень: <strong>Math power</strong> с первым аргументом -
+										разницей между X персонажа и X выхода, и вторым аргументом -
+										числом 2
+									</li>
+									<li>
+										Аналогично во вторую часть сложения поместите операцию
+										возведения в степень с разницей между Y персонажа и Y выхода
+									</li>
+									<li>
+										В правую часть сравнения поместите блок
+										<strong>get global winDistance</strong>
+									</li>
+									<li>
+										Внутри блока <strong>then</strong> добавьте блок
+										<strong>call Notifier1.ShowAlert</strong> с сообщением
+										"Поздравляем! Вы нашли выход из лабиринта!"
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/maze_check_win.png"
+								alt="Создание процедуры проверки победы"
+							/>
+
+							<li>
+								Теперь нужно вызывать эту процедуру после каждого перемещения
+								персонажа:
+								<ol>
+									<li>
+										Добавьте блок <strong>call checkWin</strong> в конце каждого
+										обработчика нажатия кнопок (после изменения координат X или
+										Y)
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								style="width: 70%"
+								src="images/maze_button_with_check.png"
+								alt="Добавление проверки победы в кнопки"
+							/>
+
+							<li>
+								<strong>Протестируйте ваше приложение:</strong><br />
+								Запустите приложение на устройстве или эмуляторе, используя один
+								из способов тестирования, описанных в
+								<a href="mit_introduction.html#download_tips" target="_blank"
+									>нашем введении в MIT App Inventor</a
+								>.
+								<ol>
+									<li>Управляйте персонажем с помощью кнопок направления</li>
+									<li>Проведите персонажа через лабиринт к выходу</li>
+									<li>
+										Когда персонаж достигнет точки выхода, появится сообщение о
+										победе
+									</li>
+								</ol>
+							</li>
+
+							<img
+								class="project-img"
+								src="images/maze_testing.png"
+								alt="Тестирование игры-лабиринта"
+							/>
+						</ul>
+
+						<div class="tip-box">
+							<i class="fas fa-lightbulb"></i>
+							<strong>Советы по улучшению игры:</strong>
+							<ol>
+								<li>
+									Добавьте счетчик шагов, чтобы игрок стремился пройти лабиринт
+									за минимальное количество ходов
+								</li>
+								<li>
+									Добавьте таймер, ограничивающий время прохождения лабиринта
+								</li>
+								<li>
+									Реализуйте проверку столкновений со стенами, чтобы персонаж не
+									мог проходить сквозь них
+								</li>
+								<li>Добавьте несколько уровней с разными лабиринтами</li>
+								<li>
+									Включите звуковые эффекты для шагов, столкновений и победы
+								</li>
+							</ol>
+						</div>
+
+						<div class="success-box">
+							<i class="fas fa-check-circle"></i>
+							<strong>Поздравляем!</strong> Вы успешно создали игру "Лабиринт
+							приключений"! Эта игра демонстрирует основные принципы разработки
+							игр в MIT App Inventor: управление персонажем, определение игровых
+							условий и взаимодействие с пользователем. Теперь вы можете
+							расширить эту игру, добавив новые функции и уровни, или
+							использовать полученные знания для создания собственных игровых
+							проектов.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(3)">
+								Назад
+							</button>
+							<button
+								id="btn-step4"
+								class="step-btn btn-read"
+								onclick="markRead('step4', 'Добавление условия победы и тестирование')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" disabled>Завершить</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="additional-resources">
+					<h3><i class="fas fa-download"></i> Скачать проект</h3>
+					<p>
+						Если у вас возникли сложности, вы можете скачать готовый файл
+						проекта в нашем центре загрузок:
+					</p>
+					<a href="mit_downloads.html#projects" class="download-link">
+						<i class="fas fa-external-link-alt"></i>
+						Перейти в центр загрузок
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<script src="scripts/config.js"></script>
+		<script src="scripts/heartbeat.js"></script>
+		<script src="scripts/theme-change.js"></script>
+		<script src="scripts/toast.js"></script>
+		<script src="scripts/header-loader.js"></script>
+		<script src="scripts/project-buttons.js"></script>
+	</body>
+</html>

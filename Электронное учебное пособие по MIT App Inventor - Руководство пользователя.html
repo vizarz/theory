@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>
+			Электронное учебное пособие по MIT App Inventor - Руководство пользователя
+		</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+		/>
+		<style>
+			:root {
+				--accent-color: #8fc202;
+				--bg-light: #f9f9f9;
+				--text-color: #333;
+				--border-color: #e0e0e0;
+			}
+
+			body {
+				font-family: 'Inter', sans-serif;
+				background-color: var(--bg-light);
+				color: var(--text-color);
+				line-height: 1.6;
+			}
+
+			.accent-color {
+				color: var(--accent-color);
+			}
+
+			.accent-bg {
+				background-color: var(--accent-color);
+			}
+
+			.section-divider {
+				border-bottom: 3px solid var(--accent-color);
+				margin: 2rem 0;
+			}
+
+			.code-block {
+				background-color: #f8f9fa;
+				border-left: 4px solid var(--accent-color);
+				padding: 1rem;
+				margin: 1rem 0;
+				border-radius: 0 8px 8px 0;
+				font-family: 'Courier New', monospace;
+				overflow-x: auto;
+			}
+
+			.step-number {
+				background-color: var(--accent-color);
+				color: white;
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				font-weight: bold;
+				margin-right: 1rem;
+			}
+
+			.info-box {
+				background-color: #e8f5e8;
+				border: 1px solid var(--accent-color);
+				border-radius: 8px;
+				padding: 1.5rem;
+				margin: 1.5rem 0;
+			}
+
+			.logo-placeholder {
+				width: 120px;
+				height: 120px;
+				background: linear-gradient(135deg, var(--accent-color), #7ba002);
+				border-radius: 12px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: white;
+				font-size: 2rem;
+				font-weight: bold;
+			}
+
+			h1,
+			h2,
+			h3 {
+				color: var(--accent-color);
+			}
+
+			.toc-item {
+				padding: 0.5rem 0;
+				border-bottom: 1px solid #e0e0e0;
+			}
+
+			.toc-item:hover {
+				background-color: #f0f8f0;
+				padding-left: 1rem;
+				transition: all 0.3s ease;
+			}
+
+			body {
+				background-color: white;
+			}
+			.no-print {
+				display: none;
+			}
+		</style>
+	</head>
+	<body class="max-w-5xl mx-auto p-8">
+		<!-- Header -->
+		<header class="text-center mb-12">
+			<div class="flex items-center justify-center mb-6">
+				<div class="logo-placeholder mr-6">
+					<i class="fas fa-mobile-alt"></i>
+				</div>
+				<div>
+					<h1 class="text-4xl font-bold mb-2">Электронное учебное пособие</h1>
+					<h2 class="text-2xl font-semibold accent-color">MIT App Inventor</h2>
+					<p class="text-gray-600 mt-2">
+						Руководство пользователя и инструкция по установке
+					</p>
+				</div>
+			</div>
+			<div class="section-divider"></div>
+		</header>
+
+		<!-- Table of Contents -->
+		<section class="mb-12">
+			<h2 class="text-2xl font-bold mb-6 flex items-center">
+				<i class="fas fa-list mr-3"></i>
+				Содержание
+			</h2>
+			<div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+				<div class="toc-item">
+					<a href="#installation" class="text-blue-600 hover:underline"
+						>1. Установка и запуск проекта локально</a
+					>
+				</div>
+				<div class="toc-item">
+					<a href="#system-requirements" class="text-blue-600 hover:underline"
+						>2. Системные требования</a
+					>
+				</div>
+				<div class="toc-item">
+					<a href="#user-guide" class="text-blue-600 hover:underline"
+						>3. Руководство пользователя</a
+					>
+				</div>
+				<div class="toc-item">
+					<a href="#getting-started" class="text-blue-600 hover:underline"
+						>4. Как начать работу</a
+					>
+				</div>
+				<div class="toc-item">
+					<a href="#useful-links" class="text-blue-600 hover:underline"
+						>5. Полезные ссылки</a
+					>
+				</div>
+			</div>
+		</section>
+
+		<!-- Installation Section -->
+		<section id="installation" class="mb-12">
+			<h2 class="text-3xl font-bold mb-6 flex items-center">
+				<i class="fas fa-download mr-3"></i>
+				Установка и запуск проекта локально
+			</h2>
+			<p class="text-lg mb-6 text-gray-700">
+				Для разработчиков, желающих запустить проект на своем компьютере
+			</p>
+
+			<!-- System Requirements -->
+			<div id="system-requirements" class="mb-8">
+				<h3 class="text-xl font-semibold mb-4 flex items-center">
+					<i class="fas fa-cogs mr-2"></i>
+					Системные требования
+				</h3>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+					<div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+						<i class="fab fa-node-js text-3xl accent-color mb-2"></i>
+						<h4 class="font-semibold">Node.js</h4>
+						<p class="text-sm text-gray-600">версия 14.x или выше</p>
+					</div>
+					<div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+						<i class="fas fa-database text-3xl accent-color mb-2"></i>
+						<h4 class="font-semibold">MySQL</h4>
+						<p class="text-sm text-gray-600">версия 5.7 или выше</p>
+					</div>
+					<div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+						<i class="fas fa-globe text-3xl accent-color mb-2"></i>
+						<h4 class="font-semibold">Браузер</h4>
+						<p class="text-sm text-gray-600">Chrome, Firefox, Edge</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Installation Steps -->
+			<div class="space-y-8">
+				<!-- Step 1 -->
+				<div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+					<h3 class="text-xl font-semibold mb-4 flex items-center">
+						<span class="step-number">1</span>
+						Распаковка архива
+					</h3>
+					<p class="mb-4">
+						Откройте архив
+						<code class="bg-gray-100 px-2 py-1 rounded">mit_theory.zip</code> и
+						распакуйте его в любую удобную папку на вашем компьютере.
+					</p>
+					<p class="mb-4">
+						Откройте командную строку(cmd) и перейдите в распакованную папку:
+					</p>
+					<div class="code-block">cd путь/до/распакованной_папки</div>
+				</div>
+
+				<!-- Step 2 -->
+				<div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+					<h3 class="text-xl font-semibold mb-4 flex items-center">
+						<span class="step-number">2</span>
+						Установка зависимостей
+					</h3>
+					<div class="code-block">npm install</div>
+				</div>
+
+				<!-- Step 3 -->
+				<div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+					<h3 class="text-xl font-semibold mb-4 flex items-center">
+						<span class="step-number">3</span>
+						Настройка базы данных
+					</h3>
+					<div class="space-y-4">
+						<div>
+							<h4 class="font-semibold mb-2">1. Создайте базу данных MySQL:</h4>
+							<div class="code-block">CREATE DATABASE mit_app_inventor;</div>
+						</div>
+						<div>
+							<h4 class="font-semibold mb-2">
+								2. Импортируйте структуру базы данных:
+							</h4>
+							<div class="code-block">
+								mysql -u root -p mit_app_inventor < database/database.sql
+							</div>
+						</div>
+						<div>
+							<h4 class="font-semibold mb-2">
+								3. Откройте файл конфигурации
+								<code class="bg-gray-100 px-2 py-1 rounded">.env</code> в
+								корневой директории проекта:
+							</h4>
+							<div class="code-block">
+								DB_HOST=localhost<br />
+								DB_USER=root<br />
+								DB_PASSWORD=ваш_пароль<br />
+								DB_NAME=mit_app_inventor<br />
+								PORT=3000<br />
+								SESSION_SECRET=ваш_секретный_ключ
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Step 4 -->
+				<div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+					<h3 class="text-xl font-semibold mb-4 flex items-center">
+						<span class="step-number">4</span>
+						Запуск сервера
+					</h3>
+					<div class="code-block">node src/app.js</div>
+				</div>
+
+				<!-- Step 5 -->
+				<div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+					<h3 class="text-xl font-semibold mb-4 flex items-center">
+						<span class="step-number">5</span>
+						Доступ к сайту
+					</h3>
+					<p class="mb-4">
+						После запуска сервера откройте браузер и перейдите по адресу:
+					</p>
+					<div class="code-block">http://localhost:3000</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="section-divider"></div>
+
+		<!-- User Guide Section -->
+		<section id="user-guide" class="mb-12">
+			<h2 class="text-3xl font-bold mb-6 flex items-center">
+				<i class="fas fa-user-graduate mr-3"></i>
+				Руководство пользователя
+			</h2>
+
+			<div id="getting-started" class="mb-8">
+				<h3 class="text-2xl font-semibold mb-6 accent-color">
+					Как начать работу с учебным пособием
+				</h3>
+
+				<!-- Access -->
+				<div
+					class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6"
+				>
+					<h4 class="text-xl font-semibold mb-4 flex items-center">
+						<i class="fas fa-sign-in-alt mr-2 accent-color"></i>
+						Доступ к сайту
+					</h4>
+					<ol class="space-y-2 list-decimal list-inside">
+						<li>Откройте браузер (рекомендуется Chrome, Firefox или Edge)</li>
+						<li>
+							Перейдите по адресу
+							<code class="bg-gray-100 px-2 py-1 rounded"
+								>http://learninventor.me/theory/www/index.html</code
+							>
+							или
+							<code class="bg-gray-100 px-2 py-1 rounded"
+								>http://localhost:3000</code
+							>
+							при локальном запуске
+						</li>
+						<li>
+							Зарегистрируйтесь или войдите в систему, используя предоставленные
+							данные для входа
+						</li>
+					</ol>
+				</div>
+
+				<!-- Structure -->
+				<div
+					class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6"
+				>
+					<h4 class="text-xl font-semibold mb-4 flex items-center">
+						<i class="fas fa-sitemap mr-2 accent-color"></i>
+						Структура учебного пособия
+					</h4>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+						<div class="border-l-4 border-green-500 pl-4">
+							<h5 class="font-semibold">Введение</h5>
+							<p class="text-sm text-gray-600">
+								Начните с раздела введения, чтобы ознакомиться с MIT App
+								Inventor
+							</p>
+						</div>
+						<div class="border-l-4 border-blue-500 pl-4">
+							<h5 class="font-semibold">Режим "Дизайнер"</h5>
+							<p class="text-sm text-gray-600">
+								Изучите создание визуального интерфейса приложения
+							</p>
+						</div>
+						<div class="border-l-4 border-purple-500 pl-4">
+							<h5 class="font-semibold">Режим "Блоки"</h5>
+							<p class="text-sm text-gray-600">
+								Узнайте о программировании логики приложения
+							</p>
+						</div>
+						<div class="border-l-4 border-red-500 pl-4">
+							<h5 class="font-semibold">Компоненты</h5>
+							<p class="text-sm text-gray-600">
+								Подробная документация по всем компонентам MIT App Inventor
+							</p>
+						</div>
+						<div class="border-l-4 border-yellow-500 pl-4 md:col-span-2">
+							<h5 class="font-semibold">Проекты</h5>
+							<p class="text-sm text-gray-600">
+								Пошаговые руководства по созданию различных приложений
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Progress Tracking -->
+				<div
+					class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6"
+				>
+					<h4 class="text-xl font-semibold mb-4 flex items-center">
+						<i class="fas fa-chart-line mr-2 accent-color"></i>
+						Отслеживание прогресса
+					</h4>
+					<div class="space-y-3">
+						<div class="flex items-center">
+							<i class="fas fa-check-circle text-green-500 mr-3"></i>
+							<span
+								>После прочтения страницы нажмите кнопку "Прочитать" для
+								сохранения прогресса</span
+							>
+						</div>
+						<div class="flex items-center">
+							<i class="fas fa-tasks text-blue-500 mr-3"></i>
+							<span
+								>В проектах отмечайте выполненные шаги кнопкой "Пометить как
+								выполнено"</span
+							>
+						</div>
+						<div class="flex items-center">
+							<i class="fas fa-save text-purple-500 mr-3"></i>
+							<span
+								>Ваш прогресс сохраняется автоматически и будет доступен при
+								следующем входе</span
+							>
+						</div>
+					</div>
+				</div>
+
+				<!-- Practical Projects -->
+				<div
+					class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6"
+				>
+					<h4 class="text-xl font-semibold mb-4 flex items-center">
+						<i class="fas fa-project-diagram mr-2 accent-color"></i>
+						Практические проекты
+					</h4>
+					<div class="space-y-3">
+						<div class="flex items-start">
+							<span
+								class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold mr-3 mt-1"
+								>1</span
+							>
+							<span
+								>Выберите проект из списка доступных (начните с простых,
+								например "Привет, мир!")</span
+							>
+						</div>
+						<div class="flex items-start">
+							<span
+								class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-semibold mr-3 mt-1"
+								>2</span
+							>
+							<span
+								>Следуйте пошаговым инструкциям для создания приложения</span
+							>
+						</div>
+						<div class="flex items-start">
+							<span
+								class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-semibold mr-3 mt-1"
+								>3</span
+							>
+							<span>Скачивайте необходимые ресурсы из центра загрузок</span>
+						</div>
+						<div class="flex items-start">
+							<span
+								class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-semibold mr-3 mt-1"
+								>4</span
+							>
+							<span
+								>Используйте подсказки и советы, если столкнетесь с
+								трудностями</span
+							>
+						</div>
+					</div>
+				</div>
+
+				<!-- Troubleshooting -->
+				<div class="info-box">
+					<h4 class="text-xl font-semibold mb-4 flex items-center">
+						<i class="fas fa-tools mr-2 accent-color"></i>
+						Устранение неполадок
+					</h4>
+					<div class="space-y-2">
+						<p>
+							<strong>Проблемы с MIT App Inventor:</strong> обратитесь к разделу
+							"Устранение неполадок"
+						</p>
+						<p>
+							<strong>Проблемы с учебным пособием:</strong> обратитесь к
+							администратору
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="section-divider"></div>
+
+		<!-- Useful Links -->
+		<section id="useful-links" class="mb-12">
+			<h2 class="text-2xl font-bold mb-6 flex items-center">
+				<i class="fas fa-external-link-alt mr-3"></i>
+				Полезные ссылки
+			</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+				<div
+					class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow"
+				>
+					<i class="fas fa-home text-3xl accent-color mb-4"></i>
+					<h3 class="font-semibold mb-2">Официальный сайт</h3>
+					<p class="text-sm text-gray-600 mb-3">MIT App Inventor</p>
+					<a
+						href="https://appinventor.mit.edu/"
+						class="text-blue-600 hover:underline text-sm"
+						>appinventor.mit.edu</a
+					>
+				</div>
+				<div
+					class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow"
+				>
+					<i class="fas fa-download text-3xl accent-color mb-4"></i>
+					<h3 class="font-semibold mb-2">Центр загрузок</h3>
+					<p class="text-sm text-gray-600 mb-3">
+						Ресурсы и материалы для проектов
+					</p>
+					<a
+						href="http://learninventor.me/theory/www/mit_downloads.html"
+						class="text-blue-600 hover:underline text-sm"
+						>learninventor.me/downloads</a
+					>
+				</div>
+				<div
+					class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow"
+				>
+					<i class="fas fa-users text-3xl accent-color mb-4"></i>
+					<h3 class="font-semibold mb-2">Форум сообщества</h3>
+					<p class="text-sm text-gray-600 mb-3">MIT App Inventor Community</p>
+					<a
+						href="https://community.appinventor.mit.edu/"
+						class="text-blue-600 hover:underline text-sm"
+						>community.appinventor.mit.edu</a
+					>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="text-center py-8 border-t border-gray-200">
+			<div class="text-gray-600 mb-4">
+				<i class="fas fa-copyright mr-2"></i>
+				2025 Электронное учебное пособие по MIT App Inventor. Все права
+				защищены.
+			</div>
+		</footer>
+	</body>
+</html>
