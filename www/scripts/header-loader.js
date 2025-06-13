@@ -209,21 +209,21 @@ fetch('header.html')
 		}
 		// Обработка профиля на мобильных устройствах
 		const profileDropdown = document.getElementById('profile-dropdown')
-		const dropdownContent = profileDropdown
-			? profileDropdown.querySelector('.dropdown-content')
-			: null
-
 		if (profileDropdown) {
-			// Добавляем обработчик клика для иконки профиля
-			profileDropdown
-				.querySelector('.profile-icon-container')
-				.addEventListener('click', function (e) {
+			// Находим иконку профиля
+			const profileIcon = profileDropdown.querySelector(
+				'.profile-icon-container'
+			)
+			if (profileIcon) {
+				// Добавляем обработчик клика для иконки профиля
+				profileIcon.addEventListener('click', function (e) {
 					// Проверяем, на мобильном ли устройстве
 					if (window.innerWidth <= 800) {
 						e.stopPropagation() // Предотвращаем "всплытие" события
 						profileDropdown.classList.toggle('active')
 					}
 				})
+			}
 
 			// Закрываем меню при клике в любом месте страницы
 			document.addEventListener('click', function (e) {
