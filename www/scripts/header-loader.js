@@ -20,13 +20,61 @@ const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" 
     <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
 </svg>`
 
-function updateThemeButton() {
+// Обновленная функция для обновления обеих кнопок темы
+function updateThemeButtons() {
 	const themeToggleBtn = document.getElementById('theme-toggle-btn')
-	if (document.body.classList.contains('dark-mode')) {
-		themeToggleBtn.innerHTML = sunIcon
-	} else {
-		themeToggleBtn.innerHTML = moonIcon
+	const mobileThemeToggleBtn = document.getElementById(
+		'mobile-theme-toggle-btn'
+	)
+
+	const isDarkMode = document.body.classList.contains('dark-mode')
+	const iconToShow = isDarkMode ? sunIcon : moonIcon
+
+	if (themeToggleBtn) {
+		themeToggleBtn.innerHTML = iconToShow
 	}
+
+	if (mobileThemeToggleBtn) {
+		mobileThemeToggleBtn.innerHTML = iconToShow
+	}
+}
+
+// Функция для переключения темы
+function toggleTheme() {
+	document.body.classList.toggle('dark-mode')
+	const darkModeEnabled = document.body.classList.contains('dark-mode')
+	localStorage.setItem('darkMode', darkModeEnabled)
+	updateThemeButtons()
+}
+
+// Функция для инициализации выпадающего меню профиля
+function setupProfileDropdown() {
+	const profileDropdown = document.getElementById('profile-dropdown')
+	if (!profileDropdown) return
+
+	// Находим кнопку профиля (работает как с div, так и с button)
+	const profileButton =
+		profileDropdown.querySelector('.profile-icon-button') ||
+		profileDropdown.querySelector('.profile-icon-container')
+
+	if (!profileButton) return
+
+	// Обработчик клика по кнопке профиля
+	profileButton.addEventListener('click', function (e) {
+		e.preventDefault()
+		e.stopPropagation()
+		profileDropdown.classList.toggle('active')
+	})
+
+	// Закрываем меню при клике в любом месте страницы
+	document.addEventListener('click', function (e) {
+		if (
+			!profileDropdown.contains(e.target) &&
+			profileDropdown.classList.contains('active')
+		) {
+			profileDropdown.classList.remove('active')
+		}
+	})
 }
 
 // Функция для преобразования бокового меню в табы на мобильных устройствах
@@ -37,19 +85,6 @@ function setupMobileNavigation() {
 
 	const menuLinks = sidebar.querySelectorAll('.nav-link')
 	if (menuLinks.length === 0) return
-	function handleScroll() {
-		if (window.innerWidth <= 800) {
-			const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-			if (scrollTop > 70) {
-				// Немного больше высоты шапки
-				sidebar.classList.add('scrolled')
-			} else {
-				sidebar.classList.remove('scrolled')
-			}
-		}
-	}
-	window.addEventListener('scroll', handleScroll)
-	handleScroll()
 
 	// Создаем карту разделов и соответствующих им ссылок в меню
 	const sectionMap = {}
@@ -63,6 +98,24 @@ function setupMobileNavigation() {
 			}
 		}
 	})
+
+	// Добавляем эффект тени при прокрутке
+	function handleScroll() {
+		if (window.innerWidth <= 800) {
+			const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+			if (scrollTop > 70) {
+				// Немного больше высоты шапки
+				sidebar.classList.add('scrolled')
+			} else {
+				sidebar.classList.remove('scrolled')
+			}
+		}
+	}
+
+	// Вызываем функцию при прокрутке
+	window.addEventListener('scroll', handleScroll)
+	// Сразу проверяем позицию прокрутки при загрузке
+	handleScroll()
 
 	// Функция для определения текущего видимого раздела
 	function determineActiveSection() {
@@ -119,7 +172,7 @@ function setupMobileNavigation() {
 	function updateActiveMenuItem() {
 		const activeSectionId = determineActiveSection()
 
-		if (activeSectionId) {
+		if (activeSectionId && sectionMap[activeSectionId]) {
 			// Удаляем класс active со всех ссылок
 			menuLinks.forEach(link => link.classList.remove('active'))
 
@@ -145,8 +198,6 @@ function setupMobileNavigation() {
 		scrollTimer = setTimeout(updateActiveMenuItem, 100)
 	})
 
-	// Запускаем при инициализации
-	updateActiveMenuItem()
 	// Функция для проверки, активна ли ссылка (соответствует ли текущему якорю)
 	function updateActiveLink() {
 		const currentHash =
@@ -188,6 +239,9 @@ function setupMobileNavigation() {
 
 	// Обновляем активное состояние при изменении хэша
 	window.addEventListener('hashchange', updateActiveLink)
+
+	// Запускаем при инициализации
+	updateActiveMenuItem()
 }
 
 fetch('header.html')
@@ -196,47 +250,24 @@ fetch('header.html')
 		const headerElem = document.getElementById('header')
 		headerElem.innerHTML = data
 
-		updateThemeButton()
+		// Обновляем обе кнопки темы
+		updateThemeButtons()
 
+		// Инициализация кнопок темы
 		const themeToggleBtn = document.getElementById('theme-toggle-btn')
-		if (themeToggleBtn) {
-			themeToggleBtn.addEventListener('click', () => {
-				document.body.classList.toggle('dark-mode')
-				const darkModeEnabled = document.body.classList.contains('dark-mode')
-				localStorage.setItem('darkMode', darkModeEnabled)
-				updateThemeButton()
-			})
-		}
-		// Обработка профиля на мобильных устройствах
-		const profileDropdown = document.getElementById('profile-dropdown')
-		if (profileDropdown) {
-			// Находим иконку профиля
-			const profileIcon = profileDropdown.querySelector(
-				'.profile-icon-container'
-			)
-			if (profileIcon) {
-				// Добавляем обработчик клика для иконки профиля
-				profileIcon.addEventListener('click', function (e) {
-					// Проверяем, на мобильном ли устройстве
-					if (window.innerWidth <= 800) {
-						e.stopPropagation() // Предотвращаем "всплытие" события
-						profileDropdown.classList.toggle('active')
-					}
-				})
-			}
+		const mobileThemeToggleBtn = document.getElementById(
+			'mobile-theme-toggle-btn'
+		)
 
-			// Закрываем меню при клике в любом месте страницы
-			document.addEventListener('click', function (e) {
-				if (
-					window.innerWidth <= 800 &&
-					profileDropdown.classList.contains('active')
-				) {
-					if (!profileDropdown.contains(e.target)) {
-						profileDropdown.classList.remove('active')
-					}
-				}
-			})
+		// Обработчики для кнопок темы
+		if (themeToggleBtn) {
+			themeToggleBtn.addEventListener('click', toggleTheme)
 		}
+
+		if (mobileThemeToggleBtn) {
+			mobileThemeToggleBtn.addEventListener('click', toggleTheme)
+		}
+
 		// Обработка профиля, если пользователь авторизован
 		const token = localStorage.getItem('token')
 		if (token) {
@@ -295,7 +326,7 @@ fetch('header.html')
 			}
 		}
 
-		// Инициализация мобильного меню ПОСЛЕ загрузки header.html
+		// Инициализация мобильного меню
 		const mobileMenuButton = document.querySelector('.mobile-menu-button')
 		const mobileMenu = document.querySelector('.mobile-menu')
 		const mobileMenuClose = document.querySelector('.mobile-menu-close')
@@ -314,13 +345,10 @@ fetch('header.html')
 			})
 		}
 
-		// Вызываем функцию настройки мобильной навигации
+		// Инициализация выпадающего меню профиля
+		setupProfileDropdown()
+
+		// Инициализация мобильной навигации
 		setupMobileNavigation()
 	})
 	.catch(error => console.error('Ошибка загрузки header:', error))
-
-// Также инициализируем мобильную навигацию при полной загрузке страницы,
-// чтобы учесть возможное изменение хэша или других условий
-document.addEventListener('DOMContentLoaded', function () {
-	setupMobileNavigation()
-})

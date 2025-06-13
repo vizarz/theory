@@ -35,6 +35,9 @@ html {
 	scroll-behavior: smooth;
 }
 header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	padding-left: 220px;
 }
 body.dark-mode header {
@@ -407,6 +410,25 @@ body.dark-mode .accordion-content {
 	background-color: #222;
 	color: #ccc;
 }
+.header-controls {
+	display: flex;
+	align-items: center;
+}
+
+.theme-toggle-container {
+	margin-right: 15px;
+}
+
+.profile-icon-button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .profile-dropdown {
 	position: absolute !important;
 	top: 10px !important;
@@ -847,8 +869,69 @@ body.dark-mode .mobile-menu-items a {
 	}
 
 	.header-controls {
+		position: relative;
+		z-index: 101; /* Выше, чем мобильное меню */
+	}
+	.mobile-theme-toggle {
 		display: flex;
-		gap: 15px;
+		align-items: center;
+		justify-content: space-between;
+		padding: 15px 20px;
+		border-bottom: 1px solid #eee;
+		margin-bottom: 10px;
+	}
+
+	.mobile-theme-toggle span {
+		font-size: 16px;
+		color: #333;
+	}
+
+	body.dark-mode .mobile-theme-toggle span {
+		color: #e5e5e5;
+	}
+
+	body.dark-mode .mobile-theme-toggle {
+		border-bottom-color: #444;
+	}
+	.profile-dropdown .dropdown-content {
+		display: none;
+		position: absolute;
+		top: 60px; /* Ниже шапки */
+		right: 10px;
+		background-color: #fff;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		border-radius: 5px;
+		padding: 10px 0;
+		min-width: 150px;
+		z-index: 1000;
+	}
+
+	.profile-dropdown.active .dropdown-content {
+		display: block;
+	}
+
+	body.dark-mode .profile-dropdown .dropdown-content {
+		background-color: #2d2d2d;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	}
+
+	.profile-dropdown .dropdown-content a {
+		display: block;
+		padding: 10px 15px;
+		text-decoration: none;
+		color: #333;
+	}
+
+	body.dark-mode .profile-dropdown .dropdown-content a {
+		color: #e5e5e5;
+	}
+
+	.profile-dropdown .dropdown-content a:hover {
+		background-color: #f5f5f5;
+	}
+
+	body.dark-mode .profile-dropdown .dropdown-content a:hover {
+		background-color: #3d3d3d;
 	}
 
 	.profile-dropdown {

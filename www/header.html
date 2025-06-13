@@ -14,7 +14,7 @@
 		</div>
 	</div>
 
-	<a href="index.html">
+	<a href="index.html" class="logo-link">
 		<div class="logo">
 			<svg
 				width="150"
@@ -301,27 +301,28 @@
 			</svg>
 		</div>
 	</a>
-
-	<div class="profile-dropdown" id="profile-dropdown">
-		<div class="profile-icon-container">
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				width="16"
-				height="16"
-				fill="currentColor"
-				class="bi bi-person-circle"
-				viewBox="0 0 16 16"
-			>
-				<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-				<path
-					fill-rule="evenodd"
-					d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
-				/>
-			</svg>
-		</div>
-		<div class="dropdown-content">
-			<a href="login.html">Вход</a>
-			<a href="register.html">Регистрация</a>
+	<div class="header-controls">
+		<div class="profile-dropdown" id="profile-dropdown">
+			<div class="profile-icon-button">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="16"
+					height="16"
+					fill="currentColor"
+					class="bi bi-person-circle"
+					viewBox="0 0 16 16"
+				>
+					<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+					<path
+						fill-rule="evenodd"
+						d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+					/>
+				</svg>
+			</div>
+			<div class="dropdown-content">
+				<a href="login.html">Вход</a>
+				<a href="register.html">Регистрация</a>
+			</div>
 		</div>
 	</div>
 
@@ -335,6 +336,10 @@
 			<a href="mit_troubleshooting.html">Устранение неполадок</a>
 			<a href="mit_projects.html">Проекты</a>
 			<a href="mit_about.html">О программе</a>
+		</div>
+		<div class="mobile-theme-toggle">
+			<span>Переключить тему</span>
+			<button id="mobile-theme-toggle-btn"></button>
 		</div>
 	</div>
 </header>
