@@ -207,7 +207,36 @@ fetch('header.html')
 				updateThemeButton()
 			})
 		}
+		// Обработка профиля на мобильных устройствах
+		const profileDropdown = document.getElementById('profile-dropdown')
+		const dropdownContent = profileDropdown
+			? profileDropdown.querySelector('.dropdown-content')
+			: null
 
+		if (profileDropdown) {
+			// Добавляем обработчик клика для иконки профиля
+			profileDropdown
+				.querySelector('.profile-icon-container')
+				.addEventListener('click', function (e) {
+					// Проверяем, на мобильном ли устройстве
+					if (window.innerWidth <= 800) {
+						e.stopPropagation() // Предотвращаем "всплытие" события
+						profileDropdown.classList.toggle('active')
+					}
+				})
+
+			// Закрываем меню при клике в любом месте страницы
+			document.addEventListener('click', function (e) {
+				if (
+					window.innerWidth <= 800 &&
+					profileDropdown.classList.contains('active')
+				) {
+					if (!profileDropdown.contains(e.target)) {
+						profileDropdown.classList.remove('active')
+					}
+				}
+			})
+		}
 		// Обработка профиля, если пользователь авторизован
 		const token = localStorage.getItem('token')
 		if (token) {

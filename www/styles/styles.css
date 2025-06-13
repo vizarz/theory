@@ -926,6 +926,31 @@ body.dark-mode .mobile-menu-items a {
 		background-color: #8fc202;
 		border-radius: 50%;
 	}
+	.profile-dropdown {
+		position: relative;
+	}
+
+	/* На мобильных устройствах выпадающее меню не показывается при наведении */
+	.profile-dropdown:hover .dropdown-content {
+		display: none;
+	}
+
+	/* На мобильных устройствах выпадающее меню показывается только при наличии класса active */
+	.profile-dropdown.active .dropdown-content {
+		display: block;
+		position: absolute;
+		top: 100%;
+		right: 0;
+		z-index: 1000;
+		width: auto;
+		min-width: 150px;
+	}
+
+	/* Увеличиваем область касания для иконки профиля */
+	.profile-icon-container {
+		padding: 8px;
+		cursor: pointer;
+	}
 	/* Специальный стиль для кнопки "Вернуться к оглавлению" */
 	.sidebar .back-to-index a {
 		background-color: #6c757d !important;
