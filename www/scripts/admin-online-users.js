@@ -1,4 +1,3 @@
-// Функция для получения инициалов (без изменений)
 function getInitials(name) {
 	if (!name || name === 'Не указано' || name === 'Загрузка...') {
 		return 'U'
@@ -170,6 +169,9 @@ async function loadOnlineUsers() {
 				offlineGrid.appendChild(createUserCard(user))
 			})
 		}
+
+		// После заполнения контейнера обновляем состояние кнопок выбора
+		updateSelectionButtons()
 	} catch (error) {
 		console.error('Ошибка загрузки пользователей:', error)
 		container.innerHTML = `
@@ -183,7 +185,6 @@ async function loadOnlineUsers() {
 	}
 }
 
-// Функция создания карточки пользователя
 function createUserCard(user) {
 	const initials = getInitials(user.name)
 	const activity = formatLastActivity(user)
@@ -200,7 +201,21 @@ function createUserCard(user) {
 
 	const userCard = document.createElement('div')
 	userCard.className = `user-card ${user.is_online ? 'online' : 'offline'}`
+	userCard.dataset.username = user.username
+
+	// Не добавляем checkbox для администраторов
+	const isAdmin = user.role === 'admin'
+
 	userCard.innerHTML = `
+        ${
+					!isAdmin
+						? `
+        <div class="user-select-checkbox">
+            <input type="checkbox" id="select-${user.username}" class="user-checkbox" data-username="${user.username}">
+            <label for="select-${user.username}"></label>
+        </div>`
+						: ''
+				}
         <div class="user-avatar" style="border: 3px solid ${avatarBorderColor}">
             ${initials}
             ${user.is_online ? '<div class="online-indicator"></div>' : ''}
@@ -215,9 +230,75 @@ function createUserCard(user) {
                 ${activity.text}
             </div>
         </div>
+        ${
+					!isAdmin
+						? `
+        <div class="user-actions">
+            <button class="btn-user-delete" data-username="${user.username}" title="Удалить пользователя">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+        </div>`
+						: ''
+				}
     `
 
+	// Добавляем обработчик для кнопки удаления
+	const deleteBtn = userCard.querySelector('.btn-user-delete')
+	if (deleteBtn) {
+		deleteBtn.addEventListener('click', function (e) {
+			e.stopPropagation()
+			const username = this.dataset.username
+			showDeleteConfirmation([username])
+		})
+	}
+
 	return userCard
+}
+
+// Функция обновления состояния кнопок выбора
+function updateSelectionButtons() {
+	const checkboxes = document.querySelectorAll('.user-checkbox:not(:disabled)')
+	const checkedBoxes = document.querySelectorAll(
+		'.user-checkbox:checked:not(:disabled)'
+	)
+	const deleteSelectedBtn = document.getElementById('deleteSelectedUsersBtn')
+
+	if (deleteSelectedBtn) {
+		deleteSelectedBtn.disabled = checkedBoxes.length === 0
+	}
+
+	const selectAllBtn = document.getElementById('selectAllUsersBtn')
+	if (selectAllBtn) {
+		if (checkboxes.length > 0 && checkedBoxes.length === checkboxes.length) {
+			selectAllBtn.innerHTML = '<i class="fas fa-square"></i> Снять выбор'
+		} else {
+			selectAllBtn.innerHTML =
+				'<i class="fas fa-check-square"></i> Выбрать всех'
+		}
+	}
+}
+
+// Функция выбора/отмены выбора всех пользователей
+function toggleSelectAllUsers() {
+	const checkboxes = document.querySelectorAll('.user-checkbox:not(:disabled)')
+	const checkedBoxes = document.querySelectorAll(
+		'.user-checkbox:checked:not(:disabled)'
+	)
+	const selectAll = checkedBoxes.length !== checkboxes.length
+
+	checkboxes.forEach(checkbox => {
+		checkbox.checked = selectAll
+	})
+
+	updateSelectionButtons()
+}
+
+// Функция получения списка выбранных пользователей
+function getSelectedUsers() {
+	const checkedBoxes = document.querySelectorAll(
+		'.user-checkbox:checked:not(:disabled)'
+	)
+	return Array.from(checkedBoxes).map(checkbox => checkbox.dataset.username)
 }
 
 // Инициализация при загрузке страницы
@@ -232,5 +313,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		// Автообновление каждые 30 секунд
 		setInterval(loadOnlineUsers, 30000)
+	}
+
+	// Добавляем обработчики событий для кнопок выбора
+	const selectAllBtn = document.getElementById('selectAllUsersBtn')
+	if (selectAllBtn) {
+		selectAllBtn.addEventListener('click', toggleSelectAllUsers)
+	}
+
+	// Обработчик изменения состояния чекбоксов
+	document.addEventListener('change', function (e) {
+		if (e.target.classList.contains('user-checkbox')) {
+			updateSelectionButtons()
+		}
+	})
+
+	// Кнопка удаления выбранных пользователей
+	const deleteSelectedBtn = document.getElementById('deleteSelectedUsersBtn')
+	if (deleteSelectedBtn) {
+		deleteSelectedBtn.addEventListener('click', function () {
+			const selectedUsers = getSelectedUsers()
+			if (selectedUsers.length > 0) {
+				showDeleteConfirmation(selectedUsers)
+			}
+		})
 	}
 })

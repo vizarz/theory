@@ -142,35 +142,129 @@ router.get('/dashboard-stats', checkAuth, async (req, res) => {
 	}
 })
 
+// Обновите существующий эндпоинт /online-users
 router.get('/online-users', checkAuth, async (req, res) => {
-    if (req.user.role !== 'admin') {
-        return res.status(403).send('Отказано в доступе')
-    }
+	if (req.user.role !== 'admin') {
+		return res.status(403).json({ message: 'Отказано в доступе' })
+	}
 
-    try {
-        // Сначала обновляем статусы - помечаем как оффлайн тех, кто не отправлял heartbeat больше 2 минут
-        await pool.query(`
+	try {
+		// Сначала обновляем статусы - помечаем как оффлайн тех, кто не отправлял heartbeat больше 2 минут
+		await pool.query(`
             UPDATE users 
             SET is_online = FALSE 
             WHERE last_heartbeat < DATE_SUB(NOW(), INTERVAL 2 MINUTE) 
             AND is_online = TRUE
-        `);
+        `)
 
-        // Получаем список онлайн пользователей
-        const [onlineUsers] = await pool.query(`
-            SELECT username, name, role, last_activity, last_heartbeat, is_online
+		// Получаем ВСЕХ пользователей с информацией об активности
+		const [allUsers] = await pool.query(`
+            SELECT 
+                username, 
+                name, 
+                role, 
+                last_activity, 
+                last_heartbeat, 
+                is_online,
+                created_at,
+                CASE 
+                    WHEN is_online = TRUE THEN 'online'
+                    WHEN last_activity IS NULL THEN 'never_active'
+                    WHEN last_activity < DATE_SUB(NOW(), INTERVAL 1 DAY) THEN 'long_offline'
+                    ELSE 'recently_offline'
+                END as status_category,
+                CASE 
+                    WHEN last_activity IS NOT NULL THEN 
+                        TIMESTAMPDIFF(MINUTE, last_activity, NOW())
+                    ELSE NULL
+                END as minutes_since_last_activity
             FROM users 
-            WHERE is_online = TRUE
-            ORDER BY last_activity DESC
-        `);
+            ORDER BY 
+                is_online DESC,
+                last_activity DESC,
+                username ASC
+        `)
 
-        res.json({
-            count: onlineUsers.length,
-            users: onlineUsers
-        });
-    } catch (error) {
-        console.error('Ошибка получения онлайн пользователей:', error);
-        res.status(500).send('Ошибка при получении списка онлайн пользователей');
-    }
-});
+		// Разделяем пользователей по категориям
+		const onlineUsers = allUsers.filter(user => user.is_online)
+		const offlineUsers = allUsers.filter(user => !user.is_online)
+
+		res.json({
+			total: allUsers.length,
+			online_count: onlineUsers.length,
+			offline_count: offlineUsers.length,
+			users: allUsers,
+		})
+	} catch (error) {
+		console.error('Ошибка получения пользователей:', error)
+		res
+			.status(500)
+			.json({ message: 'Ошибка при получении списка пользователей' })
+	}
+})
+// Эндпоинт для удаления пользователей
+router.post('/delete-users', checkAuth, async (req, res) => {
+	if (req.user.role !== 'admin') {
+		return res.status(403).json({ message: 'Отказано в доступе' })
+	}
+
+	const { usernames } = req.body
+
+	if (!usernames || !Array.isArray(usernames) || usernames.length === 0) {
+		return res
+			.status(400)
+			.json({ message: 'Не указаны пользователи для удаления' })
+	}
+
+	// Проверка, чтобы админ не удалил сам себя
+	if (usernames.includes(req.user.username)) {
+		return res
+			.status(400)
+			.json({ message: 'Вы не можете удалить свою учетную запись' })
+	}
+
+	try {
+		// Получаем список пользователей для удаления
+		const [users] = await pool.query(
+			'SELECT username, role FROM users WHERE username IN (?)',
+			[usernames]
+		)
+
+		// Проверка наличия всех пользователей
+		if (users.length !== usernames.length) {
+			return res
+				.status(404)
+				.json({ message: 'Некоторые пользователи не найдены' })
+		}
+
+		// Проверяем, нет ли в списке других админов
+		const hasAdmins = users.some(user => user.role === 'admin')
+		if (hasAdmins) {
+			return res
+				.status(400)
+				.json({ message: 'Вы не можете удалить других администраторов' })
+		}
+
+		// Удаляем связанные записи (логи чтения, сессии и т.д.)
+		await pool.query(
+			'DELETE FROM page_reads WHERE userid IN (SELECT id FROM users WHERE username IN (?))',
+			[usernames]
+		)
+
+		// Удаляем пользователей
+		const [result] = await pool.query(
+			'DELETE FROM users WHERE username IN (?)',
+			[usernames]
+		)
+
+		res.json({
+			message: 'Пользователи успешно удалены',
+			count: result.affectedRows,
+		})
+	} catch (error) {
+		console.error('Ошибка удаления пользователей:', error)
+		res.status(500).json({ message: 'Ошибка при удалении пользователей' })
+	}
+})
+
 module.exports = router

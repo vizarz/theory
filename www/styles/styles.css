@@ -1195,7 +1195,16 @@ body.dark-mode .mobile-menu-items a {
 		width: auto;
 		margin-bottom: 5px;
 	}
+	.online-actions {
+		flex-direction: column;
+		align-items: flex-start;
+	}
 
+	.selection-controls {
+		margin-top: 10px;
+		width: 100%;
+		justify-content: space-between;
+	}
 	.up-button-container {
 		flex-direction: column;
 	}
@@ -3731,4 +3740,168 @@ body.dark-mode .about-subtitle {
 
 body.dark-mode .copyright-section {
 	color: #aaa;
+}
+/* Стили для кнопок удаления и выбора пользователей */
+.online-actions {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	flex-wrap: wrap;
+}
+
+.selection-controls {
+	display: flex;
+	gap: 10px;
+}
+
+.btn-danger {
+	background-color: #dc3545;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	padding: 8px 16px;
+	cursor: pointer;
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	transition: all 0.3s;
+}
+
+.btn-danger i {
+	margin-right: 8px;
+}
+
+.btn-danger:hover {
+	background-color: #c82333;
+	transform: translateY(-2px);
+}
+
+.btn-danger:disabled {
+	background-color: #f5a5ac;
+	cursor: not-allowed;
+	transform: none;
+}
+
+/* Чекбокс для выбора пользователя */
+.user-select-checkbox {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 5;
+}
+
+.user-select-checkbox input[type='checkbox'] {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+.user-select-checkbox label {
+	position: relative;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-color: #fff;
+	border: 2px solid #ddd;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.user-select-checkbox input[type='checkbox']:checked + label {
+	background-color: #8fc202;
+	border-color: #8fc202;
+}
+
+.user-select-checkbox input[type='checkbox']:checked + label:after {
+	content: '';
+	position: absolute;
+	left: 6px;
+	top: 2px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+}
+
+/* Стили для кнопки удаления в карточке пользователя */
+.user-card {
+	position: relative;
+	padding-left: 40px; /* Место для чекбокса */
+}
+
+.user-actions {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.btn-user-delete {
+	background: none;
+	border: none;
+	color: #dc3545;
+	font-size: 16px;
+	cursor: pointer;
+	opacity: 0.6;
+	transition: all 0.3s;
+}
+
+.btn-user-delete:hover {
+	opacity: 1;
+	transform: scale(1.1);
+}
+
+/* Стили для модального окна подтверждения удаления */
+#deleteConfirmModal .modal-content {
+	max-width: 500px;
+}
+
+#deleteConfirmModal h2 {
+	color: #dc3545;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+#deleteConfirmModal h2 i {
+	color: #dc3545;
+}
+
+.selected-users-list {
+	max-height: 200px;
+	overflow-y: auto;
+	margin: 15px 0;
+	padding: 10px;
+	background-color: #f8f8f8;
+	border-radius: 5px;
+	display: none;
+}
+
+body.dark-mode .selected-users-list {
+	background-color: #333;
+}
+
+.selected-user-item {
+	padding: 8px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid #eee;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+body.dark-mode .selected-user-item {
+	border-bottom-color: #444;
+}
+
+body.dark-mode .user-select-checkbox label {
+	background-color: #333;
+	border-color: #555;
+}
+
+body.dark-mode .btn-user-delete {
+	color: #ff6b6b;
 }

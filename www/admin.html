@@ -144,18 +144,26 @@
 						Показать пользователей <i class="fas fa-chevron-down"></i>
 					</button>
 				</div>
-				<div class="section-body">
-					<div id="adminOnlineUsersForm" class="slide-form">
-						<div class="online-controls">
+				<div id="adminOnlineUsersForm" class="slide-form">
+					<div class="online-controls">
+						<div class="online-actions">
 							<button type="button" id="loadOnlineUsersBtn" class="action-btn">
 								<i class="fas fa-sync-alt"></i> Обновить список
 							</button>
-							<div class="online-count" id="onlineUsersCount">
-								0 онлайн / 0 офлайн (всего: 0)
+							<div class="selection-controls">
+								<button id="selectAllUsersBtn" class="btn-toggle">
+									<i class="fas fa-check-square"></i> Выбрать всех
+								</button>
+								<button id="deleteSelectedUsersBtn" class="btn-danger" disabled>
+									<i class="fas fa-trash-alt"></i> Удалить выбранных
+								</button>
 							</div>
 						</div>
-						<div id="onlineUsersContainer" class="users-container"></div>
+						<div class="online-count" id="onlineUsersCount">
+							0 онлайн / 0 офлайн (всего: 0)
+						</div>
 					</div>
+					<div id="onlineUsersContainer" class="users-container"></div>
 				</div>
 			</div>
 		</div>
@@ -183,6 +191,21 @@
 				</div>
 			</div>
 		</div>
+		<div id="deleteConfirmModal" class="modal">
+			<div class="modal-content">
+				<h2>
+					<i class="fas fa-exclamation-triangle"></i> Подтверждение удаления
+				</h2>
+				<p id="deleteConfirmMessage">
+					Вы действительно хотите удалить выбранных пользователей?
+				</p>
+				<div class="selected-users-list" id="selectedUsersList"></div>
+				<div class="modal-actions">
+					<button id="cancelDeleteBtn" class="btn-toggle">Отмена</button>
+					<button id="confirmDeleteBtn" class="btn-danger">Удалить</button>
+				</div>
+			</div>
+		</div>
 		<script src="scripts/config.js"></script>
 		<script src="scripts/heartbeat.js"></script>
 		<script src="scripts/admin-online-users.js"></script>
@@ -194,5 +217,6 @@
 		<script src="scripts/admin-changepassword.js"></script>
 		<script src="scripts/admin-page-reads.js"></script>
 		<script src="scripts/admin-buttons.js"></script>
+		<script src="scripts/admin-user-delete.js"></script>
 	</body>
 </html>
