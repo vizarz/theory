@@ -11,7 +11,7 @@ const API_URL = `${SERVER_URL}/api`
 
 /**
  * Возвращает полный URL для API запроса
- * @param {string} endpoint - путь API без начального слеша
+ * @param {string} endpoint - путь API без начального слэша
  * @returns {string} полный URL запроса
  */
 function getApiUrl(endpoint) {
