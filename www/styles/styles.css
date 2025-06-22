@@ -1195,6 +1195,20 @@ body.dark-mode .mobile-menu-items a {
 		width: auto;
 		margin-bottom: 5px;
 	}
+	.troubleshooting-intro {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.intro-icon {
+		margin-right: 0;
+		margin-bottom: 15px;
+	}
+
+	.intro-tips {
+		justify-content: center;
+	}
 	.online-actions {
 		flex-direction: column;
 		align-items: flex-start;
@@ -3904,4 +3918,90 @@ body.dark-mode .user-select-checkbox label {
 
 body.dark-mode .btn-user-delete {
 	color: #ff6b6b;
+}
+.intro-content p {
+	line-height: 1.6;
+	margin-bottom: 15px;
+}
+
+.intro-tips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+	margin-top: 20px;
+}
+
+.intro-tip {
+	background-color: #fff;
+	padding: 10px 15px;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+	transition: transform 0.2s;
+}
+
+.intro-tip:hover {
+	transform: translateY(-2px);
+}
+
+.intro-tip i {
+	color: #0099cc;
+	margin-right: 10px;
+}
+.troubleshooting-intro {
+	display: flex;
+	background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+	border-radius: 10px;
+	padding: 25px;
+	margin-bottom: 30px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+	border-left: 5px solid #0099cc;
+}
+
+.intro-icon {
+	font-size: 3.5em;
+	color: #0099cc;
+	margin-right: 25px;
+	display: flex;
+	align-items: center;
+}
+
+.intro-content {
+	flex: 1;
+}
+
+.intro-content h2 {
+	color: #0099cc;
+	margin-top: 0;
+	margin-bottom: 15px;
+	font-size: 1.5em;
+}
+/* Стили для темной темы - селектор body.dark-mode */
+body.dark-mode .troubleshooting-intro {
+	background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+	border-left: 5px solid #38b2ac;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .intro-icon {
+	color: #38b2ac;
+}
+
+body.dark-mode .intro-content h2 {
+	color: #38b2ac;
+}
+
+body.dark-mode .intro-content p {
+	color: #e2e8f0;
+}
+
+body.dark-mode .intro-tip {
+	background-color: #2d3748;
+	color: #e2e8f0;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .intro-tip i {
+	color: #38b2ac;
 }
