@@ -114,8 +114,7 @@
 								<a href="https://appinventor.mit.edu" target="_blank"
 									>MIT App Inventor</a
 								>
-								и создайте новый проект с названием "MazeAdventure" или
-								"ЛабиринтПриключений".
+								и создайте новый проект с названием "MazeAdventure".
 							</li>
 							<img
 								class="project-img"
@@ -175,7 +174,7 @@
 							</li>
 							<img
 								class="project-img"
-								src="images/upload_media_files.png"
+								src="images/music_player_upload_audio.jpeg"
 								alt="Загрузка медиа-файлов"
 							/>
 
@@ -218,6 +217,19 @@
 
 					<div id="step-content-2" class="step-content">
 						<h2>Шаг 2: Создание интерфейса игры</h2>
+						<div class="warning-box">
+							<i class="fas fa-mobile-alt"></i>
+							<strong>Важное замечание!</strong> Перед началом создания
+							интерфейса измените вид устройства на "Tablet" (Планшет). Для
+							этого нажмите на кнопку "Phone" в верхней части экрана, затем
+							выберите "Tablet". Это необходимо, чтобы все элементы игры были
+							хорошо видны и игра была удобной для управления.
+						</div>
+						<img
+							class="project-img"
+							src="images/maze_change_to_tablet.png"
+							alt="Изменение вида устройства на планшет"
+						/>
 						<ul class="instruction-list">
 							<li>
 								Создадим игровое поле и элементы управления. Начнем с настройки
@@ -251,7 +263,7 @@
 										parent
 									</li>
 									<li>
-										Установите <strong>Height</strong> (Высота): 300 пикселей
+										Установите <strong>Height</strong> (Высота): 200 пикселей
 										(или другое подходящее значение)
 									</li>
 									<li>
@@ -285,7 +297,7 @@
 									<li>
 										Установите начальные координаты <strong>X</strong> и
 										<strong>Y</strong> для позиции старта в лабиринте (например,
-										X: 30, Y: 30)
+										X: 10, Y: 110)
 									</li>
 									<li>Установите <strong>Speed</strong> (Скорость): 5</li>
 								</ol>
@@ -297,71 +309,70 @@
 							/>
 
 							<li>
-								Теперь создадим блок кнопок управления:
+								Теперь создадим более удобную структуру для кнопок управления с
+								помощью табличного расположения:
 								<ol>
 									<li>
-										В разделе <strong>Layout</strong> найдите компонент
-										<strong>HorizontalArrangement</strong>
+										В разделе <strong>Layout</strong> (Макет) найдите компонент
+										<strong>TableArrangement</strong> (Табличное расположение)
 									</li>
 									<li>Перетащите его на экран под Canvas1</li>
 									<li>
-										Установите <strong>Width</strong>: Fill parent и
-										<strong>AlignHorizontal</strong>: Center
+										В свойствах установите <strong>Rows</strong> (Строки): 3 и
+										<strong>Columns</strong> (Столбцы): 3
 									</li>
 									<li>
-										В <strong>HorizontalArrangement</strong> перетащите
-										компонент <strong>VerticalArrangement</strong>
-									</li>
-									<li>
-										Установите <strong>Width</strong> и <strong>Height</strong>:
-										Automatic
+										Установите <strong>Width</strong> (Ширина): Fill parent и
+										<strong>Height</strong> (Высота): Automatic
 									</li>
 								</ol>
 							</li>
+							<img
+								class="project-img"
+								src="images/maze_table_arrangement.png"
+								alt="Добавление табличного расположения"
+							/>
 
 							<li>
-								Добавим кнопки управления:
+								Добавим кнопки управления в таблицу:
 								<ol>
 									<li>
-										В разделе <strong>User Interface</strong> найдите компонент
-										<strong>Button</strong>
+										В разделе <strong>User Interface</strong> (Пользовательский
+										интерфейс) найдите компонент
+										<strong>Button</strong> (Кнопка)
 									</li>
 									<li>
-										Перетащите одну кнопку в центр
-										<strong>VerticalArrangement</strong> и установите ее
-										свойства:
+										Перетащите кнопку в ячейку таблицы (строка 1, столбец 2) -
+										это верхняя центральная ячейка:
 										<ul>
-											<li><strong>Text</strong>: "↑" (стрелка вверх)</li>
-											<li><strong>Width</strong>: 80 пикселей</li>
-											<li><strong>Height</strong>: 60 пикселей</li>
-											<li><strong>FontSize</strong>: 24</li>
 											<li>
-												<strong>BackgroundColor</strong>: выберите цвет на ваш
-												вкус
+												<strong>Text</strong> (Текст): "↑" (стрелка вверх)
+											</li>
+											<li><strong>Width</strong> (Ширина): 60 пикселей</li>
+											<li><strong>Height</strong> (Высота): 40 пикселей</li>
+											<li><strong>FontSize</strong> (Размер шрифта): 24</li>
+											<li><strong>Shape</strong> (Форма): округлая (round)</li>
+											<li>
+												<strong>BackgroundColor</strong> (Цвет фона): выберите
+												цвет на ваш вкус
 											</li>
 										</ul>
 									</li>
 									<li>
-										Добавьте <strong>HorizontalArrangement</strong> под кнопкой
-										вверх
+										Аналогично добавьте кнопку "←" (влево) в ячейку (2,1) -
+										строка 2, столбец 1
 									</li>
 									<li>
-										Перетащите три кнопки в этот
-										<strong>HorizontalArrangement</strong> и настройте их:
-										<ul>
-											<li>
-												Кнопка влево: <strong>Text</strong>: "←", те же размеры
-												и стиль
-											</li>
-											<li>
-												Кнопка вниз: <strong>Text</strong>: "↓", те же размеры и
-												стиль
-											</li>
-											<li>
-												Кнопка вправо: <strong>Text</strong>: "→", те же размеры
-												и стиль
-											</li>
-										</ul>
+										Добавьте кнопку "↓" (вниз) в ячейку (3,2) - строка 3,
+										столбец 2
+									</li>
+									<li>
+										Добавьте кнопку "→" (вправо) в ячейку (2,3) - строка 2,
+										столбец 3
+									</li>
+									<li>
+										Теперь у вас должна получиться крестовина из кнопок с
+										пустыми ячейками по углам
 									</li>
 								</ol>
 							</li>
@@ -398,6 +409,15 @@
 							символов. Для этого загрузите изображения стрелок в ваш проект и
 							используйте свойство <strong>Image</strong> у кнопок вместо
 							текста.
+						</div>
+						<div class="tip-box">
+							<i class="fas fa-lightbulb"></i>
+							<strong>Совет по удобству:</strong> Табличное расположение
+							(TableArrangement) даёт большую гибкость и точность при размещении
+							кнопок управления. Вы можете легко настроить положение каждой
+							кнопки, изменяя значения Row (строка) и Column (столбец). Это
+							особенно удобно для создания крестовины управления, как в нашей
+							игре.
 						</div>
 
 						<div class="step-navigation">

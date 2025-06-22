@@ -43,6 +43,21 @@ const downloadFiles = {
 		url: 'downloads/projects/sounds-pack.zip',
 		size: '1.5 MB',
 	},
+	'maze-resources': {
+		name: 'maze-resources.zip',
+		url: 'downloads/projects/maze-resources.zip',
+		size: '1.5 MB',
+	},
+	'maze-adventure': {
+		name: 'maze-adventure.zip',
+		url: 'downloads/projects/maze-adventure.aia',
+		size: '1.5 MB',
+	},
+	'kitten-resources': {
+		name: 'kitten-resources.zip',
+		url: 'downloads/projects/kitten-resources.zip',
+		size: '1.5 MB',
+	},
 	'blocks-cheatsheet': {
 		name: 'MIT-App-Inventor-Blocks-Cheatsheet.pdf',
 		url: 'downloads/resources/MIT-App-Inventor-Blocks-Cheatsheet.pdf',

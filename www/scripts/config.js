@@ -4,7 +4,7 @@
  */
 
 // Базовый URL для API
-const SERVER_URL = 'http://147.45.219.233:3001'
+const SERVER_URL = window.location.protocol + '//147.45.219.233:3001'
 
 // URL для API запросов
 const API_URL = `${SERVER_URL}/api`
