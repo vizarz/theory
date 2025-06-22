@@ -144,21 +144,21 @@ router.get('/dashboard-stats', checkAuth, async (req, res) => {
 
 // Обновите существующий эндпоинт /online-users
 router.get('/online-users', checkAuth, async (req, res) => {
-	if (req.user.role !== 'admin') {
-		return res.status(403).json({ message: 'Отказано в доступе' })
-	}
+    if (req.user.role !== 'admin') {
+        return res.status(403).json({ message: 'Отказано в доступе' });
+    }
 
-	try {
-		// Сначала обновляем статусы - помечаем как оффлайн тех, кто не отправлял heartbeat больше 2 минут
-		await pool.query(`
+    try {
+        // Сначала обновляем статусы - помечаем как оффлайн тех, кто не отправлял heartbeat больше 2 минут
+        await pool.query(`
             UPDATE users 
             SET is_online = FALSE 
             WHERE last_heartbeat < DATE_SUB(NOW(), INTERVAL 2 MINUTE) 
             AND is_online = TRUE
-        `)
+        `);
 
-		// Получаем ВСЕХ пользователей с информацией об активности
-		const [allUsers] = await pool.query(`
+        // Получаем ВСЕХ пользователей с информацией об активности
+        const [allUsers] = await pool.query(`
             SELECT 
                 username, 
                 name, 
@@ -183,25 +183,23 @@ router.get('/online-users', checkAuth, async (req, res) => {
                 is_online DESC,
                 last_activity DESC,
                 username ASC
-        `)
+        `);
 
-		// Разделяем пользователей по категориям
-		const onlineUsers = allUsers.filter(user => user.is_online)
-		const offlineUsers = allUsers.filter(user => !user.is_online)
+        // Разделяем пользователей по категориям
+        const onlineUsers = allUsers.filter(user => user.is_online);
+        const offlineUsers = allUsers.filter(user => !user.is_online);
 
-		res.json({
-			total: allUsers.length,
-			online_count: onlineUsers.length,
-			offline_count: offlineUsers.length,
-			users: allUsers,
-		})
-	} catch (error) {
-		console.error('Ошибка получения пользователей:', error)
-		res
-			.status(500)
-			.json({ message: 'Ошибка при получении списка пользователей' })
-	}
-})
+        res.json({
+            total: allUsers.length,
+            online_count: onlineUsers.length,
+            offline_count: offlineUsers.length,
+            users: allUsers
+        });
+    } catch (error) {
+        console.error('Ошибка получения пользователей:', error);
+        res.status(500).json({ message: 'Ошибка при получении списка пользователей' });
+    }
+});
 // Эндпоинт для удаления пользователей
 router.post('/delete-users', checkAuth, async (req, res) => {
 	if (req.user.role !== 'admin') {

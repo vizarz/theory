@@ -12,6 +12,11 @@ const downloadFiles = {
 		url: 'downloads/projects/SpeakingApp.aia',
 		size: '2 KB',
 	},
+	'purring-kitten': {
+		name: 'PurringKitten.aia',
+		url: 'downloads/projects/PurringKitten.aia',
+		size: '2 KB',
+	},
 	'bouncing-ball': {
 		name: 'BouncingBall.aia',
 		url: 'downloads/projects/BouncingBall.aia',
