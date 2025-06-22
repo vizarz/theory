@@ -1264,3 +1264,153 @@
 		background-color: #4f46e5;
 	}
 }
+/* Стили для проекта "Мой виртуальный питомец" */
+.virtual-pet-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	background: linear-gradient(to bottom, #a7d7ff, #e3f2fd);
+}
+
+.pet-body {
+	position: relative;
+	width: 120px;
+	height: 120px;
+	background-color: #ffb74d;
+	border-radius: 60%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: pet_breathe 3s infinite ease-in-out;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pet-face {
+	position: relative;
+	width: 80px;
+	height: 80px;
+}
+
+.pet-eyes {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 15px;
+}
+
+.pet-eye {
+	width: 20px;
+	height: 20px;
+	background-color: #333;
+	border-radius: 50%;
+	position: relative;
+	animation: pet_blink 4s infinite;
+}
+
+.pet-mouth {
+	width: 30px;
+	height: 15px;
+	background-color: #e53935;
+	border-radius: 0 0 15px 15px;
+	margin: 10px auto 0;
+	animation: pet_smile 4s infinite alternate;
+}
+
+.pet-emotion-bubble {
+	position: absolute;
+	top: -40px;
+	right: -30px;
+	background-color: white;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: pet_bounce 2s infinite;
+}
+
+.emotion {
+	font-size: 20px;
+}
+
+.pet-controls {
+	margin-top: 20px;
+	display: flex;
+	gap: 15px;
+}
+
+.pet-button {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #ffffff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	transition: transform 0.2s;
+}
+
+.pet-button:hover {
+	transform: scale(1.1);
+}
+
+.pet-feed {
+	color: #ff7043;
+}
+
+.pet-play {
+	color: #42a5f5;
+}
+
+.pet-sleep {
+	color: #5e35b1;
+}
+
+@keyframes pet_breathe {
+	0%,
+	100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.05);
+	}
+}
+
+@keyframes pet_blink {
+	0%,
+	45%,
+	55%,
+	100% {
+		height: 20px;
+	}
+	50% {
+		height: 2px;
+	}
+}
+
+@keyframes pet_smile {
+	0%,
+	100% {
+		transform: scaleX(1);
+	}
+	50% {
+		transform: scaleX(1.2);
+	}
+}
+
+@keyframes pet_bounce {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+}

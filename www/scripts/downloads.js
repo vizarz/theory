@@ -17,6 +17,11 @@ const downloadFiles = {
 		url: 'downloads/projects/PurringKitten.aia',
 		size: '2 KB',
 	},
+	'virtual-pet': {
+		name: 'VirtualPet.aia',
+		url: 'downloads/projects/VirtualPet.aia',
+		size: '2 KB',
+	},
 	'bouncing-ball': {
 		name: 'BouncingBall.aia',
 		url: 'downloads/projects/BouncingBall.aia',
@@ -61,6 +66,11 @@ const downloadFiles = {
 	'kitten-resources': {
 		name: 'kitten-resources.zip',
 		url: 'downloads/projects/kitten-resources.zip',
+		size: '1.5 MB',
+	},
+	'pet-resources': {
+		name: 'pet-resources.zip',
+		url: 'downloads/projects/pet-resources.zip',
 		size: '1.5 MB',
 	},
 	'blocks-cheatsheet': {

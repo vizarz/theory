@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Проект "Мой виртуальный питомец"</title>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../www/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../www/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../www/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="../www/site.webmanifest" />
+		<link rel="stylesheet" href="styles/styles.css" />
+		<link rel="stylesheet" href="styles/toast.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		/>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div class="sidebar">
+			<ul class="menu-list">
+				<li>
+					<div class="back-to-index">
+						<a href="mit_projects.html">
+							<i class="fas fa-arrow-left"></i>
+							Вернуться к проектам
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="content">
+			<div class="project-container">
+				<div class="project-header">
+					<h1>Проект "Мой виртуальный питомец"</h1>
+					<p>
+						<strong>Цель</strong>: Создать простое приложение с виртуальным
+						питомцем, используя несколько экранов.
+					</p>
+					<p>
+						В этом проекте вы научитесь создавать приложение с несколькими
+						экранами и переключаться между ними при помощи кнопок.
+					</p>
+					<div class="project-features">
+						<h3><i class="fas fa-star"></i> Чему ты научишься:</h3>
+						<ul>
+							<li>
+								<i class="fas fa-clone"></i> Создавать многоэкранные приложения
+							</li>
+							<li>
+								<i class="fas fa-exchange-alt"></i> Переключаться между экранами
+							</li>
+							<li><i class="fas fa-image"></i> Работать с изображениями</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="steps-progress">
+					<div class="progress-line"></div>
+					<div class="progress-line-completed" id="progress-line"></div>
+
+					<div class="step-item" data-step="1">
+						<div class="step-circle" onclick="showStep(1)">1</div>
+						<div class="step-title">Подготовка ресурсов</div>
+					</div>
+
+					<div class="step-item" data-step="2">
+						<div class="step-circle" onclick="showStep(2)">2</div>
+						<div class="step-title">Создание главного экрана</div>
+					</div>
+
+					<div class="step-item" data-step="3">
+						<div class="step-circle" onclick="showStep(3)">3</div>
+						<div class="step-title">Создание дополнительных экранов</div>
+					</div>
+
+					<div class="step-item" data-step="4">
+						<div class="step-circle" onclick="showStep(4)">4</div>
+						<div class="step-title">Программирование и тестирование</div>
+					</div>
+				</div>
+
+				<div class="step-contents">
+					<div id="step-content-1" class="step-content">
+						<h2>Шаг 1: Подготовка ресурсов</h2>
+						<ul class="instruction-list">
+							<li>
+								Откройте
+								<a href="https://appinventor.mit.edu" target="_blank"
+									>MIT App Inventor</a
+								>
+								и создайте новый проект с названием "VirtualPet".
+							</li>
+							<img
+								class="project-img"
+								src="images/mit_create_apps.jpeg"
+								alt="Создать приложение"
+							/>
+
+							<li>
+								Для этого проекта нам понадобятся следующие ресурсы:
+								<ol>
+									<li>
+										<strong>Изображение питомца в обычном состоянии</strong> -
+										основное изображение для главного экрана
+									</li>
+									<li>
+										<strong>Изображение питомца во время еды</strong> - для
+										экрана кормления
+									</li>
+									<li>
+										<strong>Изображение спящего питомца</strong> - для экрана
+										сна
+									</li>
+								</ol>
+							</li>
+
+							<li>
+								Скачайте необходимые ресурсы из нашего
+								<a href="mit_downloads.html#resources" class="highlight-link"
+									>центра загрузок</a
+								>
+								в разделе "Ресурсы и материалы".
+								<ol>
+									<li>
+										Найдите и скачайте ZIP-архив "pet_resources.zip", в котором
+										содержатся все необходимые файлы для проекта
+									</li>
+									<li>
+										Распакуйте архив - внутри вы найдёте файлы изображений:
+										"pet_happy.png", "pet_eating.png" и "pet_sleeping.png"
+									</li>
+									<li>
+										Теперь эти файлы готовы для загрузки в ваш проект MIT App
+										Inventor
+									</li>
+								</ol>
+							</li>
+
+							<li>
+								Загрузите скачанные файлы в ваш проект MIT App Inventor:
+								<ol>
+									<li>
+										В правой панели "Media" (Медиа) нажмите кнопку "Upload
+										File..." (Загрузить файл...)
+									</li>
+									<li>Выберите и загрузите сначала файл "pet_happy.png"</li>
+									<li>
+										Повторите процесс для файлов "pet_eating.png" и
+										"pet_sleeping.png"
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/music_player_upload_audio.jpeg"
+								alt="Загрузка изображений"
+							/>
+
+							<li>
+								После загрузки вы увидите все файлы в списке медиа-ресурсов
+								вашего проекта.
+							</li>
+						</ul>
+
+						<div class="tip-box">
+							<i class="fas fa-lightbulb"></i>
+							<strong>Совет:</strong> Если у вас нет возможности скачать
+							ресурсы, вы можете использовать любые подходящие изображения
+							питомца. Выбирайте изображения с прозрачным фоном (PNG), чтобы
+							питомец выглядел аккуратно на любом фоне экрана.
+						</div>
+
+						<div class="warning-box">
+							<i class="fas fa-exclamation-triangle"></i>
+							<strong>Важно:</strong> Убедитесь, что имена загруженных файлов
+							совпадают с именами, которые будут использоваться в проекте
+							(pet_happy.png, pet_eating.png и pet_sleeping.png). Если имена
+							файлов отличаются, вам нужно будет соответствующим образом
+							изменить их при настройке компонентов.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" disabled>Назад</button>
+							<button
+								id="btn-step1"
+								class="step-btn btn-read"
+								onclick="markRead('step1', 'Подготовка ресурсов')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(2)">
+								Далее
+							</button>
+						</div>
+					</div>
+
+					<div id="step-content-2" class="step-content">
+						<h2>Шаг 2: Создание главного экрана</h2>
+						<ul class="instruction-list">
+							<li>
+								<strong>Настройте первый экран приложения:</strong>
+								<ol>
+									<li>
+										В разделе <strong>Properties</strong> найдите свойство
+										<strong>BackgroundColor</strong> экрана и выберите светлый
+										цвет (например, светло-голубой).
+									</li>
+									<li>
+										В разделе <strong>Properties</strong> найдите свойство
+										<strong>Title</strong> и установите его значение в "Мой
+										виртуальный питомец".
+									</li>
+								</ol>
+							</li>
+
+							<li>
+								<strong>Создайте заголовок приложения:</strong>
+								<ol>
+									<li>
+										Из палитры <strong>User Interface</strong> перетащите
+										компонент <strong>Label</strong> в верхнюю часть экрана.
+									</li>
+									<li>
+										Настройте свойства:
+										<br />• <strong>Text</strong>: "Мой питомец" <br />•
+										<strong>FontSize</strong>: 24 <br />•
+										<strong>FontBold</strong>: True <br />•
+										<strong>TextAlignment</strong>: Center <br />•
+										<strong>Width</strong>: Fill parent
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/virtual_pet_main_screen_label.jpeg"
+								alt="Добавление заголовка приложения"
+							/>
+
+							<li>
+								<strong>Добавьте изображение питомца:</strong>
+								<ol>
+									<li>
+										Из палитры <strong>User Interface</strong> перетащите
+										компонент <strong>Image</strong> под заголовок.
+									</li>
+									<li>
+										Настройте свойства:
+										<br />• <strong>Picture</strong>: выберите загруженное
+										изображение "pet_happy.png" <br />• <strong>Width</strong>:
+										200 пикселей <br />• <strong>Height</strong>: 200 пикселей
+										<br />
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/virtual_pet_main_screen_image.jpeg"
+								alt="Добавление изображения питомца"
+							/>
+
+							<li>
+								<strong>Добавьте кнопки для действий:</strong>
+								<ol>
+									<li>
+										Из палитры <strong>Layout</strong> перетащите компонент
+										<strong>VerticalArrangement</strong> под изображение.
+									</li>
+									<img
+										class="project-img"
+										src="images/virtual_pet_main_screen_vertical_arrangement.jpeg"
+										alt="Добавление VerticalArrangement"
+									/>
+									<li>
+										Настройте свойства:
+										<br />• <strong>Width</strong>: Fill parent <br />•
+										<strong>AlignHorizontal</strong>: Center
+									</li>
+									<li>
+										Внутри VerticalArrangement добавьте две кнопки:
+										<br />Первая кнопка: <br />• <strong>Text</strong>:
+										"Покормить" <br />• <strong>BackgroundColor</strong>:
+										Оранжевый <br />• <strong>FontBold</strong>: True <br />•
+										<strong>Width</strong>: 150 пикселей <br />
+
+										<br /><br />Вторая кнопка: <br />• <strong>Text</strong>:
+										"Уложить спать" <br />• <strong>BackgroundColor</strong>:
+										Синий <br />• <strong>FontBold</strong>: True <br />•
+										<strong>Width</strong>: 150 пикселей <br />
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/virtual_pet_main_screen_complete.jpeg"
+								alt="Главный экран с кнопками"
+							/>
+						</ul>
+
+						<div class="tip-box">
+							<i class="fas fa-lightbulb"></i>
+							<strong>Совет:</strong> Чтобы сделать интерфейс более аккуратным,
+							добавьте пространство между элементами. Для этого между
+							компонентами можно добавить пустые компоненты
+							<strong>Label</strong> с небольшой высотой или настроить отступы в
+							свойстве <strong>Margin</strong>.
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(1)">
+								Назад
+							</button>
+							<button
+								id="btn-step2"
+								class="step-btn btn-read"
+								onclick="markRead('step2', 'Создание главного экрана')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(3)">
+								Далее
+							</button>
+						</div>
+					</div>
+
+					<div id="step-content-3" class="step-content">
+						<h2>Шаг 3: Создание дополнительных экранов</h2>
+						<ul class="instruction-list">
+							<li>
+								<strong>Создание экрана кормления:</strong>
+								<ol>
+									<li>
+										В верхнем меню выберите <strong>Add Screen...</strong> и
+										создайте новый экран с названием "FeedScreen".
+									</li>
+									<img
+										class="project-img"
+										src="images/virtual_pet_feed_screen.jpeg"
+										alt="Добавление экрана кормления"
+									/>
+									<li>
+										В разделе <strong>Properties</strong> найдите свойство
+										<strong>Title</strong> и установите его значение в
+										"Кормление питомца".
+									</li>
+									<li>
+										В разделе <strong>Properties</strong> найдите свойство
+										<strong>BackgroundColor</strong> и выберите светло-оранжевый
+										цвет.
+									</li>
+								</ol>
+							</li>
+
+							<li>
+								<strong>Настройте экран кормления:</strong>
+								<ol>
+									<li>
+										Добавьте заголовок:
+										<br />• Из палитры
+										<strong>User Interface</strong> перетащите компонент
+										<strong>Label</strong> <br />• <strong>Text</strong>:
+										"Покормить питомца" <br />• <strong>FontSize</strong>: 24
+										<br />• <strong>FontBold</strong>: True <br />•
+										<strong>TextAlignment</strong>: Center <br />•
+										<strong>Width</strong>: Fill parent
+									</li>
+									<img
+										class="project-img"
+										src="images/virtual_pet_feed_screen_label.jpeg"
+										alt="Добавление заголовка экрана кормления"
+									/>
+									<li>
+										Добавьте изображение питомца, который ест:
+										<br />• Добавьте компонент <strong>Image</strong> под
+										заголовок <br />• <strong>Picture</strong>: выберите
+										загруженное изображение "pet_eating.png" <br />•
+										<strong>Width</strong>: 200 пикселей <br />•
+										<strong>Height</strong>: 200 пикселей <br />
+									</li>
+									<img
+										class="project-img"
+										src="images/virtual_pet_feed_screen_image.jpeg"
+										alt="Добавление изображения питомца"
+									/>
+								</ol>
+							</li>
+
+							<li>
+								<strong
+									>Добавьте варианты еды (для визуального оформления):</strong
+								>
+								<ol>
+									<li>
+										Из палитры <strong>Layout</strong> перетащите компонент
+										<strong>HorizontalArrangement</strong> под изображение.
+									</li>
+									<img
+										class="project-img"
+										src="images/virtual_pet_feed_screen_horizontal_arrangement.jpeg"
+										alt="Добавление HorizontalArrangement"
+									/>
+									<li>
+										Настройте свойства:
+										<br />• <strong>Width</strong>: Fill parent <br />•
+										<strong>AlignHorizontal</strong>: Center
+									</li>
+									<li>
+										Внутри HorizontalArrangement добавьте три кнопки с
+										названиями разных типов еды (например, "Морковка 🥕",
+										"Яблоко 🍎", "Лакомство 🍪").
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/virtual_pet_feed_screen_complete.jpeg"
+								alt="Экран кормления с кнопками еды"
+							/>
+
+							<li>
+								<strong>Добавьте кнопку возврата на главный экран:</strong>
+								<ol>
+									<li>
+										Из палитры <strong>User Interface</strong> перетащите
+										компонент <strong>Button</strong> в нижнюю часть экрана.
+									</li>
+									<img
+										class="project-img"
+										src="images/virtual_pet_feed_screen_back_button.jpeg"
+										alt="Добавление кнопки возврата"
+									/>
+									<li>
+										Настройте свойства:
+										<br />• <strong>Text</strong>: "Вернуться к питомцу" <br />•
+										<strong>FontBold</strong>: True <br />•
+										<strong>Width</strong>: Fill parent <br />
+									</li>
+								</ol>
+							</li>
+
+							<li>
+								<strong>Создание экрана сна:</strong>
+								<ol>
+									<li>
+										В верхнем меню выберите <strong>Add Screen...</strong> и
+										создайте новый экран с названием "SleepScreen".
+									</li>
+									<img
+										class="project-img"
+										src="images/virtual_pet_sleep_screen.jpeg"
+										alt="Добавление экрана сна"
+									/>
+									<li>
+										В разделе <strong>Properties</strong> найдите свойство
+										<strong>Title</strong> и установите его значение в "Сон
+										питомца".
+									</li>
+									<li>
+										В разделе <strong>Properties</strong> найдите свойство
+										<strong>BackgroundColor</strong> и выберите тёмно-синий
+										цвет, чтобы создать эффект ночи.
+									</li>
+								</ol>
+							</li>
+
+							<li>
+								<strong>Настройте экран сна:</strong>
+								<ol>
+									<li>
+										Добавьте заголовок:
+										<br />• Из палитры
+										<strong>User Interface</strong> перетащите компонент
+										<strong>Label</strong> <br />• <strong>Text</strong>:
+										"Питомец спит" <br />• <strong>FontSize</strong>: 24 <br />•
+										<strong>FontBold</strong>: True <br />•
+										<strong>TextAlignment</strong>: Center <br />•
+										<strong>Width</strong>: Fill parent <br />•
+										<strong>TextColor</strong>: White (чтобы текст был виден на
+										тёмном фоне)
+									</li>
+									<img
+										class="project-img"
+										src="images/virtual_pet_sleep_screen_label.jpeg"
+										alt="Добавление заголовка экрана сна"
+									/>
+									<li>
+										Добавьте изображение спящего питомца:
+										<br />• Добавьте компонент <strong>Image</strong> под
+										заголовок <br />• <strong>Picture</strong>: выберите
+										загруженное изображение "pet_sleeping.png" <br />•
+										<strong>Width</strong>: 200 пикселей <br />•
+										<strong>Height</strong>: 200 пикселей <br />
+									</li>
+									<img
+										class="project-img"
+										src="images/virtual_pet_sleep_screen_image.jpeg"
+										alt="Добавление изображения спящего питомца"
+									/>
+									<li>
+										Добавьте декоративный элемент:
+										<br />• Из палитры
+										<strong>User Interface</strong> перетащите компонент
+										<strong>Label</strong> <br />• <strong>Text</strong>: "💤
+										Zzzz... 💤" <br />• <strong>FontSize</strong>: 20 <br />•
+										<strong>TextAlignment</strong>: Right <br />•
+										<strong>Width</strong>: Fill parent <br />•
+										<strong>TextColor</strong>: White
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/virtual_pet_sleep_screen_complete.jpeg"
+								alt="Экран сна питомца"
+							/>
+
+							<li>
+								<strong>Добавьте кнопку возврата на главный экран:</strong>
+								<ol>
+									<li>
+										Из палитры <strong>User Interface</strong> перетащите
+										компонент <strong>Button</strong> в нижнюю часть экрана.
+									</li>
+									<li>
+										Настройте свойства:
+										<br />• <strong>Text</strong>: "Вернуться к питомцу" <br />•
+										<strong>FontBold</strong>: True <br />•
+										<strong>Width</strong>: Fill parent <br />
+									</li>
+									<li>
+										<img
+											class="project-img"
+											src="images/virtual_pet_sleep_screen_back_button.jpeg"
+											alt="Добавление кнопки возврата на экран сна"
+										/>
+									</li>
+								</ol>
+							</li>
+						</ul>
+
+						<div class="warning-box">
+							<i class="fas fa-exclamation-triangle"></i>
+							<strong>Важно:</strong> Не забудьте добавить кнопки возврата на
+							главный экран на обоих дополнительных экранах. Без них
+							пользователь не сможет вернуться к своему питомцу!
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(2)">
+								Назад
+							</button>
+							<button
+								id="btn-step3"
+								class="step-btn btn-read"
+								onclick="markRead('step3', 'Создание дополнительных экранов')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" onclick="showStep(4)">
+								Далее
+							</button>
+						</div>
+					</div>
+
+					<div id="step-content-4" class="step-content">
+						<h2>Шаг 4: Программирование и тестирование</h2>
+						<ul class="instruction-list">
+							<li>
+								<strong>Переключитесь на вкладку Blocks (Блоки):</strong>
+								<br />Нажмите на кнопку "Blocks" в правом верхнем углу экрана.
+							</li>
+							<img
+								class="project-img"
+								src="images/mit_project_transit_to_blocks.jpeg"
+								alt="Переход на вкладку Blocks"
+							/>
+
+							<li>
+								<strong>Программирование кнопки "Покормить":</strong>
+								<ol>
+									<li>
+										Перейдите к экрану <strong>Screen1</strong> (в выпадающем
+										списке экранов).
+									</li>
+									<li>
+										В списке компонентов найдите <strong>Button1</strong>.
+									</li>
+									<li>Добавьте блок <strong>when Button1.Click do</strong></li>
+									<li>
+										Внутри этого блока добавьте блок
+										<strong>open another screen screenName</strong> (из раздела
+										Управление)
+									</li>
+									<li>В качестве параметра screenName укажите "FeedScreen"</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/virtual_pet_feed_button_blocks.png"
+								alt="Программирование кнопки Покормить"
+							/>
+
+							<li>
+								<strong>Программирование кнопки "Уложить спать":</strong>
+								<ol>
+									<li>
+										В списке компонентов Screen1 найдите
+										<strong>Button2</strong>.
+									</li>
+									<li>Добавьте блок <strong>when Button2.Click do</strong></li>
+									<li>
+										Внутри этого блока добавьте блок
+										<strong>open another screen screenName</strong>
+									</li>
+									<li>В качестве параметра screenName укажите "SleepScreen"</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/virtual_pet_sleep_button_blocks.png"
+								alt="Программирование кнопки Уложить спать"
+							/>
+
+							<li>
+								<strong
+									>Программирование кнопки возврата с экрана кормления:</strong
+								>
+								<ol>
+									<li>
+										Выберите экран <strong>FeedScreen</strong> в выпадающем
+										списке.
+									</li>
+									<li>
+										В списке компонентов найдите
+										<strong>Button4</strong>.
+									</li>
+									<li>
+										Добавьте блок
+										<strong>when Button4.Click do</strong>
+									</li>
+									<li>
+										Внутри этого блока добавьте блок
+										<strong>open another screen screenName</strong> с параметром
+										"Screen1"
+									</li>
+								</ol>
+							</li>
+							<img
+								class="project-img"
+								src="images/virtual_pet_back_button_blocks.png"
+								alt="Программирование кнопки возврата"
+							/>
+
+							<li>
+								<strong>Программирование кнопки возврата с экрана сна:</strong>
+								<ol>
+									<li>
+										Выберите экран <strong>SleepScreen</strong> в выпадающем
+										списке.
+									</li>
+									<li>
+										В списке компонентов найдите
+										<strong>Button1</strong>.
+									</li>
+									<li>
+										Добавьте блок
+										<strong>when Button1.Click do</strong>
+									</li>
+									<li>
+										Внутри этого блока добавьте блок
+										<strong>open another screen screenName</strong> с параметром
+										"Screen1"
+									</li>
+								</ol>
+							</li>
+
+							<ul class="instruction-list">
+								<li>
+									<strong>Протестируйте ваше приложение:</strong><br />
+									Чтобы увидеть ваше приложение в действии, воспользуйтесь
+									руководством по тестированию приложений в
+									<a href="mit_introduction.html#download_tips" target="_blank"
+										>нашем введении в MIT App Inventor</a
+									>.
+								</li>
+
+								<img
+									class="project-img"
+									src="images/mit_project_testing_app.jpeg"
+									alt="Тестирование приложения"
+								/>
+							</ul>
+
+							<li>
+								<strong>Проверьте работу приложения:</strong>
+								<ol>
+									<li>Убедитесь, что все три экрана отображаются корректно</li>
+									<li>
+										Проверьте, что кнопка "Покормить" открывает экран кормления
+									</li>
+									<li>
+										Проверьте, что кнопка "Уложить спать" открывает экран сна
+									</li>
+									<li>
+										Проверьте, что кнопки "Вернуться к питомцу" на обоих
+										дополнительных экранах корректно возвращают на главный экран
+									</li>
+								</ol>
+							</li>
+						</ul>
+
+						<div class="success-box">
+							<i class="fas fa-check-circle"></i>
+							<strong>Поздравляем!</strong> Вы успешно создали приложение "Мой
+							виртуальный питомец" с несколькими экранами! Теперь вы знаете
+							основы создания многоэкранных приложений в MIT App Inventor.
+						</div>
+
+						<div class="tip-box">
+							<i class="fas fa-lightbulb"></i>
+							<strong>Идеи для улучшения:</strong> Вы можете расширить
+							функциональность вашего приложения:
+							<ul>
+								<li>Добавить звуковые эффекты при переходе между экранами</li>
+								<li>
+									Добавить анимацию питомца с помощью нескольких изображений
+								</li>
+								<li>Создать экран с играми для питомца</li>
+								<li>Добавить возможность выбирать разных питомцев</li>
+							</ul>
+						</div>
+
+						<div class="step-navigation">
+							<button class="step-btn prev-btn" onclick="showStep(3)">
+								Назад
+							</button>
+							<button
+								id="btn-step4"
+								class="step-btn btn-read"
+								onclick="markRead('step4', 'Программирование и тестирование')"
+							>
+								Пометить как выполнено
+							</button>
+							<button class="step-btn next-btn" disabled>Завершить</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="additional-resources">
+					<h3><i class="fas fa-download"></i> Скачать проект</h3>
+					<p>
+						Если у вас возникли сложности, вы можете скачать готовый файл
+						проекта в нашем центре загрузок:
+					</p>
+					<a href="mit_downloads.html#projects" class="download-link">
+						<i class="fas fa-external-link-alt"></i>
+						Перейти в центр загрузок
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<script src="scripts/config.js"></script>
+		<script src="scripts/heartbeat.js"></script>
+		<script src="scripts/theme-change.js"></script>
+		<script src="scripts/toast.js"></script>
+		<script src="scripts/header-loader.js"></script>
+		<script src="scripts/project-buttons.js"></script>
+	</body>
+</html>
