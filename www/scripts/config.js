@@ -4,7 +4,7 @@
  */
 
 // Базовый URL для API
-const SERVER_URL = 'https://147.45.219.233:3001'
+const SERVER_URL = 'https://learninventor.me:3001'
 
 // URL для API запросов
 const API_URL = `${SERVER_URL}/api`
