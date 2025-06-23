@@ -55,12 +55,12 @@ const downloadFiles = {
 	},
 	'maze-resources': {
 		name: 'maze-resources.zip',
-		url: 'downloads/projects/maze-resources.zip',
+		url: 'downloads/projects/maze_resources.zip',
 		size: '1.5 MB',
 	},
 	'maze-adventure': {
-		name: 'maze-adventure.zip',
-		url: 'downloads/projects/maze-adventure.aia',
+		name: 'maze-adventure.aia',
+		url: 'downloads/projects/MazeAdventure.aia',
 		size: '1.5 MB',
 	},
 	'kitten-resources': {
@@ -70,7 +70,7 @@ const downloadFiles = {
 	},
 	'pet-resources': {
 		name: 'pet-resources.zip',
-		url: 'downloads/projects/pet-resources.zip',
+		url: 'downloads/projects/pet_resources.zip',
 		size: '1.5 MB',
 	},
 	'blocks-cheatsheet': {
